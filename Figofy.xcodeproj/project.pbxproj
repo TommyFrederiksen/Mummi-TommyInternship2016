@@ -1,0 +1,534 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		654A27101C350EA6008AA4EB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654A270F1C350EA6008AA4EB /* AppDelegate.swift */; };
+		654A27121C350EA6008AA4EB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654A27111C350EA6008AA4EB /* ViewController.swift */; };
+		654A27151C350EA6008AA4EB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 654A27131C350EA6008AA4EB /* Main.storyboard */; };
+		654A27171C350EA6008AA4EB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 654A27161C350EA6008AA4EB /* Assets.xcassets */; };
+		654A271A1C350EA6008AA4EB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 654A27181C350EA6008AA4EB /* LaunchScreen.storyboard */; };
+		654A27251C350EA7008AA4EB /* FigofyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654A27241C350EA7008AA4EB /* FigofyTests.swift */; };
+		654A27301C350EA7008AA4EB /* FigofyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654A272F1C350EA7008AA4EB /* FigofyUITests.swift */; };
+		65C16C6C1C354CC600628F2F /* OverviewClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C16C6B1C354CC600628F2F /* OverviewClass.swift */; };
+		65C16C741C48F95C00628F2F /* sjælland.PNG in Resources */ = {isa = PBXBuildFile; fileRef = 65C16C731C48F95C00628F2F /* sjælland.PNG */; };
+		65C16C761C490CC300628F2F /* Figofy_app_hvid.ai in Resources */ = {isa = PBXBuildFile; fileRef = 65C16C751C490CC300628F2F /* Figofy_app_hvid.ai */; };
+		65C16C781C490D2100628F2F /* Figofy logo.gif in Resources */ = {isa = PBXBuildFile; fileRef = 65C16C771C490D2100628F2F /* Figofy logo.gif */; };
+		65C16C7A1C490EE100628F2F /* Figofy rgb logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 65C16C791C490EE100628F2F /* Figofy rgb logo.png */; };
+		65C16C7C1C49121E00628F2F /* Figofy_app_trans.png in Resources */ = {isa = PBXBuildFile; fileRef = 65C16C7B1C49121E00628F2F /* Figofy_app_trans.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		654A27211C350EA7008AA4EB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 654A27041C350EA6008AA4EB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 654A270B1C350EA6008AA4EB;
+			remoteInfo = Figofy;
+		};
+		654A272C1C350EA7008AA4EB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 654A27041C350EA6008AA4EB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 654A270B1C350EA6008AA4EB;
+			remoteInfo = Figofy;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		654A270C1C350EA6008AA4EB /* Figofy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Figofy.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		654A270F1C350EA6008AA4EB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		654A27111C350EA6008AA4EB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		654A27141C350EA6008AA4EB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		654A27161C350EA6008AA4EB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		654A27191C350EA6008AA4EB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		654A271B1C350EA6008AA4EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		654A27201C350EA7008AA4EB /* FigofyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FigofyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		654A27241C350EA7008AA4EB /* FigofyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FigofyTests.swift; sourceTree = "<group>"; };
+		654A27261C350EA7008AA4EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		654A272B1C350EA7008AA4EB /* FigofyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FigofyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		654A272F1C350EA7008AA4EB /* FigofyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FigofyUITests.swift; sourceTree = "<group>"; };
+		654A27311C350EA7008AA4EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		65C16C6B1C354CC600628F2F /* OverviewClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OverviewClass.swift; path = ../OverviewClass.swift; sourceTree = "<group>"; };
+		65C16C731C48F95C00628F2F /* sjælland.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "sjælland.PNG"; path = "../../../../Downloads/sjælland.PNG"; sourceTree = "<group>"; };
+		65C16C751C490CC300628F2F /* Figofy_app_hvid.ai */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Figofy_app_hvid.ai; path = ../../../../Downloads/Figofy_app/Figofy_app_hvid.ai; sourceTree = "<group>"; };
+		65C16C771C490D2100628F2F /* Figofy logo.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = "Figofy logo.gif"; path = "../../../../Downloads/Figofy logo.gif"; sourceTree = "<group>"; };
+		65C16C791C490EE100628F2F /* Figofy rgb logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Figofy rgb logo.png"; path = "../../../../Downloads/Figofy rgb logo.png"; sourceTree = "<group>"; };
+		65C16C7B1C49121E00628F2F /* Figofy_app_trans.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Figofy_app_trans.png; path = ../../../../Downloads/Figofy_app_trans.png; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		654A27091C350EA6008AA4EB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		654A271D1C350EA7008AA4EB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		654A27281C350EA7008AA4EB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		654A27031C350EA6008AA4EB = {
+			isa = PBXGroup;
+			children = (
+				654A270E1C350EA6008AA4EB /* Figofy */,
+				654A27231C350EA7008AA4EB /* FigofyTests */,
+				654A272E1C350EA7008AA4EB /* FigofyUITests */,
+				654A270D1C350EA6008AA4EB /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		654A270D1C350EA6008AA4EB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				654A270C1C350EA6008AA4EB /* Figofy.app */,
+				654A27201C350EA7008AA4EB /* FigofyTests.xctest */,
+				654A272B1C350EA7008AA4EB /* FigofyUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		654A270E1C350EA6008AA4EB /* Figofy */ = {
+			isa = PBXGroup;
+			children = (
+				654A270F1C350EA6008AA4EB /* AppDelegate.swift */,
+				654A27111C350EA6008AA4EB /* ViewController.swift */,
+				65C16C7B1C49121E00628F2F /* Figofy_app_trans.png */,
+				65C16C731C48F95C00628F2F /* sjælland.PNG */,
+				65C16C751C490CC300628F2F /* Figofy_app_hvid.ai */,
+				65C16C771C490D2100628F2F /* Figofy logo.gif */,
+				65C16C791C490EE100628F2F /* Figofy rgb logo.png */,
+				654A27131C350EA6008AA4EB /* Main.storyboard */,
+				654A27161C350EA6008AA4EB /* Assets.xcassets */,
+				654A27181C350EA6008AA4EB /* LaunchScreen.storyboard */,
+				654A271B1C350EA6008AA4EB /* Info.plist */,
+				65C16C6B1C354CC600628F2F /* OverviewClass.swift */,
+			);
+			path = Figofy;
+			sourceTree = "<group>";
+		};
+		654A27231C350EA7008AA4EB /* FigofyTests */ = {
+			isa = PBXGroup;
+			children = (
+				654A27241C350EA7008AA4EB /* FigofyTests.swift */,
+				654A27261C350EA7008AA4EB /* Info.plist */,
+			);
+			path = FigofyTests;
+			sourceTree = "<group>";
+		};
+		654A272E1C350EA7008AA4EB /* FigofyUITests */ = {
+			isa = PBXGroup;
+			children = (
+				654A272F1C350EA7008AA4EB /* FigofyUITests.swift */,
+				654A27311C350EA7008AA4EB /* Info.plist */,
+			);
+			path = FigofyUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		654A270B1C350EA6008AA4EB /* Figofy */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 654A27341C350EA7008AA4EB /* Build configuration list for PBXNativeTarget "Figofy" */;
+			buildPhases = (
+				654A27081C350EA6008AA4EB /* Sources */,
+				654A27091C350EA6008AA4EB /* Frameworks */,
+				654A270A1C350EA6008AA4EB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Figofy;
+			productName = Figofy;
+			productReference = 654A270C1C350EA6008AA4EB /* Figofy.app */;
+			productType = "com.apple.product-type.application";
+		};
+		654A271F1C350EA7008AA4EB /* FigofyTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 654A27371C350EA7008AA4EB /* Build configuration list for PBXNativeTarget "FigofyTests" */;
+			buildPhases = (
+				654A271C1C350EA7008AA4EB /* Sources */,
+				654A271D1C350EA7008AA4EB /* Frameworks */,
+				654A271E1C350EA7008AA4EB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				654A27221C350EA7008AA4EB /* PBXTargetDependency */,
+			);
+			name = FigofyTests;
+			productName = FigofyTests;
+			productReference = 654A27201C350EA7008AA4EB /* FigofyTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		654A272A1C350EA7008AA4EB /* FigofyUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 654A273A1C350EA7008AA4EB /* Build configuration list for PBXNativeTarget "FigofyUITests" */;
+			buildPhases = (
+				654A27271C350EA7008AA4EB /* Sources */,
+				654A27281C350EA7008AA4EB /* Frameworks */,
+				654A27291C350EA7008AA4EB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				654A272D1C350EA7008AA4EB /* PBXTargetDependency */,
+			);
+			name = FigofyUITests;
+			productName = FigofyUITests;
+			productReference = 654A272B1C350EA7008AA4EB /* FigofyUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		654A27041C350EA6008AA4EB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0720;
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = Tommy;
+				TargetAttributes = {
+					654A270B1C350EA6008AA4EB = {
+						CreatedOnToolsVersion = 7.2;
+					};
+					654A271F1C350EA7008AA4EB = {
+						CreatedOnToolsVersion = 7.2;
+						TestTargetID = 654A270B1C350EA6008AA4EB;
+					};
+					654A272A1C350EA7008AA4EB = {
+						CreatedOnToolsVersion = 7.2;
+						TestTargetID = 654A270B1C350EA6008AA4EB;
+					};
+				};
+			};
+			buildConfigurationList = 654A27071C350EA6008AA4EB /* Build configuration list for PBXProject "Figofy" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 654A27031C350EA6008AA4EB;
+			productRefGroup = 654A270D1C350EA6008AA4EB /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				654A270B1C350EA6008AA4EB /* Figofy */,
+				654A271F1C350EA7008AA4EB /* FigofyTests */,
+				654A272A1C350EA7008AA4EB /* FigofyUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		654A270A1C350EA6008AA4EB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				654A271A1C350EA6008AA4EB /* LaunchScreen.storyboard in Resources */,
+				65C16C741C48F95C00628F2F /* sjælland.PNG in Resources */,
+				65C16C7C1C49121E00628F2F /* Figofy_app_trans.png in Resources */,
+				65C16C7A1C490EE100628F2F /* Figofy rgb logo.png in Resources */,
+				654A27171C350EA6008AA4EB /* Assets.xcassets in Resources */,
+				654A27151C350EA6008AA4EB /* Main.storyboard in Resources */,
+				65C16C781C490D2100628F2F /* Figofy logo.gif in Resources */,
+				65C16C761C490CC300628F2F /* Figofy_app_hvid.ai in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		654A271E1C350EA7008AA4EB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		654A27291C350EA7008AA4EB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		654A27081C350EA6008AA4EB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				65C16C6C1C354CC600628F2F /* OverviewClass.swift in Sources */,
+				654A27121C350EA6008AA4EB /* ViewController.swift in Sources */,
+				654A27101C350EA6008AA4EB /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		654A271C1C350EA7008AA4EB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				654A27251C350EA7008AA4EB /* FigofyTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		654A27271C350EA7008AA4EB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				654A27301C350EA7008AA4EB /* FigofyUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		654A27221C350EA7008AA4EB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 654A270B1C350EA6008AA4EB /* Figofy */;
+			targetProxy = 654A27211C350EA7008AA4EB /* PBXContainerItemProxy */;
+		};
+		654A272D1C350EA7008AA4EB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 654A270B1C350EA6008AA4EB /* Figofy */;
+			targetProxy = 654A272C1C350EA7008AA4EB /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		654A27131C350EA6008AA4EB /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				654A27141C350EA6008AA4EB /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		654A27181C350EA6008AA4EB /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				654A27191C350EA6008AA4EB /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		654A27321C350EA7008AA4EB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		654A27331C350EA7008AA4EB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		654A27351C350EA7008AA4EB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Figofy/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Tommy.Figofy;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		654A27361C350EA7008AA4EB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Figofy/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Tommy.Figofy;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		654A27381C350EA7008AA4EB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = FigofyTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Tommy.FigofyTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Figofy.app/Figofy";
+			};
+			name = Debug;
+		};
+		654A27391C350EA7008AA4EB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = FigofyTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Tommy.FigofyTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Figofy.app/Figofy";
+			};
+			name = Release;
+		};
+		654A273B1C350EA7008AA4EB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = FigofyUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Tommy.FigofyUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = Figofy;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		654A273C1C350EA7008AA4EB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = FigofyUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Tommy.FigofyUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = Figofy;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		654A27071C350EA6008AA4EB /* Build configuration list for PBXProject "Figofy" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				654A27321C350EA7008AA4EB /* Debug */,
+				654A27331C350EA7008AA4EB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		654A27341C350EA7008AA4EB /* Build configuration list for PBXNativeTarget "Figofy" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				654A27351C350EA7008AA4EB /* Debug */,
+				654A27361C350EA7008AA4EB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		654A27371C350EA7008AA4EB /* Build configuration list for PBXNativeTarget "FigofyTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				654A27381C350EA7008AA4EB /* Debug */,
+				654A27391C350EA7008AA4EB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		654A273A1C350EA7008AA4EB /* Build configuration list for PBXNativeTarget "FigofyUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				654A273B1C350EA7008AA4EB /* Debug */,
+				654A273C1C350EA7008AA4EB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 654A27041C350EA6008AA4EB /* Project object */;
+}
