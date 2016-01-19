@@ -204,6 +204,9 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZW5-gI-HVB">
                                 <rect key="frame" x="260" y="425" width="95" height="30"/>
                                 <state key="normal" title="100"/>
+                                <connections>
+                                    <segue destination="VWp-wP-qoj" kind="show" id="0Pm-XC-TbI"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Køb Fisketid" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sc5-IU-iyz">
                                 <rect key="frame" x="118" y="399" width="139" height="21"/>
@@ -232,10 +235,16 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JzA-Gc-vFq">
                                 <rect key="frame" x="284" y="505" width="46" height="30"/>
                                 <state key="normal" title="350"/>
+                                <connections>
+                                    <segue destination="VWp-wP-qoj" kind="show" id="JfM-b2-18T"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="36o-QO-4Xk">
                                 <rect key="frame" x="284" y="462" width="46" height="30"/>
                                 <state key="normal" title="250"/>
+                                <connections>
+                                    <segue destination="VWp-wP-qoj" kind="show" id="LWv-De-GUe"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pK0-Xp-IId">
                                 <rect key="frame" x="117" y="269" width="46" height="30"/>
@@ -249,6 +258,30 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="M0w-vG-u3Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1489.5" y="1759.5"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="M7z-Bp-sIl">
+            <objects>
+                <viewController id="VWp-wP-qoj" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jNI-eU-Pnc"/>
+                        <viewControllerLayoutGuide type="bottom" id="09v-is-Vwg"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="GH0-rQ-f3h">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3b0-sb-L21">
+                                <rect key="frame" x="67" y="134" width="240" height="128"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sHA-uH-2kN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1994" y="1761"/>
         </scene>
         <!--Opret Bruger-->
         <scene sceneID="ID7-8L-1fc">
@@ -339,4 +372,7 @@
         <image name="Figofy_app_trans.png" width="1024" height="1024"/>
         <image name="sjælland.PNG" width="747" height="775"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="LWv-De-GUe"/>
+    </inferredMetricsTieBreakers>
 </document>

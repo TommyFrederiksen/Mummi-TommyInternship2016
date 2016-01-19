@@ -15,11 +15,6 @@
 		654A27251C350EA7008AA4EB /* FigofyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654A27241C350EA7008AA4EB /* FigofyTests.swift */; };
 		654A27301C350EA7008AA4EB /* FigofyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654A272F1C350EA7008AA4EB /* FigofyUITests.swift */; };
 		65C16C6C1C354CC600628F2F /* OverviewClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C16C6B1C354CC600628F2F /* OverviewClass.swift */; };
-		65C16C741C48F95C00628F2F /* sjælland.PNG in Resources */ = {isa = PBXBuildFile; fileRef = 65C16C731C48F95C00628F2F /* sjælland.PNG */; };
-		65C16C761C490CC300628F2F /* Figofy_app_hvid.ai in Resources */ = {isa = PBXBuildFile; fileRef = 65C16C751C490CC300628F2F /* Figofy_app_hvid.ai */; };
-		65C16C781C490D2100628F2F /* Figofy logo.gif in Resources */ = {isa = PBXBuildFile; fileRef = 65C16C771C490D2100628F2F /* Figofy logo.gif */; };
-		65C16C7A1C490EE100628F2F /* Figofy rgb logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 65C16C791C490EE100628F2F /* Figofy rgb logo.png */; };
-		65C16C7C1C49121E00628F2F /* Figofy_app_trans.png in Resources */ = {isa = PBXBuildFile; fileRef = 65C16C7B1C49121E00628F2F /* Figofy_app_trans.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,11 +49,6 @@
 		654A272F1C350EA7008AA4EB /* FigofyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FigofyUITests.swift; sourceTree = "<group>"; };
 		654A27311C350EA7008AA4EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		65C16C6B1C354CC600628F2F /* OverviewClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OverviewClass.swift; path = ../OverviewClass.swift; sourceTree = "<group>"; };
-		65C16C731C48F95C00628F2F /* sjælland.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "sjælland.PNG"; path = "../../../../Downloads/sjælland.PNG"; sourceTree = "<group>"; };
-		65C16C751C490CC300628F2F /* Figofy_app_hvid.ai */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Figofy_app_hvid.ai; path = ../../../../Downloads/Figofy_app/Figofy_app_hvid.ai; sourceTree = "<group>"; };
-		65C16C771C490D2100628F2F /* Figofy logo.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = "Figofy logo.gif"; path = "../../../../Downloads/Figofy logo.gif"; sourceTree = "<group>"; };
-		65C16C791C490EE100628F2F /* Figofy rgb logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Figofy rgb logo.png"; path = "../../../../Downloads/Figofy rgb logo.png"; sourceTree = "<group>"; };
-		65C16C7B1C49121E00628F2F /* Figofy_app_trans.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Figofy_app_trans.png; path = ../../../../Downloads/Figofy_app_trans.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,11 +101,6 @@
 			children = (
 				654A270F1C350EA6008AA4EB /* AppDelegate.swift */,
 				654A27111C350EA6008AA4EB /* ViewController.swift */,
-				65C16C7B1C49121E00628F2F /* Figofy_app_trans.png */,
-				65C16C731C48F95C00628F2F /* sjælland.PNG */,
-				65C16C751C490CC300628F2F /* Figofy_app_hvid.ai */,
-				65C16C771C490D2100628F2F /* Figofy logo.gif */,
-				65C16C791C490EE100628F2F /* Figofy rgb logo.png */,
 				654A27131C350EA6008AA4EB /* Main.storyboard */,
 				654A27161C350EA6008AA4EB /* Assets.xcassets */,
 				654A27181C350EA6008AA4EB /* LaunchScreen.storyboard */,
@@ -248,13 +233,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				654A271A1C350EA6008AA4EB /* LaunchScreen.storyboard in Resources */,
-				65C16C741C48F95C00628F2F /* sjælland.PNG in Resources */,
-				65C16C7C1C49121E00628F2F /* Figofy_app_trans.png in Resources */,
-				65C16C7A1C490EE100628F2F /* Figofy rgb logo.png in Resources */,
 				654A27171C350EA6008AA4EB /* Assets.xcassets in Resources */,
 				654A27151C350EA6008AA4EB /* Main.storyboard in Resources */,
-				65C16C781C490D2100628F2F /* Figofy logo.gif in Resources */,
-				65C16C761C490CC300628F2F /* Figofy_app_hvid.ai in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
