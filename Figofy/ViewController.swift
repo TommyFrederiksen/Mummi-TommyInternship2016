@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 class ViewController: UIViewController {
 
     @IBOutlet weak var usernameTextField: UITextField!
@@ -16,16 +17,23 @@ class ViewController: UIViewController {
     
     let Users = [["Søren","Figofy"],["Kim","Figofy"],["Tommy","Figofy"]]
     
+    
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+       
+        FigofyButton(usernameTextField)
+        FigofyButton(passwordTextField)
+        
     }
+    
     @IBAction func Login(sender: AnyObject)
     {
         let username = usernameTextField.text;
         let password = passwordTextField.text;
-        
-       
         
         //empty fields in login
         if(username == "" || password == "")

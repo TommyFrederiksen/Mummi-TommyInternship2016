@@ -18,13 +18,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="a9c-kM-K4w">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Brugernavn" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="a9c-kM-K4w">
                                 <rect key="frame" x="20" y="307" width="328" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="0SD-xR-Dbg"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="FigofyColor">
+                                        <color key="value" cyan="0.94999999999999996" magenta="0.87" yellow="0.0" black="0.0" alpha="1" colorSpace="custom" customColorSpace="genericCMYKColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mf5-2c-Juc">
                                 <rect key="frame" x="20" y="365" width="328" height="30"/>
@@ -271,7 +276,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3b0-sb-L21">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="105562" translatesAutoresizingMaskIntoConstraints="NO" id="3b0-sb-L21">
                                 <rect key="frame" x="67" y="134" width="240" height="128"/>
                             </imageView>
                         </subviews>
@@ -368,11 +373,12 @@
         </scene>
     </scenes>
     <resources>
+        <image name="105562" width="454" height="280"/>
         <image name="Figofy rgb logo.png" width="1043" height="181"/>
         <image name="Figofy_app_trans.png" width="1024" height="1024"/>
         <image name="sjælland.PNG" width="747" height="775"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="LWv-De-GUe"/>
+        <segue reference="0Pm-XC-TbI"/>
     </inferredMetricsTieBreakers>
 </document>
