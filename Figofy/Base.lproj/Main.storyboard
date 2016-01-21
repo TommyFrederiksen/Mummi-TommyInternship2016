@@ -61,6 +61,11 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Figofy rgb logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="lAf-FX-jva">
                                 <rect key="frame" x="0.0" y="72" width="375" height="178"/>
                             </imageView>
+                            <button opaque="NO" contentMode="center" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DIH-VE-T5U">
+                                <rect key="frame" x="0.0" y="414" width="375" height="147"/>
+                                <rect key="contentStretch" x="1" y="1" width="0.5" height="0.5"/>
+                                <state key="normal" image="fb-login-1"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -395,6 +400,7 @@
         <image name="105562" width="454" height="280"/>
         <image name="Figofy rgb logo.png" width="1043" height="181"/>
         <image name="Figofy_app_trans.png" width="1024" height="1024"/>
+        <image name="fb-login-1" width="480" height="230"/>
         <image name="sjælland.PNG" width="747" height="775"/>
     </resources>
     <inferredMetricsTieBreakers>
