@@ -1,0 +1,409 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Lgr-Cw-Jop">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Login-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController title="Login" id="BYZ-38-t0r" customClass="LoginViewController" customModule="Figofy" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Brugernavn" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="a9c-kM-K4w">
+                                <rect key="frame" x="20" y="307" width="328" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="0SD-xR-Dbg"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="FigofyColor">
+                                        <color key="value" cyan="0.94999999999999996" magenta="0.87" yellow="0.0" black="0.0" alpha="1" colorSpace="custom" customColorSpace="genericCMYKColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mf5-2c-Juc">
+                                <rect key="frame" x="20" y="365" width="328" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="T8K-6S-0Ro"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xd7-km-fI1">
+                                <rect key="frame" x="179" y="414" width="169" height="30"/>
+                                <state key="normal" title="Login"/>
+                                <connections>
+                                    <action selector="Login:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Xon-6o-ATF"/>
+                                    <segue destination="nSa-Y8-Fhj" kind="show" id="yQV-vM-13w"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8CC-SA-Aam">
+                                <rect key="frame" x="20" y="414" width="151" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="GDA-mq-WRM"/>
+                                    <constraint firstAttribute="width" constant="151" id="eEe-SJ-9R5"/>
+                                </constraints>
+                                <state key="normal" title="Opret Bruger"/>
+                                <connections>
+                                    <segue destination="a5B-1N-PGk" kind="show" id="rSU-ZL-tL3"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Figofy rgb logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="lAf-FX-jva">
+                                <rect key="frame" x="0.0" y="72" width="375" height="178"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="center" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DIH-VE-T5U">
+                                <rect key="frame" x="0.0" y="414" width="375" height="147"/>
+                                <rect key="contentStretch" x="1" y="1" width="0.5" height="0.5"/>
+                                <state key="normal" image="fb-login-1"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="lAf-FX-jva" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" symbolic="YES" id="4ES-DS-TiZ"/>
+                            <constraint firstItem="mf5-2c-Juc" firstAttribute="trailing" secondItem="xd7-km-fI1" secondAttribute="trailing" id="5fS-ye-Gdm"/>
+                            <constraint firstItem="a9c-kM-K4w" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Cje-X8-sp1"/>
+                            <constraint firstItem="mf5-2c-Juc" firstAttribute="leading" secondItem="a9c-kM-K4w" secondAttribute="leading" id="Dn5-oI-XvC"/>
+                            <constraint firstItem="lAf-FX-jva" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="EYi-jz-Og8"/>
+                            <constraint firstItem="a9c-kM-K4w" firstAttribute="top" secondItem="lAf-FX-jva" secondAttribute="bottom" constant="57" id="INN-RG-th3"/>
+                            <constraint firstItem="8CC-SA-Aam" firstAttribute="leading" secondItem="mf5-2c-Juc" secondAttribute="leading" id="PaF-Z7-Ph6"/>
+                            <constraint firstAttribute="trailing" secondItem="lAf-FX-jva" secondAttribute="trailing" id="Q3e-w5-c2h"/>
+                            <constraint firstItem="mf5-2c-Juc" firstAttribute="top" secondItem="a9c-kM-K4w" secondAttribute="bottom" constant="28" id="Ttf-RR-vhF"/>
+                            <constraint firstItem="a9c-kM-K4w" firstAttribute="trailing" secondItem="mf5-2c-Juc" secondAttribute="trailing" id="cYE-Rj-l1q"/>
+                            <constraint firstItem="xd7-km-fI1" firstAttribute="baseline" secondItem="8CC-SA-Aam" secondAttribute="baseline" id="cdj-Xe-l2d"/>
+                            <constraint firstItem="a9c-kM-K4w" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="7" id="cyz-JT-EqU"/>
+                            <constraint firstItem="xd7-km-fI1" firstAttribute="leading" secondItem="8CC-SA-Aam" secondAttribute="trailing" constant="8" symbolic="YES" id="klH-Gc-hSG"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="8CC-SA-Aam" secondAttribute="bottom" constant="331" id="v3O-aa-aDp"/>
+                            <constraint firstItem="8CC-SA-Aam" firstAttribute="top" secondItem="mf5-2c-Juc" secondAttribute="bottom" constant="19" id="vRe-hB-KIc"/>
+                        </constraints>
+                    </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="zng-hZ-Ssi"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="passwordTextField" destination="mf5-2c-Juc" id="3Mx-Nu-vlM"/>
+                        <outlet property="usernameTextField" destination="a9c-kM-K4w" id="KcQ-n5-m9C"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1078.5" y="72.5"/>
+        </scene>
+        <!--Map View-->
+        <scene sceneID="Cpd-FU-0nO">
+            <objects>
+                <viewController title="Map View" id="RWH-db-0dg" customClass="MapViewViewController" customModule="Figofy" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Lmv-yl-XI9"/>
+                        <viewControllerLayoutGuide type="bottom" id="20o-h0-tuc"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="fTO-2m-hkx">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clearsContextBeforeDrawing="NO" multipleTouchEnabled="YES" contentMode="scaleAspectFill" semanticContentAttribute="playback" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="sjælland.PNG" highlighted="YES" translatesAutoresizingMaskIntoConstraints="NO" id="h8b-EP-6Kg">
+                                <rect key="frame" x="-124" y="20" width="681" height="603"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleAspectFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="147-Ih-vMh">
+                                <rect key="frame" x="44" y="212" width="38" height="48"/>
+                                <rect key="contentStretch" x="1" y="1" width="1" height="1"/>
+                                <state key="normal" title="Button" image="Figofy_app_trans.png"/>
+                                <connections>
+                                    <segue destination="VAL-UH-nux" kind="show" id="7nB-xq-oG3"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uod-Ho-TvD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1078.5" y="1759.5"/>
+        </scene>
+        <!--OverView-->
+        <scene sceneID="bVg-IZ-kBZ">
+            <objects>
+                <viewController title="OverView" id="nSa-Y8-Fhj" customClass="OverviewViewControler" customModule="Figofy" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="S9Z-oD-f8N"/>
+                        <viewControllerLayoutGuide type="bottom" id="bsO-Fm-CUY"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Bcr-EP-6ql">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GbW-20-3Tr">
+                                <rect key="frame" x="72" y="72" width="231" height="30"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Profil">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="tsG-e2-I6t" kind="show" id="S7x-Ej-PGb"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dhj-TF-Fq3">
+                                <rect key="frame" x="72" y="125" width="231" height="30"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Sø Oversigt">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="RWH-db-0dg" kind="show" id="kyI-Zz-JoS"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="lakeViewButton" destination="Dhj-TF-Fq3" id="uGT-fr-f1o"/>
+                        <outlet property="profileButton" destination="GbW-20-3Tr" id="igS-qL-Vlg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Pfr-f0-zYm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1078.5" y="927.5"/>
+        </scene>
+        <!--Profil-->
+        <scene sceneID="LPL-aS-GW9">
+            <objects>
+                <viewController title="Profil" id="tsG-e2-I6t" customClass="ProfileViewController" customModule="Figofy" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Cfm-7y-Cmf"/>
+                        <viewControllerLayoutGuide type="bottom" id="fE3-kf-rl9"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="J8S-th-hMU">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Profil" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XH9-gj-WbG">
+                                <rect key="frame" x="101" y="78" width="172" height="71"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iJf-nv-a7Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1632.5" y="927.5"/>
+        </scene>
+        <!--Lake Information-->
+        <scene sceneID="2VF-FD-5g0">
+            <objects>
+                <viewController title="Lake Information" id="VAL-UH-nux" customClass="LakeInformationViewController" customModule="Figofy" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="wqf-XY-SH4"/>
+                        <viewControllerLayoutGuide type="bottom" id="0gZ-86-5OF"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Rrh-YP-Dmn">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="SØ INFORMATION" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p04-16-Ygj">
+                                <rect key="frame" x="117" y="131" width="141" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZW5-gI-HVB">
+                                <rect key="frame" x="260" y="425" width="95" height="30"/>
+                                <state key="normal" title="100"/>
+                                <connections>
+                                    <segue destination="VWp-wP-qoj" kind="show" id="0Pm-XC-TbI"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Køb Fisketid" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sc5-IU-iyz">
+                                <rect key="frame" x="118" y="399" width="139" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1 Time" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="loh-xu-6PK">
+                                <rect key="frame" x="151" y="429" width="72" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="3 Timer" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NZS-DB-aWF">
+                                <rect key="frame" x="158" y="466" width="59" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="5 Timer" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wEC-Jv-ZIh">
+                                <rect key="frame" x="153" y="509" width="68" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JzA-Gc-vFq">
+                                <rect key="frame" x="284" y="505" width="46" height="30"/>
+                                <state key="normal" title="350"/>
+                                <connections>
+                                    <segue destination="VWp-wP-qoj" kind="show" id="JfM-b2-18T"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="36o-QO-4Xk">
+                                <rect key="frame" x="284" y="462" width="46" height="30"/>
+                                <state key="normal" title="250"/>
+                                <connections>
+                                    <segue destination="VWp-wP-qoj" kind="show" id="LWv-De-GUe"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="fiveHourButton" destination="JzA-Gc-vFq" id="pxV-zM-8CD"/>
+                        <outlet property="oneHourButton" destination="ZW5-gI-HVB" id="ohB-WL-WCO"/>
+                        <outlet property="treeHourButton" destination="36o-QO-4Xk" id="VjZ-81-Xk2"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="M0w-vG-u3Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1489.5" y="1759.5"/>
+        </scene>
+        <!--MobilePay-->
+        <scene sceneID="M7z-Bp-sIl">
+            <objects>
+                <viewController title="MobilePay" id="VWp-wP-qoj" customClass="MobilePayViewController" customModule="Figofy" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jNI-eU-Pnc"/>
+                        <viewControllerLayoutGuide type="bottom" id="09v-is-Vwg"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="GH0-rQ-f3h">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="105562" translatesAutoresizingMaskIntoConstraints="NO" id="3b0-sb-L21">
+                                <rect key="frame" x="67" y="134" width="240" height="128"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sHA-uH-2kN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1994" y="1761"/>
+        </scene>
+        <!--Opret Bruger-->
+        <scene sceneID="ID7-8L-1fc">
+            <objects>
+                <viewController title="Opret Bruger" id="a5B-1N-PGk" customClass="CreateUserViewController" customModule="Figofy" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="8ON-8w-yVy"/>
+                        <viewControllerLayoutGuide type="bottom" id="FeD-Up-sdI"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="cxS-GX-Qly">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Opret Ny Bruger" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6F1-t9-Sn2">
+                                <rect key="frame" x="50" y="46" width="275" height="115"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Brugernavn" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EDA-jL-ejp">
+                                <rect key="frame" x="50" y="148" width="264" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Efternevn" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="t0f-dF-yud">
+                                <rect key="frame" x="50" y="275" width="264" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Fornavn" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eao-q3-95w">
+                                <rect key="frame" x="50" y="211" width="264" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Kodeord" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cIc-b8-bL4">
+                                <rect key="frame" x="50" y="332" width="264" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-mail addresse" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ww4-ye-ksm">
+                                <rect key="frame" x="50" y="459" width="264" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Bekræft Kodeord" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ENd-75-zRE">
+                                <rect key="frame" x="50" y="395" width="264" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xai-z7-ljn">
+                                <rect key="frame" x="194" y="516" width="120" height="30"/>
+                                <state key="normal" title="Opret"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sLc-DI-2Bd">
+                                <rect key="frame" x="50" y="516" width="120" height="30"/>
+                                <state key="normal" title="Afbryd"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="UsernameTextField" destination="EDA-jL-ejp" id="5Uk-bp-yGa"/>
+                        <outlet property="confirmPasswordTextField" destination="ENd-75-zRE" id="HF7-jJ-GJB"/>
+                        <outlet property="emailTextField" destination="Ww4-ye-ksm" id="fnW-f3-DGg"/>
+                        <outlet property="firstnameTextField" destination="eao-q3-95w" id="oIS-1C-o3g"/>
+                        <outlet property="lastnameTextField" destination="t0f-dF-yud" id="LE5-h3-fbP"/>
+                        <outlet property="passwordTextField" destination="cIc-b8-bL4" id="q2X-gm-IIG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jvU-OQ-OCt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1646.5" y="71.5"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="eb6-Cf-bv3">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Lgr-Cw-Jop" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="oEH-wG-KHp">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="9EF-8l-YhY"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Xlh-wL-Wwi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="266" y="72"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="105562" width="454" height="280"/>
+        <image name="Figofy rgb logo.png" width="1043" height="181"/>
+        <image name="Figofy_app_trans.png" width="1024" height="1024"/>
+        <image name="fb-login-1" width="480" height="230"/>
+        <image name="sjælland.PNG" width="747" height="775"/>
+    </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="0Pm-XC-TbI"/>
+    </inferredMetricsTieBreakers>
+</document>
