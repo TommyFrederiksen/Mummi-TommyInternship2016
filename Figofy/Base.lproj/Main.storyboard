@@ -97,7 +97,7 @@
         <!--Map View-->
         <scene sceneID="Cpd-FU-0nO">
             <objects>
-                <viewController title="Map View" id="RWH-db-0dg" sceneMemberID="viewController">
+                <viewController title="Map View" id="RWH-db-0dg" customClass="MapViewViewController" customModule="Figofy" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Lmv-yl-XI9"/>
                         <viewControllerLayoutGuide type="bottom" id="20o-h0-tuc"/>
@@ -174,7 +174,7 @@
         <!--Profil-->
         <scene sceneID="LPL-aS-GW9">
             <objects>
-                <viewController title="Profil" id="tsG-e2-I6t" sceneMemberID="viewController">
+                <viewController title="Profil" id="tsG-e2-I6t" customClass="ProfileViewController" customModule="Figofy" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Cfm-7y-Cmf"/>
                         <viewControllerLayoutGuide type="bottom" id="fE3-kf-rl9"/>
@@ -201,7 +201,7 @@
         <!--Lake Information-->
         <scene sceneID="2VF-FD-5g0">
             <objects>
-                <viewController title="Lake Information" id="VAL-UH-nux" sceneMemberID="viewController">
+                <viewController title="Lake Information" id="VAL-UH-nux" customClass="LakeInformationViewController" customModule="Figofy" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="wqf-XY-SH4"/>
                         <viewControllerLayoutGuide type="bottom" id="0gZ-86-5OF"/>
@@ -261,14 +261,15 @@
                                     <segue destination="VWp-wP-qoj" kind="show" id="LWv-De-GUe"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pK0-Xp-IId">
-                                <rect key="frame" x="117" y="269" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="fiveHourButton" destination="JzA-Gc-vFq" id="pxV-zM-8CD"/>
+                        <outlet property="oneHourButton" destination="ZW5-gI-HVB" id="ohB-WL-WCO"/>
+                        <outlet property="treeHourButton" destination="36o-QO-4Xk" id="VjZ-81-Xk2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="M0w-vG-u3Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -277,7 +278,7 @@
         <!--MobilePay-->
         <scene sceneID="M7z-Bp-sIl">
             <objects>
-                <viewController title="MobilePay" id="VWp-wP-qoj" sceneMemberID="viewController">
+                <viewController title="MobilePay" id="VWp-wP-qoj" customClass="MobilePayViewController" customModule="Figofy" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jNI-eU-Pnc"/>
                         <viewControllerLayoutGuide type="bottom" id="09v-is-Vwg"/>
