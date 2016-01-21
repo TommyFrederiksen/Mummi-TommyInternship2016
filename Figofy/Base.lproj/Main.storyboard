@@ -3,7 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--Login-->
@@ -15,71 +15,70 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="a9c-kM-K4w">
-                                <rect key="frame" x="20" y="307" width="328" height="30"/>
+                                <rect key="frame" x="175" y="194" width="250" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="0SD-xR-Dbg"/>
+                                    <constraint firstAttribute="width" constant="250" id="Tbc-3P-naw"/>
                                 </constraints>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mf5-2c-Juc">
-                                <rect key="frame" x="20" y="365" width="328" height="30"/>
+                                <rect key="frame" x="175" y="252" width="250" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="T8K-6S-0Ro"/>
+                                    <constraint firstAttribute="width" constant="250" id="xIc-Su-L0z"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Figofy rgb logo" translatesAutoresizingMaskIntoConstraints="NO" id="ozw-kA-Mj2">
+                                <rect key="frame" x="162" y="86" width="276" height="75"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="75" id="IuH-no-Hr2"/>
+                                    <constraint firstAttribute="width" constant="276" id="cmh-1q-vMx"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8CC-SA-Aam">
+                                <rect key="frame" x="95" y="312" width="150" height="30"/>
+                                <color key="backgroundColor" red="1" green="0.61076081941033855" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Opret Bruger"/>
+                                <connections>
+                                    <segue destination="a5B-1N-PGk" kind="show" id="rSU-ZL-tL3"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xd7-km-fI1">
-                                <rect key="frame" x="179" y="414" width="169" height="30"/>
+                                <rect key="frame" x="367" y="312" width="150" height="30"/>
+                                <color key="backgroundColor" red="0.99215686274509807" green="0.54117647058823526" blue="0.035294117647058823" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Login"/>
                                 <connections>
                                     <action selector="Login:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Xon-6o-ATF"/>
                                     <segue destination="nSa-Y8-Fhj" kind="show" id="yQV-vM-13w"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8CC-SA-Aam">
-                                <rect key="frame" x="20" y="414" width="151" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="GDA-mq-WRM"/>
-                                    <constraint firstAttribute="width" constant="151" id="eEe-SJ-9R5"/>
-                                </constraints>
-                                <state key="normal" title="Opret Bruger"/>
-                                <connections>
-                                    <segue destination="a5B-1N-PGk" kind="show" id="rSU-ZL-tL3"/>
-                                </connections>
-                            </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Figofy rgb logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="lAf-FX-jva">
-                                <rect key="frame" x="0.0" y="72" width="375" height="178"/>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="lAf-FX-jva" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" symbolic="YES" id="4ES-DS-TiZ"/>
-                            <constraint firstItem="mf5-2c-Juc" firstAttribute="trailing" secondItem="xd7-km-fI1" secondAttribute="trailing" id="5fS-ye-Gdm"/>
-                            <constraint firstItem="a9c-kM-K4w" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Cje-X8-sp1"/>
-                            <constraint firstItem="mf5-2c-Juc" firstAttribute="leading" secondItem="a9c-kM-K4w" secondAttribute="leading" id="Dn5-oI-XvC"/>
-                            <constraint firstItem="lAf-FX-jva" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="EYi-jz-Og8"/>
-                            <constraint firstItem="a9c-kM-K4w" firstAttribute="top" secondItem="lAf-FX-jva" secondAttribute="bottom" constant="57" id="INN-RG-th3"/>
-                            <constraint firstItem="8CC-SA-Aam" firstAttribute="leading" secondItem="mf5-2c-Juc" secondAttribute="leading" id="PaF-Z7-Ph6"/>
-                            <constraint firstAttribute="trailing" secondItem="lAf-FX-jva" secondAttribute="trailing" id="Q3e-w5-c2h"/>
-                            <constraint firstItem="mf5-2c-Juc" firstAttribute="top" secondItem="a9c-kM-K4w" secondAttribute="bottom" constant="28" id="Ttf-RR-vhF"/>
-                            <constraint firstItem="a9c-kM-K4w" firstAttribute="trailing" secondItem="mf5-2c-Juc" secondAttribute="trailing" id="cYE-Rj-l1q"/>
-                            <constraint firstItem="xd7-km-fI1" firstAttribute="baseline" secondItem="8CC-SA-Aam" secondAttribute="baseline" id="cdj-Xe-l2d"/>
-                            <constraint firstItem="a9c-kM-K4w" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="7" id="cyz-JT-EqU"/>
-                            <constraint firstItem="xd7-km-fI1" firstAttribute="leading" secondItem="8CC-SA-Aam" secondAttribute="trailing" constant="8" symbolic="YES" id="klH-Gc-hSG"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="8CC-SA-Aam" secondAttribute="bottom" constant="331" id="v3O-aa-aDp"/>
-                            <constraint firstItem="8CC-SA-Aam" firstAttribute="top" secondItem="mf5-2c-Juc" secondAttribute="bottom" constant="19" id="vRe-hB-KIc"/>
+                            <constraint firstItem="a9c-kM-K4w" firstAttribute="top" secondItem="ozw-kA-Mj2" secondAttribute="bottom" constant="35" id="I3W-U2-nhC"/>
+                            <constraint firstItem="ozw-kA-Mj2" firstAttribute="trailing" secondItem="xd7-km-fI1" secondAttribute="trailing" id="Jls-Lp-hlo"/>
+                            <constraint firstItem="ozw-kA-Mj2" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="22" id="PLP-tL-fqw"/>
+                            <constraint firstItem="xd7-km-fI1" firstAttribute="top" secondItem="mf5-2c-Juc" secondAttribute="bottom" constant="30" id="YQn-Zu-x5P"/>
+                            <constraint firstItem="ozw-kA-Mj2" firstAttribute="leading" secondItem="8CC-SA-Aam" secondAttribute="leading" id="eeM-8B-QMZ"/>
+                            <constraint firstItem="8CC-SA-Aam" firstAttribute="top" secondItem="mf5-2c-Juc" secondAttribute="bottom" constant="30" id="fhq-mG-PCA"/>
+                            <constraint firstItem="mf5-2c-Juc" firstAttribute="centerX" secondItem="ozw-kA-Mj2" secondAttribute="centerX" id="lLV-VC-Ems"/>
+                            <constraint firstItem="ozw-kA-Mj2" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="nhs-V1-Cc0"/>
+                            <constraint firstItem="ozw-kA-Mj2" firstAttribute="width" secondItem="8CC-SA-Aam" secondAttribute="width" multiplier="2.5" id="orw-Cq-iLe"/>
+                            <constraint firstItem="mf5-2c-Juc" firstAttribute="top" secondItem="a9c-kM-K4w" secondAttribute="bottom" constant="30" id="tb4-Kx-Tkj"/>
+                            <constraint firstItem="a9c-kM-K4w" firstAttribute="centerX" secondItem="ozw-kA-Mj2" secondAttribute="centerX" id="tdT-E3-KNe"/>
+                            <constraint firstItem="ozw-kA-Mj2" firstAttribute="width" secondItem="xd7-km-fI1" secondAttribute="width" multiplier="2.5" id="z6T-wW-djo"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="zng-hZ-Ssi"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="passwordTextField" destination="mf5-2c-Juc" id="3Mx-Nu-vlM"/>
                         <outlet property="usernameTextField" destination="a9c-kM-K4w" id="KcQ-n5-m9C"/>
@@ -87,7 +86,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1078.5" y="72.5"/>
+            <point key="canvasLocation" x="1078" y="72"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="Cpd-FU-0nO">
@@ -98,7 +97,7 @@
                         <viewControllerLayoutGuide type="bottom" id="20o-h0-tuc"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="fTO-2m-hkx">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clearsContextBeforeDrawing="NO" multipleTouchEnabled="YES" contentMode="scaleAspectFill" semanticContentAttribute="playback" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="sjælland.PNG" highlighted="YES" translatesAutoresizingMaskIntoConstraints="NO" id="h8b-EP-6Kg">
@@ -115,7 +114,6 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uod-Ho-TvD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -130,7 +128,7 @@
                         <viewControllerLayoutGuide type="bottom" id="bsO-Fm-CUY"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Bcr-EP-6ql">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GbW-20-3Tr">
@@ -150,7 +148,6 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pfr-f0-zYm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -165,7 +162,7 @@
                         <viewControllerLayoutGuide type="bottom" id="fE3-kf-rl9"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="J8S-th-hMU">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Profil" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XH9-gj-WbG">
@@ -177,11 +174,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iJf-nv-a7Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1632.5" y="927.5"/>
+            <point key="canvasLocation" x="2008" y="927"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="2VF-FD-5g0">
@@ -192,7 +188,7 @@
                         <viewControllerLayoutGuide type="bottom" id="0gZ-86-5OF"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Rrh-YP-Dmn">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="SØ INFORMATION" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p04-16-Ygj">
@@ -244,11 +240,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="M0w-vG-u3Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1489.5" y="1759.5"/>
+            <point key="canvasLocation" x="2045" y="1759"/>
         </scene>
         <!--Opret Bruger-->
         <scene sceneID="ID7-8L-1fc">
@@ -259,7 +254,7 @@
                         <viewControllerLayoutGuide type="bottom" id="FeD-Up-sdI"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="cxS-GX-Qly">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Opret Ny Bruger" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6F1-t9-Sn2">
@@ -309,11 +304,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jvU-OQ-OCt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1646.5" y="71.5"/>
+            <point key="canvasLocation" x="1994.5" y="71.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="eb6-Cf-bv3">
@@ -335,7 +329,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Figofy rgb logo.png" width="1043" height="181"/>
+        <image name="Figofy rgb logo" width="1043" height="181"/>
         <image name="Figofy_app_trans.png" width="1024" height="1024"/>
         <image name="sjælland.PNG" width="747" height="775"/>
     </resources>

@@ -19,6 +19,10 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        usernameTextField.layer.borderWidth = 0.5
+        usernameTextField.layer.borderColor = UIColor.yellowColor().CGColor
+        
+        
     }
     @IBAction func Login(sender: AnyObject)
     {
