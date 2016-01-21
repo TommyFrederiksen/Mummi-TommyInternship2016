@@ -50,6 +50,7 @@
                                     <segue destination="a5B-1N-PGk" kind="show" id="rSU-ZL-tL3"/>
                                 </connections>
                             </button>
+<<<<<<< HEAD
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xd7-km-fI1">
                                 <rect key="frame" x="367" y="312" width="150" height="30"/>
                                 <color key="backgroundColor" red="0.99215686274509807" green="0.54117647058823526" blue="0.035294117647058823" alpha="1" colorSpace="calibratedRGB"/>
@@ -58,6 +59,15 @@
                                     <action selector="Login:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Xon-6o-ATF"/>
                                     <segue destination="nSa-Y8-Fhj" kind="show" id="yQV-vM-13w"/>
                                 </connections>
+=======
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Figofy rgb logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="lAf-FX-jva">
+                                <rect key="frame" x="0.0" y="72" width="375" height="178"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="center" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DIH-VE-T5U">
+                                <rect key="frame" x="0.0" y="414" width="375" height="147"/>
+                                <rect key="contentStretch" x="1" y="1" width="0.5" height="0.5"/>
+                                <state key="normal" image="fb-login-1"/>
+>>>>>>> c489a904c30f94e260a1e75a85c63d32aedf9a0d
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -357,6 +367,7 @@
     <resources>
         <image name="Figofy rgb logo" width="1043" height="181"/>
         <image name="Figofy_app_trans.png" width="1024" height="1024"/>
+        <image name="fb-login-1" width="480" height="230"/>
         <image name="sjælland.PNG" width="747" height="775"/>
     </resources>
 </document>
