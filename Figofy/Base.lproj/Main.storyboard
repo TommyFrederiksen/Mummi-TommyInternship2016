@@ -9,7 +9,7 @@
         <!--Login-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController title="Login" id="BYZ-38-t0r" customClass="ViewController" customModule="Figofy" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Login" id="BYZ-38-t0r" customClass="LoginViewController" customModule="Figofy" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -94,10 +94,10 @@
             </objects>
             <point key="canvasLocation" x="1078.5" y="72.5"/>
         </scene>
-        <!--View Controller-->
+        <!--Map View-->
         <scene sceneID="Cpd-FU-0nO">
             <objects>
-                <viewController id="RWH-db-0dg" sceneMemberID="viewController">
+                <viewController title="Map View" id="RWH-db-0dg" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Lmv-yl-XI9"/>
                         <viewControllerLayoutGuide type="bottom" id="20o-h0-tuc"/>
@@ -126,10 +126,10 @@
             </objects>
             <point key="canvasLocation" x="1078.5" y="1759.5"/>
         </scene>
-        <!--View Controller-->
+        <!--OverView-->
         <scene sceneID="bVg-IZ-kBZ">
             <objects>
-                <viewController id="nSa-Y8-Fhj" sceneMemberID="viewController">
+                <viewController title="OverView" id="nSa-Y8-Fhj" customClass="OverviewViewControler" customModule="Figofy" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="S9Z-oD-f8N"/>
                         <viewControllerLayoutGuide type="bottom" id="bsO-Fm-CUY"/>
@@ -140,14 +140,20 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GbW-20-3Tr">
                                 <rect key="frame" x="72" y="72" width="231" height="30"/>
-                                <state key="normal" title="Profil"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Profil">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
                                     <segue destination="tsG-e2-I6t" kind="show" id="S7x-Ej-PGb"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dhj-TF-Fq3">
                                 <rect key="frame" x="72" y="125" width="231" height="30"/>
-                                <state key="normal" title="Sø Oversigt"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Sø Oversigt">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
                                     <segue destination="RWH-db-0dg" kind="show" id="kyI-Zz-JoS"/>
                                 </connections>
@@ -156,6 +162,10 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="lakeViewButton" destination="Dhj-TF-Fq3" id="uGT-fr-f1o"/>
+                        <outlet property="profileButton" destination="GbW-20-3Tr" id="igS-qL-Vlg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pfr-f0-zYm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -188,10 +198,10 @@
             </objects>
             <point key="canvasLocation" x="1632.5" y="927.5"/>
         </scene>
-        <!--View Controller-->
+        <!--Lake Information-->
         <scene sceneID="2VF-FD-5g0">
             <objects>
-                <viewController id="VAL-UH-nux" sceneMemberID="viewController">
+                <viewController title="Lake Information" id="VAL-UH-nux" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="wqf-XY-SH4"/>
                         <viewControllerLayoutGuide type="bottom" id="0gZ-86-5OF"/>
@@ -264,10 +274,10 @@
             </objects>
             <point key="canvasLocation" x="1489.5" y="1759.5"/>
         </scene>
-        <!--View Controller-->
+        <!--MobilePay-->
         <scene sceneID="M7z-Bp-sIl">
             <objects>
-                <viewController id="VWp-wP-qoj" sceneMemberID="viewController">
+                <viewController title="MobilePay" id="VWp-wP-qoj" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jNI-eU-Pnc"/>
                         <viewControllerLayoutGuide type="bottom" id="09v-is-Vwg"/>
@@ -291,7 +301,7 @@
         <!--Opret Bruger-->
         <scene sceneID="ID7-8L-1fc">
             <objects>
-                <viewController title="Opret Bruger" id="a5B-1N-PGk" sceneMemberID="viewController">
+                <viewController title="Opret Bruger" id="a5B-1N-PGk" customClass="CreateUserViewController" customModule="Figofy" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="8ON-8w-yVy"/>
                         <viewControllerLayoutGuide type="bottom" id="FeD-Up-sdI"/>
@@ -348,6 +358,14 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="UsernameTextField" destination="EDA-jL-ejp" id="5Uk-bp-yGa"/>
+                        <outlet property="confirmPasswordTextField" destination="ENd-75-zRE" id="HF7-jJ-GJB"/>
+                        <outlet property="emailTextField" destination="Ww4-ye-ksm" id="fnW-f3-DGg"/>
+                        <outlet property="firstnameTextField" destination="eao-q3-95w" id="oIS-1C-o3g"/>
+                        <outlet property="lastnameTextField" destination="t0f-dF-yud" id="LE5-h3-fbP"/>
+                        <outlet property="passwordTextField" destination="cIc-b8-bL4" id="q2X-gm-IIG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jvU-OQ-OCt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

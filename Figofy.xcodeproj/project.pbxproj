@@ -8,14 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		6510180D1C4FA40700B7FECC /* FigofyColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6510180C1C4FA40700B7FECC /* FigofyColors.swift */; };
+		6510180F1C4FB17A00B7FECC /* CreateUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6510180E1C4FB17A00B7FECC /* CreateUserViewController.swift */; };
+		651018111C4FB8D100B7FECC /* OverviewViewControler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651018101C4FB8D100B7FECC /* OverviewViewControler.swift */; };
 		654A27101C350EA6008AA4EB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654A270F1C350EA6008AA4EB /* AppDelegate.swift */; };
-		654A27121C350EA6008AA4EB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654A27111C350EA6008AA4EB /* ViewController.swift */; };
+		654A27121C350EA6008AA4EB /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654A27111C350EA6008AA4EB /* LoginViewController.swift */; };
 		654A27151C350EA6008AA4EB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 654A27131C350EA6008AA4EB /* Main.storyboard */; };
 		654A27171C350EA6008AA4EB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 654A27161C350EA6008AA4EB /* Assets.xcassets */; };
 		654A271A1C350EA6008AA4EB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 654A27181C350EA6008AA4EB /* LaunchScreen.storyboard */; };
 		654A27251C350EA7008AA4EB /* FigofyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654A27241C350EA7008AA4EB /* FigofyTests.swift */; };
 		654A27301C350EA7008AA4EB /* FigofyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654A272F1C350EA7008AA4EB /* FigofyUITests.swift */; };
-		65C16C6C1C354CC600628F2F /* OverviewClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C16C6B1C354CC600628F2F /* OverviewClass.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,9 +38,11 @@
 
 /* Begin PBXFileReference section */
 		6510180C1C4FA40700B7FECC /* FigofyColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FigofyColors.swift; sourceTree = SOURCE_ROOT; };
+		6510180E1C4FB17A00B7FECC /* CreateUserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateUserViewController.swift; sourceTree = "<group>"; };
+		651018101C4FB8D100B7FECC /* OverviewViewControler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OverviewViewControler.swift; sourceTree = "<group>"; };
 		654A270C1C350EA6008AA4EB /* Figofy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Figofy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		654A270F1C350EA6008AA4EB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		654A27111C350EA6008AA4EB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		654A27111C350EA6008AA4EB /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		654A27141C350EA6008AA4EB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		654A27161C350EA6008AA4EB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		654A27191C350EA6008AA4EB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -50,7 +53,6 @@
 		654A272B1C350EA7008AA4EB /* FigofyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FigofyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		654A272F1C350EA7008AA4EB /* FigofyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FigofyUITests.swift; sourceTree = "<group>"; };
 		654A27311C350EA7008AA4EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		65C16C6B1C354CC600628F2F /* OverviewClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OverviewClass.swift; path = ../OverviewClass.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,12 +105,13 @@
 			children = (
 				6510180C1C4FA40700B7FECC /* FigofyColors.swift */,
 				654A270F1C350EA6008AA4EB /* AppDelegate.swift */,
-				654A27111C350EA6008AA4EB /* ViewController.swift */,
+				654A27111C350EA6008AA4EB /* LoginViewController.swift */,
+				6510180E1C4FB17A00B7FECC /* CreateUserViewController.swift */,
+				651018101C4FB8D100B7FECC /* OverviewViewControler.swift */,
 				654A27131C350EA6008AA4EB /* Main.storyboard */,
 				654A27161C350EA6008AA4EB /* Assets.xcassets */,
 				654A27181C350EA6008AA4EB /* LaunchScreen.storyboard */,
 				654A271B1C350EA6008AA4EB /* Info.plist */,
-				65C16C6B1C354CC600628F2F /* OverviewClass.swift */,
 			);
 			path = Figofy;
 			sourceTree = "<group>";
@@ -262,10 +265,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				65C16C6C1C354CC600628F2F /* OverviewClass.swift in Sources */,
-				654A27121C350EA6008AA4EB /* ViewController.swift in Sources */,
+				6510180F1C4FB17A00B7FECC /* CreateUserViewController.swift in Sources */,
+				654A27121C350EA6008AA4EB /* LoginViewController.swift in Sources */,
 				654A27101C350EA6008AA4EB /* AppDelegate.swift in Sources */,
 				6510180D1C4FA40700B7FECC /* FigofyColors.swift in Sources */,
+				651018111C4FB8D100B7FECC /* OverviewViewControler.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
