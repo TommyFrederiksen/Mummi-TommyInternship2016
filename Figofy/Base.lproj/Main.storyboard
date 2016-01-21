@@ -257,57 +257,83 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Opret Ny Bruger" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6F1-t9-Sn2">
-                                <rect key="frame" x="50" y="46" width="275" height="115"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Opret Ny Bruger" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6F1-t9-Sn2">
+                                <rect key="frame" x="175" y="72" width="250" height="52"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Brugernavn" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EDA-jL-ejp">
-                                <rect key="frame" x="50" y="148" width="264" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Brugernavn" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EDA-jL-ejp">
+                                <rect key="frame" x="168" y="143" width="264" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Efternevn" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="t0f-dF-yud">
-                                <rect key="frame" x="50" y="275" width="264" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Efternevn" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="t0f-dF-yud">
+                                <rect key="frame" x="168" y="270" width="264" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Fornavn" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eao-q3-95w">
-                                <rect key="frame" x="50" y="211" width="264" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Fornavn" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eao-q3-95w">
+                                <rect key="frame" x="168" y="206" width="264" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Kodeord" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cIc-b8-bL4">
-                                <rect key="frame" x="50" y="332" width="264" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Kodeord" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cIc-b8-bL4">
+                                <rect key="frame" x="168" y="327" width="264" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-mail addresse" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ww4-ye-ksm">
-                                <rect key="frame" x="50" y="459" width="264" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-mail addresse" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ww4-ye-ksm">
+                                <rect key="frame" x="168" y="454" width="264" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Bekræft Kodeord" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ENd-75-zRE">
-                                <rect key="frame" x="50" y="395" width="264" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Bekræft Kodeord" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ENd-75-zRE">
+                                <rect key="frame" x="168" y="390" width="264" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xai-z7-ljn">
-                                <rect key="frame" x="194" y="516" width="120" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xai-z7-ljn">
+                                <rect key="frame" x="312" y="504" width="120" height="30"/>
                                 <state key="normal" title="Opret"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sLc-DI-2Bd">
-                                <rect key="frame" x="50" y="516" width="120" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sLc-DI-2Bd">
+                                <rect key="frame" x="168" y="504" width="120" height="30"/>
                                 <state key="normal" title="Afbryd"/>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="6F1-t9-Sn2" firstAttribute="top" secondItem="8ON-8w-yVy" secondAttribute="bottom" constant="10" id="33l-lc-rSY"/>
+                            <constraint firstItem="sLc-DI-2Bd" firstAttribute="leading" secondItem="Ww4-ye-ksm" secondAttribute="leading" id="5YQ-wB-r3K"/>
+                            <constraint firstItem="eao-q3-95w" firstAttribute="top" secondItem="EDA-jL-ejp" secondAttribute="bottom" constant="20" id="5uD-pR-1Qf"/>
+                            <constraint firstItem="EDA-jL-ejp" firstAttribute="top" secondItem="6F1-t9-Sn2" secondAttribute="bottom" constant="20" id="CRD-IA-lxu"/>
+                            <constraint firstItem="6F1-t9-Sn2" firstAttribute="width" secondItem="EDA-jL-ejp" secondAttribute="width" id="GhI-YG-XRd"/>
+                            <constraint firstItem="6F1-t9-Sn2" firstAttribute="width" secondItem="cIc-b8-bL4" secondAttribute="width" id="Ipl-4L-xWF"/>
+                            <constraint firstItem="EDA-jL-ejp" firstAttribute="centerX" secondItem="6F1-t9-Sn2" secondAttribute="centerX" id="MIo-Ly-ypS"/>
+                            <constraint firstItem="6F1-t9-Sn2" firstAttribute="width" secondItem="ENd-75-zRE" secondAttribute="width" id="MlU-yk-fJm"/>
+                            <constraint firstItem="Ww4-ye-ksm" firstAttribute="top" secondItem="ENd-75-zRE" secondAttribute="bottom" constant="20" id="N7O-hb-xMM"/>
+                            <constraint firstItem="t0f-dF-yud" firstAttribute="centerX" secondItem="6F1-t9-Sn2" secondAttribute="centerX" id="O5f-XR-Ugc"/>
+                            <constraint firstItem="t0f-dF-yud" firstAttribute="top" secondItem="eao-q3-95w" secondAttribute="bottom" constant="20" id="PVc-If-5aw"/>
+                            <constraint firstItem="sLc-DI-2Bd" firstAttribute="top" secondItem="Ww4-ye-ksm" secondAttribute="bottom" constant="15" id="RTo-sc-xQE"/>
+                            <constraint firstItem="Ww4-ye-ksm" firstAttribute="centerX" secondItem="6F1-t9-Sn2" secondAttribute="centerX" id="VwG-IQ-izU"/>
+                            <constraint firstItem="6F1-t9-Sn2" firstAttribute="width" secondItem="Ww4-ye-ksm" secondAttribute="width" id="Yq7-iH-z6q"/>
+                            <constraint firstItem="xai-z7-ljn" firstAttribute="trailing" secondItem="Ww4-ye-ksm" secondAttribute="trailing" id="Z1g-wa-9wF"/>
+                            <constraint firstItem="6F1-t9-Sn2" firstAttribute="width" secondItem="t0f-dF-yud" secondAttribute="width" id="ZMg-ms-ouN"/>
+                            <constraint firstItem="ENd-75-zRE" firstAttribute="centerX" secondItem="6F1-t9-Sn2" secondAttribute="centerX" id="ZaW-cJ-KLR"/>
+                            <constraint firstItem="6F1-t9-Sn2" firstAttribute="centerX" secondItem="cxS-GX-Qly" secondAttribute="centerX" id="d5p-ue-ef7"/>
+                            <constraint firstItem="cIc-b8-bL4" firstAttribute="top" secondItem="t0f-dF-yud" secondAttribute="bottom" constant="20" id="gI9-Xl-bkt"/>
+                            <constraint firstItem="ENd-75-zRE" firstAttribute="top" secondItem="cIc-b8-bL4" secondAttribute="bottom" constant="20" id="jTd-Ig-UsD"/>
+                            <constraint firstItem="xai-z7-ljn" firstAttribute="top" secondItem="Ww4-ye-ksm" secondAttribute="bottom" constant="15" id="pUM-qv-CrP"/>
+                            <constraint firstItem="6F1-t9-Sn2" firstAttribute="width" secondItem="eao-q3-95w" secondAttribute="width" id="qhF-Np-JoB"/>
+                            <constraint firstItem="cIc-b8-bL4" firstAttribute="centerX" secondItem="6F1-t9-Sn2" secondAttribute="centerX" id="sYm-tm-SOo"/>
+                            <constraint firstItem="eao-q3-95w" firstAttribute="centerX" secondItem="6F1-t9-Sn2" secondAttribute="centerX" id="zG9-kv-gFq"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jvU-OQ-OCt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1994.5" y="71.5"/>
+            <point key="canvasLocation" x="1994" y="71"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="eb6-Cf-bv3">
