@@ -3,12 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 47;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		6510180D1C4FA40700B7FECC /* FigofyColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6510180C1C4FA40700B7FECC /* FigofyColors.swift */; };
-		6510180F1C4FB17A00B7FECC /* CreateUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6510180E1C4FB17A00B7FECC /* CreateUserViewController.swift */; };
 		651018111C4FB8D100B7FECC /* OverviewViewControler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651018101C4FB8D100B7FECC /* OverviewViewControler.swift */; };
 		651018131C50D93100B7FECC /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651018121C50D93100B7FECC /* ProfileViewController.swift */; };
 		651018151C50D9EB00B7FECC /* MapViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651018141C50D9EB00B7FECC /* MapViewViewController.swift */; };
@@ -42,7 +41,6 @@
 
 /* Begin PBXFileReference section */
 		6510180C1C4FA40700B7FECC /* FigofyColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FigofyColors.swift; sourceTree = SOURCE_ROOT; };
-		6510180E1C4FB17A00B7FECC /* CreateUserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateUserViewController.swift; sourceTree = "<group>"; };
 		651018101C4FB8D100B7FECC /* OverviewViewControler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OverviewViewControler.swift; sourceTree = "<group>"; };
 		651018121C50D93100B7FECC /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		651018141C50D9EB00B7FECC /* MapViewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewViewController.swift; sourceTree = "<group>"; };
@@ -115,7 +113,6 @@
 				6510180C1C4FA40700B7FECC /* FigofyColors.swift */,
 				654A27111C350EA6008AA4EB /* LoginViewController.swift */,
 				651018161C50DB4C00B7FECC /* LakeInformationViewController.swift */,
-				6510180E1C4FB17A00B7FECC /* CreateUserViewController.swift */,
 				651018141C50D9EB00B7FECC /* MapViewViewController.swift */,
 				651018181C50DBDC00B7FECC /* MobilePayViewController.swift */,
 				651018121C50D93100B7FECC /* ProfileViewController.swift */,
@@ -227,7 +224,7 @@
 				};
 			};
 			buildConfigurationList = 654A27071C350EA6008AA4EB /* Build configuration list for PBXProject "Figofy" */;
-			compatibilityVersion = "Xcode 3.2";
+			compatibilityVersion = "Xcode 6.3";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -280,7 +277,6 @@
 			files = (
 				651018171C50DB4C00B7FECC /* LakeInformationViewController.swift in Sources */,
 				651018131C50D93100B7FECC /* ProfileViewController.swift in Sources */,
-				6510180F1C4FB17A00B7FECC /* CreateUserViewController.swift in Sources */,
 				654A27121C350EA6008AA4EB /* LoginViewController.swift in Sources */,
 				654A27101C350EA6008AA4EB /* AppDelegate.swift in Sources */,
 				6510180D1C4FA40700B7FECC /* FigofyColors.swift in Sources */,

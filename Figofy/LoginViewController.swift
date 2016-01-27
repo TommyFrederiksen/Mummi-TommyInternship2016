@@ -11,6 +11,9 @@ import UIKit
 
 class LoginViewController: UIViewController {
 
+    @IBOutlet var backgroundView: UIView!
+    
+    
     @IBOutlet weak var usernameTextField: UITextField!
  
     @IBOutlet weak var passwordTextField: UITextField!
