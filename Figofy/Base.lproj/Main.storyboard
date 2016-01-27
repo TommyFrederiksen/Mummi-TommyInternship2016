@@ -3,11 +3,11 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <mutableArray key="HelveticaNeue.ttc">
-            <string>HelveticaNeue</string>
-            <string>HelveticaNeue</string>
+        <mutableArray key="System San Francisco Display Thin.ttf">
+            <string>.HelveticaNeueDeskInterface-Thin</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -16,89 +16,44 @@
             <objects>
                 <viewController title="Login" id="BYZ-38-t0r" customClass="LoginViewController" customModule="Figofy" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                        <viewControllerLayoutGuide type="top" id="9yP-PR-nC1"/>
+                        <viewControllerLayoutGuide type="bottom" id="kMn-oS-Fuu"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                    <view key="view" contentMode="scaleToFill" id="ZcC-Mc-tox">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="SD9-hm-3eW">
-                                <rect key="frame" x="0.0" y="64" width="600" height="492"/>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Hi8-Zl-D5J">
+                                <rect key="frame" x="20" y="72" width="560" height="471"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Figofy rgb logo" translatesAutoresizingMaskIntoConstraints="NO" id="lAf-FX-jva">
-                                        <rect key="frame" x="175" y="0.0" width="250" height="75"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="250" id="CBB-ks-m0b"/>
-                                            <constraint firstAttribute="height" constant="75" id="zsU-ps-nz5"/>
-                                        </constraints>
-                                    </imageView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="350" axis="vertical" alignment="center" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="cM7-kk-Uj5">
-                                        <rect key="frame" x="175" y="125" width="250" height="105"/>
-                                        <subviews>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Brugernavn" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9Ze-MR-qUA" userLabel="Username Text Field">
-                                                <rect key="frame" x="0.0" y="0.0" width="250" height="40"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="250" id="KgQ-XL-FVC"/>
-                                                    <constraint firstAttribute="height" constant="40" id="y2y-7f-Cyu"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
-                                            </textField>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gfQ-qa-SrA" userLabel="Password Text Field">
-                                                <rect key="frame" x="0.0" y="65" width="250" height="40"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="40" id="30h-dJ-4Wt"/>
-                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="250" id="BqQ-xZ-zgR"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
-                                            </textField>
-                                        </subviews>
-                                    </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="o6A-zK-Oeh">
-                                        <rect key="frame" x="210" y="280" width="180" height="212"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xd7-km-fI1">
-                                                <rect key="frame" x="0.0" y="0.0" width="90" height="212"/>
-                                                <color key="backgroundColor" red="1" green="0.5096537812081503" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="50" id="NzH-gX-Zgr"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                                <state key="normal" title="Login"/>
-                                                <connections>
-                                                    <action selector="Login:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Xon-6o-ATF"/>
-                                                    <segue destination="nSa-Y8-Fhj" kind="show" id="yQV-vM-13w"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8CC-SA-Aam">
-                                                <rect key="frame" x="90" y="0.0" width="90" height="212"/>
-                                                <color key="backgroundColor" red="1" green="0.58820621916183657" blue="0.0051960082128218454" alpha="1" colorSpace="calibratedRGB"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="50" id="qSL-kg-Rqs"/>
-                                                </constraints>
-                                                <state key="normal" title="Opret Bruger"/>
-                                            </button>
-                                        </subviews>
-                                    </stackView>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="k32-Jt-idm" customClass="TextFieldDesign" customModule="Figofy" customModuleProvider="target">
+                                        <rect key="frame" x="186" y="105" width="188" height="30"/>
+                                        <fontDescription key="fontDescription" name=".HelveticaNeueDeskInterface-Thin" family="SFNS Display" pointSize="19"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
+                                                <color key="value" red="0.0" green="0.4488220363" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </textField>
                                 </subviews>
-                            </stackView>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="0.57351831896551719" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
+                        <color key="backgroundColor" red="0.26943108974358976" green="0.26943108974358976" blue="0.26943108974358976" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="SD9-hm-3eW" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Gmi-Zg-TfK"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="SD9-hm-3eW" secondAttribute="bottom" id="aJ8-Kb-YvO"/>
-                            <constraint firstItem="SD9-hm-3eW" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="jeL-kb-usM"/>
-                            <constraint firstAttribute="trailing" secondItem="SD9-hm-3eW" secondAttribute="trailing" id="skm-4n-JDO"/>
+                            <constraint firstItem="Hi8-Zl-D5J" firstAttribute="top" secondItem="9yP-PR-nC1" secondAttribute="bottom" id="XW9-Ve-2Md"/>
+                            <constraint firstItem="Hi8-Zl-D5J" firstAttribute="trailing" secondItem="ZcC-Mc-tox" secondAttribute="trailingMargin" id="cDd-qh-GbR"/>
+                            <constraint firstItem="Hi8-Zl-D5J" firstAttribute="leading" secondItem="ZcC-Mc-tox" secondAttribute="leadingMargin" id="hNa-gB-WCh"/>
+                            <constraint firstItem="kMn-oS-Fuu" firstAttribute="top" secondItem="Hi8-Zl-D5J" secondAttribute="bottom" id="oDP-wi-FJc"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="zng-hZ-Ssi"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
-                    <connections>
-                        <outlet property="passwordTextField" destination="gfQ-qa-SrA" id="UEf-yu-Vod"/>
-                        <outlet property="usernameTextField" destination="9Ze-MR-qUA" id="i0T-ux-MLp"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -330,7 +285,6 @@
     </scenes>
     <resources>
         <image name="105562" width="454" height="280"/>
-        <image name="Figofy rgb logo" width="1043" height="181"/>
         <image name="Figofy_app_trans.png" width="1024" height="1024"/>
         <image name="sjælland.PNG" width="747" height="775"/>
     </resources>
