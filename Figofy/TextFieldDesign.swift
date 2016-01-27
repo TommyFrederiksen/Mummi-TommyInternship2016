@@ -81,7 +81,7 @@ import UIKit
     override public func animateViewsForTextEntry() {
         borderLayer.strokeEnd = 1
         
-        UIView.animateWithDuration(0.3, animations: {
+        UIView.animateWithDuration(0.5, animations: {
             let translate = CGAffineTransformMakeTranslation(-self.placeholderInsets.x, self.placeholderLabel.bounds.height + (self.placeholderInsets.y * 2))
             let scale = CGAffineTransformMakeScale(0.9, 0.9)
             
@@ -93,7 +93,7 @@ import UIKit
         if text!.isEmpty {
             borderLayer.strokeEnd = percentageForBottomBorder()
             
-            UIView.animateWithDuration(0.3, animations: {
+            UIView.animateWithDuration(0.7, animations: {
                 self.placeholderLabel.transform = CGAffineTransformIdentity
             })
         }
@@ -167,12 +167,12 @@ import UIKit
 
     override public func editingRectForBounds(bounds: CGRect) -> CGRect {
         let newBounds = rectForBorder(bounds)
-        return CGRectInset(newBounds, textFieldInsets.x, 0)
+        return CGRectInset(newBounds, textFieldInsets.x, 2)
     }
 
     override public func textRectForBounds(bounds: CGRect) -> CGRect {
         let newBounds = rectForBorder(bounds)
         
-        return CGRectInset(newBounds, textFieldInsets.x, 0)
+        return CGRectInset(newBounds, textFieldInsets.x, 2)
     }
     }

@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Lgr-Cw-Jop">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <customFonts key="customFonts">
         <mutableArray key="System San Francisco Display Thin.ttf">
+            <string>.HelveticaNeueDeskInterface-Thin</string>
             <string>.HelveticaNeueDeskInterface-Thin</string>
         </mutableArray>
     </customFonts>
@@ -23,32 +23,67 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Hi8-Zl-D5J">
-                                <rect key="frame" x="20" y="72" width="560" height="471"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Figofy rgb logo" translatesAutoresizingMaskIntoConstraints="NO" id="yO3-VS-e52">
+                                <rect key="frame" x="170" y="28" width="260" height="79"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="79" id="G0m-TP-UcP"/>
+                                    <constraint firstAttribute="width" constant="260" id="fNc-PM-kXz"/>
+                                </constraints>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="GmJ-Tf-7ge">
+                                <rect key="frame" x="200" y="230" width="200" height="140"/>
                                 <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="k32-Jt-idm" customClass="TextFieldDesign" customModule="Figofy" customModuleProvider="target">
-                                        <rect key="frame" x="186" y="105" width="188" height="30"/>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="k32-Jt-idm" customClass="TextFieldDesign" customModule="Figofy" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="200" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="BDO-UK-Lt8"/>
+                                            <constraint firstAttribute="width" constant="200" id="svr-Q9-M5n"/>
+                                        </constraints>
+                                        <color key="textColor" red="0.90588235289999997" green="0.41960784309999999" blue="0.070588235289999995" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" name=".HelveticaNeueDeskInterface-Thin" family="SFNS Display" pointSize="19"/>
                                         <textInputTraits key="textInputTraits"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
-                                                <color key="value" red="0.0" green="0.4488220363" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="value" red="0.90588235289999997" green="0.41960784309999999" blue="0.070588235289999995" alpha="1" colorSpace="calibratedRGB"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                <color key="value" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="value" red="0.90588235294117647" green="0.41960784313725491" blue="0.070588235294117646" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="placeholderFontScale">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="54z-GJ-c7z" customClass="TextFieldDesign" customModule="Figofy" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="80" width="200" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="200" id="5iS-W9-owL"/>
+                                            <constraint firstAttribute="height" constant="60" id="hok-yS-zBN"/>
+                                        </constraints>
+                                        <color key="textColor" red="0.90588235289999997" green="0.41960784309999999" blue="0.070588235289999995" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" name=".HelveticaNeueDeskInterface-Thin" family="SFNS Display" pointSize="19"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
+                                                <color key="value" red="0.90588235289999997" green="0.41960784309999999" blue="0.070588235289999995" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" red="0.90588235289999997" green="0.41960784309999999" blue="0.070588235289999995" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="placeholderFontScale">
+                                                <real key="value" value="1"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </textField>
                                 </subviews>
-                                <color key="backgroundColor" white="0.33333333333333331" alpha="0.57351831896551719" colorSpace="calibratedWhite"/>
-                            </view>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="0.26943108974358976" green="0.26943108974358976" blue="0.26943108974358976" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="Hi8-Zl-D5J" firstAttribute="top" secondItem="9yP-PR-nC1" secondAttribute="bottom" id="XW9-Ve-2Md"/>
-                            <constraint firstItem="Hi8-Zl-D5J" firstAttribute="trailing" secondItem="ZcC-Mc-tox" secondAttribute="trailingMargin" id="cDd-qh-GbR"/>
-                            <constraint firstItem="Hi8-Zl-D5J" firstAttribute="leading" secondItem="ZcC-Mc-tox" secondAttribute="leadingMargin" id="hNa-gB-WCh"/>
-                            <constraint firstItem="kMn-oS-Fuu" firstAttribute="top" secondItem="Hi8-Zl-D5J" secondAttribute="bottom" id="oDP-wi-FJc"/>
+                            <constraint firstItem="GmJ-Tf-7ge" firstAttribute="centerX" secondItem="yO3-VS-e52" secondAttribute="centerX" id="He3-Jc-Lw1"/>
+                            <constraint firstItem="yO3-VS-e52" firstAttribute="top" secondItem="9yP-PR-nC1" secondAttribute="bottom" constant="5" id="OeO-HS-zrO"/>
+                            <constraint firstItem="GmJ-Tf-7ge" firstAttribute="centerY" secondItem="ZcC-Mc-tox" secondAttribute="centerY" id="fW2-is-38d"/>
+                            <constraint firstItem="yO3-VS-e52" firstAttribute="centerX" secondItem="ZcC-Mc-tox" secondAttribute="centerX" id="lS8-uB-GXs"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
@@ -57,7 +92,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1078" y="72"/>
+            <point key="canvasLocation" x="266" y="-762"/>
         </scene>
         <!--Map View-->
         <scene sceneID="Cpd-FU-0nO">
@@ -89,7 +124,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uod-Ho-TvD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1078.5" y="1759.5"/>
+            <point key="canvasLocation" x="1030.5" y="897.5"/>
         </scene>
         <!--OverView-->
         <scene sceneID="bVg-IZ-kBZ">
@@ -126,6 +161,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="s6T-vQ-C1u"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="lakeViewButton" destination="Dhj-TF-Fq3" id="uGT-fr-f1o"/>
@@ -134,7 +170,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pfr-f0-zYm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1078.5" y="927.5"/>
+            <point key="canvasLocation" x="1030.5" y="71.5"/>
         </scene>
         <!--Profil-->
         <scene sceneID="LPL-aS-GW9">
@@ -161,7 +197,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iJf-nv-a7Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1632.5" y="927.5"/>
+            <point key="canvasLocation" x="1620.5" y="71.5"/>
         </scene>
         <!--Lake Information-->
         <scene sceneID="2VF-FD-5g0">
@@ -238,7 +274,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="M0w-vG-u3Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1489.5" y="1759.5"/>
+            <point key="canvasLocation" x="1620.5" y="897.5"/>
         </scene>
         <!--MobilePay-->
         <scene sceneID="M7z-Bp-sIl">
@@ -267,6 +303,7 @@
         <!--Navigation Controller-->
         <scene sceneID="eb6-Cf-bv3">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Xlh-wL-Wwi" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Lgr-Cw-Jop" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="oEH-wG-KHp">
@@ -275,18 +312,18 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="9EF-8l-YhY"/>
+                        <segue destination="nSa-Y8-Fhj" kind="relationship" relationship="rootViewController" id="PW8-bc-Df0"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Xlh-wL-Wwi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="266" y="72"/>
         </scene>
     </scenes>
     <resources>
         <image name="105562" width="454" height="280"/>
+        <image name="Figofy rgb logo" width="1043" height="181"/>
         <image name="Figofy_app_trans.png" width="1024" height="1024"/>
-        <image name="sjælland.PNG" width="747" height="775"/>
+        <image name="sjælland.PNG" width="768" height="1024"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="0Pm-XC-TbI"/>
