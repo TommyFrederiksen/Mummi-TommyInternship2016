@@ -15,16 +15,19 @@ class LoginViewController: UIViewController {
 //let Users = [["Søren","Figofy"],["Kim","Figofy"],["Tommy","Figofy"]]
     
     
-    
-    
     @IBOutlet weak var usernameTextField: TextFieldDesign!
     
     @IBOutlet weak var passwordTextField: TextFieldDesign!
     
     
+    @IBOutlet var backgroundView: GradientColor!
+    
+    let layer = CAGradientLayer()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        
         
     }
 

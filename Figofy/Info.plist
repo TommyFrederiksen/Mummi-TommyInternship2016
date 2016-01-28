@@ -47,6 +47,8 @@
 	<array>
 		<string>System San Francisco Display Thin</string>
 		<string>System San Francisco Display Ultralight</string>
+		<string>System San Francisco Display Bold</string>
+		<string>System San Francisco Display Regular</string>
 	</array>
 </dict>
 </plist>

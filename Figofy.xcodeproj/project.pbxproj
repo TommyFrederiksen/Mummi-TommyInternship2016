@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		183B64C01C58DD7100B78D1B /* System San Francisco Display Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 183B64BE1C58DD7100B78D1B /* System San Francisco Display Bold.ttf */; };
+		183B64C11C58DD7100B78D1B /* System San Francisco Display Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 183B64BF1C58DD7100B78D1B /* System San Francisco Display Regular.ttf */; };
+		183B64C51C58F58C00B78D1B /* GradientColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183B64C41C58F58C00B78D1B /* GradientColor.swift */; };
 		18E675801C58B6850046B259 /* TextFieldDesign.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E6757F1C58B6850046B259 /* TextFieldDesign.swift */; };
 		18E675821C58B76F0046B259 /* TextFieldEffects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E675811C58B76F0046B259 /* TextFieldEffects.swift */; };
 		18E675841C58C2E30046B259 /* System San Francisco Display Ultralight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18E675831C58C2E30046B259 /* System San Francisco Display Ultralight.ttf */; };
@@ -44,6 +47,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		183B64BE1C58DD7100B78D1B /* System San Francisco Display Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "System San Francisco Display Bold.ttf"; sourceTree = "<group>"; };
+		183B64BF1C58DD7100B78D1B /* System San Francisco Display Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "System San Francisco Display Regular.ttf"; sourceTree = "<group>"; };
+		183B64C41C58F58C00B78D1B /* GradientColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientColor.swift; sourceTree = "<group>"; };
 		18E6757F1C58B6850046B259 /* TextFieldDesign.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldDesign.swift; sourceTree = "<group>"; };
 		18E675811C58B76F0046B259 /* TextFieldEffects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldEffects.swift; sourceTree = "<group>"; };
 		18E675831C58C2E30046B259 /* System San Francisco Display Ultralight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "System San Francisco Display Ultralight.ttf"; sourceTree = "<group>"; };
@@ -94,6 +100,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		183B64C21C58DDA300B78D1B /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				18E675851C58C3340046B259 /* System San Francisco Display Thin.ttf */,
+				18E675831C58C2E30046B259 /* System San Francisco Display Ultralight.ttf */,
+				183B64BE1C58DD7100B78D1B /* System San Francisco Display Bold.ttf */,
+				183B64BF1C58DD7100B78D1B /* System San Francisco Display Regular.ttf */,
+			);
+			name = Fonts;
+			sourceTree = "<group>";
+		};
+		183B64C31C58F55700B78D1B /* DesignUIColors */ = {
+			isa = PBXGroup;
+			children = (
+				18E6757F1C58B6850046B259 /* TextFieldDesign.swift */,
+				18E675811C58B76F0046B259 /* TextFieldEffects.swift */,
+				183B64C41C58F58C00B78D1B /* GradientColor.swift */,
+			);
+			name = DesignUIColors;
+			sourceTree = "<group>";
+		};
 		654A27031C350EA6008AA4EB = {
 			isa = PBXGroup;
 			children = (
@@ -117,8 +144,8 @@
 		654A270E1C350EA6008AA4EB /* Figofy */ = {
 			isa = PBXGroup;
 			children = (
-				18E675851C58C3340046B259 /* System San Francisco Display Thin.ttf */,
-				18E675831C58C2E30046B259 /* System San Francisco Display Ultralight.ttf */,
+				183B64C31C58F55700B78D1B /* DesignUIColors */,
+				183B64C21C58DDA300B78D1B /* Fonts */,
 				654A270F1C350EA6008AA4EB /* AppDelegate.swift */,
 				6510180C1C4FA40700B7FECC /* FigofyColors.swift */,
 				654A27111C350EA6008AA4EB /* LoginViewController.swift */,
@@ -131,8 +158,6 @@
 				654A27161C350EA6008AA4EB /* Assets.xcassets */,
 				654A27181C350EA6008AA4EB /* LaunchScreen.storyboard */,
 				654A271B1C350EA6008AA4EB /* Info.plist */,
-				18E6757F1C58B6850046B259 /* TextFieldDesign.swift */,
-				18E675811C58B76F0046B259 /* TextFieldEffects.swift */,
 			);
 			path = Figofy;
 			sourceTree = "<group>";
@@ -262,9 +287,11 @@
 			files = (
 				18E675841C58C2E30046B259 /* System San Francisco Display Ultralight.ttf in Resources */,
 				654A271A1C350EA6008AA4EB /* LaunchScreen.storyboard in Resources */,
+				183B64C11C58DD7100B78D1B /* System San Francisco Display Regular.ttf in Resources */,
 				654A27171C350EA6008AA4EB /* Assets.xcassets in Resources */,
 				18E675861C58C3340046B259 /* System San Francisco Display Thin.ttf in Resources */,
 				654A27151C350EA6008AA4EB /* Main.storyboard in Resources */,
+				183B64C01C58DD7100B78D1B /* System San Francisco Display Bold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,6 +324,7 @@
 				6510180D1C4FA40700B7FECC /* FigofyColors.swift in Sources */,
 				651018111C4FB8D100B7FECC /* OverviewViewControler.swift in Sources */,
 				18E675801C58B6850046B259 /* TextFieldDesign.swift in Sources */,
+				183B64C51C58F58C00B78D1B /* GradientColor.swift in Sources */,
 				651018191C50DBDC00B7FECC /* MobilePayViewController.swift in Sources */,
 				651018151C50D9EB00B7FECC /* MapViewViewController.swift in Sources */,
 			);
