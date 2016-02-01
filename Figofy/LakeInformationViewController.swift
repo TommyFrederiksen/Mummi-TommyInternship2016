@@ -19,9 +19,7 @@ class LakeInformationViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        FigofyButton(oneHourButton)
-        FigofyButton(treeHourButton)
-        FigofyButton(fiveHourButton)
+        
         
     }
     

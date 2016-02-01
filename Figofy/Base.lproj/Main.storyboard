@@ -23,25 +23,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Figofy rgb logo" translatesAutoresizingMaskIntoConstraints="NO" id="eC9-tz-fvp">
-                                <rect key="frame" x="117" y="455" width="367" height="101"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="8Te-5c-guI"/>
-                                    <constraint firstAttribute="width" constant="250" id="Rf9-Bf-L5w"/>
-                                </constraints>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="8Te-5c-guI"/>
-                                    </mask>
-                                </variation>
-                                <variation key="heightClass=compact" misplaced="YES">
-                                    <rect key="frame" x="157" y="28" width="287" height="79"/>
-                                    <mask key="constraints">
-                                        <include reference="8Te-5c-guI"/>
-                                        <include reference="Rf9-Bf-L5w"/>
-                                    </mask>
-                                </variation>
-                            </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="GmJ-Tf-7ge">
                                 <rect key="frame" x="200" y="230" width="200" height="140"/>
                                 <subviews>
@@ -51,15 +32,15 @@
                                             <constraint firstAttribute="height" constant="60" id="BDO-UK-Lt8"/>
                                             <constraint firstAttribute="width" constant="200" id="svr-Q9-M5n"/>
                                         </constraints>
-                                        <color key="textColor" red="0.90588235289999997" green="0.41960784309999999" blue="0.070588235289999995" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" name=".HelveticaNeueDeskInterface-Regular" family="SFNS Display" pointSize="19"/>
                                         <textInputTraits key="textInputTraits"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
-                                                <color key="value" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                <color key="value" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="value" red="1" green="0.59644796560000002" blue="0.15540196040000001" alpha="1" colorSpace="calibratedRGB"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="number" keyPath="placeholderFontScale">
                                                 <real key="value" value="1"/>
@@ -72,15 +53,15 @@
                                             <constraint firstAttribute="width" constant="200" id="5iS-W9-owL"/>
                                             <constraint firstAttribute="height" constant="60" id="hok-yS-zBN"/>
                                         </constraints>
-                                        <color key="textColor" red="0.90588235289999997" green="0.41960784309999999" blue="0.070588235289999995" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" name=".HelveticaNeueDeskInterface-Regular" family="SFNS Display" pointSize="19"/>
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
-                                                <color key="value" red="0.90588235289999997" green="0.41960784309999999" blue="0.070588235289999995" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                <color key="value" red="0.90588235289999997" green="0.41960784309999999" blue="0.070588235289999995" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="number" keyPath="placeholderFontScale">
                                                 <real key="value" value="1"/>
@@ -90,36 +71,36 @@
                                 </subviews>
                                 <variation key="heightClass=compact" axis="horizontal" spacing="30"/>
                             </stackView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Figofy_app_trans" translatesAutoresizingMaskIntoConstraints="NO" id="eC9-tz-fvp">
+                                <rect key="frame" x="203" y="28" width="193" height="140"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="193" id="YmY-Eb-OK2"/>
+                                    <constraint firstAttribute="height" constant="140" id="uBa-wO-MKy"/>
+                                </constraints>
+                                <variation key="heightClass=compact" misplaced="YES">
+                                    <rect key="frame" x="157" y="28" width="287" height="79"/>
+                                </variation>
+                            </imageView>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="eC9-tz-fvp" firstAttribute="centerX" secondItem="ZcC-Mc-tox" secondAttribute="centerX" id="Mpq-6z-Vwt"/>
+                            <constraint firstItem="GmJ-Tf-7ge" firstAttribute="centerX" secondItem="ZcC-Mc-tox" secondAttribute="centerX" id="GYJ-qI-BBw"/>
                             <constraint firstItem="GmJ-Tf-7ge" firstAttribute="centerY" secondItem="ZcC-Mc-tox" secondAttribute="centerY" id="fW2-is-38d"/>
+                            <constraint firstItem="GmJ-Tf-7ge" firstAttribute="centerX" secondItem="eC9-tz-fvp" secondAttribute="centerX" id="gWi-gT-ZgD"/>
+                            <constraint firstItem="eC9-tz-fvp" firstAttribute="top" secondItem="9yP-PR-nC1" secondAttribute="bottom" constant="10" id="l2D-HD-qEm"/>
                             <constraint firstItem="GmJ-Tf-7ge" firstAttribute="centerX" secondItem="ZcC-Mc-tox" secondAttribute="centerX" id="oQP-TC-6Li"/>
-                            <constraint firstItem="eC9-tz-fvp" firstAttribute="top" secondItem="9yP-PR-nC1" secondAttribute="bottom" constant="8" id="qyY-KE-Anc"/>
-                            <constraint firstItem="kMn-oS-Fuu" firstAttribute="top" secondItem="eC9-tz-fvp" secondAttribute="bottom" id="sRH-RO-AKD"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="color" keyPath="topColor">
-                                <color key="value" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="value" red="0.40000000000000002" green="0.80000000000000004" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </userDefinedRuntimeAttribute>
                             <userDefinedRuntimeAttribute type="color" keyPath="bottomColor">
-                                <color key="value" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="value" red="0.53725490196078429" green="0.82745098039215681" blue="0.94901960784313721" alpha="1" colorSpace="calibratedRGB"/>
                             </userDefinedRuntimeAttribute>
                             <userDefinedRuntimeAttribute type="number" keyPath="opacity">
-                                <real key="value" value="0.90000000000000002"/>
+                                <real key="value" value="1"/>
                             </userDefinedRuntimeAttribute>
                             <userDefinedRuntimeAttribute type="boolean" keyPath="topBottomFlip" value="NO"/>
                         </userDefinedRuntimeAttributes>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="qyY-KE-Anc"/>
-                            </mask>
-                        </variation>
-                        <variation key="heightClass=compact">
-                            <mask key="constraints">
-                                <exclude reference="qyY-KE-Anc"/>
-                            </mask>
-                        </variation>
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="zng-hZ-Ssi"/>
@@ -174,35 +155,106 @@
                         <viewControllerLayoutGuide type="top" id="S9Z-oD-f8N"/>
                         <viewControllerLayoutGuide type="bottom" id="bsO-Fm-CUY"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Bcr-EP-6ql">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <view key="view" contentMode="scaleToFill" id="Bcr-EP-6ql" customClass="GradientColor" customModule="Figofy" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GbW-20-3Tr">
-                                <rect key="frame" x="72" y="72" width="231" height="30"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Profil">
-                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <segue destination="tsG-e2-I6t" kind="show" id="S7x-Ej-PGb"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dhj-TF-Fq3">
-                                <rect key="frame" x="72" y="125" width="231" height="30"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Sø Oversigt">
-                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <segue destination="RWH-db-0dg" kind="show" id="kyI-Zz-JoS"/>
-                                </connections>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" distribution="fillEqually" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="ZWW-ER-VPb">
+                                <rect key="frame" x="200" y="175" width="200" height="250"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="P27-tp-7my">
+                                        <rect key="frame" x="0.0" y="0.0" width="200" height="100"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GbW-20-3Tr" customClass="ButtonDesign" customModule="Figofy" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="100" id="79h-M9-VrT"/>
+                                                    <constraint firstAttribute="width" constant="100" id="hvc-AK-c31"/>
+                                                </constraints>
+                                                <state key="normal" title="Profil">
+                                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                        <color key="value" red="0.0" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="buttonColor">
+                                                        <color key="value" red="1" green="0.056107677719999999" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <segue destination="tsG-e2-I6t" kind="show" id="S7x-Ej-PGb"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dhj-TF-Fq3" customClass="ButtonDesign" customModule="Figofy" customModuleProvider="target">
+                                                <rect key="frame" x="100" y="0.0" width="100" height="100"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="100" id="rth-cW-fWB"/>
+                                                    <constraint firstAttribute="width" constant="100" id="uf9-J3-lLc"/>
+                                                </constraints>
+                                                <state key="normal" title="Sø Oversigt">
+                                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                        <color key="value" red="0.0" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="buttonColor">
+                                                        <color key="value" red="1" green="0.59644796560000002" blue="0.15540196040000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <segue destination="RWH-db-0dg" kind="show" id="kyI-Zz-JoS"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="c32-eZ-Q08">
+                                        <rect key="frame" x="0.0" y="150" width="200" height="100"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="chZ-Tn-Mmc">
+                                                <rect key="frame" x="0.0" y="0.0" width="200" height="100"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ogP-gS-Czz" customClass="ButtonDesign" customModule="Figofy" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="100" id="aR2-9a-q3a"/>
+                                                            <constraint firstAttribute="width" constant="100" id="apx-Y7-N1s"/>
+                                                        </constraints>
+                                                        <state key="normal" title="View3">
+                                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </state>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9LP-D1-WvN" customClass="ButtonDesign" customModule="Figofy" customModuleProvider="target">
+                                                        <rect key="frame" x="100" y="0.0" width="100" height="100"/>
+                                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <state key="normal" title="View4">
+                                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </state>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="topColor">
+                                <color key="value" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="bottomColor">
+                                <color key="value" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="topBottomFlip" value="YES"/>
+                            <userDefinedRuntimeAttribute type="number" keyPath="opacity">
+                                <real key="value" value="0.90000000000000002"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                     </view>
                     <navigationItem key="navigationItem" id="s6T-vQ-C1u"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="lakeViewButton" destination="Dhj-TF-Fq3" id="uGT-fr-f1o"/>
                         <outlet property="profileButton" destination="GbW-20-3Tr" id="igS-qL-Vlg"/>
@@ -221,7 +273,7 @@
                         <viewControllerLayoutGuide type="bottom" id="fE3-kf-rl9"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="J8S-th-hMU">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Profil" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XH9-gj-WbG">
@@ -233,11 +285,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iJf-nv-a7Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1620.5" y="71.5"/>
+            <point key="canvasLocation" x="1733" y="72"/>
         </scene>
         <!--Lake Information-->
         <scene sceneID="2VF-FD-5g0">
@@ -361,7 +412,7 @@
     </scenes>
     <resources>
         <image name="105562" width="454" height="280"/>
-        <image name="Figofy rgb logo" width="1043" height="181"/>
+        <image name="Figofy_app_trans" width="1024" height="1024"/>
         <image name="Figofy_app_trans.png" width="1024" height="1024"/>
         <image name="sjælland.PNG" width="182" height="199"/>
     </resources>
