@@ -10,6 +10,8 @@
 		183B64C01C58DD7100B78D1B /* System San Francisco Display Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 183B64BE1C58DD7100B78D1B /* System San Francisco Display Bold.ttf */; };
 		183B64C11C58DD7100B78D1B /* System San Francisco Display Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 183B64BF1C58DD7100B78D1B /* System San Francisco Display Regular.ttf */; };
 		183B64C51C58F58C00B78D1B /* GradientColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183B64C41C58F58C00B78D1B /* GradientColor.swift */; };
+		184696CA1C5F61710095D64B /* SeaAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184696C91C5F61710095D64B /* SeaAnnotation.swift */; };
+		184696F01C5F9A000095D64B /* CustomFigofyAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184696EF1C5F9A000095D64B /* CustomFigofyAnnotation.swift */; };
 		18A2765E1C5A165E0071E4AA /* ButtonDesign.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A2765D1C5A165E0071E4AA /* ButtonDesign.swift */; };
 		18E675801C58B6850046B259 /* TextFieldDesign.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E6757F1C58B6850046B259 /* TextFieldDesign.swift */; };
 		18E675821C58B76F0046B259 /* TextFieldEffects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E675811C58B76F0046B259 /* TextFieldEffects.swift */; };
@@ -50,6 +52,8 @@
 		183B64BE1C58DD7100B78D1B /* System San Francisco Display Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "System San Francisco Display Bold.ttf"; sourceTree = "<group>"; };
 		183B64BF1C58DD7100B78D1B /* System San Francisco Display Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "System San Francisco Display Regular.ttf"; sourceTree = "<group>"; };
 		183B64C41C58F58C00B78D1B /* GradientColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientColor.swift; sourceTree = "<group>"; };
+		184696C91C5F61710095D64B /* SeaAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeaAnnotation.swift; sourceTree = "<group>"; };
+		184696EF1C5F9A000095D64B /* CustomFigofyAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomFigofyAnnotation.swift; sourceTree = "<group>"; };
 		18A2765D1C5A165E0071E4AA /* ButtonDesign.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonDesign.swift; sourceTree = "<group>"; };
 		18E6757F1C58B6850046B259 /* TextFieldDesign.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldDesign.swift; sourceTree = "<group>"; };
 		18E675811C58B76F0046B259 /* TextFieldEffects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldEffects.swift; sourceTree = "<group>"; };
@@ -135,6 +139,14 @@
 			name = Controller;
 			sourceTree = "<group>";
 		};
+		184696C61C5F60CB0095D64B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				184696C91C5F61710095D64B /* SeaAnnotation.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		654A27031C350EA6008AA4EB = {
 			isa = PBXGroup;
 			children = (
@@ -158,6 +170,8 @@
 		654A270E1C350EA6008AA4EB /* Figofy */ = {
 			isa = PBXGroup;
 			children = (
+				184696EF1C5F9A000095D64B /* CustomFigofyAnnotation.swift */,
+				184696C61C5F60CB0095D64B /* Model */,
 				184696C51C5F4A450095D64B /* Controller */,
 				183B64C31C58F55700B78D1B /* DesignUIColors */,
 				183B64C21C58DDA300B78D1B /* Fonts */,
@@ -326,7 +340,9 @@
 			files = (
 				651018171C50DB4C00B7FECC /* LakeInformationViewController.swift in Sources */,
 				651018131C50D93100B7FECC /* ProfileViewController.swift in Sources */,
+				184696CA1C5F61710095D64B /* SeaAnnotation.swift in Sources */,
 				654A27121C350EA6008AA4EB /* LoginViewController.swift in Sources */,
+				184696F01C5F9A000095D64B /* CustomFigofyAnnotation.swift in Sources */,
 				654A27101C350EA6008AA4EB /* AppDelegate.swift in Sources */,
 				18E675821C58B76F0046B259 /* TextFieldEffects.swift in Sources */,
 				651018111C4FB8D100B7FECC /* OverviewViewControler.swift in Sources */,

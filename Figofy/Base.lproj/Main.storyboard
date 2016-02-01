@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="nSa-Y8-Fhj">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
@@ -124,28 +124,29 @@
                         <viewControllerLayoutGuide type="bottom" id="20o-h0-tuc"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="fTO-2m-hkx">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clearsContextBeforeDrawing="NO" multipleTouchEnabled="YES" contentMode="scaleAspectFill" semanticContentAttribute="playback" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="sjælland.PNG" highlighted="YES" translatesAutoresizingMaskIntoConstraints="NO" id="h8b-EP-6Kg">
-                                <rect key="frame" x="-124" y="20" width="681" height="603"/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleAspectFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="147-Ih-vMh">
-                                <rect key="frame" x="44" y="212" width="38" height="48"/>
-                                <rect key="contentStretch" x="1" y="1" width="1" height="1"/>
-                                <state key="normal" title="Button" image="Figofy_app_trans.png"/>
-                                <connections>
-                                    <segue destination="VAL-UH-nux" kind="show" id="7nB-xq-oG3"/>
-                                </connections>
-                            </button>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="94K-wD-Pqc">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="94K-wD-Pqc" secondAttribute="trailing" id="QPE-46-l45"/>
+                            <constraint firstItem="20o-h0-tuc" firstAttribute="top" secondItem="94K-wD-Pqc" secondAttribute="bottom" id="Uya-Wk-oDI"/>
+                            <constraint firstItem="94K-wD-Pqc" firstAttribute="top" secondItem="fTO-2m-hkx" secondAttribute="top" id="qH5-zx-PlX"/>
+                            <constraint firstItem="94K-wD-Pqc" firstAttribute="leading" secondItem="fTO-2m-hkx" secondAttribute="leading" id="sZV-Kw-PUt"/>
+                        </constraints>
                     </view>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <navigationItem key="navigationItem" title="Current Location" id="j9P-KQ-yo3"/>
+                    <connections>
+                        <outlet property="map" destination="94K-wD-Pqc" id="kVM-gY-tIN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uod-Ho-TvD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1030.5" y="897.5"/>
+            <point key="canvasLocation" x="1030" y="897"/>
         </scene>
         <!--OverView-->
         <scene sceneID="bVg-IZ-kBZ">
@@ -159,88 +160,69 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" distribution="fillEqually" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="ZWW-ER-VPb">
-                                <rect key="frame" x="200" y="175" width="200" height="250"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="ZQv-Tv-Vo3">
+                                <rect key="frame" x="148" y="147" width="305" height="305"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="P27-tp-7my">
-                                        <rect key="frame" x="0.0" y="0.0" width="200" height="100"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="mQ6-QO-yBQ">
+                                        <rect key="frame" x="0.0" y="0.0" width="305" height="150"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GbW-20-3Tr" customClass="ButtonDesign" customModule="Figofy" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xMD-wq-IiC">
+                                                <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
+                                                <color key="backgroundColor" red="0.14901960784313725" green="0.77647058823529413" blue="0.85490196078431369" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="100" id="79h-M9-VrT"/>
-                                                    <constraint firstAttribute="width" constant="100" id="hvc-AK-c31"/>
+                                                    <constraint firstAttribute="height" constant="150" id="PxX-D2-ji7"/>
+                                                    <constraint firstAttribute="width" constant="150" id="mjH-Jq-V2p"/>
                                                 </constraints>
-                                                <state key="normal" title="Profil">
-                                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                </state>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                        <color key="value" red="0.0" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="color" keyPath="buttonColor">
-                                                        <color key="value" red="1" green="0.056107677719999999" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
+                                                <state key="normal" title="Profile"/>
                                                 <connections>
-                                                    <segue destination="tsG-e2-I6t" kind="show" id="S7x-Ej-PGb"/>
+                                                    <segue destination="tsG-e2-I6t" kind="show" id="rau-r7-rZL"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dhj-TF-Fq3" customClass="ButtonDesign" customModule="Figofy" customModuleProvider="target">
-                                                <rect key="frame" x="100" y="0.0" width="100" height="100"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rL7-eH-zoa">
+                                                <rect key="frame" x="155" y="0.0" width="150" height="150"/>
+                                                <color key="backgroundColor" red="0.14901960780000001" green="0.77647058820000003" blue="0.85490196080000003" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="100" id="rth-cW-fWB"/>
-                                                    <constraint firstAttribute="width" constant="100" id="uf9-J3-lLc"/>
+                                                    <constraint firstAttribute="width" constant="150" id="TaB-GO-0zm"/>
+                                                    <constraint firstAttribute="height" constant="150" id="cBz-cI-Q3h"/>
                                                 </constraints>
-                                                <state key="normal" title="Sø Oversigt">
-                                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                </state>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                        <color key="value" red="0.0" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="color" keyPath="buttonColor">
-                                                        <color key="value" red="1" green="0.59644796560000002" blue="0.15540196040000001" alpha="1" colorSpace="calibratedRGB"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
+                                                <state key="normal" title="Map"/>
                                                 <connections>
-                                                    <segue destination="RWH-db-0dg" kind="show" id="kyI-Zz-JoS"/>
+                                                    <segue destination="RWH-db-0dg" kind="show" id="pX8-Nb-lBy"/>
                                                 </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="c32-eZ-Q08">
-                                        <rect key="frame" x="0.0" y="150" width="200" height="100"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="WKI-iS-41W">
+                                        <rect key="frame" x="0.0" y="155" width="305" height="150"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="chZ-Tn-Mmc">
-                                                <rect key="frame" x="0.0" y="0.0" width="200" height="100"/>
-                                                <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ogP-gS-Czz" customClass="ButtonDesign" customModule="Figofy" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
-                                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="100" id="aR2-9a-q3a"/>
-                                                            <constraint firstAttribute="width" constant="100" id="apx-Y7-N1s"/>
-                                                        </constraints>
-                                                        <state key="normal" title="View3">
-                                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                        </state>
-                                                    </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9LP-D1-WvN" customClass="ButtonDesign" customModule="Figofy" customModuleProvider="target">
-                                                        <rect key="frame" x="100" y="0.0" width="100" height="100"/>
-                                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                        <state key="normal" title="View4">
-                                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                        </state>
-                                                    </button>
-                                                </subviews>
-                                            </stackView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SmC-pz-6UB">
+                                                <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
+                                                <color key="backgroundColor" red="0.14901960780000001" green="0.77647058820000003" blue="0.85490196080000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="150" id="PfG-NK-61B"/>
+                                                    <constraint firstAttribute="height" constant="150" id="dCb-4B-EXy"/>
+                                                </constraints>
+                                                <state key="normal" title="Events"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ogh-db-ZfE">
+                                                <rect key="frame" x="155" y="0.0" width="150" height="150"/>
+                                                <color key="backgroundColor" red="0.14901960780000001" green="0.77647058820000003" blue="0.85490196080000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="150" id="7yN-rS-Vfe"/>
+                                                    <constraint firstAttribute="width" constant="150" id="Pqo-pQ-kI1"/>
+                                                </constraints>
+                                                <state key="normal" title="Watch"/>
+                                            </button>
                                         </subviews>
                                     </stackView>
                                 </subviews>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ZQv-Tv-Vo3" firstAttribute="centerX" secondItem="Bcr-EP-6ql" secondAttribute="centerX" id="PHb-qm-IUI"/>
+                            <constraint firstItem="ZQv-Tv-Vo3" firstAttribute="centerY" secondItem="Bcr-EP-6ql" secondAttribute="centerY" id="m1N-Z9-tH8"/>
+                        </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="color" keyPath="topColor">
                                 <color key="value" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -254,15 +236,11 @@
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </view>
-                    <navigationItem key="navigationItem" id="s6T-vQ-C1u"/>
-                    <connections>
-                        <outlet property="lakeViewButton" destination="Dhj-TF-Fq3" id="uGT-fr-f1o"/>
-                        <outlet property="profileButton" destination="GbW-20-3Tr" id="igS-qL-Vlg"/>
-                    </connections>
+                    <navigationItem key="navigationItem" title="Overview" id="s6T-vQ-C1u"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pfr-f0-zYm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1030.5" y="71.5"/>
+            <point key="canvasLocation" x="1030" y="71"/>
         </scene>
         <!--Profil-->
         <scene sceneID="LPL-aS-GW9">
@@ -389,7 +367,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sHA-uH-2kN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1994" y="1761"/>
+            <point key="canvasLocation" x="2183.5" y="897.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="eb6-Cf-bv3">
@@ -413,8 +391,6 @@
     <resources>
         <image name="105562" width="454" height="280"/>
         <image name="Figofy_app_trans" width="1024" height="1024"/>
-        <image name="Figofy_app_trans.png" width="1024" height="1024"/>
-        <image name="sjælland.PNG" width="182" height="199"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="0Pm-XC-TbI"/>
