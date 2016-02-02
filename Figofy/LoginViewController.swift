@@ -9,10 +9,14 @@
 import UIKit
 
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController
+{
 
     
-//let Users = [["Søren","Figofy"],["Kim","Figofy"],["Tommy","Figofy"]]
+    
+    
+    
+    let Users = [["Søren","Figofy"],["Kim","Figofy"],["Tommy","Figofy"],["Mummi","Figofy"],["Figofy","Figofy"]]
     
     
     @IBOutlet weak var usernameTextField: TextFieldDesign!
@@ -24,63 +28,69 @@ class LoginViewController: UIViewController {
     
     let layer = CAGradientLayer()
     
-    override func viewDidLoad() {
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
-        
-        
         
     }
 
-//    @IBAction func Login(sender: AnyObject)
-//    {
-//        let username = usernameTextField.text;
-//        let password = passwordTextField.text;
-//        
-//        //empty fields in login
-//        if(username == "" || password == "")
-//        {
-//            
-//            let uiAlert = UIAlertController(title: "OBS", message: "Username & Password kan ikke være tomme", preferredStyle: UIAlertControllerStyle.Alert)
-//            
-//            uiAlert.addAction(UIAlertAction(title: "OK", style: .Default, handler: {(action: UIAlertAction!) in self.navigationController?.popToRootViewControllerAnimated(true)}))
-//            
-//            self.presentViewController(uiAlert, animated: true, completion: nil)
-//            
-//            
-//            
-//        }
-//        var indicator = false;
-//        
-//        for (name) in Users{
-//            if (name.contains(username!))
-//            {
-//                if(name.contains(password!))
-//                {
-//                    indicator = true;
-//                }
-//                if(name.contains(password!) == false)
-//                {
-//                }
-//            }
-//            else
-//            {
-//            }
-//        }
-//        if(password == username)
-//        {
-//            indicator = false;
-//        }
-//        
-//        if(indicator == false)
-//        {
-//            let uiAlert = UIAlertController(title: "OBS", message: "login fejlede", preferredStyle: UIAlertControllerStyle.Alert)
-//            
-//            uiAlert.addAction(UIAlertAction(title: "OK", style: .Default, handler: {(action: UIAlertAction!) in self.navigationController?.popToRootViewControllerAnimated(true)}))
-//            
-//            self.presentViewController(uiAlert, animated: true, completion: nil)
-//        }
+    @IBAction func Login(sender: AnyObject)
+    {
+        let username = usernameTextField.text;
+        let password = passwordTextField.text;
         
-//    }
+        //empty fields in login
+        if(username == "" || password == "")
+        {
+            
+            let uiAlert = UIAlertController(title: "OBS", message: "Username & Password kan ikke være tomme", preferredStyle: UIAlertControllerStyle.Alert)
+            
+            uiAlert.addAction(UIAlertAction(title: "OK", style: .Default, handler:
+                {(action: UIAlertAction!) in self.navigationController?.popToRootViewControllerAnimated(true)
+                }))
+            
+            self.presentViewController(uiAlert, animated: true, completion: nil)
+            
+            
+            
+        }
+        var indicator = false;
+        
+        for (name) in Users
+        {
+            if (name.contains(username!))
+            {
+                if(name.contains(password!))
+                {
+                    indicator = true;
+                    
+                 
+                    
+                }
+                if(name.contains(password!) == false)
+                {
+                }
+            }
+            else
+            {
+            }
+        }
+        if(password == username)
+        {
+            indicator = false;
+        }
+        
+        if(indicator == false)
+        {
+            let uiAlert = UIAlertController(title: "OBS", message: "login fejlede", preferredStyle: UIAlertControllerStyle.Alert)
+            
+            uiAlert.addAction(UIAlertAction(title: "OK", style: .Default, handler: {(action: UIAlertAction!) in self.navigationController?.popToRootViewControllerAnimated(true)}))
+            
+            self.presentViewController(uiAlert, animated: true, completion: nil)
+        }
+        
+    }
+   
 
 }
 
