@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="nSa-Y8-Fhj">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Lgr-Cw-Jop">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <mutableArray key="HelveticaNeue.ttc">
+            <string>HelveticaNeue</string>
+        </mutableArray>
         <mutableArray key="System San Francisco Display Regular.ttf">
             <string>.HelveticaNeueDeskInterface-Regular</string>
             <string>.HelveticaNeueDeskInterface-Regular</string>
@@ -115,6 +119,86 @@
             </objects>
             <point key="canvasLocation" x="266" y="-762"/>
         </scene>
+        <!--Sea ListVC-->
+        <scene sceneID="IW7-DO-Vyb">
+            <objects>
+                <viewController id="Ok1-gl-0lN" customClass="SeaListVC" customModule="Figofy" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="b08-6a-2pt"/>
+                        <viewControllerLayoutGuide type="bottom" id="lQA-3Z-LF0"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="FBT-f2-Vjo">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="70" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="vUY-f2-DXs">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" red="0.59999999999999998" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SeaCell" rowHeight="70" id="Xyy-fJ-ozM" customClass="SeaCell" customModule="Figofy" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="600" height="70"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Xyy-fJ-ozM" id="Ik1-Ue-OnZ">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="70"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="ØsterSø" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RQd-gQ-D4a">
+                                                    <rect key="frame" x="66" y="5" width="526" height="21"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="SFG-Xh-xZ5">
+                                                    <rect key="frame" x="66" y="28" width="526" height="27"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-LightItalic" family="Helvetica Neue" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstItem="RQd-gQ-D4a" firstAttribute="trailing" secondItem="Ik1-Ue-OnZ" secondAttribute="trailingMargin" id="QcI-ef-s3r"/>
+                                                <constraint firstItem="RQd-gQ-D4a" firstAttribute="top" secondItem="Ik1-Ue-OnZ" secondAttribute="topMargin" id="ZBx-ap-HhL"/>
+                                                <constraint firstItem="SFG-Xh-xZ5" firstAttribute="trailing" secondItem="Ik1-Ue-OnZ" secondAttribute="trailingMargin" id="d50-J1-XJ3"/>
+                                                <constraint firstItem="SFG-Xh-xZ5" firstAttribute="top" secondItem="RQd-gQ-D4a" secondAttribute="bottom" constant="2" id="h3N-RK-ojU"/>
+                                                <constraint firstItem="RQd-gQ-D4a" firstAttribute="top" secondItem="Ik1-Ue-OnZ" secondAttribute="topMargin" id="kDb-xV-6nX"/>
+                                                <constraint firstItem="SFG-Xh-xZ5" firstAttribute="top" secondItem="RQd-gQ-D4a" secondAttribute="bottom" constant="2" id="xp6-Nl-fN6"/>
+                                            </constraints>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="QcI-ef-s3r"/>
+                                                    <exclude reference="ZBx-ap-HhL"/>
+                                                    <exclude reference="d50-J1-XJ3"/>
+                                                    <exclude reference="xp6-Nl-fN6"/>
+                                                </mask>
+                                            </variation>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" red="1" green="0.93591099560000002" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <outlet property="seaAddress" destination="SFG-Xh-xZ5" id="HNg-TZ-m1a"/>
+                                            <outlet property="seaName" destination="RQd-gQ-D4a" id="uzx-2U-l8j"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="lQA-3Z-LF0" firstAttribute="top" secondItem="vUY-f2-DXs" secondAttribute="bottom" id="6Dc-CK-Ovi"/>
+                            <constraint firstAttribute="trailing" secondItem="vUY-f2-DXs" secondAttribute="trailing" id="McY-Ck-JHP"/>
+                            <constraint firstItem="vUY-f2-DXs" firstAttribute="top" secondItem="FBT-f2-Vjo" secondAttribute="top" id="ZPQ-LI-p70"/>
+                            <constraint firstItem="vUY-f2-DXs" firstAttribute="leading" secondItem="FBT-f2-Vjo" secondAttribute="leading" id="hSm-sq-QdU"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="vUY-f2-DXs" id="jbW-6F-X5h"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SCV-JA-aDZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1030" y="1607"/>
+        </scene>
         <!--Map View-->
         <scene sceneID="Cpd-FU-0nO">
             <objects>
@@ -130,16 +214,32 @@
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="94K-wD-Pqc">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </mapView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="65q-Ja-tfO">
+                                <rect key="frame" x="0.0" y="556" width="600" height="44"/>
+                                <items/>
+                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="94K-wD-Pqc" secondAttribute="trailing" id="QPE-46-l45"/>
+                            <constraint firstItem="65q-Ja-tfO" firstAttribute="leading" secondItem="fTO-2m-hkx" secondAttribute="leading" id="Sy9-eG-9CK"/>
                             <constraint firstItem="20o-h0-tuc" firstAttribute="top" secondItem="94K-wD-Pqc" secondAttribute="bottom" id="Uya-Wk-oDI"/>
+                            <constraint firstAttribute="trailing" secondItem="65q-Ja-tfO" secondAttribute="trailing" id="ZAT-XS-ZL7"/>
+                            <constraint firstItem="20o-h0-tuc" firstAttribute="top" secondItem="65q-Ja-tfO" secondAttribute="bottom" id="kVU-pm-KCm"/>
                             <constraint firstItem="94K-wD-Pqc" firstAttribute="top" secondItem="fTO-2m-hkx" secondAttribute="top" id="qH5-zx-PlX"/>
                             <constraint firstItem="94K-wD-Pqc" firstAttribute="leading" secondItem="fTO-2m-hkx" secondAttribute="leading" id="sZV-Kw-PUt"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Current Location" id="j9P-KQ-yo3"/>
+                    <navigationItem key="navigationItem" title="Current Location" id="j9P-KQ-yo3">
+                        <barButtonItem key="rightBarButtonItem" systemItem="bookmarks" id="okH-Rn-4jO" userLabel="popover">
+                            <connections>
+                                <action selector="onPopoverTapped:" destination="RWH-db-0dg" id="7eE-Nk-340"/>
+                                <segue destination="Ok1-gl-0lN" kind="popoverPresentation" identifier="showSeas" popoverAnchorBarButtonItem="okH-Rn-4jO" id="M22-R0-Jna">
+                                    <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                </segue>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="map" destination="94K-wD-Pqc" id="kVM-gY-tIN"/>
                     </connections>
@@ -236,7 +336,7 @@
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </view>
-                    <navigationItem key="navigationItem" title="Overview" id="s6T-vQ-C1u"/>
+                    <navigationItem key="navigationItem" title="Overview" id="9Bi-yn-Bxo"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pfr-f0-zYm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

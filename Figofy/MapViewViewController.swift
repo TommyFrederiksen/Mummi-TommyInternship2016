@@ -11,7 +11,7 @@ import MapKit
 import CoreLocation
 import Contacts
 
-class MapViewViewController: UIViewController, MKMapViewDelegate {
+class MapViewViewController: UIViewController, MKMapViewDelegate, UIPopoverPresentationControllerDelegate {
     
     
     @IBOutlet weak var map: MKMapView!
@@ -32,30 +32,12 @@ class MapViewViewController: UIViewController, MKMapViewDelegate {
             getPlacemarkFromAddress(add)
         }
         
-    
         
     }
     
     override func viewDidAppear(animated: Bool) {
         locationAuthStatus()
     }
-    
-    
-//    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-//        return 1
-//    }
-//    
-//    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return 1
-//    }
-//    
-//    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-//        return UITableViewCell()
-//    }
-//    
-//    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-//        
-//    }
     
     func locationAuthStatus() {
         if CLLocationManager.authorizationStatus() == .AuthorizedWhenInUse {
@@ -71,6 +53,7 @@ class MapViewViewController: UIViewController, MKMapViewDelegate {
         
         map.setRegion(coordinateRegion, animated: true)
         
+        locationManager.stopUpdatingLocation()
     }
     
     func mapView(mapView: MKMapView, didUpdateUserLocation userLocation: MKUserLocation) {
@@ -90,7 +73,6 @@ class MapViewViewController: UIViewController, MKMapViewDelegate {
         if annotation.isKindOfClass(SeaAnnotation){
             let annoView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: "Default")
             annoView.animatesDrop = true
-            annoView
             return annoView
             
         } else if annotation.isKindOfClass(MKUserLocation) {
@@ -117,7 +99,27 @@ class MapViewViewController: UIViewController, MKMapViewDelegate {
             }
         }
     }
-
+    
+    @IBAction func onPopoverTapped(sender: AnyObject) {
+        self.performSegueWithIdentifier("showSeas", sender: nil)
+        
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "showSeas" {
+            let vc = segue.destinationViewController
+            let controller = vc.popoverPresentationController
+            
+            if controller != nil {
+                controller?.delegate = self
+            }
+        }
+    }
+    
+    func adaptivePresentationStyleForPresentationController(controller: UIPresentationController) -> UIModalPresentationStyle {
+        return .None
+    }
+    
     
     
 }

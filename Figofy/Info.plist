@@ -52,5 +52,10 @@
 		<string>System San Francisco Display Bold</string>
 		<string>System San Francisco Display Regular</string>
 	</array>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
 </dict>
 </plist>
