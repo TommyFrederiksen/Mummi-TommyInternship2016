@@ -42,6 +42,7 @@ class MapViewViewController: UIViewController, MKMapViewDelegate, UIPopoverPrese
     func locationAuthStatus() {
         if CLLocationManager.authorizationStatus() == .AuthorizedWhenInUse {
             map.showsUserLocation = true
+            locationManager.stopUpdatingLocation()
         } else {
             locationManager.requestWhenInUseAuthorization()
         }
@@ -53,7 +54,6 @@ class MapViewViewController: UIViewController, MKMapViewDelegate, UIPopoverPrese
         
         map.setRegion(coordinateRegion, animated: true)
         
-        locationManager.stopUpdatingLocation()
     }
     
     func mapView(mapView: MKMapView, didUpdateUserLocation userLocation: MKUserLocation) {
