@@ -11,11 +11,10 @@ import UIKit
 
 class LakeInformationViewController: UIViewController {
     
+ 
     
-    @IBOutlet weak var oneHourButton: UIButton!
     
-    @IBOutlet weak var treeHourButton: UIButton!
-    @IBOutlet weak var fiveHourButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
