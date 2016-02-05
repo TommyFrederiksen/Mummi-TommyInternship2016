@@ -47,10 +47,10 @@
 	</array>
 	<key>UIAppFonts</key>
 	<array>
-		<string>System San Francisco Display Thin</string>
-		<string>System San Francisco Display Ultralight</string>
-		<string>System San Francisco Display Bold</string>
-		<string>System San Francisco Display Regular</string>
+		<string>System San Francisco Display Thin.ttf</string>
+		<string>System San Francisco Display Ultralight.ttf</string>
+		<string>System San Francisco Display Bold.ttf</string>
+		<string>System San Francisco Display Regular.ttf</string>
 	</array>
 	<key>NSAppTransportSecurity</key>
 	<dict>
