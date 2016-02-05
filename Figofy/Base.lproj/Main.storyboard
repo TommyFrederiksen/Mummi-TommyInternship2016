@@ -158,9 +158,6 @@
                                                         <color key="value" red="1" green="0.59644796560000002" blue="0.15540196040000001" alpha="1" colorSpace="calibratedRGB"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
-                                                <connections>
-                                                    <segue destination="Lgr-Cw-Jop" kind="show" id="dfO-es-oyi"/>
-                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
