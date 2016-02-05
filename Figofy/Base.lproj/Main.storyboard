@@ -167,7 +167,7 @@
                                 </subviews>
                                 <variation key="heightClass=compact" axis="horizontal" spacing="30"/>
                             </stackView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Figofy_app_trans" translatesAutoresizingMaskIntoConstraints="NO" id="eC9-tz-fvp">
+                            <stackView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Figofy_app_trans" translatesAutoresizingMaskIntoConstraints="NO" id="eC9-tz-fvp">
                                 <rect key="frame" x="203" y="30" width="193" height="140"/>
                                 <constraints>
                                     <constraint firstItem="1Tp-Uh-HvH" firstAttribute="leading" secondItem="HQy-My-uvF" secondAttribute="leadingMargin" id="LhI-fG-5xL"/>
