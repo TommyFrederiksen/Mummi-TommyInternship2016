@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Lgr-Cw-Jop">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
@@ -10,9 +10,16 @@
             <string>HelveticaNeue</string>
             <string>HelveticaNeue</string>
         </mutableArray>
+        <mutableArray key="System San Francisco Display Bold.ttf">
+            <string>.HelveticaNeueDeskInterface-Bold</string>
+        </mutableArray>
         <mutableArray key="System San Francisco Display Regular.ttf">
             <string>.HelveticaNeueDeskInterface-Regular</string>
             <string>.HelveticaNeueDeskInterface-Regular</string>
+        </mutableArray>
+        <mutableArray key="System San Francisco Display Thin.ttf">
+            <string>.HelveticaNeueDeskInterface-Thin</string>
+            <string>.HelveticaNeueDeskInterface-Thin</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -28,86 +35,154 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="GmJ-Tf-7ge">
-                                <rect key="frame" x="200" y="230" width="200" height="140"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="HQy-My-uvF">
+                                <rect key="frame" x="20" y="20" width="560" height="516"/>
                                 <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="k32-Jt-idm" customClass="TextFieldDesign" customModule="Figofy" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="200" height="60"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="gdD-3B-Msf">
+                                        <rect key="frame" x="166" y="0.0" width="228" height="204"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Figofy_app_trans" translatesAutoresizingMaskIntoConstraints="NO" id="Oho-4c-J6S">
+                                                <rect key="frame" x="0.0" y="0.0" width="228" height="204"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="204" id="MIy-pm-8We"/>
+                                                    <constraint firstAttribute="width" constant="228" id="aZ5-Q4-OaW"/>
+                                                </constraints>
+                                            </imageView>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="1Tp-Uh-HvH">
+                                        <rect key="frame" x="0.0" y="234" width="560" height="160"/>
+                                        <subviews>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="k32-Jt-idm" customClass="TextFieldDesign" customModule="Figofy" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="560" height="60"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="60" id="LxO-Ym-fgt"/>
+                                                    <constraint firstAttribute="width" constant="200" id="it4-zF-4fr">
+                                                        <variation key="heightClass=compact" constant="350"/>
+                                                    </constraint>
+                                                </constraints>
+                                                <color key="textColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" name=".HelveticaNeueDeskInterface-Regular" family="SFNS Display" pointSize="19"/>
+                                                <textInputTraits key="textInputTraits" spellCheckingType="no"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
+                                                        <color key="value" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                        <color key="value" red="0.53725490200000003" green="0.82745098039999998" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="placeholderFontScale">
+                                                        <real key="value" value="1"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </textField>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="54z-GJ-c7z" customClass="TextFieldDesign" customModule="Figofy" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="65" width="560" height="60"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="60" id="Wxt-7D-imk"/>
+                                                    <constraint firstAttribute="width" constant="200" id="ixP-Pi-f2R">
+                                                        <variation key="heightClass=compact" constant="350"/>
+                                                    </constraint>
+                                                </constraints>
+                                                <color key="textColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" name=".HelveticaNeueDeskInterface-Regular" family="SFNS Display" pointSize="19"/>
+                                                <textInputTraits key="textInputTraits" spellCheckingType="no" secureTextEntry="YES"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
+                                                        <color key="value" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                        <color key="value" red="0.53725490200000003" green="0.82745098039999998" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="placeholderFontScale">
+                                                        <real key="value" value="1"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </textField>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0yJ-To-3DF">
+                                                <rect key="frame" x="0.0" y="130" width="560" height="30"/>
+                                                <color key="backgroundColor" red="0.53725490200000003" green="0.82745098039999998" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="30" id="Gzl-tD-5wP"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name=".HelveticaNeueDeskInterface-Bold" family="SFNS Display" pointSize="15"/>
+                                                <state key="normal" title="Login">
+                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="Login:" destination="BYZ-38-t0r" eventType="touchUpInside" id="g0R-wY-XgD"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="60" id="BDO-UK-Lt8"/>
-                                            <constraint firstAttribute="width" constant="200" id="svr-Q9-M5n"/>
+                                            <constraint firstItem="0yJ-To-3DF" firstAttribute="width" secondItem="54z-GJ-c7z" secondAttribute="width" id="eo0-v6-8aT"/>
                                         </constraints>
-                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" name=".HelveticaNeueDeskInterface-Regular" family="SFNS Display" pointSize="19"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
-                                                <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                <color key="value" red="1" green="0.59644796560000002" blue="0.15540196040000001" alpha="1" colorSpace="calibratedRGB"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="placeholderFontScale">
-                                                <real key="value" value="1"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="54z-GJ-c7z" customClass="TextFieldDesign" customModule="Figofy" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="80" width="200" height="60"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="200" id="5iS-W9-owL"/>
-                                            <constraint firstAttribute="height" constant="60" id="hok-yS-zBN"/>
-                                        </constraints>
-                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" name=".HelveticaNeueDeskInterface-Regular" family="SFNS Display" pointSize="19"/>
-                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
-                                                <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="placeholderFontScale">
-                                                <real key="value" value="1"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </textField>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="eo0-v6-8aT"/>
+                                            </mask>
+                                        </variation>
+                                        <variation key="heightClass=compact" alignment="center">
+                                            <mask key="constraints">
+                                                <include reference="eo0-v6-8aT"/>
+                                            </mask>
+                                        </variation>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="HQZ-cw-hbi">
+                                        <rect key="frame" x="195" y="424" width="171" height="92"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="252" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" text="Don't have an account?" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5VD-vX-91m">
+                                                <rect key="frame" x="0.0" y="39" width="126" height="15"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="15" id="AMJ-pf-9qe"/>
+                                                    <constraint firstAttribute="width" constant="126" id="ETJ-a9-mVf"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name=".HelveticaNeueDeskInterface-Thin" family="SFNS Display" pointSize="12"/>
+                                                <color key="textColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d2f-l4-Avi" customClass="ButtonDesign" customModule="Figofy" customModuleProvider="target">
+                                                <rect key="frame" x="131" y="39" width="40" height="15"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="15" id="JCj-ol-dVc"/>
+                                                    <constraint firstAttribute="width" constant="40" id="wKd-YN-VxH"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name=".HelveticaNeueDeskInterface-Thin" family="SFNS Display" pointSize="12"/>
+                                                <state key="normal" title="Sign up"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                        <color key="value" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="buttonColor">
+                                                        <color key="value" red="1" green="0.59644796560000002" blue="0.15540196040000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <segue destination="Lgr-Cw-Jop" kind="show" id="dfO-es-oyi"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
-                                <variation key="heightClass=compact" axis="horizontal" spacing="30"/>
-                            </stackView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Figofy_app_trans" translatesAutoresizingMaskIntoConstraints="NO" id="eC9-tz-fvp">
-                                <rect key="frame" x="203" y="28" width="193" height="140"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="193" id="YmY-Eb-OK2"/>
-                                    <constraint firstAttribute="height" constant="140" id="uBa-wO-MKy"/>
+                                    <constraint firstItem="1Tp-Uh-HvH" firstAttribute="leading" secondItem="HQy-My-uvF" secondAttribute="leadingMargin" id="LhI-fG-5xL"/>
+                                    <constraint firstAttribute="trailingMargin" secondItem="1Tp-Uh-HvH" secondAttribute="trailing" id="bkb-it-Jpb"/>
                                 </constraints>
-                                <variation key="heightClass=compact" misplaced="YES">
-                                    <rect key="frame" x="157" y="28" width="287" height="79"/>
-                                </variation>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d2f-l4-Avi">
-                                <rect key="frame" x="276" y="415" width="46" height="30"/>
-                                <state key="normal" title="Login"/>
-                                <connections>
-                                    <action selector="Login:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tHR-gD-QXc"/>
-                                    <segue destination="Lgr-Cw-Jop" kind="show" id="dfO-es-oyi"/>
-                                </connections>
-                            </button>
+                            </stackView>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="GmJ-Tf-7ge" firstAttribute="centerX" secondItem="ZcC-Mc-tox" secondAttribute="centerX" id="GYJ-qI-BBw"/>
-                            <constraint firstItem="GmJ-Tf-7ge" firstAttribute="centerY" secondItem="ZcC-Mc-tox" secondAttribute="centerY" id="fW2-is-38d"/>
-                            <constraint firstItem="GmJ-Tf-7ge" firstAttribute="centerX" secondItem="eC9-tz-fvp" secondAttribute="centerX" id="gWi-gT-ZgD"/>
-                            <constraint firstItem="eC9-tz-fvp" firstAttribute="top" secondItem="9yP-PR-nC1" secondAttribute="bottom" constant="10" id="l2D-HD-qEm"/>
-                            <constraint firstItem="GmJ-Tf-7ge" firstAttribute="centerX" secondItem="ZcC-Mc-tox" secondAttribute="centerX" id="oQP-TC-6Li"/>
+                            <constraint firstItem="HQy-My-uvF" firstAttribute="top" secondItem="9yP-PR-nC1" secondAttribute="bottom" id="7ky-1g-Dgh"/>
+                            <constraint firstItem="kMn-oS-Fuu" firstAttribute="top" secondItem="HQy-My-uvF" secondAttribute="bottom" constant="20" id="E4Y-H5-QnS"/>
+                            <constraint firstItem="HQy-My-uvF" firstAttribute="leading" secondItem="ZcC-Mc-tox" secondAttribute="leadingMargin" id="RVM-iZ-8on"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="HQy-My-uvF" secondAttribute="trailing" id="XVR-J7-f0O"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="color" keyPath="topColor">
-                                <color key="value" red="0.40000000000000002" green="0.80000000000000004" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="value" red="0.15500245526739304" green="0.21859127582165605" blue="0.59417067307692306" alpha="1" colorSpace="calibratedRGB"/>
                             </userDefinedRuntimeAttribute>
                             <userDefinedRuntimeAttribute type="color" keyPath="bottomColor">
-                                <color key="value" red="0.53725490196078429" green="0.82745098039215681" blue="0.94901960784313721" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="value" red="0.20831585570469799" green="0.29229048356565129" blue="0.44940562618310059" alpha="1" colorSpace="calibratedRGB"/>
                             </userDefinedRuntimeAttribute>
                             <userDefinedRuntimeAttribute type="number" keyPath="opacity">
                                 <real key="value" value="1"/>

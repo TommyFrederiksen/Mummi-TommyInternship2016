@@ -9,33 +9,47 @@
 import UIKit
 
 
-class LoginViewController: UIViewController
-{
+class LoginViewController: UIViewController, UITextFieldDelegate {
 
-    
-    
-    
-    
-    let Users = [["Søren","Figofy"],["Kim","Figofy"],["Tommy","Figofy"],["Mummi","Figofy"],["Figofy","Figofy"]]
-    
-    
+    //MARK: IBOutlets
     @IBOutlet weak var usernameTextField: TextFieldDesign!
-    
     @IBOutlet weak var passwordTextField: TextFieldDesign!
     
     
-    @IBOutlet var backgroundView: GradientColor!
-    
+    // MARK: Variables
     let layer = CAGradientLayer()
+    let Users = [["Søren","Figofy"],["Kim","Figofy"],["Tommy","Figofy"],["Mummi","Figofy"],["Figofy","Figofy"]]
     
+    // MARK: View Methods
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        self.usernameTextField.delegate = self
+        self.passwordTextField.delegate = self
+        
+        
+    }
+    
+    // MARK: Custom Methods
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        view.endEditing(true)
+        super.touchesBegan(touches, withEvent: event)
         
     }
 
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        
+        return true
+    }
+    
+    
+    
+    //MARK: IBAction
     @IBAction func Login(sender: AnyObject)
     {
+        
         let username = usernameTextField.text;
         let password = passwordTextField.text;
         
@@ -50,6 +64,7 @@ class LoginViewController: UIViewController
                 }))
             
             self.presentViewController(uiAlert, animated: true, completion: nil)
+            view.endEditing(true)
             
             
             
