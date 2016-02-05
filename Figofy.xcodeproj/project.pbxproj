@@ -38,6 +38,11 @@
 		654A271A1C350EA6008AA4EB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 654A27181C350EA6008AA4EB /* LaunchScreen.storyboard */; };
 		654A27251C350EA7008AA4EB /* FigofyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654A27241C350EA7008AA4EB /* FigofyTests.swift */; };
 		654A27301C350EA7008AA4EB /* FigofyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654A272F1C350EA7008AA4EB /* FigofyUITests.swift */; };
+		655044C91C636F7700D79B89 /* EventTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655044C81C636F7700D79B89 /* EventTableVC.swift */; };
+		655044CB1C637C2900D79B89 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655044CA1C637C2900D79B89 /* Event.swift */; };
+		655044CD1C64CF1100D79B89 /* ClockVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655044CC1C64CF1100D79B89 /* ClockVC.swift */; };
+		655044CF1C64D24700D79B89 /* Clock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655044CE1C64D24700D79B89 /* Clock.swift */; };
+		657368CE1C635E3900E1367D /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 657368CD1C635E3900E1367D /* EventTableViewCell.swift */; };
 		B09EB5B85DC919F2CDD54667 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E7C50AA277E747DDA8657D91 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -97,6 +102,11 @@
 		654A272B1C350EA7008AA4EB /* FigofyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FigofyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		654A272F1C350EA7008AA4EB /* FigofyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FigofyUITests.swift; sourceTree = "<group>"; };
 		654A27311C350EA7008AA4EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		655044C81C636F7700D79B89 /* EventTableVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventTableVC.swift; sourceTree = "<group>"; };
+		655044CA1C637C2900D79B89 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		655044CC1C64CF1100D79B89 /* ClockVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClockVC.swift; sourceTree = "<group>"; };
+		655044CE1C64D24700D79B89 /* Clock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Clock.swift; sourceTree = "<group>"; };
+		657368CD1C635E3900E1367D /* EventTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventTableViewCell.swift; path = ../EventTableViewCell.swift; sourceTree = "<group>"; };
 		E7C50AA277E747DDA8657D91 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3D388C7DAA3D5DB5B97783B /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -152,6 +162,7 @@
 		184696C51C5F4A450095D64B /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				657368CD1C635E3900E1367D /* EventTableViewCell.swift */,
 				18CCAA961C60D5B700C7D5E8 /* CreateSeaVC.swift */,
 				651018161C50DB4C00B7FECC /* LakeInformationViewController.swift */,
 				654A27111C350EA6008AA4EB /* LoginViewController.swift */,
@@ -160,6 +171,8 @@
 				651018101C4FB8D100B7FECC /* OverviewViewControler.swift */,
 				651018121C50D93100B7FECC /* ProfileViewController.swift */,
 				1846984E1C60C0E50095D64B /* SeaListVC.swift */,
+				655044C81C636F7700D79B89 /* EventTableVC.swift */,
+				655044CC1C64CF1100D79B89 /* ClockVC.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -170,6 +183,8 @@
 				187625E41C60F251003828DD /* Sea.swift */,
 				187625E51C60F251003828DD /* Sea+CoreDataProperties.swift */,
 				184696C91C5F61710095D64B /* SeaAnnotation.swift */,
+				655044CA1C637C2900D79B89 /* Event.swift */,
+				655044CE1C64D24700D79B89 /* Clock.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -451,20 +466,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				655044CD1C64CF1100D79B89 /* ClockVC.swift in Sources */,
 				651018171C50DB4C00B7FECC /* LakeInformationViewController.swift in Sources */,
 				651018131C50D93100B7FECC /* ProfileViewController.swift in Sources */,
 				184696CA1C5F61710095D64B /* SeaAnnotation.swift in Sources */,
+				655044C91C636F7700D79B89 /* EventTableVC.swift in Sources */,
 				654A27121C350EA6008AA4EB /* LoginViewController.swift in Sources */,
 				184696F01C5F9A000095D64B /* CustomFigofyAnnotation.swift in Sources */,
 				184698461C60A34B0095D64B /* Figofy.xcdatamodeld in Sources */,
 				654A27101C350EA6008AA4EB /* AppDelegate.swift in Sources */,
 				18E675821C58B76F0046B259 /* TextFieldEffects.swift in Sources */,
+				657368CE1C635E3900E1367D /* EventTableViewCell.swift in Sources */,
 				187625E71C60F251003828DD /* Sea+CoreDataProperties.swift in Sources */,
 				18CCAA981C60D5B700C7D5E8 /* CreateSeaVC.swift in Sources */,
+				655044CB1C637C2900D79B89 /* Event.swift in Sources */,
 				651018111C4FB8D100B7FECC /* OverviewViewControler.swift in Sources */,
 				18E675801C58B6850046B259 /* TextFieldDesign.swift in Sources */,
 				183B64C51C58F58C00B78D1B /* GradientColor.swift in Sources */,
 				1846984F1C60C0E50095D64B /* SeaListVC.swift in Sources */,
+				655044CF1C64D24700D79B89 /* Clock.swift in Sources */,
 				1846984C1C60BE8E0095D64B /* SeaCell.swift in Sources */,
 				651018191C50DBDC00B7FECC /* MobilePayViewController.swift in Sources */,
 				651018151C50D9EB00B7FECC /* MapViewViewController.swift in Sources */,
