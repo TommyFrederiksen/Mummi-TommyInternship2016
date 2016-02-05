@@ -8,6 +8,7 @@
     <customFonts key="customFonts">
         <mutableArray key="HelveticaNeue.ttc">
             <string>HelveticaNeue</string>
+            <string>HelveticaNeue</string>
         </mutableArray>
         <mutableArray key="System San Francisco Display Regular.ttf">
             <string>.HelveticaNeueDeskInterface-Regular</string>
@@ -223,7 +224,13 @@
                             </mapView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="65q-Ja-tfO">
                                 <rect key="frame" x="0.0" y="556" width="600" height="44"/>
-                                <items/>
+                                <items>
+                                    <barButtonItem style="plain" systemItem="refresh" id="69q-Ti-Q15">
+                                        <connections>
+                                            <action selector="onRefreshPressed:" destination="RWH-db-0dg" id="qCq-IJ-4eh"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
                             </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -319,14 +326,14 @@
                                             </button>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="c32-eZ-Q08">
-                                        <rect key="frame" x="0.0" y="150" width="200" height="100"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="c32-eZ-Q08">
+                                        <rect key="frame" x="0.0" y="155" width="305" height="150"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="chZ-Tn-Mmc">
-                                                <rect key="frame" x="0.0" y="0.0" width="200" height="100"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="chZ-Tn-Mmc">
+                                                <rect key="frame" x="0.0" y="0.0" width="305" height="150"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ogP-gS-Czz" customClass="ButtonDesign" customModule="Figofy" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ogP-gS-Czz" customClass="ButtonDesign" customModule="Figofy" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="153" height="150"/>
                                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="100" id="aR2-9a-q3a"/>
@@ -336,8 +343,8 @@
                                                             <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                         </state>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9LP-D1-WvN" customClass="ButtonDesign" customModule="Figofy" customModuleProvider="target">
-                                                        <rect key="frame" x="100" y="0.0" width="100" height="100"/>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9LP-D1-WvN" customClass="ButtonDesign" customModule="Figofy" customModuleProvider="target">
+                                                        <rect key="frame" x="153" y="0.0" width="153" height="150"/>
                                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                         <state key="normal" title="View4">
                                                             <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -369,10 +376,6 @@
                         </userDefinedRuntimeAttributes>
                     </view>
                     <navigationItem key="navigationItem" id="s6T-vQ-C1u"/>
-                    <connections>
-                        <outlet property="lakeViewButton" destination="Dhj-TF-Fq3" id="uGT-fr-f1o"/>
-                        <outlet property="profileButton" destination="GbW-20-3Tr" id="igS-qL-Vlg"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pfr-f0-zYm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -500,11 +503,11 @@
                         <viewControllerLayoutGuide type="bottom" id="ZdR-EL-mmt"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="5EH-c4-bri">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Verdens beste Fiskesø" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cdt-E6-5iA">
-                                <rect key="frame" x="0.0" y="64" width="343" height="20"/>
+                                <rect key="frame" x="0.0" y="64" width="560" height="20"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -562,9 +565,9 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kV2-Ux-UZW" userLabel="Stack View 2">
-                                <rect key="frame" x="0.0" y="210" width="397" height="150"/>
+                                <rect key="frame" x="0.0" y="210" width="614" height="150"/>
                                 <subviews>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" misplaced="YES" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AeP-af-kJx">
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AeP-af-kJx">
                                         <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
                                         <color key="backgroundColor" red="0.40000000000000002" green="0.80000000000000004" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
@@ -582,13 +585,13 @@ Søndag   00:00 - 21:00</string>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="13"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="images-3" translatesAutoresizingMaskIntoConstraints="NO" id="YCA-3g-EVg">
-                                        <rect key="frame" x="150" y="0.0" width="247" height="150"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="images-3" translatesAutoresizingMaskIntoConstraints="NO" id="YCA-3g-EVg">
+                                        <rect key="frame" x="150" y="0.0" width="464" height="150"/>
                                     </imageView>
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="KMa-au-xmo" userLabel="Stack View 4">
-                                <rect key="frame" x="20" y="448" width="343" height="108"/>
+                                <rect key="frame" x="20" y="448" width="560" height="108"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleAspectFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="kcW-ay-95Q">
                                         <rect key="frame" x="0.0" y="0.0" width="92" height="108"/>
@@ -619,7 +622,7 @@ Søndag   00:00 - 21:00</string>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NZB-zk-uGQ">
-                                                        <rect key="frame" x="44" y="0.0" width="48" height="27"/>
+                                                        <rect key="frame" x="44" y="0.0" width="49" height="27"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                         <state key="normal" title="160,- Kr"/>
                                                     </button>
@@ -635,7 +638,7 @@ Søndag   00:00 - 21:00</string>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="byb-ei-lgm">
-                                                        <rect key="frame" x="44" y="0.0" width="48" height="27"/>
+                                                        <rect key="frame" x="44" y="0.0" width="49" height="27"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                         <state key="normal" title="190,- Kr"/>
                                                     </button>
@@ -651,7 +654,7 @@ Søndag   00:00 - 21:00</string>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TsM-iu-kSS">
-                                                        <rect key="frame" x="44" y="0.0" width="48" height="27"/>
+                                                        <rect key="frame" x="44" y="0.0" width="49" height="27"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                         <state key="normal" title="260,- Kr"/>
                                                     </button>
@@ -660,10 +663,10 @@ Søndag   00:00 - 21:00</string>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleAspectFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="XbZ-0G-uZy">
-                                        <rect key="frame" x="92" y="0.0" width="251" height="104"/>
+                                        <rect key="frame" x="92" y="0.0" width="468" height="104"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3gw-ea-h3N">
-                                                <rect key="frame" x="0.0" y="0.0" width="251" height="20"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="468" height="20"/>
                                                 <inset key="contentEdgeInsets" minX="148" minY="6" maxX="-5" maxY="0.0"/>
                                                 <state key="normal">
                                                     <attributedString key="attributedTitle">
@@ -676,25 +679,25 @@ Søndag   00:00 - 21:00</string>
                                                 </state>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IHW-Xa-81u">
-                                                <rect key="frame" x="0.0" y="20" width="251" height="21"/>
+                                                <rect key="frame" x="0.0" y="20" width="468" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                 <inset key="contentEdgeInsets" minX="126" minY="6" maxX="-5" maxY="0.0"/>
                                                 <state key="normal" title="Faciliteter"/>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ELK-eP-2uQ">
-                                                <rect key="frame" x="0.0" y="41" width="251" height="21"/>
+                                                <rect key="frame" x="0.0" y="41" width="468" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                 <inset key="contentEdgeInsets" minX="92" minY="6" maxX="-5" maxY="0.0"/>
                                                 <state key="normal" title="Links til Fiskesø"/>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XkY-6g-ZVM">
-                                                <rect key="frame" x="0.0" y="62" width="251" height="21"/>
+                                                <rect key="frame" x="0.0" y="62" width="468" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                 <inset key="contentEdgeInsets" minX="150" minY="6" maxX="0.0" maxY="0.0"/>
                                                 <state key="normal" title="Regler"/>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RgV-ab-HjX">
-                                                <rect key="frame" x="0.0" y="83" width="251" height="21"/>
+                                                <rect key="frame" x="0.0" y="83" width="468" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                 <inset key="contentEdgeInsets" minX="76" minY="6" maxX="0.0" maxY="0.0"/>
                                                 <state key="normal" title="Send Besked til Ejer"/>
@@ -778,6 +781,5 @@ Søndag   00:00 - 21:00</string>
         <image name="Figofy_app_trans" width="1024" height="1024"/>
         <image name="Figofy_app_trans.png" width="1024" height="1024"/>
         <image name="images-3" width="259" height="194"/>
-        <image name="sjælland.PNG" width="182" height="199"/>
     </resources>
 </document>

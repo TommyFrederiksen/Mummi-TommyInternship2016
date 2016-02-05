@@ -11,27 +11,27 @@ import MapKit
 import CoreLocation
 import Contacts
 
-class MapViewViewController: UIViewController, MKMapViewDelegate, UIPopoverPresentationControllerDelegate {
+class MapViewViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, UIPopoverPresentationControllerDelegate {
     
-    
+    // MARK: IBOutlets
     @IBOutlet weak var map: MKMapView!
     
-    let locationManager = CLLocationManager()
     
-     //default value of the starting zoom
-    let regionRadius: CLLocationDistance = 1000
+    // MARK: Variables
+    let locationManager = CLLocationManager()
+    let regionRadius: CLLocationDistance = 1000//default value of the starting zoom
+    var currentUserLocation: CLLocation!
     
     let addresses = ["Kalkgravsvej 22, 4000 roskilde", "Fiskervejen 75,4000 Roskilde" , "Holmevej 41,3670 Veksø"]
     
-    
+    // MARK: View Methods
     override func viewDidLoad() {
         super.viewDidLoad()
-        map.delegate = self
         
-        for add in addresses {
-            getPlacemarkFromAddress(add)
-        }
-        
+        self.map.delegate = self
+        self.map.userTrackingMode = MKUserTrackingMode.Follow
+        self.locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        self.locationManager.startUpdatingLocation()
         
     }
     
@@ -39,26 +39,29 @@ class MapViewViewController: UIViewController, MKMapViewDelegate, UIPopoverPrese
         locationAuthStatus()
     }
     
+    
+    // MARK: Custom Methods
     func locationAuthStatus() {
         if CLLocationManager.authorizationStatus() == .AuthorizedWhenInUse {
-            map.showsUserLocation = true
-            locationManager.stopUpdatingLocation()
+            self.map.showsUserLocation = true
         } else {
-            locationManager.requestWhenInUseAuthorization()
+            self.locationManager.requestWhenInUseAuthorization()
         }
     }
     
     func centerMapOnLocation(location: CLLocation) {
         
-        let coordinateRegion = MKCoordinateRegionMakeWithDistance(location.coordinate, regionRadius, regionRadius)
+        let coordinateRegion = MKCoordinateRegionMakeWithDistance(location.coordinate, regionRadius * 2, regionRadius * 2)
         
-        map.setRegion(coordinateRegion, animated: true)
+        self.map.setRegion(coordinateRegion, animated: true)
         
+        self.locationManager.stopUpdatingLocation()
     }
+    
     
     func mapView(mapView: MKMapView, didUpdateUserLocation userLocation: MKUserLocation) {
         if let loc = userLocation.location {
-            centerMapOnLocation(loc)
+            currentUserLocation = loc
         }
     }
     
@@ -84,7 +87,7 @@ class MapViewViewController: UIViewController, MKMapViewDelegate, UIPopoverPrese
     func createAnnotationForLocation(location: CLLocation) {
         let sea = SeaAnnotation(coordinate: location.coordinate)
         
-        map.addAnnotation(sea)
+        self.map.addAnnotation(sea)
         
     }
     
@@ -98,6 +101,12 @@ class MapViewViewController: UIViewController, MKMapViewDelegate, UIPopoverPrese
                 }
             }
         }
+    }
+    
+    // MARK: IBActions and Navigation
+    @IBAction func onRefreshPressed(sender: AnyObject) {
+        centerMapOnLocation(currentUserLocation)
+        
     }
     
     @IBAction func onPopoverTapped(sender: AnyObject) {
