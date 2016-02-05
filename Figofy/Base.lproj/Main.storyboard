@@ -53,7 +53,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="1Tp-Uh-HvH">
                                         <rect key="frame" x="0.0" y="234" width="560" height="160"/>
                                         <subviews>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="k32-Jt-idm" customClass="TextFieldDesign" customModule="Figofy" customModuleProvider="target">
+                                            <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="k32-Jt-idm" customClass="TextFieldDesign" customModule="Figofy" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="560" height="60"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="60" id="LxO-Ym-fgt"/>
@@ -63,7 +63,7 @@
                                                 </constraints>
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" name=".HelveticaNeueDeskInterface-Regular" family="SFNS Display" pointSize="19"/>
-                                                <textInputTraits key="textInputTraits" spellCheckingType="no"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="next"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
                                                         <color key="value" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
@@ -76,7 +76,7 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </textField>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="54z-GJ-c7z" customClass="TextFieldDesign" customModule="Figofy" customModuleProvider="target">
+                                            <textField opaque="NO" clipsSubviews="YES" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="54z-GJ-c7z" customClass="TextFieldDesign" customModule="Figofy" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="65" width="560" height="60"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="60" id="Wxt-7D-imk"/>
@@ -86,7 +86,7 @@
                                                 </constraints>
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" name=".HelveticaNeueDeskInterface-Regular" family="SFNS Display" pointSize="19"/>
-                                                <textInputTraits key="textInputTraits" spellCheckingType="no" secureTextEntry="YES"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="go" secureTextEntry="YES"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
                                                         <color key="value" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
@@ -99,7 +99,7 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </textField>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0yJ-To-3DF">
+                                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0yJ-To-3DF">
                                                 <rect key="frame" x="0.0" y="130" width="560" height="30"/>
                                                 <color key="backgroundColor" red="0.53725490200000003" green="0.82745098039999998" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
@@ -111,6 +111,7 @@
                                                 </state>
                                                 <connections>
                                                     <action selector="Login:" destination="BYZ-38-t0r" eventType="touchUpInside" id="g0R-wY-XgD"/>
+                                                    <segue destination="Lgr-Cw-Jop" kind="show" identifier="Login" id="xq7-7V-Y0Z"/>
                                                 </connections>
                                             </button>
                                         </subviews>

@@ -31,37 +31,16 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     }
     
     // MARK: Custom Methods
-    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        view.endEditing(true)
-        super.touchesBegan(touches, withEvent: event)
-        
-    }
-
-    
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
-        self.view.endEditing(true)
-        
-        return true
-    }
-    
-    
-    
-    //MARK: IBAction
-    @IBAction func Login(sender: AnyObject)
-    {
-        
-        let username = usernameTextField.text;
-        let password = passwordTextField.text;
-        
+    func login(){
         //empty fields in login
-        if(username == "" || password == "")
+        if(usernameTextField.text == "" || passwordTextField.text == "")
         {
             
             let uiAlert = UIAlertController(title: "OBS", message: "Username & Password kan ikke være tomme", preferredStyle: UIAlertControllerStyle.Alert)
             
             uiAlert.addAction(UIAlertAction(title: "OK", style: .Default, handler:
                 {(action: UIAlertAction!) in self.navigationController?.popToRootViewControllerAnimated(true)
-                }))
+            }))
             
             self.presentViewController(uiAlert, animated: true, completion: nil)
             view.endEditing(true)
@@ -73,24 +52,19 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         
         for (name) in Users
         {
-            if (name.contains(username!))
+            if (name.contains(usernameTextField.text!))
             {
-                if(name.contains(password!))
+                if(name.contains(passwordTextField.text!))
                 {
                     indicator = true;
-                    
-                 
-                    
-                }
-                if(name.contains(password!) == false)
-                {
+                    performSegueWithIdentifier("Login", sender: self)
                 }
             }
             else
             {
             }
         }
-        if(password == username)
+        if(passwordTextField.text == usernameTextField)
         {
             indicator = false;
         }
@@ -103,7 +77,32 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             
             self.presentViewController(uiAlert, animated: true, completion: nil)
         }
+    }
+    
+    
+    // MARK: Delegate Methods
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        view.endEditing(true)
+        super.touchesBegan(touches, withEvent: event)
         
+    }
+
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        if textField.tag == 1 {
+            passwordTextField.becomeFirstResponder()
+        } else if textField.returnKeyType == UIReturnKeyType.Go {
+            login()
+        }
+        
+        return true
+    }
+    
+    
+    //MARK: IBAction
+    @IBAction func Login(sender: AnyObject)
+    {
+        login()
     }
    
 
