@@ -11,7 +11,7 @@ import UIKit
 
 class MobilePayViewController: UIViewController {
     
-    
+    var payment = MobilePayPayment()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,6 +22,20 @@ class MobilePayViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    @IBAction func callMobilePayment() {
+        
+        MobilePayManager.sharedInstance().beginMobilePaymentWithPayment(payment) { error in
+            
+            if error.code == MobilePayErrorCode.PaymentRejectedFraud.rawValue {
+                print("something went wrong: \(error.debugDescription)" )
+            } else {
+                print("paid")
+            }
+            
+        }
+    
     }
     
     
