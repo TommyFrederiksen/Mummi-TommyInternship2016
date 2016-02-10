@@ -214,7 +214,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3722" y="-593"/>
+            <point key="canvasLocation" x="266" y="-700"/>
         </scene>
         <!--Sea ListVC-->
         <scene sceneID="IW7-DO-Vyb">
@@ -294,7 +294,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SCV-JA-aDZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3722" y="2825"/>
+            <point key="canvasLocation" x="1030" y="1607"/>
         </scene>
         <!--Clock-->
         <scene sceneID="DO7-Z1-tpI">
@@ -328,7 +328,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="o4w-1z-t6N" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4638" y="1989"/>
+            <point key="canvasLocation" x="1742" y="1607"/>
         </scene>
         <!--Event Log-->
         <scene sceneID="eJs-Jd-Uym">
@@ -406,7 +406,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hHl-kZ-oma" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2808" y="1989"/>
+            <point key="canvasLocation" x="266" y="897"/>
         </scene>
         <!--Map View-->
         <scene sceneID="Cpd-FU-0nO">
@@ -455,7 +455,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uod-Ho-TvD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3722" y="1989"/>
+            <point key="canvasLocation" x="1030" y="897"/>
         </scene>
         <!--OverView-->
         <scene sceneID="bVg-IZ-kBZ">
@@ -544,7 +544,7 @@
                                                             <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                         </state>
                                                         <connections>
-                                                            <segue destination="VWp-wP-qoj" kind="show" id="OwT-hM-T6F"/>
+                                                            <segue destination="17N-41-QlL" kind="show" id="NsP-Zk-2cf"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -576,7 +576,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pfr-f0-zYm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3722" y="1135"/>
+            <point key="canvasLocation" x="1030" y="71"/>
         </scene>
         <!--Profil-->
         <scene sceneID="LPL-aS-GW9">
@@ -689,7 +689,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iJf-nv-a7Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4455" y="1135"/>
+            <point key="canvasLocation" x="1733" y="72"/>
         </scene>
         <!--Lake Information View Controller-->
         <scene sceneID="sZg-mi-wwc">
@@ -919,7 +919,7 @@ Søndag   00:00 - 21:00</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MSk-JG-Czi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4411" y="2825"/>
+            <point key="canvasLocation" x="1757" y="897"/>
         </scene>
         <!--MobilePay-->
         <scene sceneID="M7z-Bp-sIl">
@@ -933,24 +933,22 @@ Søndag   00:00 - 21:00</string>
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1o3-5j-y9V">
-                                <rect key="frame" x="232" y="284" width="136" height="31"/>
-                                <state key="normal" title="PAY"/>
-                                <connections>
-                                    <action selector="callMobilePayment" destination="VWp-wP-qoj" eventType="touchUpInside" id="wFl-5o-P2T"/>
-                                </connections>
-                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="105562" translatesAutoresizingMaskIntoConstraints="NO" id="3b0-sb-L21">
+                                <rect key="frame" x="20" y="20" width="560" height="560"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="1o3-5j-y9V" firstAttribute="centerY" secondItem="GH0-rQ-f3h" secondAttribute="centerY" id="Bez-6m-mjN"/>
-                            <constraint firstItem="1o3-5j-y9V" firstAttribute="centerX" secondItem="GH0-rQ-f3h" secondAttribute="centerX" id="zdq-Sz-A2I"/>
+                            <constraint firstItem="3b0-sb-L21" firstAttribute="top" secondItem="jNI-eU-Pnc" secondAttribute="bottom" id="3PV-TY-bs5"/>
+                            <constraint firstItem="3b0-sb-L21" firstAttribute="centerX" secondItem="GH0-rQ-f3h" secondAttribute="centerX" id="Sa9-gq-Isp"/>
+                            <constraint firstItem="3b0-sb-L21" firstAttribute="leading" secondItem="GH0-rQ-f3h" secondAttribute="leadingMargin" id="i0Q-YY-yNX"/>
+                            <constraint firstItem="3b0-sb-L21" firstAttribute="centerY" secondItem="GH0-rQ-f3h" secondAttribute="centerY" id="pjt-4V-lFS"/>
                         </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sHA-uH-2kN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5137" y="2825"/>
+            <point key="canvasLocation" x="2505" y="897"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="eb6-Cf-bv3">
@@ -968,10 +966,11 @@ Søndag   00:00 - 21:00</string>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xlh-wL-Wwi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3722" y="232"/>
+            <point key="canvasLocation" x="266" y="72"/>
         </scene>
     </scenes>
     <resources>
+        <image name="105562" width="454" height="280"/>
         <image name="Figofy_app_trans" width="1024" height="1024"/>
         <image name="Figofy_app_trans.png" width="1024" height="1024"/>
         <image name="defaultPhoto" width="151" height="100"/>
