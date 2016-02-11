@@ -19,9 +19,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         
+        //REMEMEBER TO SWITCH BETWEEN
+        //TEST
+        MobilePayManager.sharedInstance().setupWithMerchantId("APPDK0000000000", merchantUrlScheme: "figofy", country: .Denmark)
+        
+        //ACTUAL
+        //MobilePayManager.sharedInstance().setupWithMerchantId("APPDK9D4857", merchantUrlScheme: "figofy", country: .Denmark)
+        
         return true
     }
     
+    func application(app: UIApplication, openURL url: NSURL, options: [String : AnyObject]) -> Bool {
+        handleMobilePayPaymentWithUrl(url)
+        return true
+    }
     
 
     func applicationWillResignActive(application: UIApplication) {
@@ -46,6 +57,93 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
+    
+    // MARK: MOBILEPAY
+    
+    func handleMobilePayPaymentWithUrl(url: NSURL) {
+        
+        MobilePayManager.sharedInstance().handleMobilePayPaymentWithUrl(url, success: { (mobilePaySuccess: MobilePaySuccessfulPayment?) -> Void in
+            
+            let orderId = mobilePaySuccess?.orderId
+            let transactionId = mobilePaySuccess?.transactionId
+            let amountWithdrawnFromCard = "\(mobilePaySuccess?.amountWithdrawnFromCard)"
+            
+            UIAlertView(title: "Payment SuccessFull", message: "MobilePay purchase succeeded: Your have now paid for order with id \(orderId) and MobilePay transaction id \(transactionId) and the amount withdrawn from the card is \(amountWithdrawnFromCard)", delegate: nil, cancelButtonTitle: "OK").show()
+            
+            }, error: { error in
+                // Listed from 1-12
+                print(error.code)
+                // Unknown error occurred
+                if error.code == MobilePayErrorCode.Unknown.rawValue {
+                    print(error.description)
+                }
+                // Invalid parameters sent to MobilePay app
+                else if error.code == MobilePayErrorCode.InvalidParameters.rawValue {
+                    print(error.description)
+                }
+                // VerifyMerchant request failed - validation af merchant failed.
+                else if error.code == 2 {
+                    print(error.description)
+                }
+                // MobilePay app is out of date and should be updated
+                else if error.code == MobilePayErrorCode.UpdateApp.rawValue {
+                    // TODO: NOTFIY USER #3
+                    print(error.description)
+                }
+                // Merchant is not valid
+                else if error.code == MobilePayErrorCode.MerchantNotValid.rawValue {
+                    print(error.description)
+                }
+                // Hmac parameter is not valid
+                else if error.code == MobilePayErrorCode.HMACNotValid.rawValue {
+                    print(error.description)
+                }
+                // MobilePay timeout, the purchase took more than 5 minutes
+                else if error.code == MobilePayErrorCode.TimeOut.rawValue {
+                    // TODO: NOTFIY USER #6
+                    print(error.description)
+                }
+                // MobilePay amount limits exceeded. Open MobilePay 'Beløbsgrænser' to see your status.
+                else if error.code == MobilePayErrorCode.LimitsExceeded.rawValue {
+                    // TODO: NOTFIY USER #7
+                    print(error.description)
+                }
+                // Timeout set in merchant app exceeded
+                else if error.code == MobilePayErrorCode.MerchantTimeout.rawValue {
+                    // TODO: NOTFIY USER #8
+                    print(error.description)
+                }
+                // Invalid signature
+                else if error.code == MobilePayErrorCode.InvalidSignature.rawValue {
+                    print(error.description)
+                }
+                // MobilePay SDK version is outdated
+                else if error.code == MobilePayErrorCode.SDKIsOutdated.rawValue {
+                    print(error.description)
+                }
+                // The given OrderId is already used. An OrderId has to be unique.
+                else if error.code == MobilePayErrorCode.OrderIdAlreadyUsed.rawValue {
+                    print(error.description)
+                }
+                // The payment was rejected because the user is chosen for fraud validation.
+                else if error.code == MobilePayErrorCode.PaymentRejectedFraud.rawValue {
+                    print(error.description)
+                }
+                
+            }) { paymentCancelled in
+                // TODO: CANCELATION HANDLING
+                print("MobilePay got cancelled with Id \(paymentCancelled?.orderId) by user")
+                
+                UIAlertController(title: "Overførsel Afbrudt", message: "blabla", preferredStyle: .Alert)
+                //showErrorAlert("Payment Cancelled", msg: "OrderId: \(paymentCancelled?.orderId)")
+        }
+        
+        
+    }
+
+    
+    
+    
     // MARK: - Core Data stack
     
     lazy var applicationDocumentsDirectory: NSURL = {
@@ -108,6 +206,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }
     }
-
+    
 }
 

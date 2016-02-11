@@ -15,6 +15,8 @@
 		184698461C60A34B0095D64B /* Figofy.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 184698441C60A34B0095D64B /* Figofy.xcdatamodeld */; };
 		1846984C1C60BE8E0095D64B /* SeaCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1846984B1C60BE8E0095D64B /* SeaCell.swift */; };
 		1846984F1C60C0E50095D64B /* SeaListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1846984E1C60C0E50095D64B /* SeaListVC.swift */; };
+		187278EE1C6B48F50029D33F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187278ED1C6B48F50029D33F /* Constants.swift */; };
+		187278F01C6B64360029D33F /* libMobilePayManager1.7.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 187278EF1C6B64360029D33F /* libMobilePayManager1.7.0.a */; };
 		187625DD1C60EC75003828DD /* ListOfSeas.csv in Resources */ = {isa = PBXBuildFile; fileRef = 187625DC1C60EC75003828DD /* ListOfSeas.csv */; };
 		187625E61C60F251003828DD /* Sea.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187625E41C60F251003828DD /* Sea.swift */; };
 		187625E71C60F251003828DD /* Sea+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187625E51C60F251003828DD /* Sea+CoreDataProperties.swift */; };
@@ -43,7 +45,7 @@
 		655044CD1C64CF1100D79B89 /* ClockVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655044CC1C64CF1100D79B89 /* ClockVC.swift */; };
 		655044CF1C64D24700D79B89 /* Clock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655044CE1C64D24700D79B89 /* Clock.swift */; };
 		657368CE1C635E3900E1367D /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 657368CD1C635E3900E1367D /* EventTableViewCell.swift */; };
-		B09EB5B85DC919F2CDD54667 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E7C50AA277E747DDA8657D91 /* libPods.a */; };
+		F98634459CF7905C5013FABE /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B10CAFE5CCEBA3FE110E428F /* Pods.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +74,9 @@
 		184698451C60A34B0095D64B /* Figofy.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Figofy.xcdatamodel; sourceTree = "<group>"; };
 		1846984B1C60BE8E0095D64B /* SeaCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeaCell.swift; sourceTree = "<group>"; };
 		1846984E1C60C0E50095D64B /* SeaListVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeaListVC.swift; sourceTree = "<group>"; };
+		187278EC1C6B3FA80029D33F /* Figofy-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Figofy-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
+		187278ED1C6B48F50029D33F /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		187278EF1C6B64360029D33F /* libMobilePayManager1.7.0.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libMobilePayManager1.7.0.a; path = "Pods/MobilePay-AppSwitch-SDK/sdk/iOS/1.7.0/MobilePayManager/libMobilePayManager1.7.0.a"; sourceTree = "<group>"; };
 		187625DC1C60EC75003828DD /* ListOfSeas.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ListOfSeas.csv; sourceTree = "<group>"; };
 		187625E41C60F251003828DD /* Sea.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sea.swift; sourceTree = "<group>"; };
 		187625E51C60F251003828DD /* Sea+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Sea+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -107,7 +112,7 @@
 		655044CC1C64CF1100D79B89 /* ClockVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClockVC.swift; sourceTree = "<group>"; };
 		655044CE1C64D24700D79B89 /* Clock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Clock.swift; sourceTree = "<group>"; };
 		657368CD1C635E3900E1367D /* EventTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventTableViewCell.swift; path = ../EventTableViewCell.swift; sourceTree = "<group>"; };
-		E7C50AA277E747DDA8657D91 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		B10CAFE5CCEBA3FE110E428F /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3D388C7DAA3D5DB5B97783B /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -116,7 +121,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B09EB5B85DC919F2CDD54667 /* libPods.a in Frameworks */,
+				F98634459CF7905C5013FABE /* Pods.framework in Frameworks */,
+				187278F01C6B64360029D33F /* libMobilePayManager1.7.0.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -180,6 +186,7 @@
 		184696C61C5F60CB0095D64B /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				187278ED1C6B48F50029D33F /* Constants.swift */,
 				187625E41C60F251003828DD /* Sea.swift */,
 				187625E51C60F251003828DD /* Sea+CoreDataProperties.swift */,
 				184696C91C5F61710095D64B /* SeaAnnotation.swift */,
@@ -246,6 +253,7 @@
 				184698441C60A34B0095D64B /* Figofy.xcdatamodeld */,
 				187625DC1C60EC75003828DD /* ListOfSeas.csv */,
 				187625E81C60F440003828DD /* menudata.csv */,
+				187278EC1C6B3FA80029D33F /* Figofy-Bridging-Header.h */,
 			);
 			path = Figofy;
 			sourceTree = "<group>";
@@ -271,7 +279,8 @@
 		9B8569D1672C1A77B7280598 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				E7C50AA277E747DDA8657D91 /* libPods.a */,
+				187278EF1C6B64360029D33F /* libMobilePayManager1.7.0.a */,
+				B10CAFE5CCEBA3FE110E428F /* Pods.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -466,6 +475,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				187278EE1C6B48F50029D33F /* Constants.swift in Sources */,
 				655044CD1C64CF1100D79B89 /* ClockVC.swift in Sources */,
 				651018171C50DB4C00B7FECC /* LakeInformationViewController.swift in Sources */,
 				651018131C50D93100B7FECC /* ProfileViewController.swift in Sources */,
@@ -564,6 +574,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_BITCODE = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -584,6 +595,7 @@
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/MJPS/Desktop/Figofy/Figofy-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -609,6 +621,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_BITCODE = NO;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -622,6 +635,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/MJPS/Desktop/Figofy/Figofy-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -637,6 +651,10 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Figofy/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Pods/MobilePay-AppSwitch-SDK/sdk/iOS/1.7.0/MobilePayManager",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = Tommy.Figofy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -654,6 +672,10 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Figofy/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Pods/MobilePay-AppSwitch-SDK/sdk/iOS/1.7.0/MobilePayManager",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = Tommy.Figofy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
