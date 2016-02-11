@@ -19,16 +19,6 @@ class SeaListVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        //move to custom class
-//        tableView.layer.cornerRadius = 10
-//        tableView.layer.borderColor = UIColor.blackColor().CGColor
-//        tableView.layer.borderWidth = 0.25
-//        tableView.layer.shadowColor = UIColor.blackColor().CGColor
-//        tableView.layer.shadowOpacity = 0.6
-//        tableView.layer.shadowRadius = 15
-//        tableView.layer.shadowOffset = CGSize(width: 5, height: 5)
-//        tableView.layer.masksToBounds = false
-        
         tableView.delegate = self
         tableView.dataSource = self
         
@@ -55,6 +45,7 @@ class SeaListVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         }
     }
     
+    // MARK: TableView Methods
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }
@@ -72,8 +63,17 @@ class SeaListVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         } else {
             return SeaCell()
         }
-        
     }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
+        let sea: Sea!
+        
+        sea = seas[indexPath.row]
+        
+        performSegueWithIdentifier("LakeInformationVC", sender: sea)
+    }
+    
     
     func createSea() {
         let app = UIApplication.sharedApplication().delegate as! AppDelegate
@@ -232,6 +232,16 @@ class SeaListVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             try context.save()
         } catch  {
             print("could not save recipe")
+        }
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "LakeInformationVC" {
+            if let lakeInfo = segue.destinationViewController as? LakeInformationVC {
+                if let sea = sender as? Sea {
+                    lakeInfo.sea = sea
+                }
+            }
         }
     }
 

@@ -68,7 +68,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let transactionId = mobilePaySuccess?.transactionId
             let amountWithdrawnFromCard = "\(mobilePaySuccess?.amountWithdrawnFromCard)"
             
-            UIAlertView(title: "Payment SuccessFull", message: "MobilePay purchase succeeded: Your have now paid for order with id \(orderId) and MobilePay transaction id \(transactionId) and the amount withdrawn from the card is \(amountWithdrawnFromCard)", delegate: nil, cancelButtonTitle: "OK").show()
+            //UIAlertView(title: "Payment SuccessFull", message: "MobilePay purchase succeeded: Your have now paid for order with id \(orderId) and MobilePay transaction id \(transactionId) and the amount withdrawn from the card is \(amountWithdrawnFromCard)", delegate: nil, cancelButtonTitle: "OK").show()
             
             }, error: { error in
                 // Listed from 1-12
@@ -134,7 +134,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 // TODO: CANCELATION HANDLING
                 print("MobilePay got cancelled with Id \(paymentCancelled?.orderId) by user")
                 
-                UIAlertController(title: "Overførsel Afbrudt", message: "blabla", preferredStyle: .Alert)
+                //UIAlertController(title: "Overførsel Afbrudt", message: "blabla", preferredStyle: .Alert)
                 //showErrorAlert("Payment Cancelled", msg: "OrderId: \(paymentCancelled?.orderId)")
         }
         

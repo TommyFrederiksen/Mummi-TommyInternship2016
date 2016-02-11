@@ -1,5 +1,5 @@
 //
-//  LakeInformationViewController.swift
+//  LakeInformationVC.swift
 //  Figofy
 //
 //  Created by Tommy on 21/01/2016.
@@ -9,12 +9,17 @@
 import UIKit
 
 
-class LakeInformationViewController: UIViewController {
+class LakeInformationVC: UIViewController {
     
  
+    // MARK: IBOutlets
     
     
+    // MARK: Variables
+    var sea: Sea!
     
+    
+    // MARK: View Functions
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -23,9 +28,8 @@ class LakeInformationViewController: UIViewController {
     }
     
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    @IBAction func backBtnPressed(sender: AnyObject) {
+        dismissViewControllerAnimated(true, completion: nil)
     }
     
     

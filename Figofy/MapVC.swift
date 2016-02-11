@@ -1,5 +1,5 @@
 //
-//  MapViewViewController.swift
+//  MapVC.swift
 //  Figofy
 //
 //  Created by Tommy on 21/01/2016.
@@ -11,7 +11,7 @@ import MapKit
 import CoreLocation
 import Contacts
 
-class MapViewViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, UIPopoverPresentationControllerDelegate {
+class MapVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, UIPopoverPresentationControllerDelegate {
     
     // MARK: IBOutlets
     @IBOutlet weak var map: MKMapView!
