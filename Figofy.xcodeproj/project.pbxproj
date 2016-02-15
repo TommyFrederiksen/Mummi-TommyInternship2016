@@ -45,6 +45,7 @@
 		655044CD1C64CF1100D79B89 /* ClockVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655044CC1C64CF1100D79B89 /* ClockVC.swift */; };
 		655044CF1C64D24700D79B89 /* Clock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655044CE1C64D24700D79B89 /* Clock.swift */; };
 		657368CE1C635E3900E1367D /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 657368CD1C635E3900E1367D /* EventTableViewCell.swift */; };
+		659501001C6DD94C0067ED1A /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659500FF1C6DD94C0067ED1A /* Timer.swift */; };
 		F98634459CF7905C5013FABE /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B10CAFE5CCEBA3FE110E428F /* Pods.framework */; };
 /* End PBXBuildFile section */
 
@@ -112,6 +113,7 @@
 		655044CC1C64CF1100D79B89 /* ClockVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClockVC.swift; sourceTree = "<group>"; };
 		655044CE1C64D24700D79B89 /* Clock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Clock.swift; sourceTree = "<group>"; };
 		657368CD1C635E3900E1367D /* EventTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventTableViewCell.swift; path = ../EventTableViewCell.swift; sourceTree = "<group>"; };
+		659500FF1C6DD94C0067ED1A /* Timer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Timer.swift; sourceTree = "<group>"; };
 		B10CAFE5CCEBA3FE110E428F /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3D388C7DAA3D5DB5B97783B /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -192,6 +194,7 @@
 				184696C91C5F61710095D64B /* SeaAnnotation.swift */,
 				655044CA1C637C2900D79B89 /* Event.swift */,
 				655044CE1C64D24700D79B89 /* Clock.swift */,
+				659500FF1C6DD94C0067ED1A /* Timer.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -492,6 +495,7 @@
 				655044CB1C637C2900D79B89 /* Event.swift in Sources */,
 				651018111C4FB8D100B7FECC /* OverviewViewControler.swift in Sources */,
 				18E675801C58B6850046B259 /* TextFieldDesign.swift in Sources */,
+				659501001C6DD94C0067ED1A /* Timer.swift in Sources */,
 				183B64C51C58F58C00B78D1B /* GradientColor.swift in Sources */,
 				1846984F1C60C0E50095D64B /* SeaListVC.swift in Sources */,
 				655044CF1C64D24700D79B89 /* Clock.swift in Sources */,
@@ -658,6 +662,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = Tommy.Figofy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/Tommy/Desktop/Mummi-TommyInternship2016/Figofy-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -679,6 +684,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = Tommy.Figofy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/Tommy/Desktop/Mummi-TommyInternship2016/Figofy-Bridging-Header.h";
 			};
 			name = Release;
 		};

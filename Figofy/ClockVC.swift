@@ -18,27 +18,41 @@ class ClockVC: UIViewController
     let clock = Clock()
     
     var timer: NSTimer?
+    let circle = Timer(frame: UIScreen.mainScreen().bounds)
+    let background = UIColor.blackColor()
+    
+
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: "UpdateTimeLabel", userInfo: nil, repeats: true)
+        //timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: "UpdateTimeLabel",userInfo: nil, repeats: true)
+        
+        self.view = circle
+        circle.animate(0, toValue: 1, animationDuration: circle.animationDurationOfSeconds)
+        
+        
+        
+        
+        
+        self.view.backgroundColor = background
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        UpdateTimeLabel()
+        //UpdateTimeLabel()
         
     }
     
     deinit{
-        timer?.invalidate()
+        //timer?.invalidate()
     }
     
     func UpdateTimeLabel(){
         let formatter = NSDateFormatter()
         formatter.timeStyle = .MediumStyle
         timeLabel.text = formatter.stringFromDate(clock.currentTime)
+        timeLabel.textColor = UIColor.whiteColor()
     }
     
     

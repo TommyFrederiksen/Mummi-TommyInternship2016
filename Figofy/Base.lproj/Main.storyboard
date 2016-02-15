@@ -310,14 +310,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="00:00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xTV-1K-muX">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xTV-1K-muX">
                                 <rect key="frame" x="20" y="290" width="560" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SQK-wr-PSe">
-                                <rect key="frame" x="277" y="401" width="46" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SQK-wr-PSe">
+                                <rect key="frame" x="277" y="396" width="46" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="598-qO-sVe"/>
                                     <constraint firstAttribute="width" constant="46" id="Dt8-NI-E8B"/>
@@ -334,7 +334,7 @@
                             <constraint firstItem="rDm-bg-R01" firstAttribute="top" secondItem="SQK-wr-PSe" secondAttribute="bottom" constant="125" id="5bc-St-LDb"/>
                             <constraint firstItem="xTV-1K-muX" firstAttribute="leading" secondItem="825-va-7tB" secondAttribute="leadingMargin" id="MdS-zJ-f8W"/>
                             <constraint firstAttribute="trailingMargin" secondItem="xTV-1K-muX" secondAttribute="trailing" id="Nhk-j6-kBd"/>
-                            <constraint firstItem="xTV-1K-muX" firstAttribute="centerX" secondItem="825-va-7tB" secondAttribute="centerX" id="TAE-WJ-5VM"/>
+                            <constraint firstItem="xTV-1K-muX" firstAttribute="centerY" secondItem="825-va-7tB" secondAttribute="centerY" id="g5U-Nr-jtA"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="Dmh-Ze-5Cm"/>
@@ -600,8 +600,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Dd7-9w-MP4">
-                                <rect key="frame" x="20" y="74" width="560" height="200"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Dd7-9w-MP4">
+                                <rect key="frame" x="20" y="30" width="560" height="200"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="TCe-Ab-gCQ">
                                         <rect key="frame" x="0.0" y="0.0" width="275" height="200"/>
@@ -666,16 +666,16 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Favorit Sø'er" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aIf-pM-R7p">
-                                <rect key="frame" x="20" y="281" width="560" height="33"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Favorit Sø'er" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aIf-pM-R7p">
+                                <rect key="frame" x="20" y="237" width="560" height="33"/>
                                 <color key="backgroundColor" red="0.3411764705882353" green="0.75294117647058822" blue="0.99215686274509807" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <size key="shadowOffset" width="0.0" height="0.0"/>
                             </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Uax-t9-AUM" userLabel="FavoriteLakesTableView">
-                                <rect key="frame" x="20" y="314" width="560" height="242"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Uax-t9-AUM" userLabel="FavoriteLakesTableView">
+                                <rect key="frame" x="20" y="270" width="560" height="281"/>
                                 <color key="backgroundColor" red="0.74117647058823533" green="0.86274509803921573" blue="0.92156862745098034" alpha="1" colorSpace="calibratedRGB"/>
                             </tableView>
                         </subviews>
@@ -824,7 +824,7 @@ Søndag   00:00 - 21:00</string>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NZB-zk-uGQ">
-                                                        <rect key="frame" x="44" y="0.0" width="49" height="27"/>
+                                                        <rect key="frame" x="44" y="0.0" width="48" height="27"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                         <state key="normal" title="160,- Kr"/>
                                                     </button>
@@ -840,7 +840,7 @@ Søndag   00:00 - 21:00</string>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="byb-ei-lgm">
-                                                        <rect key="frame" x="44" y="0.0" width="49" height="27"/>
+                                                        <rect key="frame" x="44" y="0.0" width="48" height="27"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                         <state key="normal" title="190,- Kr"/>
                                                     </button>
@@ -856,7 +856,7 @@ Søndag   00:00 - 21:00</string>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TsM-iu-kSS">
-                                                        <rect key="frame" x="44" y="0.0" width="49" height="27"/>
+                                                        <rect key="frame" x="44" y="0.0" width="48" height="27"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                         <state key="normal" title="260,- Kr"/>
                                                     </button>
