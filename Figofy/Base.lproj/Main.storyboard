@@ -337,7 +337,7 @@
                             <constraint firstItem="xTV-1K-muX" firstAttribute="centerY" secondItem="825-va-7tB" secondAttribute="centerY" id="g5U-Nr-jtA"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="Dmh-Ze-5Cm"/>
+                    <tabBarItem key="tabBarItem" systemItem="favorites" id="Dmh-Ze-5Cm"/>
                     <connections>
                         <outlet property="timeLabel" destination="xTV-1K-muX" id="InQ-Lz-833"/>
                     </connections>
@@ -419,7 +419,7 @@
                             <outlet property="delegate" destination="X5z-Ec-O9v" id="pby-aP-Lqn"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Item" id="CIT-LI-Kw2"/>
+                    <tabBarItem key="tabBarItem" systemItem="featured" id="CIT-LI-Kw2"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hHl-kZ-oma" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -449,7 +449,7 @@
                             <constraint firstItem="94K-wD-Pqc" firstAttribute="leading" secondItem="fTO-2m-hkx" secondAttribute="leading" id="sZV-Kw-PUt"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" id="d5j-sB-TrV"/>
+                    <tabBarItem key="tabBarItem" title="" systemItem="topRated" id="d5j-sB-TrV"/>
                     <connections>
                         <outlet property="map" destination="94K-wD-Pqc" id="kVM-gY-tIN"/>
                     </connections>
@@ -568,10 +568,10 @@
             </objects>
             <point key="canvasLocation" x="-966" y="-421"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Custom Tab Bar-->
         <scene sceneID="KmC-nh-FEv">
             <objects>
-                <tabBarController id="RJR-a0-jWZ" sceneMemberID="viewController">
+                <tabBarController id="RJR-a0-jWZ" customClass="CustomTabBar" customModule="Figofy" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" id="9Zd-wB-NWV">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -693,7 +693,7 @@
                             <constraint firstItem="Dd7-9w-MP4" firstAttribute="top" secondItem="Cfm-7y-Cmf" secondAttribute="bottom" constant="10" id="pfJ-6C-5at"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="Dod-ru-iI8"/>
+                    <tabBarItem key="tabBarItem" systemItem="history" id="Dod-ru-iI8"/>
                     <connections>
                         <outlet property="favoriteLakesTableView" destination="Uax-t9-AUM" id="4UP-7O-sHL"/>
                     </connections>

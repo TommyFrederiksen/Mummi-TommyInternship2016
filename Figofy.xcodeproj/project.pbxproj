@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		18317D671C6DD31400C995D7 /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18317D661C6DD31400C995D7 /* CustomTabBar.swift */; };
 		183B64C01C58DD7100B78D1B /* System San Francisco Display Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 183B64BE1C58DD7100B78D1B /* System San Francisco Display Bold.ttf */; };
 		183B64C11C58DD7100B78D1B /* System San Francisco Display Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 183B64BF1C58DD7100B78D1B /* System San Francisco Display Regular.ttf */; };
 		183B64C51C58F58C00B78D1B /* GradientColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183B64C41C58F58C00B78D1B /* GradientColor.swift */; };
@@ -67,6 +68,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		18317D661C6DD31400C995D7 /* CustomTabBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
 		183B64BE1C58DD7100B78D1B /* System San Francisco Display Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "System San Francisco Display Bold.ttf"; sourceTree = "<group>"; };
 		183B64BF1C58DD7100B78D1B /* System San Francisco Display Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "System San Francisco Display Regular.ttf"; sourceTree = "<group>"; };
 		183B64C41C58F58C00B78D1B /* GradientColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientColor.swift; sourceTree = "<group>"; };
@@ -181,6 +183,7 @@
 				1846984E1C60C0E50095D64B /* SeaListVC.swift */,
 				655044C81C636F7700D79B89 /* EventTableVC.swift */,
 				655044CC1C64CF1100D79B89 /* ClockVC.swift */,
+				18317D661C6DD31400C995D7 /* CustomTabBar.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -494,6 +497,7 @@
 				18CCAA981C60D5B700C7D5E8 /* CreateSeaVC.swift in Sources */,
 				655044CB1C637C2900D79B89 /* Event.swift in Sources */,
 				651018111C4FB8D100B7FECC /* OverviewViewControler.swift in Sources */,
+				18317D671C6DD31400C995D7 /* CustomTabBar.swift in Sources */,
 				18E675801C58B6850046B259 /* TextFieldDesign.swift in Sources */,
 				659501001C6DD94C0067ED1A /* Timer.swift in Sources */,
 				183B64C51C58F58C00B78D1B /* GradientColor.swift in Sources */,
