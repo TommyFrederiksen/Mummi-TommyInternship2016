@@ -29,7 +29,6 @@
 		18E675821C58B76F0046B259 /* TextFieldEffects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E675811C58B76F0046B259 /* TextFieldEffects.swift */; };
 		18E675841C58C2E30046B259 /* System San Francisco Display Ultralight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18E675831C58C2E30046B259 /* System San Francisco Display Ultralight.ttf */; };
 		18E675861C58C3340046B259 /* System San Francisco Display Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18E675851C58C3340046B259 /* System San Francisco Display Thin.ttf */; };
-		651018111C4FB8D100B7FECC /* OverviewViewControler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651018101C4FB8D100B7FECC /* OverviewViewControler.swift */; };
 		651018131C50D93100B7FECC /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651018121C50D93100B7FECC /* ProfileViewController.swift */; };
 		651018151C50D9EB00B7FECC /* MapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651018141C50D9EB00B7FECC /* MapVC.swift */; };
 		651018171C50DB4C00B7FECC /* LakeInformationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651018161C50DB4C00B7FECC /* LakeInformationVC.swift */; };
@@ -92,7 +91,6 @@
 		18E675831C58C2E30046B259 /* System San Francisco Display Ultralight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "System San Francisco Display Ultralight.ttf"; sourceTree = "<group>"; };
 		18E675851C58C3340046B259 /* System San Francisco Display Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "System San Francisco Display Thin.ttf"; sourceTree = "<group>"; };
 		2B956FA0C05CC4AF882EF6F7 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
-		651018101C4FB8D100B7FECC /* OverviewViewControler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OverviewViewControler.swift; sourceTree = "<group>"; };
 		651018121C50D93100B7FECC /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		651018141C50D9EB00B7FECC /* MapVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapVC.swift; sourceTree = "<group>"; };
 		651018161C50DB4C00B7FECC /* LakeInformationVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LakeInformationVC.swift; sourceTree = "<group>"; };
@@ -178,7 +176,6 @@
 				654A27111C350EA6008AA4EB /* LoginViewController.swift */,
 				651018141C50D9EB00B7FECC /* MapVC.swift */,
 				651018181C50DBDC00B7FECC /* MobilePayViewController.swift */,
-				651018101C4FB8D100B7FECC /* OverviewViewControler.swift */,
 				651018121C50D93100B7FECC /* ProfileViewController.swift */,
 				1846984E1C60C0E50095D64B /* SeaListVC.swift */,
 				655044C81C636F7700D79B89 /* EventTableVC.swift */,
@@ -496,7 +493,6 @@
 				187625E71C60F251003828DD /* Sea+CoreDataProperties.swift in Sources */,
 				18CCAA981C60D5B700C7D5E8 /* CreateSeaVC.swift in Sources */,
 				655044CB1C637C2900D79B89 /* Event.swift in Sources */,
-				651018111C4FB8D100B7FECC /* OverviewViewControler.swift in Sources */,
 				18317D671C6DD31400C995D7 /* CustomTabBar.swift in Sources */,
 				18E675801C58B6850046B259 /* TextFieldDesign.swift in Sources */,
 				659501001C6DD94C0067ED1A /* Timer.swift in Sources */,
@@ -666,7 +662,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = Tommy.Figofy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "/Users/Tommy/Desktop/Mummi-TommyInternship2016/Figofy-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "${SRCROOT}/Figofy-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -688,7 +684,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = Tommy.Figofy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "/Users/Tommy/Desktop/Mummi-TommyInternship2016/Figofy-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "${SRCROOT}/Figofy-Bridging-Header.h";
 			};
 			name = Release;
 		};
