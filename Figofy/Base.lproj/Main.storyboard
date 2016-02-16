@@ -298,10 +298,10 @@
             </objects>
             <point key="canvasLocation" x="770" y="395"/>
         </scene>
-        <!--Clock-->
+        <!--ClockVC-->
         <scene sceneID="DO7-Z1-tpI">
             <objects>
-                <viewController title="Clock" id="17N-41-QlL" customClass="ClockVC" customModule="Figofy" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Clock" id="17N-41-QlL" userLabel="ClockVC" customClass="ClockVC" customModule="Figofy" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="0wz-N1-y6c"/>
                         <viewControllerLayoutGuide type="bottom" id="rDm-bg-R01"/>
@@ -310,6 +310,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XeL-9k-hYH" userLabel="Timer">
+                                <rect key="frame" x="20" y="20" width="560" height="376"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xTV-1K-muX">
                                 <rect key="frame" x="20" y="290" width="560" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -334,12 +338,17 @@
                             <constraint firstItem="rDm-bg-R01" firstAttribute="top" secondItem="SQK-wr-PSe" secondAttribute="bottom" constant="125" id="5bc-St-LDb"/>
                             <constraint firstItem="xTV-1K-muX" firstAttribute="leading" secondItem="825-va-7tB" secondAttribute="leadingMargin" id="MdS-zJ-f8W"/>
                             <constraint firstAttribute="trailingMargin" secondItem="xTV-1K-muX" secondAttribute="trailing" id="Nhk-j6-kBd"/>
+                            <constraint firstItem="XeL-9k-hYH" firstAttribute="leading" secondItem="825-va-7tB" secondAttribute="leadingMargin" id="OVK-gG-BJv"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="XeL-9k-hYH" secondAttribute="trailing" id="Y1I-Ov-DIr"/>
                             <constraint firstItem="xTV-1K-muX" firstAttribute="centerY" secondItem="825-va-7tB" secondAttribute="centerY" id="g5U-Nr-jtA"/>
+                            <constraint firstItem="XeL-9k-hYH" firstAttribute="top" secondItem="0wz-N1-y6c" secondAttribute="bottom" id="rvm-Ci-nXd"/>
+                            <constraint firstItem="SQK-wr-PSe" firstAttribute="top" secondItem="XeL-9k-hYH" secondAttribute="bottom" id="wGQ-G2-XgW"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" systemItem="favorites" id="Dmh-Ze-5Cm"/>
                     <connections>
                         <outlet property="timeLabel" destination="xTV-1K-muX" id="InQ-Lz-833"/>
+                        <outlet property="timerView" destination="XeL-9k-hYH" id="A7M-bR-WoK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="o4w-1z-t6N" userLabel="First Responder" sceneMemberID="firstResponder"/>
