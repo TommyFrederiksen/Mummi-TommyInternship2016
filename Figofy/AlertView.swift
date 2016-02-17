@@ -10,11 +10,12 @@ import UIKit
 
 class AlertView: UIAlertController {
 
-    var alertController: UIAlertController!
+    var alertController: AlertView!
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
     }
+    
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -28,7 +29,7 @@ class AlertView: UIAlertController {
     
     
     func showYesNoAlert(title: String!, message: String!, style: UIAlertControllerStyle, VC: UIViewController) {
-        alertController = UIAlertController.init(title: title, message: message, preferredStyle: style)
+        alertController = AlertView(title: title, message: message, preferredStyle: style)
         
         let noAction = UIAlertAction(title: "No", style: .Default) { action in
             print("User Pressed Okay")
@@ -45,7 +46,7 @@ class AlertView: UIAlertController {
     }
     
     func showOkayAlert(title: String!, message: String!, style: UIAlertControllerStyle, VC: UIViewController) {
-        alertController = UIAlertController.init(title: title, message: message, preferredStyle: style)
+        alertController = AlertView(title: title, message: message, preferredStyle: style)
         
         let okayAction = UIAlertAction(title: "Okay", style: .Default) { action in
             print("User Pressed Okay")

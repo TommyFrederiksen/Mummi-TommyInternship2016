@@ -14,14 +14,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         
         
         //REMEMEBER TO SWITCH BETWEEN
         //TEST
-        MobilePayManager.sharedInstance().setupWithMerchantId("APPDK0000000000", merchantUrlScheme: "Figofy", country: .Denmark)
+        //MobilePayManager.sharedInstance().setupWithMerchantId("APPDK0000000000", merchantUrlScheme: "figofy", country: .Denmark)
+        MobilePayManager.sharedInstance().setupWithMerchantId("APPDK0000000000", merchantUrlScheme: "figofy", timeoutSeconds: 30, returnSeconds: 1, captureType: .Capture, country: .Denmark)
         
         //ACTUAL
         //MobilePayManager.sharedInstance().setupWithMerchantId("APPDK2922783001", merchantUrlScheme: "figofy", country: .Denmark)
@@ -29,8 +29,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
     
+    
+    
     func application(app: UIApplication, openURL url: NSURL, options: [String : AnyObject]) -> Bool {
+        
         handleMobilePayPaymentWithUrl(url)
+//        let alert = UIAlertController(title: "Payment Successful", message: "MobilePay purchase succeeded: You have now paid for order with ID: \(5444) and MobilePay Transaction ID: \(3) and the amount withdrawn form the card is \(1234)", preferredStyle: .Alert)
+//        let nav = app.windows[0].rootViewController as? UINavigationController
+//        let active = nav?.visibleViewController
+//        
+//        active?.presentViewController(alert, animated: true, completion: nil)
+        
         return true
     }
     
@@ -61,14 +70,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // MARK: MOBILEPAY
     
     func handleMobilePayPaymentWithUrl(url: NSURL) {
-        
+        var top: UIViewController?
+        if let view = UIApplication.sharedApplication().keyWindow?.rootViewController {
+            top = view
+        }
         MobilePayManager.sharedInstance().handleMobilePayPaymentWithUrl(url, success: { (mobilePaySuccess: MobilePaySuccessfulPayment?) -> Void in
             
             let orderId = mobilePaySuccess?.orderId
             let transactionId = mobilePaySuccess?.transactionId
             let amountWithdrawnFromCard = "\(mobilePaySuccess?.amountWithdrawnFromCard)"
             
-            //UIAlertView(title: "Payment SuccessFull", message: "MobilePay purchase succeeded: Your have now paid for order with id \(orderId) and MobilePay transaction id \(transactionId) and the amount withdrawn from the card is \(amountWithdrawnFromCard)", delegate: nil, cancelButtonTitle: "OK").show()
+            
+            AlertView().showOkayAlert("Payment Successful", message: "MobilePay purchase succeeded: You have now paid for order with ID: \(orderId) and MobilePay Transaction ID: \(transactionId) and the amount withdrawn form the card is \(amountWithdrawnFromCard)", style: .Alert, VC: top!)
+            
             
             }, error: { error in
                 // Listed from 1-12
@@ -88,6 +102,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 // MobilePay app is out of date and should be updated
                 else if error.code == MobilePayErrorCode.UpdateApp.rawValue {
                     // TODO: NOTFIY USER #3
+                    AlertView().showOkayAlert("MobilePay Outdated", message: "Please update your MobilePay Application", style: .Alert, VC: top!)
                     print(error.description)
                 }
                 // Merchant is not valid
@@ -101,16 +116,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 // MobilePay timeout, the purchase took more than 5 minutes
                 else if error.code == MobilePayErrorCode.TimeOut.rawValue {
                     // TODO: NOTFIY USER #6
+                    AlertView().showOkayAlert("MobilePay TimeOut", message: "The purchase took more than 5 minutes", style: .Alert, VC: top!)
                     print(error.description)
                 }
                 // MobilePay amount limits exceeded. Open MobilePay 'Beløbsgrænser' to see your status.
                 else if error.code == MobilePayErrorCode.LimitsExceeded.rawValue {
                     // TODO: NOTFIY USER #7
+                    
+                    AlertView().showOkayAlert("Limit Exceeded", message: "Open MobilePay 'Beløbsgrænser' to see your status.", style: .Alert, VC: top!)
                     print(error.description)
                 }
                 // Timeout set in merchant app exceeded
                 else if error.code == MobilePayErrorCode.MerchantTimeout.rawValue {
                     // TODO: NOTFIY USER #8
+                    AlertView().showOkayAlert("MobilePay TimeOut", message: "Lost connection to server, please try again later", style: .Alert, VC: top!)
                     print(error.description)
                 }
                 // Invalid signature
@@ -133,11 +152,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }) { paymentCancelled in
                 // TODO: CANCELATION HANDLING
                 print("MobilePay got cancelled with Id \(paymentCancelled?.orderId) by user")
+                AlertView().showOkayAlert("Payment Cancelled", message: "MobilePay got cancelled with Id \(paymentCancelled?.orderId) by user", style: .Alert, VC: top!)
                 
-                //UIAlertController(title: "Overførsel Afbrudt", message: "blabla", preferredStyle: .Alert)
-                //showErrorAlert("Payment Cancelled", msg: "OrderId: \(paymentCancelled?.orderId)")
         }
-        
         
     }
 

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="VWp-wP-qoj">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
@@ -20,8 +20,10 @@
             <string>.HelveticaNeueDeskInterface-Regular</string>
             <string>.HelveticaNeueDeskInterface-Regular</string>
             <string>.HelveticaNeueDeskInterface-Regular</string>
+            <string>.HelveticaNeueDeskInterface-Regular</string>
         </mutableArray>
         <mutableArray key="System San Francisco Display Thin.ttf">
+            <string>.HelveticaNeueDeskInterface-Thin</string>
             <string>.HelveticaNeueDeskInterface-Thin</string>
             <string>.HelveticaNeueDeskInterface-Thin</string>
         </mutableArray>
@@ -868,26 +870,60 @@ Søndag   00:00 - 21:00</string>
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="105562" translatesAutoresizingMaskIntoConstraints="NO" id="3b0-sb-L21">
-                                <rect key="frame" x="20" y="20" width="560" height="560"/>
-                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pu8-8r-XyJ">
+                                <rect key="frame" x="224" y="275" width="152" height="50"/>
+                                <color key="backgroundColor" red="0.95686274510000002" green="0.31764705879999999" blue="0.1176470588" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="152" id="7yN-7J-AQ6"/>
+                                    <constraint firstAttribute="height" constant="50" id="xPB-2e-MDK"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name=".HelveticaNeueDeskInterface-Thin" family="SFNS Display" pointSize="34"/>
+                                <state key="normal" title="PAY">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="payBtnPressed:" destination="VWp-wP-qoj" eventType="touchUpInside" id="ru2-Mu-HSv"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Amount" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="p7p-TC-1wJ" customClass="TextFieldDesign" customModule="Figofy" customModuleProvider="target">
+                                <rect key="frame" x="135" y="185" width="330" height="46"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="330" id="5qg-xD-txV"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name=".HelveticaNeueDeskInterface-Regular" family="SFNS Display" pointSize="20"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
+                                        <color key="value" red="1" green="0.59644796560000002" blue="0.15540196040000001" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.95686274510000002" green="0.31764705879999999" blue="0.1176470588" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="placeholderFontScale">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="3b0-sb-L21" firstAttribute="top" secondItem="jNI-eU-Pnc" secondAttribute="bottom" id="3PV-TY-bs5"/>
-                            <constraint firstItem="3b0-sb-L21" firstAttribute="centerX" secondItem="GH0-rQ-f3h" secondAttribute="centerX" id="Sa9-gq-Isp"/>
-                            <constraint firstItem="3b0-sb-L21" firstAttribute="leading" secondItem="GH0-rQ-f3h" secondAttribute="leadingMargin" id="i0Q-YY-yNX"/>
-                            <constraint firstItem="3b0-sb-L21" firstAttribute="centerY" secondItem="GH0-rQ-f3h" secondAttribute="centerY" id="pjt-4V-lFS"/>
+                            <constraint firstItem="pu8-8r-XyJ" firstAttribute="centerY" secondItem="GH0-rQ-f3h" secondAttribute="centerY" id="Cey-VM-czZ"/>
+                            <constraint firstItem="pu8-8r-XyJ" firstAttribute="centerX" secondItem="GH0-rQ-f3h" secondAttribute="centerX" id="YDb-aX-eSU"/>
+                            <constraint firstItem="p7p-TC-1wJ" firstAttribute="centerX" secondItem="GH0-rQ-f3h" secondAttribute="centerX" id="bPa-Pg-p9M"/>
+                            <constraint firstItem="pu8-8r-XyJ" firstAttribute="top" secondItem="p7p-TC-1wJ" secondAttribute="bottom" constant="44" id="t1L-CS-rHH"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="amount" destination="p7p-TC-1wJ" id="acX-ig-hWJ"/>
+                        <outlet property="payBtn" destination="pu8-8r-XyJ" id="hJu-45-Uoh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sHA-uH-2kN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1617" y="1157"/>
+            <point key="canvasLocation" x="1035" y="-1993"/>
         </scene>
     </scenes>
     <resources>
-        <image name="105562" width="454" height="280"/>
         <image name="Figofy_app_trans" width="1024" height="1024"/>
         <image name="Figofy_app_trans.png" width="1024" height="1024"/>
         <image name="defaultPhoto" width="151" height="100"/>

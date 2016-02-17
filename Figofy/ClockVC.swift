@@ -10,9 +10,9 @@ import UIKit
 
 class ClockVC: UIViewController
 {
-    var alertView = AlertView()
     var payment = MobilePayPayment()
     var manager = MobilePayManager()
+    var info = MobilePaySuccessfulPayment()
     
     
     @IBOutlet weak var timerView: Timer!
@@ -59,16 +59,23 @@ class ClockVC: UIViewController
     
     
     @IBAction func payWithMobilePay(sender: AnyObject) {
-        alertView.showOkayAlert("MobilePay Initialized", message: "Switching to MobilePay", style: .Alert, VC: self)
         //alertView.showYesNoAlert("MobilePay Initialized", message: "Switching to MobilePay", style: .Alert, VC: self)
         
+        let price = Float(200)
+        let Id = "3232"
         
-        
-//        MobilePayManager.sharedInstance().beginMobilePaymentWithPayment(MobilePayPayment(orderId: "1234", productPrice: 1)) { error in
-//            
-//            
-//            
-//        }
+        if price >= 0 && Id != "" {
+            payment = MobilePayPayment(orderId: Id, productPrice: price)
+            
+            MobilePayManager.sharedInstance().beginMobilePaymentWithPayment(payment) { error in
+                if error.localizedDescription != "" {
+                    print(error.localizedDescription)
+                }
+                
+                
+            }
+            
+        }
         
         
     }
