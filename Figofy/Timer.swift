@@ -14,16 +14,11 @@ import QuartzCore
 //this call will create 3 circles and animate them as a countdown timer
 class Timer: UIView {
 
-
-    
-    let animationDuration:NSTimeInterval = 6.0 // The duration of the animation in seconds
-    
-    
-    
-    
+    let animationDuration:NSTimeInterval = 60.0 // The duration of the animation in seconds
     var circlePath: UIBezierPath = UIBezierPath()
     let circleLayer: CAShapeLayer = CAShapeLayer()
     let anim = CABasicAnimation(keyPath: "strokeEnd")
+    
     
     func ClockMaker()
     {
@@ -38,14 +33,9 @@ class Timer: UIView {
     }
     
     
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.ClockMaker()
-        
-        
-        
-        
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -64,7 +54,6 @@ class Timer: UIView {
         anim.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionLinear)
         circleLayer.addAnimation(anim, forKey: "animateCircle")
         circleLayer.strokeStart = 0
-        circleLayer.strokeEnd = 1
-        anim.repeatCount = Float.infinity
+        circleLayer.strokeEnd = 0
     }
 }

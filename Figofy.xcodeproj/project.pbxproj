@@ -23,6 +23,7 @@
 		187625E71C60F251003828DD /* Sea+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187625E51C60F251003828DD /* Sea+CoreDataProperties.swift */; };
 		187625E91C60F440003828DD /* menudata.csv in Resources */ = {isa = PBXBuildFile; fileRef = 187625E81C60F440003828DD /* menudata.csv */; };
 		18A2765E1C5A165E0071E4AA /* ButtonDesign.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A2765D1C5A165E0071E4AA /* ButtonDesign.swift */; };
+		18AFDA031C7472C300F2616E /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18AFDA021C7472C300F2616E /* AlertView.swift */; };
 		18CCAA981C60D5B700C7D5E8 /* CreateSeaVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CCAA961C60D5B700C7D5E8 /* CreateSeaVC.swift */; };
 		18CCAA991C60D5B700C7D5E8 /* CreateSeaVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18CCAA971C60D5B700C7D5E8 /* CreateSeaVC.xib */; };
 		18E675801C58B6850046B259 /* TextFieldDesign.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E6757F1C58B6850046B259 /* TextFieldDesign.swift */; };
@@ -84,6 +85,7 @@
 		187625E51C60F251003828DD /* Sea+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Sea+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		187625E81C60F440003828DD /* menudata.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = menudata.csv; sourceTree = "<group>"; };
 		18A2765D1C5A165E0071E4AA /* ButtonDesign.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonDesign.swift; sourceTree = "<group>"; };
+		18AFDA021C7472C300F2616E /* AlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
 		18CCAA961C60D5B700C7D5E8 /* CreateSeaVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateSeaVC.swift; sourceTree = "<group>"; };
 		18CCAA971C60D5B700C7D5E8 /* CreateSeaVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CreateSeaVC.xib; sourceTree = "<group>"; };
 		18E6757F1C58B6850046B259 /* TextFieldDesign.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldDesign.swift; sourceTree = "<group>"; };
@@ -205,6 +207,7 @@
 				184696EF1C5F9A000095D64B /* CustomFigofyAnnotation.swift */,
 				1846984B1C60BE8E0095D64B /* SeaCell.swift */,
 				18CCAA971C60D5B700C7D5E8 /* CreateSeaVC.xib */,
+				18AFDA021C7472C300F2616E /* AlertView.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -480,6 +483,7 @@
 			files = (
 				187278EE1C6B48F50029D33F /* Constants.swift in Sources */,
 				655044CD1C64CF1100D79B89 /* ClockVC.swift in Sources */,
+				18AFDA031C7472C300F2616E /* AlertView.swift in Sources */,
 				651018171C50DB4C00B7FECC /* LakeInformationVC.swift in Sources */,
 				651018131C50D93100B7FECC /* ProfileViewController.swift in Sources */,
 				184696CA1C5F61710095D64B /* SeaAnnotation.swift in Sources */,

@@ -21,10 +21,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         //REMEMEBER TO SWITCH BETWEEN
         //TEST
-        MobilePayManager.sharedInstance().setupWithMerchantId("APPDK2922783001", merchantUrlScheme: "Figofy", country: .Denmark)
+        MobilePayManager.sharedInstance().setupWithMerchantId("APPDK0000000000", merchantUrlScheme: "Figofy", country: .Denmark)
         
         //ACTUAL
-        //MobilePayManager.sharedInstance().setupWithMerchantId("APPDK9D4857", merchantUrlScheme: "figofy", country: .Denmark)
+        //MobilePayManager.sharedInstance().setupWithMerchantId("APPDK2922783001", merchantUrlScheme: "figofy", country: .Denmark)
         
         return true
     }
