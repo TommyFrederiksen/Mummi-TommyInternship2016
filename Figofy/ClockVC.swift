@@ -28,17 +28,15 @@ class ClockVC: UIViewController
         
         timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: "UpdateTimeLabel",userInfo: nil, repeats: true)
         
-
-        
-        self.view.backgroundColor = background
+        let circle = Timer()
+        self.view = circle
+        circle.animate()
     }
     
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         UpdateTimeLabel()
-        
-        
     }
     
     deinit{
@@ -48,14 +46,21 @@ class ClockVC: UIViewController
     func UpdateTimeLabel(){
         let formatter = NSDateFormatter()
         formatter.timeStyle = .MediumStyle
-        timeLabel.text = formatter.stringFromDate(clock.currentTime)
-        timeLabel.textColor = UIColor.whiteColor()
+        
+        if let lbl = timeLabel {
+            lbl.text = "Helllo"
+            var x: Int = 0
+            x++
+            print("label isnt nil yet. Number \(x)")
+            if let timetxt = timeLabel.text where timetxt != "" {
+                print("lbl text is not nil. Number \(x)")
+            }
+        }
     }
     
     
     
     @IBAction func payWithMobilePay(sender: AnyObject) {
-        
         
    
         MobilePayManager.sharedInstance().beginMobilePaymentWithPayment(MobilePayPayment(orderId: "1234", productPrice: 1)) { error in
