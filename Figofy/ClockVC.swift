@@ -13,20 +13,24 @@ class ClockVC: UIViewController
     var alertView = AlertView()
     var payment = MobilePayPayment()
     var manager = MobilePayManager()
+    var timer = Timer()
     
     
-    @IBOutlet weak var timerView: Timer!
+    @IBOutlet weak var timerView: UIView!
     @IBOutlet weak var timeLabel: UILabel!
     let clock = Clock()
     
-    var timer: NSTimer?
+    var clockTimer: NSTimer?
     
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: "UpdateTimeLabel",userInfo: nil, repeats: true)
+        clockTimer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: "UpdateTimeLabel",userInfo: nil, repeats: true)
+        UpdateTimerView()
+        
+        
         
         
     }
@@ -35,25 +39,38 @@ class ClockVC: UIViewController
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         UpdateTimeLabel()
+        
+        
     }
     
     deinit{
-        timer?.invalidate()
+        clockTimer?.invalidate()
     }
+    
+    func UpdateTimerView(){
+        //timer.bounds = timerView.bounds
+        
+        
+        let timerview = Timer(frame: CGRectMake(timerView.bounds.width/10000 ,timerView.bounds.height/10000 ,300 ,300))
+        timerView.addSubview(timerview)
+        timerview.animate()
+        
+        
+        
+        
+        
+        
+    }
+    
+        
+
     
     func UpdateTimeLabel(){
         let formatter = NSDateFormatter()
         formatter.timeStyle = .MediumStyle
+      
+        timeLabel.text =  formatter.stringFromDate(clock.currentTime)
         
-        if let lbl = timeLabel {
-            lbl.text = "Helllo"
-            var x: Int = 0
-            x++
-            print("label isnt nil yet. Number \(x)")
-            if let timetxt = timeLabel.text where timetxt != "" {
-                print("lbl text is not nil. Number \(x)")
-            }
-        }
     }
     
     

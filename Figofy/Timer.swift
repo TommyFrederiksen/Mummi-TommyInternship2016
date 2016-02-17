@@ -11,7 +11,6 @@ import UIKit
 import QuartzCore
 
 
-//this call will create 3 circles and animate them as a countdown timer
 class Timer: UIView {
 
     let animationDuration:NSTimeInterval = 60.0 // The duration of the animation in seconds
@@ -24,8 +23,8 @@ class Timer: UIView {
     {
         circlePath = UIBezierPath(arcCenter: CGPoint(x: frame.size.width/2 ,y: frame.size.height/2), radius: (frame.size.width/2)-30, startAngle: 0, endAngle: CGFloat(M_PI*(2.0)), clockwise: true)
         circleLayer.path = circlePath.CGPath
-        circleLayer.fillColor = UIColor.blueColor().CGColor
-        circleLayer.strokeColor = UIColor.whiteColor().CGColor
+        circleLayer.fillColor = UIColor.clearColor().CGColor
+        circleLayer.strokeColor = UIColor.blackColor().CGColor
         circleLayer.lineWidth = 4
         circleLayer.strokeEnd = 0.0
         layer.addSublayer(circleLayer)
@@ -54,6 +53,6 @@ class Timer: UIView {
         anim.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionLinear)
         circleLayer.addAnimation(anim, forKey: "animateCircle")
         circleLayer.strokeStart = 0
-        circleLayer.strokeEnd = 0
+        circleLayer.strokeEnd = 1
     }
 }
