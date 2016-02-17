@@ -10,17 +10,17 @@ import UIKit
 
 class ClockVC: UIViewController
 {
+    var alertView = AlertView()
     var payment = MobilePayPayment()
     var manager = MobilePayManager()
     
     
-    @IBOutlet weak var timerView: UIView!
+    @IBOutlet weak var timerView: Timer!
     @IBOutlet weak var timeLabel: UILabel!
     let clock = Clock()
     
     var timer: NSTimer?
     
-    let background = UIColor.blackColor()
 
     
     override func viewDidLoad() {
@@ -28,9 +28,7 @@ class ClockVC: UIViewController
         
         timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: "UpdateTimeLabel",userInfo: nil, repeats: true)
         
-        let circle = Timer()
-        self.view = circle
-        circle.animate()
+        
     }
     
     
@@ -61,13 +59,16 @@ class ClockVC: UIViewController
     
     
     @IBAction func payWithMobilePay(sender: AnyObject) {
+        alertView.showOkayAlert("MobilePay Initialized", message: "Switching to MobilePay", style: .Alert, VC: self)
+        //alertView.showYesNoAlert("MobilePay Initialized", message: "Switching to MobilePay", style: .Alert, VC: self)
         
-   
-        MobilePayManager.sharedInstance().beginMobilePaymentWithPayment(MobilePayPayment(orderId: "1234", productPrice: 1)) { error in
-            
-            
-            
-        }
+        
+        
+//        MobilePayManager.sharedInstance().beginMobilePaymentWithPayment(MobilePayPayment(orderId: "1234", productPrice: 1)) { error in
+//            
+//            
+//            
+//        }
         
         
     }
