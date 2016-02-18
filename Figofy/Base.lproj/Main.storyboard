@@ -324,7 +324,9 @@
                                     <constraint firstAttribute="height" constant="30" id="598-qO-sVe"/>
                                     <constraint firstAttribute="width" constant="46" id="Dt8-NI-E8B"/>
                                 </constraints>
-                                <state key="normal" title="Button"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" red="0.090196078431372548" green="0.36470588235294116" blue="0.92156862745098034" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="payWithMobilePay:" destination="17N-41-QlL" eventType="touchUpInside" id="8s6-UW-UFp"/>
                                 </connections>
@@ -337,8 +339,14 @@
                                     <constraint firstAttribute="height" constant="300" id="XUQ-ZC-2ad"/>
                                 </constraints>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wHV-Dn-yP1">
+                                <rect key="frame" x="20" y="64" width="560" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="0.59644796560000002" blue="0.15540196040000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="SQK-wr-PSe" firstAttribute="centerX" secondItem="825-va-7tB" secondAttribute="centerX" id="1kB-No-cG9"/>
                             <constraint firstItem="xTV-1K-muX" firstAttribute="centerX" secondItem="825-va-7tB" secondAttribute="centerX" id="5Zy-Fe-F5E"/>
@@ -348,9 +356,13 @@
                             <constraint firstItem="XeL-9k-hYH" firstAttribute="centerY" secondItem="825-va-7tB" secondAttribute="centerY" id="J2a-I7-2Bi"/>
                             <constraint firstItem="xTV-1K-muX" firstAttribute="leading" secondItem="825-va-7tB" secondAttribute="leadingMargin" id="MdS-zJ-f8W"/>
                             <constraint firstAttribute="trailingMargin" secondItem="xTV-1K-muX" secondAttribute="trailing" id="Nhk-j6-kBd"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="wHV-Dn-yP1" secondAttribute="trailing" constant="259" id="O1t-A6-hk6"/>
+                            <constraint firstItem="wHV-Dn-yP1" firstAttribute="leading" secondItem="825-va-7tB" secondAttribute="leadingMargin" id="OOW-6d-eyy"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="wHV-Dn-yP1" secondAttribute="trailing" id="TCb-Fc-Z8x"/>
                             <constraint firstItem="XeL-9k-hYH" firstAttribute="centerX" secondItem="825-va-7tB" secondAttribute="centerX" id="Zdh-XB-98G"/>
                             <constraint firstItem="SQK-wr-PSe" firstAttribute="top" secondItem="xTV-1K-muX" secondAttribute="bottom" constant="85" id="cbF-Uw-f94"/>
                             <constraint firstItem="xTV-1K-muX" firstAttribute="centerY" secondItem="825-va-7tB" secondAttribute="centerY" id="g5U-Nr-jtA"/>
+                            <constraint firstItem="wHV-Dn-yP1" firstAttribute="top" secondItem="0wz-N1-y6c" secondAttribute="bottom" constant="44" id="qVL-k8-sZS"/>
                             <constraint firstItem="SQK-wr-PSe" firstAttribute="top" secondItem="XeL-9k-hYH" secondAttribute="bottom" id="wGQ-G2-XgW"/>
                         </constraints>
                         <variation key="default">
@@ -364,6 +376,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" systemItem="favorites" id="Dmh-Ze-5Cm"/>
                     <connections>
+                        <outlet property="CountDownClock" destination="wHV-Dn-yP1" id="EE0-Yb-ftJ"/>
                         <outlet property="timeLabel" destination="xTV-1K-muX" id="InQ-Lz-833"/>
                         <outlet property="timerView" destination="XeL-9k-hYH" id="A7M-bR-WoK"/>
                     </connections>
