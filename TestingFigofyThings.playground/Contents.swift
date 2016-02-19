@@ -6,6 +6,7 @@ import SceneKit
 import SpriteKit
 import XCPlayground
 
+
 let canvas = UIView(frame: CGRectMake(0, 0, 500, 700))
 canvas.backgroundColor = UIColor.darkGrayColor()
 
@@ -28,9 +29,10 @@ class ProgressView: UIView  {
     
     
     func animateProgressView(timeLeft: Int) {
+        
         let animation = CABasicAnimation(keyPath: "strokeEnd")
-        animation.fromValue = CGFloat(0.0)
-        animation.toValue = CGFloat(1.0)
+        animation.fromValue = CGFloat(1.0)
+        animation.toValue = CGFloat(0.0)
         animation.duration = Double(timeLeft*60*60)
         animation.additive = true
         animation.fillMode = kCAFillModeForwards
@@ -40,8 +42,8 @@ class ProgressView: UIView  {
         animation.removedOnCompletion = false
         progressLayer.addAnimation(animation, forKey: "strokeEnd")
         let animation2 = CABasicAnimation(keyPath: "strokeEnd")
-        animation2.fromValue = CGFloat(0.0)
-        animation2.toValue = CGFloat(1.0)
+        animation2.fromValue = CGFloat(1.0)
+        animation2.toValue = CGFloat(0.0)
         animation2.duration = Double(timeLeft*60)
         animation2.additive = true
         animation2.fillMode = kCAFillModeForwards
@@ -51,8 +53,8 @@ class ProgressView: UIView  {
         animation2.removedOnCompletion = false
         progressLayer2.addAnimation(animation2, forKey: "strokeEnd")
         let animation3 = CABasicAnimation(keyPath: "strokeEnd")
-        animation3.fromValue = CGFloat(0.0)
-        animation3.toValue = CGFloat(1.0)
+        animation3.fromValue = CGFloat(1.0)
+        animation3.toValue = CGFloat(0.0)
         animation3.duration = Double(timeLeft)
         animation3.additive = true
         animation3.fillMode = kCAFillModeForwards
@@ -79,7 +81,7 @@ private func createProgressLayer() {
     
     
     progressLayer.backgroundColor = UIColor.clearColor().CGColor
-    progressLayer.shadowColor = UIColor.orangeColor().CGColor
+    progressLayer.shadowColor = UIColor.whiteColor().CGColor
     progressLayer.shadowRadius = 3.5
     progressLayer.shadowOpacity = 1
     progressLayer.shadowOffset = CGSizeZero
@@ -97,14 +99,14 @@ private func createProgressLayer() {
     
     
     progressLayer2.backgroundColor = UIColor.clearColor().CGColor
-    progressLayer2.shadowColor = UIColor.orangeColor().CGColor
-    progressLayer2.shadowRadius = 3.5
+    progressLayer2.shadowColor = UIColor.whiteColor().CGColor
+    progressLayer2.shadowRadius = 2.5
     progressLayer2.shadowOpacity = 1
     progressLayer2.shadowOffset = CGSizeZero
     progressLayer2.allowsEdgeAntialiasing = true
     progressLayer2.masksToBounds = false
     progressLayer2.fillColor = nil
-    progressLayer2.strokeColor = UIColor.blackColor().CGColor
+    progressLayer2.strokeColor = UIColor.whiteColor().CGColor
     progressLayer2.strokeStart = 0.0
     progressLayer2.strokeEnd = 0.0
     progressLayer2.lineWidth = 5
@@ -115,17 +117,17 @@ private func createProgressLayer() {
     
     
     progressLayer3.backgroundColor = UIColor.clearColor().CGColor
-    progressLayer3.shadowColor = UIColor.orangeColor().CGColor
-    progressLayer3.shadowRadius = 3.5
+    progressLayer3.shadowColor = UIColor.whiteColor().CGColor
+    progressLayer3.shadowRadius = 1.5
     progressLayer3.shadowOpacity = 1
     progressLayer3.shadowOffset = CGSizeZero
     progressLayer3.allowsEdgeAntialiasing = true
     progressLayer3.masksToBounds = false
     progressLayer3.fillColor = nil
-    progressLayer3.strokeColor = UIColor.blackColor().CGColor
+    progressLayer3.strokeColor = UIColor.whiteColor().CGColor
     progressLayer3.strokeStart = 0.0
     progressLayer3.strokeEnd = 0.0
-    progressLayer3.lineWidth = 2.5
+    progressLayer3.lineWidth = 1.5
     progressLayer3.lineJoin = kCALineJoinRound
     
     gradientMaskLayer.mask = progressLayer
@@ -137,23 +139,28 @@ private func createProgressLayer() {
     
 }
     
-private func gradientMask() -> CAGradientLayer {
+    private func gradientMask() -> CAGradientLayer {
     let gradientLayer = CAGradientLayer()
     gradientLayer.frame = canvas.frame
-    gradientLayer.locations = [0.0, 0.3, 0.5, 1.0]
+    gradientLayer.locations = [0.0,  1.0]
+    
+    
+    let colorTop: AnyObject = UIColor(red: 234/255.0, green: 70/255.0, blue: 154/255.0, alpha: 1.0).CGColor
+    
+    let colorMidTM: AnyObject = UIColor(colorLiteralRed: 253/255, green: 75/255, blue: 56/255, alpha: 1.0).CGColor
         
-    let colorTop: AnyObject = UIColor(red: 244.0/255.0, green: 81.0/255.0, blue: 30.0/255.0, alpha: 1.0).CGColor
-    let colorMidTM: AnyObject = UIColor(colorLiteralRed: 255.0/255, green: 254.0/255, blue: 17/255, alpha: 1.0).CGColor
     let colorBottom: AnyObject = UIColor(red: 48/255.0, green: 110/255.0, blue: 255/255.0, alpha: 1.0).CGColor
+        
     let colorMid: AnyObject = UIColor(colorLiteralRed: 153.0, green: 255, blue: 255, alpha: 1.0).CGColor
     
-    let arrayOfColors: [AnyObject] = [colorTop, colorMidTM, colorMid, colorBottom]
+    let arrayOfColors: [AnyObject] = [colorTop, colorMidTM]
         gradientLayer.colors = arrayOfColors
     
    
     return gradientLayer
 
     }
+    
 }
 
 func secondsToHoursMinutesSeconds (seconds : Int) -> (Int, Int, Int) {
@@ -164,7 +171,8 @@ func secondsToHoursMinutesSeconds (seconds : Int) -> (Int, Int, Int) {
 secondsToHoursMinutesSeconds(3600)
 
 var test = ProgressView()
-test.animateProgressView(60)
+
+test.animateProgressView(1)
 
 
 

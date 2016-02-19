@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="tsG-e2-I6t">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
@@ -37,7 +37,7 @@
                         <viewControllerLayoutGuide type="top" id="9yP-PR-nC1"/>
                         <viewControllerLayoutGuide type="bottom" id="kMn-oS-Fuu"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="ZcC-Mc-tox" customClass="GradientColor" customModule="Figofy" customModuleProvider="target">
+                    <view key="view" contentMode="scaleToFill" id="ZcC-Mc-tox">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
@@ -194,12 +194,6 @@
                             <constraint firstAttribute="trailingMargin" secondItem="HQy-My-uvF" secondAttribute="trailing" id="XVR-J7-f0O"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
-                            <userDefinedRuntimeAttribute type="color" keyPath="topColor">
-                                <color key="value" red="0.15500245526739304" green="0.21859127582165605" blue="0.59417067307692306" alpha="1" colorSpace="calibratedRGB"/>
-                            </userDefinedRuntimeAttribute>
-                            <userDefinedRuntimeAttribute type="color" keyPath="bottomColor">
-                                <color key="value" red="0.20831585570469799" green="0.29229048356565129" blue="0.44940562618310059" alpha="1" colorSpace="calibratedRGB"/>
-                            </userDefinedRuntimeAttribute>
                             <userDefinedRuntimeAttribute type="number" keyPath="opacity">
                                 <real key="value" value="1"/>
                             </userDefinedRuntimeAttribute>
@@ -374,7 +368,7 @@
                             </mask>
                         </variation>
                     </view>
-                    <tabBarItem key="tabBarItem" systemItem="favorites" id="Dmh-Ze-5Cm"/>
+                    <tabBarItem key="tabBarItem" title="Tid" id="Dmh-Ze-5Cm"/>
                     <connections>
                         <outlet property="CountDownClock" destination="wHV-Dn-yP1" id="EE0-Yb-ftJ"/>
                         <outlet property="timeLabel" destination="xTV-1K-muX" id="InQ-Lz-833"/>
@@ -458,7 +452,7 @@
                             <outlet property="delegate" destination="X5z-Ec-O9v" id="pby-aP-Lqn"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" systemItem="featured" id="CIT-LI-Kw2"/>
+                    <tabBarItem key="tabBarItem" title="Events" id="CIT-LI-Kw2"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hHl-kZ-oma" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -488,7 +482,7 @@
                             <constraint firstItem="94K-wD-Pqc" firstAttribute="leading" secondItem="fTO-2m-hkx" secondAttribute="leading" id="sZV-Kw-PUt"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" systemItem="topRated" id="d5j-sB-TrV"/>
+                    <tabBarItem key="tabBarItem" title="Kort" id="d5j-sB-TrV"/>
                     <connections>
                         <outlet property="map" destination="94K-wD-Pqc" id="kVM-gY-tIN"/>
                     </connections>
@@ -525,111 +519,16 @@
                         <viewControllerLayoutGuide type="top" id="Cfm-7y-Cmf"/>
                         <viewControllerLayoutGuide type="bottom" id="fE3-kf-rl9"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="J8S-th-hMU">
+                    <view key="view" contentMode="scaleToFill" id="J8S-th-hMU" userLabel="ContainerView">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Dd7-9w-MP4">
-                                <rect key="frame" x="20" y="30" width="560" height="200"/>
-                                <subviews>
-                                    <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="TCe-Ab-gCQ">
-                                        <rect key="frame" x="0.0" y="0.0" width="275" height="200"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Figofy" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bp9-em-1KU">
-                                                <rect key="frame" x="0.0" y="0.0" width="275" height="25"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Industrivej 24" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bib-fz-NIu">
-                                                <rect key="frame" x="0.0" y="35" width="275" height="25"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100 År" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rsc-4w-Fn3">
-                                                <rect key="frame" x="0.0" y="70" width="275" height="25"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mand" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XEU-fY-437">
-                                                <rect key="frame" x="0.0" y="105" width="275" height="25"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20 22 00 06" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ni7-hO-TUm">
-                                                <rect key="frame" x="0.0" y="140" width="275" height="25"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Figofy@figofy.dk" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rVM-Sc-5ST">
-                                                <rect key="frame" x="0.0" y="175" width="275" height="25"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                    </stackView>
-                                    <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" distribution="equalSpacing" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="97p-NQ-CCT">
-                                        <rect key="frame" x="285" y="0.0" width="275" height="200"/>
-                                        <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Figofy_app_trans" translatesAutoresizingMaskIntoConstraints="NO" id="ilG-Et-aBu">
-                                                <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="120" id="Htf-s1-EL5"/>
-                                                    <constraint firstAttribute="height" constant="120" id="ptN-lq-dgi"/>
-                                                </constraints>
-                                            </imageView>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lXk-FB-KTB">
-                                                <rect key="frame" x="0.0" y="130" width="61" height="30"/>
-                                                <state key="normal" title="Kalender"/>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rTi-cf-MXt">
-                                                <rect key="frame" x="0.0" y="170" width="49" height="30"/>
-                                                <state key="normal" title="Venner"/>
-                                            </button>
-                                        </subviews>
-                                    </stackView>
-                                </subviews>
-                            </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Favorit Sø'er" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aIf-pM-R7p">
-                                <rect key="frame" x="20" y="237" width="560" height="33"/>
-                                <color key="backgroundColor" red="0.3411764705882353" green="0.75294117647058822" blue="0.99215686274509807" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                                <size key="shadowOffset" width="0.0" height="0.0"/>
-                            </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Uax-t9-AUM" userLabel="FavoriteLakesTableView">
-                                <rect key="frame" x="20" y="270" width="560" height="281"/>
-                                <color key="backgroundColor" red="0.74117647058823533" green="0.86274509803921573" blue="0.92156862745098034" alpha="1" colorSpace="calibratedRGB"/>
-                            </tableView>
-                        </subviews>
-                        <color key="backgroundColor" red="0.40000000000000002" green="0.80000000000000004" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                        <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="Uax-t9-AUM" secondAttribute="trailing" id="0ie-PJ-63b"/>
-                            <constraint firstItem="Uax-t9-AUM" firstAttribute="leading" secondItem="J8S-th-hMU" secondAttribute="leadingMargin" id="AiN-x6-nld"/>
-                            <constraint firstItem="Uax-t9-AUM" firstAttribute="top" secondItem="Dd7-9w-MP4" secondAttribute="bottom" constant="40" id="KHx-V7-MGI"/>
-                            <constraint firstItem="aIf-pM-R7p" firstAttribute="leading" secondItem="J8S-th-hMU" secondAttribute="leadingMargin" id="UUp-4x-EGf"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Dd7-9w-MP4" secondAttribute="trailing" id="duW-iE-Bdm"/>
-                            <constraint firstItem="fE3-kf-rl9" firstAttribute="top" secondItem="Uax-t9-AUM" secondAttribute="bottom" id="hCm-PJ-WPd"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="aIf-pM-R7p" secondAttribute="trailing" id="j07-DM-vzA"/>
-                            <constraint firstItem="Uax-t9-AUM" firstAttribute="top" secondItem="aIf-pM-R7p" secondAttribute="bottom" id="oos-nC-Byu"/>
-                            <constraint firstItem="Dd7-9w-MP4" firstAttribute="leading" secondItem="J8S-th-hMU" secondAttribute="leadingMargin" id="pDa-0v-Qf3"/>
-                            <constraint firstItem="Dd7-9w-MP4" firstAttribute="top" secondItem="Cfm-7y-Cmf" secondAttribute="bottom" constant="10" id="pfJ-6C-5at"/>
-                        </constraints>
+                        <color key="backgroundColor" red="1" green="0.8924316065395973" blue="0.46421455536912754" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
-                    <tabBarItem key="tabBarItem" systemItem="history" id="Dod-ru-iI8"/>
-                    <connections>
-                        <outlet property="favoriteLakesTableView" destination="Uax-t9-AUM" id="4UP-7O-sHL"/>
-                    </connections>
+                    <tabBarItem key="tabBarItem" title="Min Side" id="Dod-ru-iI8"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iJf-nv-a7Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2073" y="-368"/>
+            <point key="canvasLocation" x="2026" y="-368"/>
         </scene>
         <!--Lake InformationVC-->
         <scene sceneID="sZg-mi-wwc">
@@ -900,7 +799,7 @@ Søndag   00:00 - 21:00</string>
                                     <action selector="payBtnPressed:" destination="VWp-wP-qoj" eventType="touchUpInside" id="ru2-Mu-HSv"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Amount" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="p7p-TC-1wJ" customClass="TextFieldDesign" customModule="Figofy" customModuleProvider="target">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Amount" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="p7p-TC-1wJ" customClass="TextFieldDesign" customModule="Figofy" customModuleProvider="target">
                                 <rect key="frame" x="135" y="185" width="330" height="46"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="330" id="5qg-xD-txV"/>
