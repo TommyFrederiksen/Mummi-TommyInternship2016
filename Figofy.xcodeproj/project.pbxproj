@@ -22,7 +22,7 @@
 		187625E61C60F251003828DD /* Sea.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187625E41C60F251003828DD /* Sea.swift */; };
 		187625E71C60F251003828DD /* Sea+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187625E51C60F251003828DD /* Sea+CoreDataProperties.swift */; };
 		187625E91C60F440003828DD /* menudata.csv in Resources */ = {isa = PBXBuildFile; fileRef = 187625E81C60F440003828DD /* menudata.csv */; };
-		18A2765E1C5A165E0071E4AA /* ButtonDesign.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A2765D1C5A165E0071E4AA /* ButtonDesign.swift */; };
+		18A2765E1C5A165E0071E4AA /* FigofyButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A2765D1C5A165E0071E4AA /* FigofyButton.swift */; };
 		18AFDA031C7472C300F2616E /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18AFDA021C7472C300F2616E /* AlertView.swift */; };
 		18CCAA981C60D5B700C7D5E8 /* CreateSeaVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CCAA961C60D5B700C7D5E8 /* CreateSeaVC.swift */; };
 		18CCAA991C60D5B700C7D5E8 /* CreateSeaVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18CCAA971C60D5B700C7D5E8 /* CreateSeaVC.xib */; };
@@ -84,7 +84,7 @@
 		187625E41C60F251003828DD /* Sea.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sea.swift; sourceTree = "<group>"; };
 		187625E51C60F251003828DD /* Sea+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Sea+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		187625E81C60F440003828DD /* menudata.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = menudata.csv; sourceTree = "<group>"; };
-		18A2765D1C5A165E0071E4AA /* ButtonDesign.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonDesign.swift; sourceTree = "<group>"; };
+		18A2765D1C5A165E0071E4AA /* FigofyButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FigofyButton.swift; sourceTree = "<group>"; };
 		18AFDA021C7472C300F2616E /* AlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
 		18CCAA961C60D5B700C7D5E8 /* CreateSeaVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateSeaVC.swift; sourceTree = "<group>"; };
 		18CCAA971C60D5B700C7D5E8 /* CreateSeaVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CreateSeaVC.xib; sourceTree = "<group>"; };
@@ -164,7 +164,7 @@
 				18E6757F1C58B6850046B259 /* TextFieldDesign.swift */,
 				18E675811C58B76F0046B259 /* TextFieldEffects.swift */,
 				183B64C41C58F58C00B78D1B /* GradientColor.swift */,
-				18A2765D1C5A165E0071E4AA /* ButtonDesign.swift */,
+				18A2765D1C5A165E0071E4AA /* FigofyButton.swift */,
 			);
 			name = DesignUIColors;
 			sourceTree = "<group>";
@@ -506,7 +506,7 @@
 				1846984C1C60BE8E0095D64B /* SeaCell.swift in Sources */,
 				651018191C50DBDC00B7FECC /* MobilePayViewController.swift in Sources */,
 				651018151C50D9EB00B7FECC /* MapVC.swift in Sources */,
-				18A2765E1C5A165E0071E4AA /* ButtonDesign.swift in Sources */,
+				18A2765E1C5A165E0071E4AA /* FigofyButton.swift in Sources */,
 				187625E61C60F251003828DD /* Sea.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
