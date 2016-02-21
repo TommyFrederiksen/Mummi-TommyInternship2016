@@ -172,7 +172,7 @@ secondsToHoursMinutesSeconds(3600)
 
 var test = ProgressView()
 
-test.animateProgressView(1)
+test.animateProgressView(60)
 
 
 
