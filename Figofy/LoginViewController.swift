@@ -14,8 +14,17 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     //MARK: IBOutlets
     @IBOutlet weak var usernameTextField: TextFieldDesign!
     @IBOutlet weak var passwordTextField: TextFieldDesign!
+    @IBOutlet weak var loginbtn: UIButton!
+    @IBOutlet weak var figofyLogo: UIImageView!
+    @IBOutlet weak var profilephotoView: UIImageView!
     
+    @IBOutlet weak var opretbtn: UIButton!
+    @IBOutlet weak var opretprofilUsername: TextFieldDesign!
+    @IBOutlet weak var opretprofilPassword: TextFieldDesign!
+    @IBOutlet weak var opretprofilEmail: TextFieldDesign!
+    @IBOutlet weak var opretprofilPhone: TextFieldDesign!
     
+    @IBOutlet weak var buttomBar: UIStackView!
     // MARK: Variables
     let layer = CAGradientLayer()
     let Users = [["Søren","Figofy"],["Kim","Figofy"],["Tommy","Figofy"],["Mummi","Figofy"],["Figofy","Figofy"]]
@@ -26,6 +35,11 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         self.usernameTextField.delegate = self
         self.passwordTextField.delegate = self
+        loginbtn.layer.cornerRadius = 50
+        opretbtn.layer.cornerRadius = 50
+
+        
+        
         
         
     }
@@ -105,6 +119,21 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         login()
     }
    
+    @IBOutlet weak var opretSV: UIStackView!
+    @IBAction func OpretProfil(sender: AnyObject) {
+        usernameTextField.hidden = true
+        passwordTextField.hidden = true
+        loginbtn.hidden = true
+        figofyLogo.hidden = true
+        profilephotoView.hidden = false
+        profilephotoView.layer.cornerRadius = 75
+        profilephotoView.clipsToBounds = true
+        opretSV.hidden = false
+        buttomBar.hidden = true
+        
+    }
 
+    @IBAction func OpretProfiel(sender: AnyObject) {
+    }
 }
 
