@@ -18,7 +18,9 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var figofyLogo: UIImageView!
     @IBOutlet weak var profilephotoView: UIImageView!
     
-    @IBOutlet weak var opretbtn: UIButton!
+    @IBOutlet weak var fortrydBtn: UIButton!
+    @IBOutlet weak var opretBtn: UIButton!
+    
     @IBOutlet weak var opretprofilUsername: TextFieldDesign!
     @IBOutlet weak var opretprofilPassword: TextFieldDesign!
     @IBOutlet weak var opretprofilEmail: TextFieldDesign!
@@ -36,7 +38,9 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         self.usernameTextField.delegate = self
         self.passwordTextField.delegate = self
         loginbtn.layer.cornerRadius = 50
-        opretbtn.layer.cornerRadius = 50
+        opretBtn.layer.cornerRadius = opretBtn.frame.width/2
+        fortrydBtn.layer.cornerRadius = fortrydBtn.frame.width/2
+        
 
         
         
@@ -133,6 +137,16 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         
     }
 
+    @IBAction func FortrydOpret(sender: AnyObject) {
+        usernameTextField.hidden = false
+        passwordTextField.hidden = false
+        loginbtn.hidden = false
+        figofyLogo.hidden = false
+        profilephotoView.hidden = true
+        
+        opretSV.hidden = true
+        buttomBar.hidden = false
+    }
     @IBAction func OpretProfiel(sender: AnyObject) {
     }
 }
