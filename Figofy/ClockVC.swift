@@ -19,7 +19,7 @@ class ClockVC: UIViewController
     var timeLeft = Timer.duration.animationDuration?.hashValue
     var countDown: NSTimer?
     
-    @IBOutlet weak var timerView: UIView!
+    @IBOutlet weak var timerView: Timer!
     @IBOutlet weak var CountDownClock: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
     
@@ -37,12 +37,12 @@ class ClockVC: UIViewController
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         UpdateTimeLabel()
-        Update()
     }
     
     deinit{
         clockTimer?.invalidate()
     }
+    
     func Update(){
        
         
@@ -55,17 +55,19 @@ class ClockVC: UIViewController
         
     }
     
+
     func UpdateTimerView(){
         
-        let timerview = Timer(frame: CGRectMake(timerView.bounds.width/10000 ,timerView.bounds.height/10000 ,300 ,300))
-        timerView.addSubview(timerview)
+        
+        
         let color = UIColor(red: 23/255, green: 28/255, blue: 63/255, alpha: 1).CGColor
+        
         timerView.layer.shadowColor = color
         timerView.layer.shadowOpacity = 0.9
         timerView.layer.shadowRadius = 4
         timerView.layer.shadowOffset = CGSizeZero
         Timer.duration.animationDuration = 60
-        timerview.animate()
+        timerView.animate()
         
     }
     
@@ -73,12 +75,7 @@ class ClockVC: UIViewController
     func UpdateTimeLabel(){
         let formatter = NSDateFormatter()
         formatter.timeStyle = .MediumStyle
-        timeLabel.textColor = UIColor(red: 26/255, green: 28/255, blue: 68/255, alpha: 1)
-        timeLabel.text =  formatter.stringFromDate(clock.currentTime)
-        let color = UIColor(red: 20/255, green: 20/255, blue: 20/255, alpha: 1).CGColor
-        timeLabel.layer.shadowColor = color
-        timeLabel.layer.shadowOpacity = 0.9
-        timeLabel.layer.shadowOffset = CGSizeZero
+        
     }
     
     @IBAction func payWithMobilePay(sender: AnyObject) {

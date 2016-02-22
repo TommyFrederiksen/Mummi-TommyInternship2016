@@ -17,6 +17,29 @@ class ProgressView: UIView  {
     let progressLayer2 = CAShapeLayer()
     let progressLayer3 = CAShapeLayer()
     
+    let secondsGradientMask = CAGradientLayer()
+    let minutesGradientMask = CAGradientLayer()
+    let hoursGradientMask = CAGradientLayer()
+    
+    
+    private func iterateThroughCollection(collection: [AnyObject]) -> Array<AnyObject> {
+        let newCollection: [AnyObject] = collection
+        
+        if var getLayer = newCollection as? [CAShapeLayer] where getLayer.count == 0 {
+            getLayer.append(self.progressLayer)
+            getLayer.append(self.progressLayer2)
+            getLayer.append(self.progressLayer3)
+            return getLayer
+        } else if var getGradients = newCollection as? [CAGradientLayer] where getGradients.count == 0 {
+            getGradients.append(self.secondsGradientMask)
+            getGradients.append(self.minutesGradientMask)
+            getGradients.append(self.hoursGradientMask)
+            return getGradients
+        }
+        return []
+    }
+    
+    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         createProgressLayer()
@@ -141,7 +164,7 @@ private func createProgressLayer() {
     
     private func gradientMask() -> CAGradientLayer {
     let gradientLayer = CAGradientLayer()
-    gradientLayer.frame = canvas.frame
+    gradientLayer.frame = canvas.bounds
     gradientLayer.locations = [0.0,  1.0]
     
     
@@ -172,7 +195,9 @@ secondsToHoursMinutesSeconds(3600)
 
 var test = ProgressView()
 
-test.animateProgressView(60)
+test.animateProgressView(6)
+
+
 
 
 
