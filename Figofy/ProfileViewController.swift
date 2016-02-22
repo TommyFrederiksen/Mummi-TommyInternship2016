@@ -11,12 +11,31 @@ import UIKit
 
 class ProfileViewController: UIViewController {
     
+   
     
+    
+    
+   
+    @IBOutlet weak var profileImageView: UIImageView!
+    
+    @IBOutlet weak var backgroundImageBtn: UIButton!
+    @IBOutlet weak var editImageBtn: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        Test()
+    
         
-    } 
+        
+    }
+    func Test(){
+        profileImageView.layer.cornerRadius = profileImageView.frame.width/2
+        
+        profileImageView.clipsToBounds = true
+        backgroundImageBtn.layer.cornerRadius = backgroundImageBtn.layer.frame.width/2
+        
+    }
+    
     
     
     

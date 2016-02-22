@@ -40,7 +40,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         loginbtn.layer.cornerRadius = 50
         opretBtn.layer.cornerRadius = opretBtn.frame.width/2
         fortrydBtn.layer.cornerRadius = fortrydBtn.frame.width/2
-        
+        profilephotoView.layer.cornerRadius = 75
+        profilephotoView.clipsToBounds = true
 
         
         
@@ -130,8 +131,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         loginbtn.hidden = true
         figofyLogo.hidden = true
         profilephotoView.hidden = false
-        profilephotoView.layer.cornerRadius = 75
-        profilephotoView.clipsToBounds = true
+        
         opretSV.hidden = false
         buttomBar.hidden = true
         
