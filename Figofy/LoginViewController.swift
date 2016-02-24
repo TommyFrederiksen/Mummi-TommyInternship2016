@@ -7,7 +7,8 @@
 //
 
 import UIKit
-
+import FBSDKCoreKit
+import FBSDKLoginKit
 
 class LoginViewController: UIViewController, UITextFieldDelegate {
 
@@ -21,11 +22,12 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var fortrydBtn: UIButton!
     @IBOutlet weak var opretBtn: UIButton!
     
-    @IBOutlet weak var opretprofilUsername: TextFieldDesign!
-    @IBOutlet weak var opretprofilPassword: TextFieldDesign!
-    @IBOutlet weak var opretprofilEmail: TextFieldDesign!
-    @IBOutlet weak var opretprofilPhone: TextFieldDesign!
+    @IBOutlet weak var createUsername: TextFieldDesign!
+    @IBOutlet weak var createPassword: TextFieldDesign!
+    @IBOutlet weak var createEmail: TextFieldDesign!
+    @IBOutlet weak var createPhone: TextFieldDesign!
     
+    @IBOutlet weak var opretSV: UIStackView!
     @IBOutlet weak var buttomBar: UIStackView!
     // MARK: Variables
     let layer = CAGradientLayer()
@@ -42,90 +44,74 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         fortrydBtn.layer.cornerRadius = fortrydBtn.frame.width/2
         profilephotoView.layer.cornerRadius = 75
         profilephotoView.clipsToBounds = true
-
-        
-        
-        
-        
     }
     
-    // MARK: Custom Methods
-    func login(){
-        //empty fields in login
-        if(usernameTextField.text == "" || passwordTextField.text == "")
-        {
-            
-            let uiAlert = UIAlertController(title: "OBS", message: "Username & Password kan ikke være tomme", preferredStyle: UIAlertControllerStyle.Alert)
-            
-            uiAlert.addAction(UIAlertAction(title: "OK", style: .Default, handler:
-                {(action: UIAlertAction!) in self.navigationController?.popToRootViewControllerAnimated(true)
-            }))
-            
-            self.presentViewController(uiAlert, animated: true, completion: nil)
-            view.endEditing(true)
-            
-            
-            
-        }
-        var indicator = false;
-        
-        for (name) in Users
-        {
-            if (name.contains(usernameTextField.text!))
-            {
-                if(name.contains(passwordTextField.text!))
-                {
-                    indicator = true;
-                    performSegueWithIdentifier("Login", sender: self)
-                }
-            }
-            else
-            {
-            }
-        }
-        if(passwordTextField.text == usernameTextField)
-        {
-            indicator = false;
-        }
-        
-        if(indicator == false)
-        {
-            let uiAlert = UIAlertController(title: "OBS", message: "login fejlede", preferredStyle: UIAlertControllerStyle.Alert)
-            
-            uiAlert.addAction(UIAlertAction(title: "OK", style: .Default, handler: {(action: UIAlertAction!) in self.navigationController?.popToRootViewControllerAnimated(true)}))
-            
-            self.presentViewController(uiAlert, animated: true, completion: nil)
-        }
-    }
-    
-    
-    // MARK: Delegate Methods
-    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        view.endEditing(true)
-        super.touchesBegan(touches, withEvent: event)
-        
-    }
-
-    
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
-        if textField.tag == 1 {
-            passwordTextField.becomeFirstResponder()
-        } else if textField.returnKeyType == UIReturnKeyType.Go {
-            login()
-        }
-        
-        return true
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        //grab the key and if it is there, login automatically
+//        if NSUserDefaults.standardUserDefaults().valueForKey(KEY_UID) != nil {
+//            self.performSegueWithIdentifier(SEGUE_LOGGED_IN, sender: nil)
+//        }
     }
     
     
     //MARK: IBAction
-    @IBAction func Login(sender: AnyObject)
+    //FACEBOOK
+    @IBAction func fbLogin(sender: UIButton)
     {
-        login()
+        
+        let facebookLogin = FBSDKLoginManager()
+        
+        facebookLogin.logInWithReadPermissions(["email"], fromViewController: self, handler: { facebookResult, facebookError -> Void in
+            if facebookError != nil {
+                print("Facebook login failed. Error \(facebookError)")
+            } else {
+                //get the access token for Firebase
+                let accessToken = FBSDKAccessToken.currentAccessToken()
+                print("Successfully logged in with facebook. \(accessToken)")
+                
+                DataService.dataService.REF_BASE.authWithOAuthProvider("facebook", token: accessToken.tokenString, withCompletionBlock: { error, authData in
+                    
+                    //store the information in Firebase
+                    if error != nil {
+                        print("Login Failed. \(error)")
+                    } else {
+                        print("Logged In! \(authData)")
+                        //save it to the device
+                        NSUserDefaults.standardUserDefaults().setValue(authData.uid, forKey: KEY_UID)
+                        //save to firebase
+                        var graphConnection = FBSDKGraphRequestConnection()
+                        
+                        if accessToken.hasGranted("") {
+                            
+                        }
+//                        FBSDKGraphRequest(graphPath: "me?fields=id,name,picture", parameters: nil).startWithCompletionHandler({ connection, result, error in
+//                            
+//                            if error != nil {
+//                                print("couldnt get information about user: \(error)")
+//                            } else {
+//                                
+//                                print("Information about the user: \(result)")
+//                                print("CONNECTION: \(connection)")
+//                            }
+//                            
+//                        })
+                        
+//                        let user = ["provider" : authData.provider!]
+//                        DataService.dataService.createFirebaseUser(authData.uid, user: user)
+//                        
+                        //Navigate through
+                        self.performSegueWithIdentifier(SEGUE_LOGGED_IN, sender: nil)
+                    }
+                    
+                })
+                
+                
+            }
+        })
     }
-   
-    @IBOutlet weak var opretSV: UIStackView!
-    @IBAction func OpretProfil(sender: AnyObject) {
+    
+    @IBAction func registerBtnPressed(sender: AnyObject) {
         usernameTextField.hidden = true
         passwordTextField.hidden = true
         loginbtn.hidden = true
@@ -136,8 +122,50 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         buttomBar.hidden = true
         
     }
+    
+    @IBAction func createBtnPressed (sender: UIButton) {
+        
+        if let email = createEmail.text where email != "", let pwd = createPassword.text where pwd != "" {
+            
+            DataService.dataService.REF_BASE.authUser(email, password: pwd, withCompletionBlock: { error, authData in
+                
+                if error != nil {
+                    
+                    print(error)
+                    
+                    if error.code == STATUS_ACCOUNT_NONEXIST {
+                        DataService.dataService.REF_BASE.createUser(email, password: pwd, withValueCompletionBlock: { error, result in
+                            
+                            if error != nil {
+                                AlertView().showOkayAlert("Could not create account", message:  "Problem Creating Account. Try something else", style: .Alert, VC: self)
+                            } else {
+                                //Save user and log in
+                                NSUserDefaults.standardUserDefaults().setValue(result[KEY_UID], forKey: KEY_UID)
+                                
+                                DataService.dataService.REF_BASE.authUser(email, password: pwd, withCompletionBlock: nil)
+                                
+                                self.performSegueWithIdentifier(SEGUE_LOGGED_IN, sender: nil)
+                            }
+                            
+                        })
+                    } else {
+                        AlertView().showOkayAlert("Could not login", message:  "Please check your username or password", style: .Alert, VC: self)
+                    }
+                    
+                } else {
+                    self.performSegueWithIdentifier(SEGUE_LOGGED_IN, sender: nil)
+                }
+                
+            })
+            
+        } else {
+            AlertView().showOkayAlert("Email and Password Required", message: "you must enter an email and a password", style: .Alert, VC: self)
+        }
+        
+    }
+    
 
-    @IBAction func FortrydOpret(sender: AnyObject) {
+    @IBAction func cancelBtnPressed (sender: AnyObject) {
         usernameTextField.hidden = false
         passwordTextField.hidden = false
         loginbtn.hidden = false
@@ -147,7 +175,25 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         opretSV.hidden = true
         buttomBar.hidden = false
     }
-    @IBAction func OpretProfiel(sender: AnyObject) {
+    
+    
+    
+    // MARK: Delegate Methods
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        view.endEditing(true)
+        super.touchesBegan(touches, withEvent: event)
+        
+    }
+    
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        if textField.tag == 1 {
+            passwordTextField.becomeFirstResponder()
+        } else if textField.returnKeyType == UIReturnKeyType.Go {
+            
+        }
+        
+        return true
     }
 }
 

@@ -67,7 +67,6 @@ class ClockVC: UIViewController
         timerView.layer.shadowRadius = 4
         timerView.layer.shadowOffset = CGSizeZero
         Timer.duration.animationDuration = 60
-        timerView.animate()
         
     }
     
