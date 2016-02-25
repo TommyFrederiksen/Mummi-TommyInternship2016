@@ -79,6 +79,10 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                     }
                 }
                 
+<<<<<<< HEAD
+=======
+                
+>>>>>>> b9ae4c5e344059b8d866aa07d357956a31ade162
                 print("Successfully logged in with facebook. \(accessToken)")
                 
                 DataService.dataService.REF_BASE.authWithOAuthProvider("facebook", token: accessToken.tokenString, withCompletionBlock: { error, authData in
