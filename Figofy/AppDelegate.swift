@@ -8,6 +8,8 @@
 
 import UIKit
 import CoreData
+import FBSDKCoreKit
+import FBSDKLoginKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -15,32 +17,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
         
         
-        //REMEMEBER TO SWITCH BETWEEN
-        //TEST
-        //MobilePayManager.sharedInstance().setupWithMerchantId("APPDK0000000000", merchantUrlScheme: "figofy", country: .Denmark)
+        //TESTING
         MobilePayManager.sharedInstance().setupWithMerchantId("APPDK0000000000", merchantUrlScheme: "figofy", timeoutSeconds: 30, returnSeconds: 1, captureType: .Capture, country: .Denmark)
-        
         //ACTUAL
-        //MobilePayManager.sharedInstance().setupWithMerchantId("APPDK2922783001", merchantUrlScheme: "figofy", country: .Denmark)
+        //MobilePayManager.sharedInstance().setupWithMerchantId("APPDK2922783001", merchantUrlScheme: "figofy", timeoutSeconds: 30, returnSeconds: 1, captureType: .Capture, country: .Denmark)
         
-        return true
-    }
-    
-    
-    
-    func application(app: UIApplication, openURL url: NSURL, options: [String : AnyObject]) -> Bool {
-        
-        handleMobilePayPaymentWithUrl(url)
-//        let alert = UIAlertController(title: "Payment Successful", message: "MobilePay purchase succeeded: You have now paid for order with ID: \(5444) and MobilePay Transaction ID: \(3) and the amount withdrawn form the card is \(1234)", preferredStyle: .Alert)
-//        let nav = app.windows[0].rootViewController as? UINavigationController
-//        let active = nav?.visibleViewController
-//        
-//        active?.presentViewController(alert, animated: true, completion: nil)
-        
-        return true
+        //facebook Check for log in
+        return FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
     }
     
 
@@ -60,15 +45,33 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationDidBecomeActive(application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+        
+        //activate facebook
+        FBSDKAppEvents.activateApp()
+        
     }
 
     func applicationWillTerminate(application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
-
+    
+    func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject) -> Bool {
+        handleMobilePayPaymentWithUrl(url)
+        
+        //When you create a new account with facebook, its going to switch to facebook and handle it
+        return FBSDKApplicationDelegate.sharedInstance().application(application, openURL: url, sourceApplication: sourceApplication, annotation: annotation)
+        
+    }
+    
+//    func application(app: UIApplication, openURL url: NSURL, options: [String : AnyObject]) -> Bool {
+//        
+//        // MARK: TODO
+//        //if mobilepay doesnt work with the method above, try and figure out how to handle different appswitching or whatever.
+//        //handleMobilePayPaymentWithUrl(url)
+//        return false
+//    }
     
     // MARK: MOBILEPAY
-    
     func handleMobilePayPaymentWithUrl(url: NSURL) {
         var top: UIViewController?
         if let view = UIApplication.sharedApplication().keyWindow?.rootViewController {

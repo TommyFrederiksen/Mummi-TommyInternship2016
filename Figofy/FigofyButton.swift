@@ -24,7 +24,7 @@ import UIKit
         super.init(coder: aDecoder)
         
     }
-    
+
     override func awakeFromNib() {
         layer.cornerRadius = frame.size.width / 2.0
         layer.backgroundColor = buttonColor.CGColor

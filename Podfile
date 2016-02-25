@@ -6,3 +6,4 @@ use_frameworks!
 pod 'AFNetworking', '~> 3.0’
 pod 'MobilePay-AppSwitch-SDK', '~> 1.7.0'
 pod 'Alamofire', '~> 3.0'
+pod 'Firebase', '>= 2.5.0'

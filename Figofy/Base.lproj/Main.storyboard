@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -60,6 +59,88 @@
                                     <rect key="frame" x="0.0" y="0.0" width="140" height="101"/>
                                 </variation>
                             </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="1Tp-Uh-HvH" userLabel="Stack View Username/password">
+                                <rect key="frame" x="200" y="175" width="200" height="250"/>
+                                <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="k32-Jt-idm" customClass="TextFieldDesign" customModule="Figofy" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="200" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="LxO-Ym-fgt">
+                                                <variation key="heightClass=compact" constant="50"/>
+                                            </constraint>
+                                            <constraint firstAttribute="width" constant="200" id="it4-zF-4fr">
+                                                <variation key="heightClass=compact" constant="350"/>
+                                            </constraint>
+                                        </constraints>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" name=".HelveticaNeueDeskInterface-Regular" family="SFNS Display" pointSize="19"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="next"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
+                                                <color key="value" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" red="0.53725490200000003" green="0.82745098039999998" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="placeholderFontScale">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="54z-GJ-c7z" customClass="TextFieldDesign" customModule="Figofy" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="75" width="200" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="Wxt-7D-imk"/>
+                                            <constraint firstAttribute="width" constant="200" id="ixP-Pi-f2R">
+                                                <variation key="heightClass=compact" constant="350"/>
+                                            </constraint>
+                                        </constraints>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" name=".HelveticaNeueDeskInterface-Regular" family="SFNS Display" pointSize="19"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="go" secureTextEntry="YES"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
+                                                <color key="value" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" red="0.53725490200000003" green="0.82745098039999998" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="placeholderFontScale">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <variation key="heightClass=compact" misplaced="YES">
+                                            <rect key="frame" x="0.0" y="55" width="350" height="50"/>
+                                        </variation>
+                                    </textField>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="bottom" translatesAutoresizingMaskIntoConstraints="NO" id="3AL-4L-124">
+                                        <rect key="frame" x="0.0" y="150" width="200" height="100"/>
+                                        <subviews>
+                                            <button opaque="NO" tag="3" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0yJ-To-3DF">
+                                                <rect key="frame" x="100" y="0.0" width="100" height="100"/>
+                                                <color key="backgroundColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="100" id="Gzl-tD-5wP"/>
+                                                    <constraint firstAttribute="width" constant="100" id="R0f-fn-aBh"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name=".HelveticaNeueDeskInterface-Bold" family="SFNS Display" pointSize="15"/>
+                                                <state key="normal" title="Login">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="fbLogin:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GgY-t7-kYq"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="0yJ-To-3DF" secondAttribute="trailing" id="EWW-N3-T04"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                                <variation key="heightClass=compact" alignment="top" misplaced="YES" spacing="5">
+                                    <rect key="frame" x="105" y="131" width="350" height="140"/>
+                                </variation>
+                            </stackView>
                             <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="H3w-fY-xsf">
                                 <rect key="frame" x="200" y="180" width="200" height="310"/>
                                 <subviews>
@@ -100,7 +181,7 @@
                                         </constraints>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" name=".HelveticaNeueDeskInterface-Regular" family="SFNS Display" pointSize="19"/>
-                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="next"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="next" secureTextEntry="YES"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
                                                 <color key="value" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -175,7 +256,7 @@
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="FortrydOpret:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9qH-kV-4ue"/>
+                                                    <action selector="cancelBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sOd-JS-JLp"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="3" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EJK-2M-gjP">
@@ -189,6 +270,9 @@
                                                 <state key="normal" title="Opret">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="createBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="EAD-CF-jCr"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -203,88 +287,6 @@
                                 </subviews>
                                 <variation key="heightClass=compact" misplaced="YES">
                                     <rect key="frame" x="210" y="0.0" width="140" height="101"/>
-                                </variation>
-                            </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="1Tp-Uh-HvH" userLabel="Stack View Username/password">
-                                <rect key="frame" x="200" y="175" width="200" height="250"/>
-                                <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="k32-Jt-idm" customClass="TextFieldDesign" customModule="Figofy" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="200" height="60"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="60" id="LxO-Ym-fgt">
-                                                <variation key="heightClass=compact" constant="50"/>
-                                            </constraint>
-                                            <constraint firstAttribute="width" constant="200" id="it4-zF-4fr">
-                                                <variation key="heightClass=compact" constant="350"/>
-                                            </constraint>
-                                        </constraints>
-                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" name=".HelveticaNeueDeskInterface-Regular" family="SFNS Display" pointSize="19"/>
-                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="next"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
-                                                <color key="value" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                <color key="value" red="0.53725490200000003" green="0.82745098039999998" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="placeholderFontScale">
-                                                <real key="value" value="1"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="54z-GJ-c7z" customClass="TextFieldDesign" customModule="Figofy" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="75" width="200" height="60"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="60" id="Wxt-7D-imk"/>
-                                            <constraint firstAttribute="width" constant="200" id="ixP-Pi-f2R">
-                                                <variation key="heightClass=compact" constant="350"/>
-                                            </constraint>
-                                        </constraints>
-                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" name=".HelveticaNeueDeskInterface-Regular" family="SFNS Display" pointSize="19"/>
-                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="go" secureTextEntry="YES"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
-                                                <color key="value" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                <color key="value" red="0.53725490200000003" green="0.82745098039999998" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="placeholderFontScale">
-                                                <real key="value" value="1"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                        <variation key="heightClass=compact" misplaced="YES">
-                                            <rect key="frame" x="0.0" y="55" width="350" height="50"/>
-                                        </variation>
-                                    </textField>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="bottom" translatesAutoresizingMaskIntoConstraints="NO" id="3AL-4L-124">
-                                        <rect key="frame" x="0.0" y="150" width="200" height="100"/>
-                                        <subviews>
-                                            <button opaque="NO" tag="3" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0yJ-To-3DF">
-                                                <rect key="frame" x="100" y="0.0" width="100" height="100"/>
-                                                <color key="backgroundColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="100" id="Gzl-tD-5wP"/>
-                                                    <constraint firstAttribute="width" constant="100" id="R0f-fn-aBh"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" name=".HelveticaNeueDeskInterface-Bold" family="SFNS Display" pointSize="15"/>
-                                                <state key="normal" title="Login">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="Login:" destination="BYZ-38-t0r" eventType="touchUpInside" id="g0R-wY-XgD"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
-                                        <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="0yJ-To-3DF" secondAttribute="trailing" id="EWW-N3-T04"/>
-                                        </constraints>
-                                    </stackView>
-                                </subviews>
-                                <variation key="heightClass=compact" alignment="top" misplaced="YES" spacing="5">
-                                    <rect key="frame" x="105" y="131" width="350" height="140"/>
                                 </variation>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="HQZ-cw-hbi" userLabel="ButtomBar">
@@ -307,7 +309,7 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <action selector="OpretProfil:" destination="BYZ-38-t0r" eventType="touchUpInside" id="E4m-74-19L"/>
+                                            <action selector="registerBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mim-Pb-NLu"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -368,18 +370,18 @@
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="buttomBar" destination="HQZ-cw-hbi" id="d66-co-2bg"/>
+                        <outlet property="createEmail" destination="Bnj-hV-hjM" id="113-mI-bHr"/>
+                        <outlet property="createPassword" destination="8yt-d2-vEi" id="8kB-6R-s5x"/>
+                        <outlet property="createPhone" destination="lsZ-gd-kSc" id="H5o-5c-H8Y"/>
+                        <outlet property="createUsername" destination="KfP-Nx-lxj" id="kA5-Vy-b6e"/>
                         <outlet property="figofyLogo" destination="cKH-GM-PVZ" id="obC-Qw-scE"/>
                         <outlet property="fortrydBtn" destination="wR1-1J-PYU" id="sL4-KO-VaU"/>
                         <outlet property="loginbtn" destination="0yJ-To-3DF" id="or0-dL-G3h"/>
                         <outlet property="opretBtn" destination="EJK-2M-gjP" id="hEh-Jo-HwS"/>
                         <outlet property="opretSV" destination="H3w-fY-xsf" id="cFK-Hc-AJD"/>
-                        <outlet property="opretprofilEmail" destination="Bnj-hV-hjM" id="ikn-XF-9Rf"/>
-                        <outlet property="opretprofilPassword" destination="8yt-d2-vEi" id="k1k-ms-EUj"/>
-                        <outlet property="opretprofilPhone" destination="lsZ-gd-kSc" id="Cd0-aP-UHF"/>
-                        <outlet property="opretprofilUsername" destination="KfP-Nx-lxj" id="VzA-ot-XD8"/>
-                        <outlet property="passwordTextField" destination="54z-GJ-c7z" id="2zs-Hd-4E0"/>
+                        <outlet property="passwordTextField" destination="54z-GJ-c7z" id="OeD-cv-1bf"/>
                         <outlet property="profilephotoView" destination="Qb9-6C-5I4" id="KMt-HM-zZd"/>
-                        <outlet property="usernameTextField" destination="k32-Jt-idm" id="9wm-7i-aCX"/>
+                        <outlet property="usernameTextField" destination="k32-Jt-idm" id="c7P-L7-Zzt"/>
                         <segue destination="RJR-a0-jWZ" kind="show" identifier="Login" id="NHp-ZK-LBJ"/>
                     </connections>
                 </viewController>
@@ -1045,7 +1047,7 @@ Søndag   00:00 - 21:00</string>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NZB-zk-uGQ">
-                                                        <rect key="frame" x="44" y="0.0" width="48" height="27"/>
+                                                        <rect key="frame" x="44" y="0.0" width="49" height="27"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                         <state key="normal" title="160,- Kr"/>
                                                     </button>
@@ -1061,7 +1063,7 @@ Søndag   00:00 - 21:00</string>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="byb-ei-lgm">
-                                                        <rect key="frame" x="44" y="0.0" width="48" height="27"/>
+                                                        <rect key="frame" x="44" y="0.0" width="49" height="27"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                         <state key="normal" title="190,- Kr"/>
                                                     </button>
@@ -1077,7 +1079,7 @@ Søndag   00:00 - 21:00</string>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TsM-iu-kSS">
-                                                        <rect key="frame" x="44" y="0.0" width="48" height="27"/>
+                                                        <rect key="frame" x="44" y="0.0" width="49" height="27"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                         <state key="normal" title="260,- Kr"/>
                                                     </button>
@@ -1235,7 +1237,6 @@ Søndag   00:00 - 21:00</string>
         <image name="Figofy rgb logo" width="1043" height="181"/>
         <image name="Figofy_app_trans" width="1024" height="1024"/>
         <image name="Figofy_app_trans.png" width="1024" height="1024"/>
-        <image name="Fisker i båd2" width="525" height="717"/>
         <image name="defaultPhoto" width="151" height="100"/>
         <image name="images-3" width="259" height="194"/>
         <image name="man.jpg" width="462" height="462"/>
