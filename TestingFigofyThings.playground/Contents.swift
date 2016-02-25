@@ -197,9 +197,57 @@ var test = ProgressView()
 
 test.animateProgressView(6)
 
+//http://www.appcoda.com/nsdate/
+/* Custom date format Specifiers
+EEEE: The full name of the day (e.g. Monday). Use 1-3 letters for the abbreviated representation of the day name.
+
+MMMM: The full name of the month (e.g. October). Use 1-3 letters for the abbreviated representation of the month name.
+
+dd: The day number in the month (e.g. 09 or 15).
+
+yyyy: The year with four digits (e.g. 2015)
+
+HH: The hour representation with two digits (e.g. 08 or 19).
+
+mm: The minutes representation with two digits (e.g. 05 or 54).
+
+ss: The seconds representation with two digits.
+
+zzz: The timezone presented with three letters (e.g. GMT)
+
+GGG: BC or AD.
+*/
+
+let currentDate = NSDate()
+let dateFormatter = NSDateFormatter()
+
+//Full Style
+dateFormatter.dateStyle = .FullStyle
+var convertedDate = dateFormatter.stringFromDate(currentDate)
+//Long Style
+dateFormatter.dateStyle = .LongStyle
+convertedDate = dateFormatter.stringFromDate(currentDate)
+//Medium Style
+dateFormatter.dateStyle = .MediumStyle
+convertedDate = dateFormatter.stringFromDate(currentDate)
+//Short Style
+dateFormatter.dateStyle = .ShortStyle
+convertedDate = dateFormatter.stringFromDate(currentDate)
+dateFormatter.dateFormat = "EEEE, MMMM dd, yyyy"
+convertedDate = dateFormatter.stringFromDate(currentDate)
+dateFormatter.dateFormat = "HH:mm:ss"
+convertedDate = dateFormatter.stringFromDate(currentDate)
+//Converting from string to NSDate
+var dateAsString = "24-02-2016 15:00"
+dateFormatter.dateFormat = "dd-MM-yyyy HH:mm"
+var newDate = dateFormatter.dateFromString(dateAsString)
+//With timezone
+dateAsString = "Thu, 08 Oct 2015 09:22:33 GMT"
+dateFormatter.dateFormat = "EEE, dd MMM yyyy HH:mm:ss zzz"
+newDate = dateFormatter.dateFromString(dateAsString)
 
 
-
+let calendar = NSCalendar.currentCalendar()
 
 
 //var view = UIView(frame: CGRectMake(0,0, 100, 50))

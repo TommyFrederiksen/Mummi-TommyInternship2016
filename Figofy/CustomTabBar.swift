@@ -21,7 +21,6 @@ class CustomTabBar: UITabBarController, UITabBarControllerDelegate {
     
     
     override func tabBar(tabBar: UITabBar, didSelectItem item: UITabBarItem) {
-        print("1234")
         UIView.animateWithDuration(2.5, animations: { () -> Void in
             tabBar.tintColor = self.randomColor()
             
