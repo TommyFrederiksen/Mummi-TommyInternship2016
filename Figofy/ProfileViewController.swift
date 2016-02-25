@@ -9,33 +9,53 @@
 import UIKit
 
 
-class ProfileViewController: UIViewController {
+class ProfileViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     
+    @IBOutlet weak var collectionView: UICollectionView!
    
     
     
+    var favoriteSeasImg = ["EventImage1","EventImage2","EventImage3","EventImage1","EventImage2","EventImage3"]
+    var favoriteSeasTxt = ["Simons Put & Take","Fede Sø","Super Sø","Fisker Sø","Kæmpe Sø","Mini Sø"]
     
-   
+    @IBOutlet weak var logBtn: UIButton!
+    @IBOutlet weak var photoBtn: UIButton!
     @IBOutlet weak var profileImageView: UIImageView!
-    
-    @IBOutlet weak var backgroundImageBtn: UIButton!
+ 
     @IBOutlet weak var editImageBtn: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        Test()
+        collectionView.delegate = self
+        collectionView.dataSource = self
     
-        
-        
-    }
-    func Test(){
+        // Do any additional setup after loading the view, typically from a nib.
         profileImageView.layer.cornerRadius = profileImageView.frame.width/2
         
         profileImageView.clipsToBounds = true
-        backgroundImageBtn.layer.cornerRadius = backgroundImageBtn.layer.frame.width/2
+    
+    }
+    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+        let img = UIImage(named: favoriteSeasImg[indexPath.row])
+        if let cell = collectionView.dequeueReusableCellWithReuseIdentifier("FavoriteSeaCell", forIndexPath: indexPath) as? FavoriteSeaCell
+        {
+            cell.configureCell(img!, text: favoriteSeasTxt[indexPath.row])
+            return cell
+        }else{
+           return FavoriteSeaCell()
+        }
+       
+        
         
     }
     
+    func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
+    
+        return 1
+    }
+    
+    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return favoriteSeasImg.count
+    }
     
     
     
