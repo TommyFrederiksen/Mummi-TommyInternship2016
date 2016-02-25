@@ -9,9 +9,9 @@
         <mutableArray key="HelveticaNeue.ttc">
             <string>HelveticaNeue</string>
             <string>HelveticaNeue</string>
-            <string>HelveticaNeue</string>
         </mutableArray>
         <mutableArray key="System San Francisco Display Bold.ttf">
+            <string>.HelveticaNeueDeskInterface-Bold</string>
             <string>.HelveticaNeueDeskInterface-Bold</string>
             <string>.HelveticaNeueDeskInterface-Bold</string>
             <string>.HelveticaNeueDeskInterface-Bold</string>
@@ -29,6 +29,7 @@
             <string>.HelveticaNeueDeskInterface-Regular</string>
         </mutableArray>
         <mutableArray key="System San Francisco Display Thin.ttf">
+            <string>.HelveticaNeueDeskInterface-Thin</string>
             <string>.HelveticaNeueDeskInterface-Thin</string>
         </mutableArray>
     </customFonts>
@@ -406,51 +407,45 @@
                         <subviews>
                             <tableView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="70" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="vUY-f2-DXs">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                                <color key="backgroundColor" red="0.59999999999999998" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SeaCell" rowHeight="70" id="Xyy-fJ-ozM" customClass="SeaCell" customModule="Figofy" customModuleProvider="target">
+                                    <tableViewCell opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="FigofySeaCell" rowHeight="70" id="Xyy-fJ-ozM" customClass="FigofySeaCell" customModule="Figofy" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="600" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Xyy-fJ-ozM" id="Ik1-Ue-OnZ">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="70"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="ØsterSø" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RQd-gQ-D4a">
-                                                    <rect key="frame" x="66" y="5" width="526" height="21"/>
-                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="13" translatesAutoresizingMaskIntoConstraints="NO" id="swj-Z6-gY0">
+                                                    <rect key="frame" x="8" y="8" width="584" height="21"/>
+                                                    <fontDescription key="fontDescription" name=".HelveticaNeueDeskInterface-Bold" family="SFNS Display" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="SFG-Xh-xZ5">
-                                                    <rect key="frame" x="66" y="28" width="526" height="27"/>
-                                                    <fontDescription key="fontDescription" name="HelveticaNeue-LightItalic" family="Helvetica Neue" pointSize="17"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ADDRESS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MBj-ds-fYQ">
+                                                    <rect key="frame" x="8" y="41" width="584" height="21"/>
+                                                    <fontDescription key="fontDescription" name=".HelveticaNeueDeskInterface-Thin" family="SFNS Display" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <constraints>
-                                                <constraint firstItem="RQd-gQ-D4a" firstAttribute="trailing" secondItem="Ik1-Ue-OnZ" secondAttribute="trailingMargin" id="QcI-ef-s3r"/>
-                                                <constraint firstItem="RQd-gQ-D4a" firstAttribute="top" secondItem="Ik1-Ue-OnZ" secondAttribute="topMargin" id="ZBx-ap-HhL"/>
-                                                <constraint firstItem="SFG-Xh-xZ5" firstAttribute="trailing" secondItem="Ik1-Ue-OnZ" secondAttribute="trailingMargin" id="d50-J1-XJ3"/>
-                                                <constraint firstItem="SFG-Xh-xZ5" firstAttribute="top" secondItem="RQd-gQ-D4a" secondAttribute="bottom" constant="2" id="h3N-RK-ojU"/>
-                                                <constraint firstItem="RQd-gQ-D4a" firstAttribute="top" secondItem="Ik1-Ue-OnZ" secondAttribute="topMargin" id="kDb-xV-6nX"/>
-                                                <constraint firstItem="SFG-Xh-xZ5" firstAttribute="top" secondItem="RQd-gQ-D4a" secondAttribute="bottom" constant="2" id="xp6-Nl-fN6"/>
+                                                <constraint firstItem="swj-Z6-gY0" firstAttribute="centerX" secondItem="Ik1-Ue-OnZ" secondAttribute="centerX" id="2yP-3R-zRl"/>
+                                                <constraint firstItem="MBj-ds-fYQ" firstAttribute="trailing" secondItem="Ik1-Ue-OnZ" secondAttribute="trailingMargin" id="4f6-NJ-YEh"/>
+                                                <constraint firstItem="MBj-ds-fYQ" firstAttribute="centerX" secondItem="swj-Z6-gY0" secondAttribute="centerX" id="LGb-Pu-b6X"/>
+                                                <constraint firstItem="swj-Z6-gY0" firstAttribute="trailing" secondItem="Ik1-Ue-OnZ" secondAttribute="trailingMargin" id="dKa-4E-I4Z"/>
+                                                <constraint firstItem="MBj-ds-fYQ" firstAttribute="bottom" secondItem="Ik1-Ue-OnZ" secondAttribute="bottomMargin" id="oG2-fb-WvM"/>
+                                                <constraint firstItem="swj-Z6-gY0" firstAttribute="top" secondItem="Ik1-Ue-OnZ" secondAttribute="topMargin" id="qMN-bq-jii"/>
+                                                <constraint firstItem="MBj-ds-fYQ" firstAttribute="leading" secondItem="Ik1-Ue-OnZ" secondAttribute="leadingMargin" id="sC4-fn-J5x"/>
+                                                <constraint firstItem="swj-Z6-gY0" firstAttribute="leading" secondItem="Ik1-Ue-OnZ" secondAttribute="leadingMargin" id="v5x-QC-Ohn"/>
                                             </constraints>
-                                            <variation key="default">
-                                                <mask key="constraints">
-                                                    <exclude reference="QcI-ef-s3r"/>
-                                                    <exclude reference="ZBx-ap-HhL"/>
-                                                    <exclude reference="d50-J1-XJ3"/>
-                                                    <exclude reference="xp6-Nl-fN6"/>
-                                                </mask>
-                                            </variation>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="1" green="0.93591099560000002" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
-                                            <outlet property="seaAddress" destination="SFG-Xh-xZ5" id="HNg-TZ-m1a"/>
-                                            <outlet property="seaName" destination="RQd-gQ-D4a" id="uzx-2U-l8j"/>
+                                            <outlet property="seaAddress" destination="MBj-ds-fYQ" id="cdn-NG-qyq"/>
+                                            <outlet property="seaName" destination="swj-Z6-gY0" id="bWG-V5-KvL"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

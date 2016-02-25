@@ -32,6 +32,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     // MARK: Variables
     let layer = CAGradientLayer()
     let Users = [["Søren","Figofy"],["Kim","Figofy"],["Tommy","Figofy"],["Mummi","Figofy"],["Figofy","Figofy"]]
+    let fbPermissions = ["email","user_birthday","user_location",]
     
     // MARK: View Methods
     override func viewDidLoad()
@@ -60,14 +61,25 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     @IBAction func fbLogin(sender: UIButton)
     {
         
-        let facebookLogin = FBSDKLoginManager()
-        
-        facebookLogin.logInWithReadPermissions(["email"], fromViewController: self, handler: { facebookResult, facebookError -> Void in
+        FBSDKLoginManager().logInWithReadPermissions(self.fbPermissions, fromViewController: self, handler: { facebookResult, facebookError -> Void in
             if facebookError != nil {
                 print("Facebook login failed. Error \(facebookError)")
             } else {
                 //get the access token for Firebase
                 let accessToken = FBSDKAccessToken.currentAccessToken()
+                
+                if accessToken.declinedPermissions.count == 0 {
+                    print("No Permissions were declined")
+                    // TODO: Some
+                } else {
+                    let declinedPerms = accessToken.declinedPermissions
+                    for perm in declinedPerms {
+                        print("__________________________ \(perm.description)")
+                        
+                    }
+                }
+                
+                
                 print("Successfully logged in with facebook. \(accessToken)")
                 
                 DataService.dataService.REF_BASE.authWithOAuthProvider("facebook", token: accessToken.tokenString, withCompletionBlock: { error, authData in
@@ -77,29 +89,26 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                         print("Login Failed. \(error)")
                     } else {
                         print("Logged In! \(authData)")
+                        
+                        
                         //save it to the device
                         NSUserDefaults.standardUserDefaults().setValue(authData.uid, forKey: KEY_UID)
                         //save to firebase
-                        var graphConnection = FBSDKGraphRequestConnection()
                         
-                        if accessToken.hasGranted("") {
+                        FBSDKGraphRequest(graphPath: "me?fields=id,first_name,middle_name,last_name,birthday,email,gender,location", parameters: nil).startWithCompletionHandler({ connection, result, error in
                             
-                        }
-//                        FBSDKGraphRequest(graphPath: "me?fields=id,name,picture", parameters: nil).startWithCompletionHandler({ connection, result, error in
-//                            
-//                            if error != nil {
-//                                print("couldnt get information about user: \(error)")
-//                            } else {
-//                                
-//                                print("Information about the user: \(result)")
-//                                print("CONNECTION: \(connection)")
-//                            }
-//                            
-//                        })
+                            if error != nil {
+                                print("couldnt get information about user: \(error)")
+                            } else {
+                                
+                                print("Information about the user: \(result)")
+                            }
+                            
+                        })
                         
 //                        let user = ["provider" : authData.provider!]
 //                        DataService.dataService.createFirebaseUser(authData.uid, user: user)
-//                        
+                        
                         //Navigate through
                         self.performSegueWithIdentifier(SEGUE_LOGGED_IN, sender: nil)
                     }
@@ -109,6 +118,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                 
             }
         })
+        
+        
     }
     
     @IBAction func registerBtnPressed(sender: AnyObject) {
@@ -142,8 +153,13 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                                 //Save user and log in
                                 NSUserDefaults.standardUserDefaults().setValue(result[KEY_UID], forKey: KEY_UID)
                                 
-                                DataService.dataService.REF_BASE.authUser(email, password: pwd, withCompletionBlock: nil)
-                                
+                                DataService.dataService.REF_BASE.authUser(email, password: pwd, withCompletionBlock: { error, authData in
+                                // MARK: TODO The data from the form in to dictionary
+                                let user = ["provider" : authData.provider!]
+                                DataService.dataService.createFirebaseUser(authData.uid, user: user)
+                                    
+                                    
+                                })
                                 self.performSegueWithIdentifier(SEGUE_LOGGED_IN, sender: nil)
                             }
                             

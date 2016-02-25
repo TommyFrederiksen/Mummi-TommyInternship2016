@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		171DC17FDCFBEE728D67FE26 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B3D4BDC1C3533F8ED3B5DA2 /* Pods.framework */; };
+		181E55751C7DABE7007E9EF3 /* FigofySea.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181E55741C7DABE7007E9EF3 /* FigofySea.swift */; };
+		181E55771C7DDCFD007E9EF3 /* FigofyUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181E55761C7DDCFD007E9EF3 /* FigofyUser.swift */; };
 		18317D671C6DD31400C995D7 /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18317D661C6DD31400C995D7 /* CustomTabBar.swift */; };
 		183B64C01C58DD7100B78D1B /* System San Francisco Display Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 183B64BE1C58DD7100B78D1B /* System San Francisco Display Bold.ttf */; };
 		183B64C11C58DD7100B78D1B /* System San Francisco Display Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 183B64BF1C58DD7100B78D1B /* System San Francisco Display Regular.ttf */; };
@@ -74,6 +76,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		181E55741C7DABE7007E9EF3 /* FigofySea.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FigofySea.swift; sourceTree = "<group>"; };
+		181E55761C7DDCFD007E9EF3 /* FigofyUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FigofyUser.swift; sourceTree = "<group>"; };
 		18317D661C6DD31400C995D7 /* CustomTabBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
 		183B64BE1C58DD7100B78D1B /* System San Francisco Display Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "System San Francisco Display Bold.ttf"; sourceTree = "<group>"; };
 		183B64BF1C58DD7100B78D1B /* System San Francisco Display Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "System San Francisco Display Regular.ttf"; sourceTree = "<group>"; };
@@ -164,6 +168,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		181E55731C7DABBF007E9EF3 /* SpecificCoreData */ = {
+			isa = PBXGroup;
+			children = (
+				187625E41C60F251003828DD /* Sea.swift */,
+				187625E51C60F251003828DD /* Sea+CoreDataProperties.swift */,
+			);
+			name = SpecificCoreData;
+			sourceTree = "<group>";
+		};
 		183B64C21C58DDA300B78D1B /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
@@ -207,12 +220,13 @@
 		184696C61C5F60CB0095D64B /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				187625E41C60F251003828DD /* Sea.swift */,
-				187625E51C60F251003828DD /* Sea+CoreDataProperties.swift */,
+				181E55731C7DABBF007E9EF3 /* SpecificCoreData */,
 				184696C91C5F61710095D64B /* SeaAnnotation.swift */,
 				655044CA1C637C2900D79B89 /* Event.swift */,
 				655044CE1C64D24700D79B89 /* Clock.swift */,
 				659500FF1C6DD94C0067ED1A /* Timer.swift */,
+				181E55741C7DABE7007E9EF3 /* FigofySea.swift */,
+				181E55761C7DDCFD007E9EF3 /* FigofyUser.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -524,8 +538,10 @@
 				651018171C50DB4C00B7FECC /* LakeInformationVC.swift in Sources */,
 				651018131C50D93100B7FECC /* ProfileViewController.swift in Sources */,
 				184696CA1C5F61710095D64B /* SeaAnnotation.swift in Sources */,
+				181E55751C7DABE7007E9EF3 /* FigofySea.swift in Sources */,
 				655044C91C636F7700D79B89 /* EventTableVC.swift in Sources */,
 				654A27121C350EA6008AA4EB /* LoginViewController.swift in Sources */,
+				181E55771C7DDCFD007E9EF3 /* FigofyUser.swift in Sources */,
 				184696F01C5F9A000095D64B /* CustomFigofyAnnotation.swift in Sources */,
 				184698461C60A34B0095D64B /* Figofy.xcdatamodeld in Sources */,
 				654A27101C350EA6008AA4EB /* AppDelegate.swift in Sources */,
