@@ -1063,7 +1063,7 @@ Søndag   00:00 - 21:00</string>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="byb-ei-lgm">
-                                                        <rect key="frame" x="44" y="0.0" width="49" height="27"/>
+                                                        <rect key="frame" x="44" y="0.0" width="48" height="27"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                         <state key="normal" title="190,- Kr"/>
                                                     </button>
@@ -1079,7 +1079,7 @@ Søndag   00:00 - 21:00</string>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TsM-iu-kSS">
-                                                        <rect key="frame" x="44" y="0.0" width="49" height="27"/>
+                                                        <rect key="frame" x="44" y="0.0" width="48" height="27"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                         <state key="normal" title="260,- Kr"/>
                                                     </button>
@@ -1237,6 +1237,7 @@ Søndag   00:00 - 21:00</string>
         <image name="Figofy rgb logo" width="1043" height="181"/>
         <image name="Figofy_app_trans" width="1024" height="1024"/>
         <image name="Figofy_app_trans.png" width="1024" height="1024"/>
+        <image name="Fisker i båd2" width="525" height="717"/>
         <image name="defaultPhoto" width="151" height="100"/>
         <image name="images-3" width="259" height="194"/>
         <image name="man.jpg" width="462" height="462"/>
