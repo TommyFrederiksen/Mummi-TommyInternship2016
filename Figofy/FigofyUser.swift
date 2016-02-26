@@ -17,13 +17,19 @@ class FigofyUser {
     
     
     // MARK: Variables
+    private var _userPostKey: String!
+    private var _facebookId: Int!
     private var _firstName: String!
     private var _middleName: String?
     private var _lastName: String!
-    private var _gender: Gender!
-    private var _birthday: NSDate
+    private var _email: String!
+    private var _gender: String!
+    private var _birthday: String!//TODO
     private var _dateCreated: NSDate
     
+    var facebookId: Int {
+        return _facebookId
+    }
     
     var userFirstName: String {
         return _firstName
@@ -37,23 +43,28 @@ class FigofyUser {
         return _lastName
     }
     
-    var userGender: String {
-        return _gender.rawValue
+    var email: String {
+        return _email
     }
     
-    var userBirthday: NSDate {
+    var userGender: String {
+        return _gender
+    }
+    
+    var userBirthday: String {
         return _birthday
     }
-    
-    
     
     var userMemberLength: NSDate {
         return _dateCreated
     }
     
+    init() {
+        self._dateCreated = NSDate()
+    }
     
-    
-    init(firstname: String, lastname: String, gender: Gender, birthday: NSDate) {
+    init(facebookId: Int, firstname: String, lastname: String, gender: String, birthday: String) {
+        self._facebookId = facebookId
         self._firstName = firstname
         self._lastName = lastname
         self._gender = gender
@@ -62,11 +73,41 @@ class FigofyUser {
     }
     
     
+    init(postKey: String, dictionary: Dictionary<String, AnyObject>) {
+        self._userPostKey = postKey
+        
+        if let id = dictionary["id"] as? Int {
+            print("facebookId: \(id)")
+            self._facebookId = id
+        }
+        if let fName = dictionary["first_name"] as? String {
+            print("firstName: \(fName)")
+            self._firstName = fName
+        }
+        if let fLast = dictionary["last_name"] as? String {
+            print("lastName: \(fLast)")
+            self._lastName = fLast
+        }
+        if let email = dictionary["email"] as? String {
+            print("Email: \(email)")
+            self._email = email
+        }
+        if let birthday = dictionary["birthday"] as? String {
+            print("BirthDay: \(birthday)")
+            self._birthday = birthday
+        }
+        if let gender = dictionary["gender"] as? String {
+            print("Gender: \(gender)")
+            self._gender = gender
+        }
+        if let location = dictionary["location"] as? Dictionary<String, AnyObject> {
+            print("Location: \(location)")
+        }
+        self._dateCreated = NSDate()
+    }
     
     // MARK: Custom Methods
-    func ageFromBirthday(birthday: NSDate) -> Int {
-        return 1
-    }
+    
     
     
     

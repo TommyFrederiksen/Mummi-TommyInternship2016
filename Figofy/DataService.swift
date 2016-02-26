@@ -30,7 +30,7 @@ class DataService {
     }
     
     
-    func createFirebaseUser(uid: String, user: Dictionary<String, String>) {
+    func createFirebaseUser(uid: String, user: Dictionary<String, AnyObject>) {
         //'/users/33asdf12f34' if it doesnt exist, it will create it. Or if it does it will update it
         REF_USERS.childByAppendingPath(uid).setValue(user)
     }

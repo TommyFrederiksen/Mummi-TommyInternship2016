@@ -10,15 +10,15 @@ import UIKit
 
 class CustomTabBar: UITabBarController, UITabBarControllerDelegate {
     
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         delegate = self
-        self.tabBar.barStyle = .Black
         
     }
-
-    
     
     override func tabBar(tabBar: UITabBar, didSelectItem item: UITabBarItem) {
         UIView.animateWithDuration(2.5, animations: { () -> Void in
@@ -62,14 +62,17 @@ class CustomTabBar: UITabBarController, UITabBarControllerDelegate {
         
         return UIColor(hue: hue, saturation: saturation, brightness: brightness, alpha: 1.0)
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
+    
+//    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+//        let tabBarController = segue.destinationViewController as! UITabBarController
+//        if segue.identifier == SEGUE_LOGGED_IN {
+//            if let profileView = tabBarController.viewControllers![0] as? ProfileViewController {
+//                if let user = sender as? FigofyUser {
+//                    profileView.user = user
+//                }
+//            }
+//        }
+//    }
+    
 
 }

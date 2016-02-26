@@ -104,9 +104,8 @@ class MapVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, UIP
     }
     
     // MARK: IBActions and Navigation
-    @IBAction func onRefreshPressed(sender: AnyObject) {
+    @IBAction func currentLocaitonPressed(sender: AnyObject) {
         centerMapOnLocation(currentUserLocation)
-        
     }
     
     @IBAction func onPopoverTapped(sender: AnyObject) {

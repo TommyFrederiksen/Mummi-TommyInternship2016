@@ -11,20 +11,20 @@ import UIKit
 
 class ProfileViewController: UIViewController {
     
-   
-    
-    
-    
-   
     @IBOutlet weak var profileImageView: UIImageView!
     
     @IBOutlet weak var backgroundImageBtn: UIButton!
     @IBOutlet weak var editImageBtn: UIButton!
+    
+    
+    @IBOutlet weak var firstName: UILabel!
+    var user: FigofyUser!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         Test()
-    
+        firstName.text = user.userFirstName
         
         
     }

@@ -29,11 +29,11 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var opretSV: UIStackView!
     @IBOutlet weak var buttomBar: UIStackView!
+    
     // MARK: Variables
     let layer = CAGradientLayer()
-    let Users = [["Søren","Figofy"],["Kim","Figofy"],["Tommy","Figofy"],["Mummi","Figofy"],["Figofy","Figofy"]]
-    let fbPermissions = ["email","user_birthday","user_location",]
-    
+    let fbPermissions = ["email", "user_location", "user_birthday"]
+    var fbParameters = Dictionary<NSObject, AnyObject>()
     // MARK: View Methods
     override func viewDidLoad()
     {
@@ -45,6 +45,9 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         fortrydBtn.layer.cornerRadius = fortrydBtn.frame.width/2
         profilephotoView.layer.cornerRadius = 75
         profilephotoView.clipsToBounds = true
+        
+        fbParameters.updateValue("email,first_name,middle_name,last_name,gender,location", forKey: "fields")
+        
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -60,11 +63,17 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     //FACEBOOK
     @IBAction func fbLogin(sender: UIButton)
     {
-        
-        FBSDKLoginManager().logInWithReadPermissions(self.fbPermissions, fromViewController: self, handler: { facebookResult, facebookError -> Void in
+        let facebookLogin = FBSDKLoginManager()
+        let graphConnection = FBSDKGraphRequestConnection()
+        facebookLogin.logInWithReadPermissions(self.fbPermissions, fromViewController: self, handler: { facebookResult, facebookError -> Void in
             if facebookError != nil {
                 print("Facebook login failed. Error \(facebookError)")
-            } else {
+                facebookLogin.logOut()
+            } else if facebookResult.isCancelled {
+                
+                facebookLogin.logOut()
+                
+            }else {
                 //get the access token for Firebase
                 let accessToken = FBSDKAccessToken.currentAccessToken()
                 
@@ -79,7 +88,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                     }
                 }
                 
-                
                 print("Successfully logged in with facebook. \(accessToken)")
                 
                 DataService.dataService.REF_BASE.authWithOAuthProvider("facebook", token: accessToken.tokenString, withCompletionBlock: { error, authData in
@@ -88,36 +96,44 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                     if error != nil {
                         print("Login Failed. \(error)")
                     } else {
-                        print("Logged In! \(authData)")
+                        print("Getting Data from facebook...")
                         
                         
                         //save it to the device
                         NSUserDefaults.standardUserDefaults().setValue(authData.uid, forKey: KEY_UID)
-                        //save to firebase
                         
-                        FBSDKGraphRequest(graphPath: "me?fields=id,first_name,middle_name,last_name,birthday,email,gender,location", parameters: nil).startWithCompletionHandler({ connection, result, error in
-                            
+                        //save to firebase
+    
+                        
+                        FBSDKGraphRequest(graphPath: "me", parameters: self.fbParameters).startWithCompletionHandler({ connection, result, error in
+                            print("RESULT:________\(result)__________")
                             if error != nil {
                                 print("couldnt get information about user: \(error)")
                             } else {
+                                print("\(result)")
                                 
-                                print("Information about the user: \(result)")
+                                if let userInfo = result as? [String:AnyObject] {
+                                    
+                                    let currentUser = FigofyUser(postKey: authData.uid, dictionary: userInfo)
+                                    DataService.dataService.createFirebaseUser(authData.uid, user: userInfo)
+                                    
+                                    //Navigate through
+                                    
+                                    self.performSegueWithIdentifier(SEGUE_LOGGED_IN, sender: currentUser)
+                                }
                             }
+                            
+                            
                             
                         })
                         
-//                        let user = ["provider" : authData.provider!]
-//                        DataService.dataService.createFirebaseUser(authData.uid, user: user)
-                        
-                        //Navigate through
-                        self.performSegueWithIdentifier(SEGUE_LOGGED_IN, sender: nil)
                     }
                     
-                })
-                
+                    
+                })//End of authWithOAuthProvider
                 
             }
-        })
+        })//End of FBSDKLoginManger
         
         
     }
@@ -210,6 +226,19 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         }
         
         return true
+    }
+    
+    // MARK: Segue method
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        let tabBarController = segue.destinationViewController as! UITabBarController
+        if segue.identifier == SEGUE_LOGGED_IN {
+            if let profileView = tabBarController.viewControllers![0] as? ProfileViewController {
+                if let user = sender as? FigofyUser {
+                    profileView.user = user
+                }
+            }
+        }
+        
     }
 }
 
