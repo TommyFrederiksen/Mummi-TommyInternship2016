@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="RWH-db-0dg">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -443,7 +443,7 @@
                                                 <constraint firstItem="swj-Z6-gY0" firstAttribute="leading" secondItem="Ik1-Ue-OnZ" secondAttribute="leadingMargin" id="v5x-QC-Ohn"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" red="1" green="0.93591099560000002" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" red="0.90980392160000001" green="0.93725490199999995" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
                                             <outlet property="seaAddress" destination="MBj-ds-fYQ" id="cdn-NG-qyq"/>
                                             <outlet property="seaName" destination="swj-Z6-gY0" id="bWG-V5-KvL"/>
@@ -774,7 +774,7 @@
                                                             <constraint firstAttribute="width" constant="112" id="Nza-DD-st3"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MIN LOG" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bhe-Xp-77e">
@@ -784,7 +784,7 @@
                                                             <constraint firstAttribute="height" constant="40" id="j5Y-xu-i58"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nkM-L3-eEY" customClass="FigofyButton" customModule="Figofy" customModuleProvider="target">
@@ -844,7 +844,7 @@
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ub0-8H-q3O">
                                                                     <rect key="frame" x="66" y="8" width="319" height="50"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                             </subviews>
@@ -892,7 +892,7 @@
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2e8-dV-fwM">
                                                                     <rect key="frame" x="8" y="91" width="104" height="21"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                             </subviews>
@@ -916,7 +916,7 @@
                                                 </cells>
                                             </collectionView>
                                         </subviews>
-                                        <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstItem="n17-Id-45k" firstAttribute="top" secondItem="aXw-FV-UPv" secondAttribute="top" constant="554" id="4TM-Ac-A0P"/>
                                             <constraint firstAttribute="height" constant="1131" id="4zO-Su-deD"/>
@@ -948,7 +948,7 @@
                                 </constraints>
                             </scrollView>
                         </subviews>
-                        <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="aXw-FV-UPv" firstAttribute="width" secondItem="QDh-a1-YnI" secondAttribute="width" id="BI9-I4-D6q"/>
                             <constraint firstItem="ydx-2P-xpI" firstAttribute="top" secondItem="1Ar-Ip-v0Q" secondAttribute="bottom" id="Jmf-7D-tC4"/>
@@ -1010,10 +1010,10 @@
                                             <constraint firstAttribute="height" constant="50" id="sCz-YW-F4Y"/>
                                         </constraints>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="SQF-GX-mqW">
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="SQF-GX-mqW">
                                         <rect key="frame" x="0.0" y="60" width="560" height="195"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="bluerock" translatesAutoresizingMaskIntoConstraints="NO" id="aul-V3-cnI">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bluerock" translatesAutoresizingMaskIntoConstraints="NO" id="aul-V3-cnI">
                                                 <rect key="frame" x="0.0" y="0.0" width="560" height="195"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="130" id="no3-IY-Uqu"/>
@@ -1021,7 +1021,7 @@
                                             </imageView>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="1fX-FU-JZu">
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="1fX-FU-JZu">
                                         <rect key="frame" x="0.0" y="265" width="560" height="100"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="Zqc-cC-D0T">
@@ -1036,13 +1036,13 @@
                                             <constraint firstAttribute="height" constant="100" id="XM5-bp-dmX"/>
                                         </constraints>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" distribution="fillProportionally" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="dyt-tR-U6c">
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="dyt-tR-U6c">
                                         <rect key="frame" x="0.0" y="375" width="560" height="195"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="LuY-EQ-63M">
+                                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="LuY-EQ-63M">
                                                 <rect key="frame" x="0.0" y="0.0" width="560" height="40"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="PRISER" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NhM-wZ-Ii5">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PRISER" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NhM-wZ-Ii5">
                                                         <rect key="frame" x="0.0" y="10" width="560" height="22"/>
                                                         <fontDescription key="fontDescription" name=".HelveticaNeueDeskInterface-Bold" family="SFNS Display" pointSize="18"/>
                                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -1053,7 +1053,7 @@
                                                     <constraint firstAttribute="height" constant="40" id="Dt4-u7-UEE"/>
                                                 </constraints>
                                             </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ts6-Xr-09n">
+                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ts6-Xr-09n">
                                                 <rect key="frame" x="0.0" y="45" width="560" height="45"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Priser 2016 fiskekort (FRI FANGS PÅ ALLE FISKEKORT TIL 31-12-2016)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="996-RH-d6y">
@@ -1067,7 +1067,7 @@
                                                     <constraint firstAttribute="height" constant="45" id="hNm-US-0e2"/>
                                                 </constraints>
                                             </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qRs-0D-LgT">
+                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qRs-0D-LgT">
                                                 <rect key="frame" x="0.0" y="95" width="560" height="30"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2 Timer: " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jct-rp-1vX">
@@ -1086,7 +1086,7 @@
                                                     <constraint firstAttribute="height" constant="30" id="xoW-pl-i7r"/>
                                                 </constraints>
                                             </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="X3M-Os-CXd">
+                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X3M-Os-CXd">
                                                 <rect key="frame" x="0.0" y="130" width="560" height="30"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5 Timer: " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gPh-Pm-237">
@@ -1105,7 +1105,7 @@
                                                     <constraint firstAttribute="height" constant="30" id="O8A-v2-PNV"/>
                                                 </constraints>
                                             </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="k3U-I9-qpA">
+                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k3U-I9-qpA">
                                                 <rect key="frame" x="0.0" y="165" width="560" height="30"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="8 Timer: " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lyh-UR-DHW">

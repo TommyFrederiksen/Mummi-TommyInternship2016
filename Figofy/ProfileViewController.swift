@@ -25,6 +25,9 @@ class ProfileViewController: UIViewController, UICollectionViewDataSource, UICol
     @IBOutlet weak var profileImageView: UIImageView!
     
     @IBOutlet weak var editImageBtn: UIButton!
+    
+    var user: FigofyUser!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         favoriteSeaCollectionView.delegate = self
