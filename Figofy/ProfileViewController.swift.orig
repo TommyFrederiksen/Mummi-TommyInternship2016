@@ -11,6 +11,8 @@ import UIKit
 
 class ProfileViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     
+<<<<<<< HEAD
+=======
     @IBOutlet weak var favoriteSeaCollectionView: UICollectionView!
     @IBOutlet weak var friendsCollectionView: UICollectionView!
     
@@ -22,15 +24,28 @@ class ProfileViewController: UIViewController, UICollectionViewDataSource, UICol
     
     @IBOutlet weak var logBtn: UIButton!
     @IBOutlet weak var photoBtn: UIButton!
+>>>>>>> 427bc38a5191d5077dd523cf8367b1f93119780d
     @IBOutlet weak var profileImageView: UIImageView!
     
     @IBOutlet weak var editImageBtn: UIButton!
+    
+    
+    @IBOutlet weak var firstName: UILabel!
+    var user: FigofyUser!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+<<<<<<< HEAD
+        // Do any additional setup after loading the view, typically from a nib.
+        Test()
+        firstName.text = user.userFirstName
+        
+=======
         favoriteSeaCollectionView.delegate = self
         favoriteSeaCollectionView.dataSource = self
         friendsCollectionView.delegate = self
         friendsCollectionView.dataSource = self
+>>>>>>> 427bc38a5191d5077dd523cf8367b1f93119780d
         
         profileImageView.layer.cornerRadius = profileImageView.frame.width/2
         
