@@ -53,11 +53,8 @@
 		655044CB1C637C2900D79B89 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655044CA1C637C2900D79B89 /* Event.swift */; };
 		655044CD1C64CF1100D79B89 /* ClockVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655044CC1C64CF1100D79B89 /* ClockVC.swift */; };
 		655044CF1C64D24700D79B89 /* Clock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655044CE1C64D24700D79B89 /* Clock.swift */; };
-		655F30241C7F0FE7007DE8D3 /* FavoriteSeaCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655F30231C7F0FE7007DE8D3 /* FavoriteSeaCell.swift */; };
 		657368CE1C635E3900E1367D /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 657368CD1C635E3900E1367D /* EventTableViewCell.swift */; };
 		659501001C6DD94C0067ED1A /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659500FF1C6DD94C0067ED1A /* Timer.swift */; };
-		65C8DFB81C7F39720088622A /* Pods.debug.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 65C8DFB71C7F39720088622A /* Pods.debug.xcconfig */; };
-		65C8DFBA1C7F398A0088622A /* Pods.release.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 65C8DFB91C7F398A0088622A /* Pods.release.xcconfig */; };
 		F98634459CF7905C5013FABE /* Pods in Frameworks */ = {isa = PBXBuildFile; fileRef = B10CAFE5CCEBA3FE110E428F /* Pods */; };
 /* End PBXBuildFile section */
 
@@ -110,6 +107,7 @@
 		18E675811C58B76F0046B259 /* TextFieldEffects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldEffects.swift; sourceTree = "<group>"; };
 		18E675831C58C2E30046B259 /* System San Francisco Display Ultralight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "System San Francisco Display Ultralight.ttf"; sourceTree = "<group>"; };
 		18E675851C58C3340046B259 /* System San Francisco Display Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "System San Francisco Display Thin.ttf"; sourceTree = "<group>"; };
+		2B956FA0C05CC4AF882EF6F7 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		651018121C50D93100B7FECC /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		651018141C50D9EB00B7FECC /* MapVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapVC.swift; sourceTree = "<group>"; };
 		651018161C50DB4C00B7FECC /* LakeInformationVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LakeInformationVC.swift; sourceTree = "<group>"; };
@@ -131,13 +129,11 @@
 		655044CA1C637C2900D79B89 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		655044CC1C64CF1100D79B89 /* ClockVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClockVC.swift; sourceTree = "<group>"; };
 		655044CE1C64D24700D79B89 /* Clock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Clock.swift; sourceTree = "<group>"; };
-		655F30231C7F0FE7007DE8D3 /* FavoriteSeaCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteSeaCell.swift; sourceTree = "<group>"; };
 		657368CD1C635E3900E1367D /* EventTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventTableViewCell.swift; path = ../EventTableViewCell.swift; sourceTree = "<group>"; };
 		659500FF1C6DD94C0067ED1A /* Timer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Timer.swift; sourceTree = "<group>"; };
-		65C8DFB71C7F39720088622A /* Pods.debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
-		65C8DFB91C7F398A0088622A /* Pods.release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		6B3D4BDC1C3533F8ED3B5DA2 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B10CAFE5CCEBA3FE110E428F /* Pods */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods; path = ../../../Pods; sourceTree = BUILT_PRODUCTS_DIR; };
+		F3D388C7DAA3D5DB5B97783B /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -231,7 +227,6 @@
 				659500FF1C6DD94C0067ED1A /* Timer.swift */,
 				181E55741C7DABE7007E9EF3 /* FigofySea.swift */,
 				181E55761C7DDCFD007E9EF3 /* FigofyUser.swift */,
-				655F30231C7F0FE7007DE8D3 /* FavoriteSeaCell.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -266,8 +261,8 @@
 		436D3628BF46749D6376F570 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				65C8DFB91C7F398A0088622A /* Pods.release.xcconfig */,
-				65C8DFB71C7F39720088622A /* Pods.debug.xcconfig */,
+				2B956FA0C05CC4AF882EF6F7 /* Pods.debug.xcconfig */,
+				F3D388C7DAA3D5DB5B97783B /* Pods.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -420,7 +415,6 @@
 				TargetAttributes = {
 					654A270B1C350EA6008AA4EB = {
 						CreatedOnToolsVersion = 7.2;
-						DevelopmentTeam = 57A28JUWJJ;
 					};
 					654A271F1C350EA7008AA4EB = {
 						CreatedOnToolsVersion = 7.2;
@@ -462,11 +456,9 @@
 				654A271A1C350EA6008AA4EB /* LaunchScreen.storyboard in Resources */,
 				183B64C11C58DD7100B78D1B /* System San Francisco Display Regular.ttf in Resources */,
 				654A27171C350EA6008AA4EB /* Assets.xcassets in Resources */,
-				65C8DFB81C7F39720088622A /* Pods.debug.xcconfig in Resources */,
 				18E675861C58C3340046B259 /* System San Francisco Display Thin.ttf in Resources */,
 				654A27151C350EA6008AA4EB /* Main.storyboard in Resources */,
 				18CCAA991C60D5B700C7D5E8 /* CreateSeaVC.xib in Resources */,
-				65C8DFBA1C7F398A0088622A /* Pods.release.xcconfig in Resources */,
 				183B64C01C58DD7100B78D1B /* System San Francisco Display Bold.ttf in Resources */,
 				187625DD1C60EC75003828DD /* ListOfSeas.csv in Resources */,
 			);
@@ -549,7 +541,6 @@
 				181E55751C7DABE7007E9EF3 /* FigofySea.swift in Sources */,
 				655044C91C636F7700D79B89 /* EventTableVC.swift in Sources */,
 				654A27121C350EA6008AA4EB /* LoginViewController.swift in Sources */,
-				655F30241C7F0FE7007DE8D3 /* FavoriteSeaCell.swift in Sources */,
 				181E55771C7DDCFD007E9EF3 /* FigofyUser.swift in Sources */,
 				184696F01C5F9A000095D64B /* CustomFigofyAnnotation.swift in Sources */,
 				184698461C60A34B0095D64B /* Figofy.xcdatamodeld in Sources */,
@@ -717,14 +708,17 @@
 		};
 		654A27351C350EA7008AA4EB /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 65C8DFB71C7F39720088622A /* Pods.debug.xcconfig */;
+			baseConfigurationReference = 2B956FA0C05CC4AF882EF6F7 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				ENABLE_BITCODE = NO;
-				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/**";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = Figofy/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
@@ -741,14 +735,17 @@
 		};
 		654A27361C350EA7008AA4EB /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 65C8DFB91C7F398A0088622A /* Pods.release.xcconfig */;
+			baseConfigurationReference = F3D388C7DAA3D5DB5B97783B /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				ENABLE_BITCODE = NO;
-				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/**";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = Figofy/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
