@@ -28,6 +28,8 @@ import UIKit
     override func awakeFromNib() {
         layer.cornerRadius = frame.size.width / 2.0
         layer.backgroundColor = buttonColor.CGColor
+        layer.borderWidth = 2
+        layer.borderColor = UIColor(red: 255/255, green: 128/255, blue: 0/255, alpha: 1  ).CGColor
         setTitleColor(txtColor, forState: .Normal)
         clipsToBounds = true
     }

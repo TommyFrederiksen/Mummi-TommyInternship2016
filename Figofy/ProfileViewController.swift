@@ -17,13 +17,17 @@ class ProfileViewController: UIViewController, UICollectionViewDataSource, UICol
     
     var favoriteSeasImg = ["EventImage1","EventImage2","EventImage3","EventImage1","EventImage2","EventImage3","EventImage1","EventImage2","EventImage3","EventImage1"]
     var favoriteSeasTxt = ["Simons Put & Take","Fede Sø","Super Sø","Fisker Sø","Kæmpe Sø","Mini Sø","Ibs Sø","Hannes Sø","Lenes Sø","SønderSø"]
-    var friendsImg = ["man","man","man","man","man","man","man","man","man","man"]
+    var friendsImg = ["man1","man2","man3","man4","female1","female2","man8","man5","man6","man7"]
     var friendsName = ["Søren","Kim","Lasse","Jonas","Vibeke","Lullu","Ib","Gerner","Hans","Ole"]
     
     @IBOutlet weak var logBtn: UIButton!
     @IBOutlet weak var photoBtn: UIButton!
+    @IBOutlet weak var logBtnBg: FigofyButton!
     @IBOutlet weak var profileImageView: UIImageView!
     
+    
+    @IBOutlet weak var FavoriteSeaLbl: UILabel!
+    //@IBOutlet weak var editImgBGLbl: UILabel!
     @IBOutlet weak var editImageBtn: UIButton!
     
     var user: FigofyUser!
@@ -38,6 +42,15 @@ class ProfileViewController: UIViewController, UICollectionViewDataSource, UICol
         profileImageView.layer.cornerRadius = profileImageView.frame.width/2
         
         profileImageView.clipsToBounds = true
+        favoriteSeaCollectionView.layer.borderWidth = 1
+        friendsCollectionView.layer.borderWidth = 1
+        //logBtnBg.layer.borderWidth = 2
+        //logBtnBg.layer.borderColor = UIColor(red: 255/255, green: 128/255, blue: 0/255, alpha: 1  ).CGColor
+        
+        
+        
+        
+        
         
     }
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell
@@ -48,7 +61,11 @@ class ProfileViewController: UIViewController, UICollectionViewDataSource, UICol
             if let cell = collectionView.dequeueReusableCellWithReuseIdentifier("FavoriteSeaCell", forIndexPath: indexPath) as? FavoriteSeaCell
             {
                 cell.configureCell(img!, text: favoriteSeasTxt[indexPath.row])
+                cell.layer.cornerRadius = 15
+                cell.mainImg.layer.cornerRadius = cell.mainImg.layer.frame.width/2
+                cell.mainImg.clipsToBounds = true
                 return cell
+                
             }else{
                 return FavoriteSeaCell()
             }
@@ -59,9 +76,12 @@ class ProfileViewController: UIViewController, UICollectionViewDataSource, UICol
             if let cell = collectionView.dequeueReusableCellWithReuseIdentifier("FriendsCell", forIndexPath: indexPath) as? FavoriteSeaCell
             {
                 if let profielImg = img {
-                   cell.configureCell(profielImg, text: friendsName[indexPath.row])
-                 
+                    cell.configureCell(profielImg, text: friendsName[indexPath.row])
+                    
                 }
+                cell.layer.cornerRadius = 15
+                cell.mainImg.layer.cornerRadius = cell.mainImg.layer.frame.width/2
+                cell.mainImg.clipsToBounds = true
                 return cell
             }
             else

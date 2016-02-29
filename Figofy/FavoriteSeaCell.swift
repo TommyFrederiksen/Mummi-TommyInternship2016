@@ -20,5 +20,6 @@ class FavoriteSeaCell: UICollectionViewCell {
     func configureCell(image: UIImage, text: String){
         mainImg.image = image
         mainLbl.text = text
+        
     }
 }
