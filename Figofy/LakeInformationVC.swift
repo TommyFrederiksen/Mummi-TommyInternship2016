@@ -83,12 +83,21 @@ class LakeInformationVC: UIViewController {
             
         }
         
-        self.performSegueWithIdentifier("payment", sender: nil)
+        self.performSegueWithIdentifier(SEGUE_PAYMENT, sender: nil)
         
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // TODO: Time updates etc.
+        let tabBarController = segue.destinationViewController as! UITabBarController
+        
+        if segue.identifier == SEGUE_PAYMENT {
+            tabBarController.selectedIndex = 3
+            if let profileView = tabBarController.viewControllers![3] as? ClockVC {
+                
+                profileView.TESTSTR = "PAYED WITH 2 Hours"
+            }
+        }
     }
     
 }

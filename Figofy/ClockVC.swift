@@ -18,7 +18,7 @@ class ClockVC: UIViewController
     var clockTimer: NSTimer?
     var timeLeft = Timer.duration.animationDuration?.hashValue
     var countDown: NSTimer?
-    
+    var TESTSTR: String?
     @IBOutlet weak var timerView: Timer!
     @IBOutlet weak var CountDownClock: UILabel!
     @IBOutlet weak var timeLabel: UILabel!

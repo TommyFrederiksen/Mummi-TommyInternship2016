@@ -14,6 +14,7 @@ let KEY_UID = "uid"
 
 //Segues
 let SEGUE_LOGGED_IN = "Login"
+let SEGUE_PAYMENT = "payment"
 
 
 //Status Codes

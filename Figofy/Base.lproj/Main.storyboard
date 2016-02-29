@@ -156,7 +156,7 @@
                                 </constraints>
                             </imageView>
                             <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" distribution="fillProportionally" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="H3w-fY-xsf">
-                                <rect key="frame" x="200" y="115" width="200" height="1949"/>
+                                <rect key="frame" x="200" y="115" width="200" height="81265"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Fornavn" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Bnj-hV-hjM" userLabel="Navn" customClass="TextFieldDesign" customModule="Figofy" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="200" height="60"/>
@@ -300,7 +300,7 @@
                                         </variation>
                                     </stackView>
                                     <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5nY-uK-tNF">
-                                        <rect key="frame" x="0.0" y="335" width="200" height="1579"/>
+                                        <rect key="frame" x="0.0" y="335" width="200" height="80895"/>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="200" id="83h-OK-sma"/>
@@ -314,7 +314,7 @@
                                         </variation>
                                     </view>
                                     <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" distribution="fillEqually" spacing="60" translatesAutoresizingMaskIntoConstraints="NO" id="v7l-Ya-7u8">
-                                        <rect key="frame" x="0.0" y="1919" width="200" height="30"/>
+                                        <rect key="frame" x="0.0" y="81235" width="200" height="30"/>
                                         <subviews>
                                             <button opaque="NO" tag="3" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="48I-iX-udE">
                                                 <rect key="frame" x="0.0" y="0.0" width="200" height="30"/>
@@ -1300,7 +1300,6 @@
                                                         <state key="normal" title="130 ,-"/>
                                                         <connections>
                                                             <action selector="payHoursTapped:" destination="w4b-47-C3a" eventType="touchUpInside" id="Wb4-9Z-KIH"/>
-                                                            <segue destination="17N-41-QlL" kind="show" identifier="payment" id="wjv-q2-6qJ"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -1400,11 +1399,12 @@
                         <outlet property="logoImg" destination="HiR-gl-tEz" id="6qQ-Lp-Rtb"/>
                         <outlet property="nameLbl" destination="rcJ-mu-6WW" id="Tq5-ga-Wfb"/>
                         <outlet property="seaImg" destination="aul-V3-cnI" id="82b-kh-GC7"/>
+                        <segue destination="RJR-a0-jWZ" kind="show" identifier="payment" id="E4H-FE-siE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MSk-JG-Czi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="782" y="1162"/>
+            <point key="canvasLocation" x="1826" y="410"/>
         </scene>
         <!--MobilePay-->
         <scene sceneID="M7z-Bp-sIl">
@@ -1485,6 +1485,6 @@
         <image name="watchUI" width="998" height="1394"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="wjv-q2-6qJ"/>
+        <segue reference="E4H-FE-siE"/>
     </inferredMetricsTieBreakers>
 </document>
