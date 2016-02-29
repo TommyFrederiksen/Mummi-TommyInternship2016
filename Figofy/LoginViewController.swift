@@ -22,7 +22,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var fortrydBtn: UIButton!
     @IBOutlet weak var opretBtn: UIButton!
     
-    @IBOutlet weak var createUsername: TextFieldDesign!
+    @IBOutlet weak var createFirstName: TextFieldDesign!
+    @IBOutlet weak var createLastName: TextFieldDesign!
     @IBOutlet weak var createPassword: TextFieldDesign!
     @IBOutlet weak var createEmail: TextFieldDesign!
     @IBOutlet weak var createPhone: TextFieldDesign!
@@ -103,8 +104,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                         NSUserDefaults.standardUserDefaults().setValue(authData.uid, forKey: KEY_UID)
                         
                         //save to firebase
-    
-                        
                         FBSDKGraphRequest(graphPath: "me", parameters: self.fbParameters).startWithCompletionHandler({ connection, result, error in
                             print("RESULT:________\(result)__________")
                             if error != nil {
@@ -171,7 +170,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                                 
                                 DataService.dataService.REF_BASE.authUser(email, password: pwd, withCompletionBlock: { error, authData in
                                 // MARK: TODO The data from the form in to dictionary
-                                let user = ["provider" : authData.provider!]
+                                    let user: [String : AnyObject] = ["provider" : authData.provider!, "email" : self.createEmail.text!, "mobile" : self.createPhone.text!, "firstName" : self.createFirstName.text!]
                                 DataService.dataService.createFirebaseUser(authData.uid, user: user)
                                     
                                     
@@ -206,6 +205,11 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         
         opretSV.hidden = true
         buttomBar.hidden = false
+        
+        createFirstName.text = ""
+        createEmail.text = ""
+        createPhone.text = ""
+        createPassword.text = ""
     }
     
     

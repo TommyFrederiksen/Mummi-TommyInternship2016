@@ -87,6 +87,10 @@ class SeaListVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         performSegueWithIdentifier("LakeInformationVC", sender: sea)
     }
     
+    func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+    }
+    
     // MARK: Segue Methods
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "LakeInformationVC" {

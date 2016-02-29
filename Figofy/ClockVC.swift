@@ -80,23 +80,8 @@ class ClockVC: UIViewController
     }
     
     @IBAction func payWithMobilePay(sender: AnyObject) {
-        //alertView.showYesNoAlert("MobilePay Initialized", message: "Switching to MobilePay", style: .Alert, VC: self)
         
-        let price = Float(200)
-        let Id = "3232"
-        
-        if price >= 0 && Id != "" {
-            payment = MobilePayPayment(orderId: Id, productPrice: price)
-            
-            MobilePayManager.sharedInstance().beginMobilePaymentWithPayment(payment) { error in
-                if error.localizedDescription != "" {
-                    print(error.localizedDescription)
-                }
-                
-                
-            }
-            
-        }
+        self.performSegueWithIdentifier("catchedFish", sender: nil)
         
         
     }

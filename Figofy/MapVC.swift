@@ -22,7 +22,7 @@ class MapVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, UIP
     let regionRadius: CLLocationDistance = 1000//default value of the starting zoom
     var currentUserLocation: CLLocation!
     
-    let addresses = ["Kalkgravsvej 22, 4000 roskilde", "Fiskervejen 75,4000 Roskilde" , "Holmevej 41,3670 Veksø"]
+    let addresses = ["Kalkgravsvej 22, 4000 roskilde", "Fiskervejen 75,4000 Roskilde" , "Holmevej 41,3670 Veksø", "Tovesvej 30, 4220, Korsør", "Arnakkevej 31, 4593, Eskebjerg", "Åbakkevej 13, 4130, Viby Sjælland"]
     
     // MARK: View Methods
     override func viewDidLoad() {
@@ -32,6 +32,11 @@ class MapVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, UIP
         self.map.userTrackingMode = MKUserTrackingMode.Follow
         self.locationManager.desiredAccuracy = kCLLocationAccuracyBest
         self.locationManager.startUpdatingLocation()
+        
+        for add in addresses {
+            getPlacemarkFromAddress(add)
+        }
+        
         
     }
     

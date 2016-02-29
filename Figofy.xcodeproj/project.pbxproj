@@ -34,6 +34,7 @@
 		18AFDA031C7472C300F2616E /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18AFDA021C7472C300F2616E /* AlertView.swift */; };
 		18CCAA981C60D5B700C7D5E8 /* CreateSeaVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CCAA961C60D5B700C7D5E8 /* CreateSeaVC.swift */; };
 		18CCAA991C60D5B700C7D5E8 /* CreateSeaVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18CCAA971C60D5B700C7D5E8 /* CreateSeaVC.xib */; };
+		18E642B01C80A87F00155CCC /* RegisterFishVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E642AF1C80A87F00155CCC /* RegisterFishVC.swift */; };
 		18E675801C58B6850046B259 /* TextFieldDesign.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E6757F1C58B6850046B259 /* TextFieldDesign.swift */; };
 		18E675821C58B76F0046B259 /* TextFieldEffects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E675811C58B76F0046B259 /* TextFieldEffects.swift */; };
 		18E675841C58C2E30046B259 /* System San Francisco Display Ultralight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18E675831C58C2E30046B259 /* System San Francisco Display Ultralight.ttf */; };
@@ -104,6 +105,7 @@
 		18AFDA021C7472C300F2616E /* AlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
 		18CCAA961C60D5B700C7D5E8 /* CreateSeaVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateSeaVC.swift; sourceTree = "<group>"; };
 		18CCAA971C60D5B700C7D5E8 /* CreateSeaVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CreateSeaVC.xib; sourceTree = "<group>"; };
+		18E642AF1C80A87F00155CCC /* RegisterFishVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterFishVC.swift; sourceTree = "<group>"; };
 		18E6757F1C58B6850046B259 /* TextFieldDesign.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldDesign.swift; sourceTree = "<group>"; };
 		18E675811C58B76F0046B259 /* TextFieldEffects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldEffects.swift; sourceTree = "<group>"; };
 		18E675831C58C2E30046B259 /* System San Francisco Display Ultralight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "System San Francisco Display Ultralight.ttf"; sourceTree = "<group>"; };
@@ -215,6 +217,7 @@
 				655044C81C636F7700D79B89 /* EventTableVC.swift */,
 				655044CC1C64CF1100D79B89 /* ClockVC.swift */,
 				18317D661C6DD31400C995D7 /* CustomTabBar.swift */,
+				18E642AF1C80A87F00155CCC /* RegisterFishVC.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -559,6 +562,7 @@
 				18317D671C6DD31400C995D7 /* CustomTabBar.swift in Sources */,
 				18E675801C58B6850046B259 /* TextFieldDesign.swift in Sources */,
 				659501001C6DD94C0067ED1A /* Timer.swift in Sources */,
+				18E642B01C80A87F00155CCC /* RegisterFishVC.swift in Sources */,
 				183B64C51C58F58C00B78D1B /* GradientColor.swift in Sources */,
 				1846984F1C60C0E50095D64B /* SeaListVC.swift in Sources */,
 				655044CF1C64D24700D79B89 /* Clock.swift in Sources */,
