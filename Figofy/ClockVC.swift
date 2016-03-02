@@ -64,10 +64,6 @@ class ClockVC: UIViewController {
         
     }
     
-    
-    
-    
-    
     func UpdateTimeLabel(){
         let formatter = NSDateFormatter()
         formatter.timeStyle = .MediumStyle
@@ -79,6 +75,10 @@ class ClockVC: UIViewController {
         
         self.performSegueWithIdentifier("catchedFish", sender: nil)
         
+        
+    }
+    
+    @IBAction func unwindToClock(sender: UIStoryboardSegue) {
         
     }
     

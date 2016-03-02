@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RegisterFishVC: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIPickerViewDataSource, UIPickerViewDelegate, UITextFieldDelegate {
+class RegisterFishVC: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIPickerViewDelegate {
 
     // MARK: IBOutlets Txt Entry
     @IBOutlet weak var fishImg: UIImageView!
@@ -73,12 +73,11 @@ class RegisterFishVC: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     
     func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        
+        return 1
     }
     
     func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        
-        
+        return "FIX THIS"
     }
     
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
@@ -96,8 +95,7 @@ class RegisterFishVC: UIViewController, UIImagePickerControllerDelegate, UINavig
 
     // MARK: IBActions
     @IBAction func uploadPressed(sender: AnyObject) {
-        
-        AlertView().showYesNoAlert("Post To Facebook", message: "Would you like to post to Facebook also?", style: .Alert, VC: self)
+        self.performSegueWithIdentifier("unwindToClock", sender: nil)
         
     }
     

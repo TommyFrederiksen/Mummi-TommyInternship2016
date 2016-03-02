@@ -113,6 +113,7 @@ class MapVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, UIP
         centerMapOnLocation(currentUserLocation)
     }
     
+    
     @IBAction func onPopoverTapped(sender: AnyObject) {
         self.performSegueWithIdentifier("showSeas", sender: nil)
     }
@@ -131,6 +132,7 @@ class MapVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, UIP
     func adaptivePresentationStyleForPresentationController(controller: UIPresentationController) -> UIModalPresentationStyle {
         return .None
     }
+    
     
     
     
