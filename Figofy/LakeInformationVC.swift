@@ -40,7 +40,7 @@ class LakeInformationVC: UIViewController {
     
     @IBAction func payHoursTapped(sender: UIButton) {
         var price = Float(200)
-        var Id = "3232"
+        let Id = "3232"
         if sender.tag == 0 {
             price = 130
             

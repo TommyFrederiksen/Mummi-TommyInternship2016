@@ -79,8 +79,8 @@ private func createProgressLayer() {
     let gradientMaskLayer = gradientMask()
     let gradientMaskLayer2 = gradientMask()
     let gradientMaskLayer3 = gradientMask()
-    let radius = CGRectGetWidth(canvas.frame)/2-30.0
-    let dashLength = 2*radius*CGFloat(M_PI)/60
+    let radius = ((CGRectGetWidth(canvas.frame))/2)-30
+    let dashLength = (canvas.frame.width - 30)*CGFloat(M_PI)/12
     
     progressLayer.path = UIBezierPath(arcCenter: centerPoint, radius: radius, startAngle: startAngle, endAngle: endAngle, clockwise: true).CGPath
     
@@ -97,7 +97,8 @@ private func createProgressLayer() {
     progressLayer.strokeStart = 0.0
     progressLayer.strokeEnd = 0.0
     progressLayer.lineWidth = 10
-    progressLayer.lineDashPattern = [dashLength/5,2]
+    progressLayer.lineDashPhase = 0
+    progressLayer.lineDashPattern = [dashLength*1]
     progressLayer.lineJoin = kCALineJoinRound
 
     progressLayer2.path = UIBezierPath(arcCenter: centerPoint, radius: radius-10, startAngle: startAngle, endAngle: endAngle, clockwise: true).CGPath
@@ -115,7 +116,7 @@ private func createProgressLayer() {
     progressLayer2.strokeStart = 0.0
     progressLayer2.strokeEnd = 0.0
     progressLayer2.lineWidth = 5
-    progressLayer2.lineDashPattern = [dashLength,0.1]
+    //progressLayer2.lineDashPattern = [dashLength,0.1]
     progressLayer2.lineJoin = kCALineJoinRound
     
     progressLayer3.path = UIBezierPath(arcCenter: centerPoint, radius: radius-20, startAngle: startAngle, endAngle: endAngle, clockwise: true).CGPath
