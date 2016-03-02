@@ -65,7 +65,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     @IBAction func fbLogin(sender: UIButton)
     {
         let facebookLogin = FBSDKLoginManager()
-        let graphConnection = FBSDKGraphRequestConnection()
+        //let graphConnection = FBSDKGraphRequestConnection()
         facebookLogin.logInWithReadPermissions(self.fbPermissions, fromViewController: self, handler: { facebookResult, facebookError -> Void in
             if facebookError != nil {
                 print("Facebook login failed. Error \(facebookError)")
