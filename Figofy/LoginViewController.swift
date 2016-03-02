@@ -170,7 +170,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                                 
                                 DataService.dataService.REF_BASE.authUser(email, password: pwd, withCompletionBlock: { error, authData in
                                 // MARK: TODO The data from the form in to dictionary
-                                    let user: [String : AnyObject] = ["provider" : authData.provider!, "email" : self.createEmail.text!, "mobile" : self.createPhone.text!, "firstName" : self.createFirstName.text!]
+                                let user: [String : AnyObject] = ["provider" : authData.provider!, "email" : self.createEmail.text!, "mobile" : self.createPhone.text!, "firstName" : self.createFirstName.text!]
+                                    
                                 DataService.dataService.createFirebaseUser(authData.uid, user: user)
                                     
                                     
