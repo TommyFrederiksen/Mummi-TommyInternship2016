@@ -17,6 +17,7 @@ class DataService {
     private var _REF_BASE = Firebase(url: "\(URL_BASE)")
     private var _REF_SEAS = Firebase(url: "\(URL_BASE)/seas")
     private var _REF_USERS = Firebase(url: "\(URL_BASE)/users")
+    private var _CURRENT_TIMESTAMP = Firebase()
     var REF_BASE: Firebase {
         return _REF_BASE
     }

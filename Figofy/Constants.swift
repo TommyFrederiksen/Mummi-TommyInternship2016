@@ -8,7 +8,6 @@
 
 import Foundation
 
-
 //Keys
 let KEY_UID = "uid"
 
