@@ -15,6 +15,7 @@ class EventTableVC: UITableViewController {
     var events = [Event]()
     
         
+   
     func loadSampleEvents()
     {
         let photo1 = UIImage(named: "EventImage1")!
@@ -71,18 +72,27 @@ class EventTableVC: UITableViewController {
         let cellIdentifier = "EventTableViewCell"
         let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! EventTableViewCell
         let event = events[indexPath.row]
-        // MARK:configures the cell
+        // MARK: configures the cell
         cell.photoImageView.image = event._photo
+        cell.photoImageView.layer.cornerRadius = 45
+        cell.photoImageView.clipsToBounds = true
         cell.nameLabel.text = event._name
         cell.descriptionLabel.text = event._description
         cell.timeAndDateLabel.text = event._dateTime
+        
+        
         
 
         
 
         return cell
     }
-    
+    override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        
+        return 20.00
+    }
+   
+   
 
     /*
     // Override to support conditional editing of the table view.
