@@ -71,16 +71,7 @@ class ClockVC: UIViewController {
         timeLabel.textColor = UIColor.whiteColor()
     }
     
-    @IBAction func payWithMobilePay(sender: AnyObject) {
-        
-        self.performSegueWithIdentifier("catchedFish", sender: nil)
-        
-        
-    }
     
-    @IBAction func unwindToClock(sender: UIStoryboardSegue) {
-        
-    }
     
 }
 

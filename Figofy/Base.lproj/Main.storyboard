@@ -111,9 +111,6 @@
                                                 <real key="value" value="1"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
-                                        <variation key="heightClass=compact" misplaced="YES">
-                                            <rect key="frame" x="0.0" y="55" width="350" height="50"/>
-                                        </variation>
                                     </textField>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="bottom" translatesAutoresizingMaskIntoConstraints="NO" id="3AL-4L-124">
                                         <rect key="frame" x="0.0" y="150" width="200" height="100"/>
@@ -137,7 +134,7 @@
                                     </stackView>
                                 </subviews>
                                 <variation key="heightClass=compact" alignment="top" misplaced="YES" spacing="5">
-                                    <rect key="frame" x="105" y="131" width="350" height="140"/>
+                                    <rect key="frame" x="105" y="131" width="350" height="220"/>
                                 </variation>
                             </stackView>
                             <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="man6" translatesAutoresizingMaskIntoConstraints="NO" id="Qb9-6C-5I4">
@@ -297,6 +294,9 @@
                                         <constraints>
                                             <constraint firstAttribute="width" constant="200" id="83h-OK-sma"/>
                                         </constraints>
+                                        <variation key="heightClass=compact" misplaced="YES">
+                                            <rect key="frame" x="0.0" y="295" width="350" height="280"/>
+                                        </variation>
                                     </view>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="60" translatesAutoresizingMaskIntoConstraints="NO" id="v7l-Ya-7u8">
                                         <rect key="frame" x="0.0" y="340" width="200" height="80"/>
@@ -314,8 +314,14 @@
                                                 </connections>
                                             </button>
                                         </subviews>
+                                        <variation key="heightClass=compact" misplaced="YES">
+                                            <rect key="frame" x="0.0" y="580" width="350" height="80"/>
+                                        </variation>
                                     </stackView>
                                 </subviews>
+                                <variation key="heightClass=compact" misplaced="YES">
+                                    <rect key="frame" x="125" y="10" width="350" height="660"/>
+                                </variation>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="gdD-3B-Msf" userLabel="Stack View logo top">
                                 <rect key="frame" x="20" y="20" width="560" height="87"/>
@@ -325,7 +331,7 @@
                                     </imageView>
                                 </subviews>
                                 <variation key="heightClass=compact" misplaced="YES">
-                                    <rect key="frame" x="210" y="0.0" width="140" height="101"/>
+                                    <rect key="frame" x="210" y="0.0" width="560" height="87"/>
                                 </variation>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="HQZ-cw-hbi" userLabel="ButtomBar">
@@ -532,7 +538,6 @@
                                     </mask>
                                 </variation>
                                 <connections>
-                                    <action selector="payWithMobilePay:" destination="17N-41-QlL" eventType="touchUpInside" id="8zU-wx-W4y"/>
                                     <segue destination="vB9-OO-Q0m" kind="show" identifier="catchedFish" id="ViT-06-MNh"/>
                                 </connections>
                             </button>
@@ -578,108 +583,261 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Rp5-J3-rPG">
-                                <rect key="frame" x="190" y="28" width="221" height="117"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="221" id="33d-mh-NUA"/>
-                                    <constraint firstAttribute="height" constant="117" id="OqQ-IM-hLh"/>
-                                </constraints>
-                            </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="xzC-o5-J9D">
-                                <rect key="frame" x="20" y="185" width="560" height="61"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JLI-ML-HE8">
+                                <rect key="frame" x="20" y="20" width="560" height="580"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="dYf-rE-C6l">
-                                        <rect key="frame" x="0.0" y="0.0" width="560" height="21"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Rp5-J3-rPG">
+                                        <rect key="frame" x="50" y="8" width="460" height="117"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="117" id="HP1-3L-n4t"/>
+                                        </constraints>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wMK-pY-4j7">
+                                        <rect key="frame" x="184" y="16" width="192" height="100"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="100" id="X4P-fj-gT8"/>
+                                            <constraint firstAttribute="width" constant="192" id="sqp-rn-fBw"/>
+                                        </constraints>
+                                        <state key="normal" title="Tilføj Billede"/>
+                                        <connections>
+                                            <action selector="addPicBtnPressed:" destination="vB9-OO-Q0m" eventType="touchUpInside" id="bhF-Fx-aEq"/>
+                                        </connections>
+                                    </button>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="p7c-wu-4gO">
+                                        <rect key="frame" x="180" y="203" width="200" height="175"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Art" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qRx-Le-e8a">
-                                                <rect key="frame" x="0.0" y="0.0" width="174" height="21"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vægt" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6sd-dh-cDI">
-                                                <rect key="frame" x="194" y="0.0" width="173" height="21"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Længde" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ny5-tF-iWD">
-                                                <rect key="frame" x="387" y="0.0" width="174" height="21"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="9AE-x5-wN6" userLabel="Art">
+                                                <rect key="frame" x="0.0" y="0.0" width="200" height="40"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Art:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rXw-Qv-owc">
+                                                        <rect key="frame" x="0.0" y="0.0" width="100" height="40"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="40" id="LUz-31-egx"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
+                                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U6q-UH-ZJT">
+                                                        <rect key="frame" x="100" y="0.0" width="100" height="40"/>
+                                                        <state key="normal" title="Vælg art"/>
+                                                        <connections>
+                                                            <action selector="chooseTapped:" destination="vB9-OO-Q0m" eventType="touchUpInside" id="s4g-mA-hTE"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="dc9-h4-Dlc"/>
+                                                </constraints>
+                                                <variation key="default">
+                                                    <mask key="constraints">
+                                                        <exclude reference="dc9-h4-Dlc"/>
+                                                    </mask>
+                                                </variation>
+                                                <variation key="heightClass=compact" alignment="center" axis="vertical"/>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="YVV-ct-jjy" userLabel="Vægt">
+                                                <rect key="frame" x="0.0" y="45" width="200" height="40"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vægt:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9aL-jW-FFH">
+                                                        <rect key="frame" x="0.0" y="0.0" width="100" height="40"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="40" id="QSs-1L-Yj3"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
+                                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TuC-C0-kqm">
+                                                        <rect key="frame" x="100" y="0.0" width="100" height="40"/>
+                                                        <state key="normal" title="Vælg vægt"/>
+                                                        <connections>
+                                                            <action selector="chooseTapped:" destination="vB9-OO-Q0m" eventType="touchUpInside" id="UTb-cE-WLu"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <variation key="heightClass=compact" alignment="center" axis="vertical"/>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="xip-Uw-67U" userLabel="Længde">
+                                                <rect key="frame" x="0.0" y="90" width="200" height="40"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Længde:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uPI-CY-buC">
+                                                        <rect key="frame" x="0.0" y="0.0" width="100" height="40"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="40" id="aFs-03-tIV"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
+                                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D11-Dc-oVN">
+                                                        <rect key="frame" x="100" y="0.0" width="100" height="40"/>
+                                                        <state key="normal" title="Vælg længde"/>
+                                                        <connections>
+                                                            <action selector="chooseTapped:" destination="vB9-OO-Q0m" eventType="touchUpInside" id="YH4-E7-aPZ"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <variation key="heightClass=compact" alignment="center" axis="vertical"/>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="c9x-tJ-ZBn" userLabel="Agn">
+                                                <rect key="frame" x="0.0" y="135" width="200" height="40"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Agn:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0gW-Ig-e8M">
+                                                        <rect key="frame" x="0.0" y="0.0" width="100" height="40"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="40" id="2kz-YA-R1j"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
+                                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QDI-Rq-chQ">
+                                                        <rect key="frame" x="100" y="0.0" width="100" height="40"/>
+                                                        <state key="normal" title="Vælg agn"/>
+                                                        <connections>
+                                                            <action selector="chooseTapped:" destination="vB9-OO-Q0m" eventType="touchUpInside" id="AV0-dE-qXg"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <variation key="heightClass=compact" alignment="center" axis="vertical"/>
+                                            </stackView>
                                         </subviews>
+                                        <constraints>
+                                            <constraint firstItem="YVV-ct-jjy" firstAttribute="height" secondItem="9AE-x5-wN6" secondAttribute="height" id="C1l-YP-Iyy"/>
+                                            <constraint firstAttribute="width" constant="200" id="CE3-fc-egz">
+                                                <variation key="heightClass=compact" constant="400"/>
+                                            </constraint>
+                                            <constraint firstItem="xip-Uw-67U" firstAttribute="height" secondItem="9AE-x5-wN6" secondAttribute="height" id="Ybc-Zt-vYO"/>
+                                            <constraint firstItem="c9x-tJ-ZBn" firstAttribute="height" secondItem="9AE-x5-wN6" secondAttribute="height" id="eQA-T5-3uo"/>
+                                        </constraints>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="C1l-YP-Iyy"/>
+                                                <exclude reference="Ybc-Zt-vYO"/>
+                                                <exclude reference="eQA-T5-3uo"/>
+                                            </mask>
+                                        </variation>
+                                        <variation key="heightClass=compact" axis="horizontal" distribution="fillEqually" spacing="10"/>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WPM-Bm-95r">
-                                        <rect key="frame" x="0.0" y="41" width="560" height="21"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Agn" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o2R-sk-yUJ">
-                                                <rect key="frame" x="0.0" y="0.0" width="560" height="21"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                    </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cui-RT-kB3">
+                                        <rect key="frame" x="205" y="502" width="150" height="30"/>
+                                        <color key="backgroundColor" red="0.53725490200000003" green="0.82745098039999998" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="150" id="3hN-Fx-c9S"/>
+                                            <constraint firstAttribute="width" constant="150" id="CqN-pI-s2U"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                                        <state key="normal" title="Registrer Fangst">
+                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="3hN-Fx-c9S"/>
+                                            </mask>
+                                        </variation>
+                                        <variation key="heightClass=compact" misplaced="YES">
+                                            <rect key="frame" x="205" y="288" width="150" height="42"/>
+                                        </variation>
+                                        <connections>
+                                            <action selector="uploadPressed:" destination="vB9-OO-Q0m" eventType="touchUpInside" id="CuW-WP-1z6"/>
+                                        </connections>
+                                    </button>
+                                    <pickerView hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B5D-NJ-rQ2">
+                                        <rect key="frame" x="0.0" y="364" width="560" height="216"/>
+                                    </pickerView>
+                                    <pickerView hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b0F-F7-oNw">
+                                        <rect key="frame" x="0.0" y="364" width="560" height="216"/>
+                                    </pickerView>
+                                    <pickerView hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f56-bh-JpZ">
+                                        <rect key="frame" x="0.0" y="364" width="560" height="216"/>
+                                    </pickerView>
+                                    <pickerView hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GEK-5p-UC1">
+                                        <rect key="frame" x="0.0" y="364" width="560" height="216"/>
+                                    </pickerView>
                                 </subviews>
-                            </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cui-RT-kB3">
-                                <rect key="frame" x="271" y="296" width="58" height="34"/>
                                 <color key="backgroundColor" red="0.90980392160000001" green="0.93725490199999995" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Upload">
-                                    <color key="titleColor" red="0.1176470588" green="0.53333333329999999" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="uploadPressed:" destination="vB9-OO-Q0m" eventType="touchUpInside" id="CuW-WP-1z6"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wMK-pY-4j7">
-                                <rect key="frame" x="204" y="37" width="192" height="100"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="2Z1-XG-EvW"/>
-                                    <constraint firstAttribute="width" constant="192" id="JqE-WO-sQN"/>
+                                    <constraint firstAttribute="trailingMargin" secondItem="p7c-wu-4gO" secondAttribute="trailing" id="0Yz-VM-4sm"/>
+                                    <constraint firstItem="p7c-wu-4gO" firstAttribute="leading" secondItem="JLI-ML-HE8" secondAttribute="leadingMargin" id="1M2-G1-oe2"/>
+                                    <constraint firstItem="p7c-wu-4gO" firstAttribute="top" secondItem="Rp5-J3-rPG" secondAttribute="bottom" constant="50" id="5EC-Cz-l2U"/>
+                                    <constraint firstItem="p7c-wu-4gO" firstAttribute="top" secondItem="JLI-ML-HE8" secondAttribute="topMargin" id="74e-1X-zrg"/>
+                                    <constraint firstItem="Rp5-J3-rPG" firstAttribute="leading" secondItem="JLI-ML-HE8" secondAttribute="leadingMargin" constant="42" id="82K-hm-1a3"/>
+                                    <constraint firstAttribute="trailingMargin" secondItem="Rp5-J3-rPG" secondAttribute="trailing" constant="42" id="BuM-Jf-uhI"/>
+                                    <constraint firstAttribute="bottomMargin" secondItem="cui-RT-kB3" secondAttribute="bottom" constant="40" id="CS0-KQ-tq6"/>
+                                    <constraint firstItem="cui-RT-kB3" firstAttribute="centerX" secondItem="JLI-ML-HE8" secondAttribute="centerX" id="GpL-dm-3cZ"/>
+                                    <constraint firstItem="wMK-pY-4j7" firstAttribute="centerX" secondItem="JLI-ML-HE8" secondAttribute="centerX" id="Mxu-OM-0XK"/>
+                                    <constraint firstItem="p7c-wu-4gO" firstAttribute="top" secondItem="Rp5-J3-rPG" secondAttribute="bottom" constant="10" id="QE1-lO-Ox2"/>
+                                    <constraint firstItem="Rp5-J3-rPG" firstAttribute="top" secondItem="JLI-ML-HE8" secondAttribute="topMargin" id="SWv-Iq-ku6"/>
+                                    <constraint firstAttribute="bottom" secondItem="cui-RT-kB3" secondAttribute="bottom" constant="50" id="WUK-h6-bHV">
+                                        <variation key="heightClass=compact" constant="40"/>
+                                    </constraint>
+                                    <constraint firstAttribute="bottom" secondItem="f56-bh-JpZ" secondAttribute="bottom" id="YwB-8Q-dOc"/>
+                                    <constraint firstItem="Rp5-J3-rPG" firstAttribute="centerX" secondItem="JLI-ML-HE8" secondAttribute="centerX" id="ZuO-H0-0I5"/>
+                                    <constraint firstAttribute="bottom" secondItem="B5D-NJ-rQ2" secondAttribute="bottom" id="asZ-Uy-OfW"/>
+                                    <constraint firstItem="b0F-F7-oNw" firstAttribute="leading" secondItem="JLI-ML-HE8" secondAttribute="leading" id="bC2-ZS-uDs"/>
+                                    <constraint firstAttribute="trailing" secondItem="b0F-F7-oNw" secondAttribute="trailing" id="bfy-eA-YtE"/>
+                                    <constraint firstAttribute="trailing" secondItem="GEK-5p-UC1" secondAttribute="trailing" id="cHY-sy-be5"/>
+                                    <constraint firstItem="cui-RT-kB3" firstAttribute="top" secondItem="p7c-wu-4gO" secondAttribute="bottom" constant="10" id="cfE-Ng-hkM"/>
+                                    <constraint firstItem="f56-bh-JpZ" firstAttribute="leading" secondItem="JLI-ML-HE8" secondAttribute="leading" id="dO1-Es-qK2"/>
+                                    <constraint firstItem="B5D-NJ-rQ2" firstAttribute="leading" secondItem="JLI-ML-HE8" secondAttribute="leading" id="gJn-yf-xJw"/>
+                                    <constraint firstItem="cui-RT-kB3" firstAttribute="width" secondItem="p7c-wu-4gO" secondAttribute="width" id="gMf-1i-yuZ"/>
+                                    <constraint firstAttribute="bottom" secondItem="GEK-5p-UC1" secondAttribute="bottom" id="gdB-IG-Mmi"/>
+                                    <constraint firstAttribute="bottom" secondItem="b0F-F7-oNw" secondAttribute="bottom" id="hB3-xg-dVb"/>
+                                    <constraint firstAttribute="trailing" secondItem="B5D-NJ-rQ2" secondAttribute="trailing" id="ie0-mG-IeA"/>
+                                    <constraint firstItem="GEK-5p-UC1" firstAttribute="leading" secondItem="JLI-ML-HE8" secondAttribute="leading" id="jVr-LX-2IC"/>
+                                    <constraint firstItem="wMK-pY-4j7" firstAttribute="top" secondItem="JLI-ML-HE8" secondAttribute="topMargin" constant="8" id="jxj-zL-4x6"/>
+                                    <constraint firstItem="p7c-wu-4gO" firstAttribute="centerY" secondItem="JLI-ML-HE8" secondAttribute="centerY" id="kMD-Lr-0bg"/>
+                                    <constraint firstItem="cui-RT-kB3" firstAttribute="centerX" secondItem="JLI-ML-HE8" secondAttribute="centerX" id="mwl-Qx-hkk"/>
+                                    <constraint firstItem="p7c-wu-4gO" firstAttribute="centerX" secondItem="JLI-ML-HE8" secondAttribute="centerX" id="nVq-Kr-rhC"/>
+                                    <constraint firstAttribute="trailing" secondItem="f56-bh-JpZ" secondAttribute="trailing" id="rkb-iP-yUB"/>
+                                    <constraint firstItem="cui-RT-kB3" firstAttribute="top" secondItem="p7c-wu-4gO" secondAttribute="bottom" constant="8" id="sQT-Ep-LmW"/>
                                 </constraints>
-                                <state key="normal" title="Add Fish"/>
-                                <connections>
-                                    <action selector="addPicBtnPressed:" destination="vB9-OO-Q0m" eventType="touchUpInside" id="bhF-Fx-aEq"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="7" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lxi-Yf-sfK">
-                                <rect key="frame" x="55" y="349" width="491" height="194"/>
-                                <color key="backgroundColor" red="0.95686274510000002" green="0.31764705879999999" blue="0.1176470588" alpha="1" colorSpace="calibratedRGB"/>
-                                <string key="text">Skal have scrollpicker views i disse entries. Så brugere ikke selv skal indtaste værdierne. Skaber en bedre opleveslse og meget intuitivt</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="82K-hm-1a3"/>
+                                        <exclude reference="BuM-Jf-uhI"/>
+                                        <exclude reference="0Yz-VM-4sm"/>
+                                        <exclude reference="1M2-G1-oe2"/>
+                                        <exclude reference="5EC-Cz-l2U"/>
+                                        <exclude reference="74e-1X-zrg"/>
+                                        <exclude reference="QE1-lO-Ox2"/>
+                                        <exclude reference="CS0-KQ-tq6"/>
+                                        <exclude reference="GpL-dm-3cZ"/>
+                                        <exclude reference="cfE-Ng-hkM"/>
+                                        <exclude reference="gMf-1i-yuZ"/>
+                                        <exclude reference="sQT-Ep-LmW"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=compact">
+                                    <mask key="constraints">
+                                        <exclude reference="CS0-KQ-tq6"/>
+                                        <exclude reference="GpL-dm-3cZ"/>
+                                        <exclude reference="cfE-Ng-hkM"/>
+                                        <exclude reference="gMf-1i-yuZ"/>
+                                    </mask>
+                                </variation>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="xzC-o5-J9D" secondAttribute="trailing" id="1hs-kP-dUm"/>
-                            <constraint firstItem="cui-RT-kB3" firstAttribute="centerX" secondItem="wMK-pY-4j7" secondAttribute="centerX" id="3qs-md-16L"/>
-                            <constraint firstItem="wMK-pY-4j7" firstAttribute="centerX" secondItem="Gq6-H8-Tq2" secondAttribute="centerX" id="75o-LZ-U47"/>
-                            <constraint firstItem="cui-RT-kB3" firstAttribute="centerX" secondItem="Gq6-H8-Tq2" secondAttribute="centerX" id="8aa-VM-CBq"/>
-                            <constraint firstItem="wMK-pY-4j7" firstAttribute="top" secondItem="3Xz-fS-I8T" secondAttribute="bottom" constant="17" id="F7f-lv-94a"/>
-                            <constraint firstItem="cui-RT-kB3" firstAttribute="top" secondItem="xzC-o5-J9D" secondAttribute="bottom" constant="50" id="Fvc-id-HCY"/>
-                            <constraint firstItem="xzC-o5-J9D" firstAttribute="top" secondItem="Rp5-J3-rPG" secondAttribute="bottom" constant="40" id="KAT-9z-cKm"/>
-                            <constraint firstItem="Rp5-J3-rPG" firstAttribute="centerX" secondItem="Gq6-H8-Tq2" secondAttribute="centerX" id="M1m-y4-b7M"/>
-                            <constraint firstItem="Rp5-J3-rPG" firstAttribute="top" secondItem="3Xz-fS-I8T" secondAttribute="bottom" constant="8" id="Vpe-zz-mUc"/>
-                            <constraint firstItem="KsH-ed-b7H" firstAttribute="top" secondItem="xzC-o5-J9D" secondAttribute="bottom" id="d3O-hd-heW"/>
-                            <constraint firstItem="xzC-o5-J9D" firstAttribute="leading" secondItem="Gq6-H8-Tq2" secondAttribute="leadingMargin" id="qhu-cC-nWZ"/>
-                            <constraint firstItem="cui-RT-kB3" firstAttribute="centerY" secondItem="wMK-pY-4j7" secondAttribute="centerY" id="xxH-mu-BtJ"/>
+                            <constraint firstItem="JLI-ML-HE8" firstAttribute="top" secondItem="3Xz-fS-I8T" secondAttribute="bottom" id="3ck-VI-Ouz"/>
+                            <constraint firstItem="JLI-ML-HE8" firstAttribute="trailing" secondItem="Gq6-H8-Tq2" secondAttribute="trailingMargin" id="8Od-kc-QfJ"/>
+                            <constraint firstItem="JLI-ML-HE8" firstAttribute="bottom" secondItem="Gq6-H8-Tq2" secondAttribute="bottomMargin" id="8XH-tQ-sCl"/>
+                            <constraint firstItem="JLI-ML-HE8" firstAttribute="leading" secondItem="Gq6-H8-Tq2" secondAttribute="leadingMargin" id="bx4-6f-jEm"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="3qs-md-16L"/>
-                                <exclude reference="xxH-mu-BtJ"/>
-                                <exclude reference="d3O-hd-heW"/>
-                            </mask>
-                        </variation>
                     </view>
                     <connections>
+                        <outlet property="baitPicker" destination="GEK-5p-UC1" id="AGe-bg-j99"/>
+                        <outlet property="chooseBait" destination="QDI-Rq-chQ" id="q3c-XQ-WxD"/>
+                        <outlet property="chooseLength" destination="D11-Dc-oVN" id="YFH-pP-TyU"/>
+                        <outlet property="chooseSpecies" destination="U6q-UH-ZJT" id="aEl-SJ-ByF"/>
+                        <outlet property="chooseWeight" destination="TuC-C0-kqm" id="GYi-L6-n8Z"/>
                         <outlet property="fishImg" destination="Rp5-J3-rPG" id="Wcc-LT-YI3"/>
+                        <outlet property="lengthPicker" destination="f56-bh-JpZ" id="Fcs-co-Zyd"/>
+                        <outlet property="speciesPicker" destination="B5D-NJ-rQ2" id="9J6-MB-ynm"/>
                         <outlet property="uploadButton" destination="cui-RT-kB3" id="dhn-ns-kjO"/>
+                        <outlet property="weightPicker" destination="b0F-F7-oNw" id="Ud5-EB-b14"/>
                         <segue destination="0MC-JJ-92w" kind="unwind" identifier="unwindToClock" unwindAction="unwindToClock:" id="ecb-ly-PQs"/>
                     </connections>
                 </viewController>
@@ -1433,8 +1591,8 @@
                                     <action selector="payBtnPressed:" destination="VWp-wP-qoj" eventType="touchUpInside" id="ru2-Mu-HSv"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Amount" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="p7p-TC-1wJ" customClass="TextFieldDesign" customModule="Figofy" customModuleProvider="target">
-                                <rect key="frame" x="135" y="185" width="330" height="46"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Amount" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="p7p-TC-1wJ" customClass="TextFieldDesign" customModule="Figofy" customModuleProvider="target">
+                                <rect key="frame" x="135" y="207" width="330" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="330" id="5qg-xD-txV"/>
                                 </constraints>
