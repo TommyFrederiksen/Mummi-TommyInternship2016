@@ -29,7 +29,10 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var createPhone: TextFieldDesign!
     
     @IBOutlet weak var opretSV: UIStackView!
-    @IBOutlet weak var buttomBar: UIStackView!
+   
+    @IBOutlet weak var buttomBarButton: UIButton!
+   
+    
     
     // MARK: Variables
     let layer = CAGradientLayer()
@@ -143,9 +146,9 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         loginbtn.hidden = true
         figofyLogo.hidden = true
         profilephotoView.hidden = false
-        
+        buttomBarButton.setTitle("FIGOFY fisketuren begynder her!", forState: UIControlState.Normal)
         opretSV.hidden = false
-        buttomBar.hidden = true
+        
         
     }
     
@@ -203,10 +206,9 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         loginbtn.hidden = false
         figofyLogo.hidden = false
         profilephotoView.hidden = true
-        
+       
         opretSV.hidden = true
-        buttomBar.hidden = false
-        
+        buttomBarButton.setTitle("Ikke en del af figofy? Opret dig her", forState: UIControlState.Normal)
         createFirstName.text = ""
         createEmail.text = ""
         createPhone.text = ""

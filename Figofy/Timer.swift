@@ -75,73 +75,46 @@ class Timer: UIView {
     
     private func createProgressLayer() {
         
-        let halfWidth = frame.size.width/2
-        let halfHeight = frame.size.height/2
-        let startAngle = CGFloat(M_PI_2)
-        let endAngle = CGFloat(M_PI * 2 + M_PI_2)
+        let halfWidth = self.bounds.size.width/2
+        let halfHeight = self.bounds.size.height/2
+        let startAngle = CGFloat(-M_PI_2)
+        let endAngle = CGFloat(M_PI * 2 - M_PI_2)
         let centerPoint = CGPointMake(halfWidth/2, halfHeight/2)
-        let radius = halfWidth - 10
-        let dashLength = (halfWidth*2 - 30)*CGFloat(M_PI)
+        //let radius = halfWidth - 10
+        let dashLength = (150)*CGFloat(M_PI)
         
-        progressLayer.path = UIBezierPath(arcCenter: centerPoint, radius: radius, startAngle: startAngle, endAngle: endAngle, clockwise: true).CGPath
-        
-        
-        progressLayer.backgroundColor = UIColor.clearColor().CGColor
-        progressLayer.shadowColor = UIColor.whiteColor().CGColor
-        progressLayer.shadowRadius = 3.5
-        progressLayer.shadowOpacity = 1
-        progressLayer.shadowOffset = CGSizeZero
-        progressLayer.allowsEdgeAntialiasing = true
-        progressLayer.masksToBounds = false
-        progressLayer.fillColor = nil
-        progressLayer.strokeColor = UIColor.blueColor().CGColor
-        progressLayer.strokeStart = 0.0
-        progressLayer.strokeEnd = 0.0
-        progressLayer.lineWidth = 10
-        progressLayer.lineDashPhase = 0
-        progressLayer.lineDashPattern = [dashLength*1]
-        progressLayer.lineJoin = kCALineJoinRound
-        
-        progressLayer2.path = UIBezierPath(arcCenter: centerPoint, radius: radius-10, startAngle: startAngle, endAngle: endAngle, clockwise: true).CGPath
+        progressLayer.path = UIBezierPath(arcCenter: centerPoint, radius: 150, startAngle: startAngle, endAngle: endAngle, clockwise: true).CGPath
+        SetLayer(progressLayer,line: 10.0)
+        progressLayer.lineDashPattern = [dashLength/100,3]
         
         
-        progressLayer2.backgroundColor = UIColor.clearColor().CGColor
-        progressLayer2.shadowColor = UIColor.whiteColor().CGColor
-        progressLayer2.shadowRadius = 2.5
-        progressLayer2.shadowOpacity = 1
-        progressLayer2.shadowOffset = CGSizeZero
-        progressLayer2.allowsEdgeAntialiasing = true
-        progressLayer2.masksToBounds = false
-        progressLayer2.fillColor = nil
-        progressLayer2.strokeColor = UIColor.blueColor().CGColor
-        progressLayer2.strokeStart = 0.0
-        progressLayer2.strokeEnd = 0.0
-        progressLayer2.lineWidth = 5
-        //progressLayer2.lineDashPattern = [dashLength,0.1]
-        progressLayer2.lineJoin = kCALineJoinRound
-        
-        progressLayer3.path = UIBezierPath(arcCenter: centerPoint, radius: radius-20, startAngle: startAngle, endAngle: endAngle, clockwise: true).CGPath
+        progressLayer2.path = UIBezierPath(arcCenter: centerPoint, radius: 140, startAngle: startAngle, endAngle: endAngle, clockwise: true).CGPath
+        SetLayer(progressLayer2,line: 5.0)
         
         
-        progressLayer3.backgroundColor = UIColor.clearColor().CGColor
-        progressLayer3.shadowColor = UIColor.whiteColor().CGColor
-        progressLayer3.shadowRadius = 1.5
-        progressLayer3.shadowOpacity = 1
-        progressLayer3.shadowOffset = CGSizeZero
-        progressLayer3.allowsEdgeAntialiasing = true
-        progressLayer3.masksToBounds = false
-        progressLayer3.fillColor = nil
-        progressLayer3.strokeColor = UIColor.blueColor().CGColor
-        progressLayer3.strokeStart = 0.0
-        progressLayer3.strokeEnd = 0.0
-        progressLayer3.lineWidth = 1.5
-        progressLayer3.lineJoin = kCALineJoinRound
         
-       
+        progressLayer3.path = UIBezierPath(arcCenter: centerPoint, radius: 130, startAngle: startAngle, endAngle: endAngle, clockwise: true).CGPath
+        SetLayer(progressLayer3, line: 1.5)
         
-
-    
+        
+        
 }
+    func SetLayer(progresslayer: CAShapeLayer, line: Double) ->CAShapeLayer{
+        progresslayer.backgroundColor = UIColor.clearColor().CGColor
+        progresslayer.shadowColor = UIColor.whiteColor().CGColor
+        progresslayer.shadowRadius = 2.5
+        progresslayer.shadowOpacity = 1
+        progresslayer.shadowOffset = CGSizeZero
+        progresslayer.allowsEdgeAntialiasing = true
+        progresslayer.masksToBounds = false
+        progresslayer.fillColor = nil
+        progresslayer.strokeColor = UIColor(red: 255/255, green: 128/255, blue: 0/255, alpha: 1).CGColor
+        progresslayer.strokeStart = 0.0
+        progresslayer.strokeEnd = 0.0
+        progresslayer.lineJoin = kCALineJoinRound
+        progresslayer.lineWidth = CGFloat(line)
+        return progresslayer
+    }
 
 func secondsToHoursMinutesSeconds (seconds : Int) -> (Int, Int, Int) {
     return (seconds / 3600, (seconds % 3600) / 60, (seconds % 60))

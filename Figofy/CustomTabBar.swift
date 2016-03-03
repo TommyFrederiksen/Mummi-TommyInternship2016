@@ -11,18 +11,24 @@ import UIKit
 class CustomTabBar: UITabBarController, UITabBarControllerDelegate {
     
     
+    @IBOutlet weak var tabBarUI: UITabBar!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         delegate = self
+        tabBarUI.barStyle = UIBarStyle.Default
+        tabBarUI.alpha = 1
+        tabBarUI.backgroundColor = UIColor(red: 23/255, green: 45/255, blue: 130/255, alpha: 1)
+        tabBarUI.tintColor = UIColor.whiteColor()
+        
         
     }
     
     override func tabBar(tabBar: UITabBar, didSelectItem item: UITabBarItem) {
         UIView.animateWithDuration(2.5, animations: { () -> Void in
-            tabBar.tintColor = self.randomColor()
+            //tabBar.backgroundColor = UIColor.blueColor()
             
             //ROtation animation
 //            let rotateAnim = CABasicAnimation(keyPath: "transform.rotation")
@@ -55,13 +61,13 @@ class CustomTabBar: UITabBarController, UITabBarControllerDelegate {
     
     
     //For fun
-    func randomColor () -> UIColor {
-        let hue: CGFloat = CGFloat(arc4random()%256) / 256
-        let saturation : CGFloat = CGFloat(arc4random() % 128) / 256 + 0.5 // from 0.5 to 1.0 to stay away from white
-        let brightness : CGFloat = CGFloat(arc4random() % 128) / 256 + 0.5 // from 0.5 to 1.0 to stay away from black
-        
-        return UIColor(hue: hue, saturation: saturation, brightness: brightness, alpha: 1.0)
-    }
+//    func randomColor () -> UIColor {
+//        let hue: CGFloat = CGFloat(arc4random()%256) / 256
+//        let saturation : CGFloat = CGFloat(arc4random() % 128) / 256 + 0.5 // from 0.5 to 1.0 to stay away from white
+//        let brightness : CGFloat = CGFloat(arc4random() % 128) / 256 + 0.5 // from 0.5 to 1.0 to stay away from black
+//        
+//        return UIColor(hue: hue, saturation: saturation, brightness: brightness, alpha: 1.0)
+//    }
     
 //    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
 //        let tabBarController = segue.destinationViewController as! UITabBarController
