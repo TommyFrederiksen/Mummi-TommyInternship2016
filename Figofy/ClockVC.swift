@@ -28,7 +28,8 @@ class ClockVC: UIViewController {
     @IBOutlet weak var timerRingView: UIView!
 
     
-    override func viewDidLoad() {
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
         
         
@@ -37,7 +38,8 @@ class ClockVC: UIViewController {
         UpdateTimerView()
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(animated: Bool)
+    {
         super.viewWillAppear(animated)
         UpdateTimeLabel()
         UpdateTimerView()
@@ -64,8 +66,8 @@ class ClockVC: UIViewController {
         
     }
     
-    
-    func UpdateTimeLabel(){
+    func UpdateTimeLabel()
+    {
         let formatter = NSDateFormatter()
         formatter.timeStyle = .MediumStyle
         timeLabel.text = formatter.stringFromDate(clock.currentTime)
@@ -76,6 +78,10 @@ class ClockVC: UIViewController {
         
         self.performSegueWithIdentifier("catchedFish", sender: nil)
         
+        
+    }
+    
+    @IBAction func unwindToClock(sender: UIStoryboardSegue) {
         
     }
     

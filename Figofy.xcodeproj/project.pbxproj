@@ -24,6 +24,8 @@
 		187625E61C60F251003828DD /* Sea.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187625E41C60F251003828DD /* Sea.swift */; };
 		187625E71C60F251003828DD /* Sea+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187625E51C60F251003828DD /* Sea+CoreDataProperties.swift */; };
 		187625E91C60F440003828DD /* menudata.csv in Resources */ = {isa = PBXBuildFile; fileRef = 187625E81C60F440003828DD /* menudata.csv */; };
+		189DE0CC1C86E89A00EA2977 /* Fish.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189DE0CB1C86E89A00EA2977 /* Fish.swift */; };
+		189DE0CE1C86FA1400EA2977 /* FishCatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189DE0CD1C86FA1400EA2977 /* FishCatch.swift */; };
 		189E3CFC1C7BC05100AFE975 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189E3CFB1C7BC05100AFE975 /* Constants.swift */; };
 		189E3CFE1C7BDE4900AFE975 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 189E3CFD1C7BDE4900AFE975 /* FBSDKShareKit.framework */; };
 		18A2765E1C5A165E0071E4AA /* FigofyButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A2765D1C5A165E0071E4AA /* FigofyButton.swift */; };
@@ -95,6 +97,8 @@
 		187625E41C60F251003828DD /* Sea.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sea.swift; sourceTree = "<group>"; };
 		187625E51C60F251003828DD /* Sea+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Sea+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		187625E81C60F440003828DD /* menudata.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = menudata.csv; sourceTree = "<group>"; };
+		189DE0CB1C86E89A00EA2977 /* Fish.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fish.swift; sourceTree = "<group>"; };
+		189DE0CD1C86FA1400EA2977 /* FishCatch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FishCatch.swift; sourceTree = "<group>"; };
 		189E3CFB1C7BC05100AFE975 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		189E3CFD1C7BDE4900AFE975 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
 		18A2765D1C5A165E0071E4AA /* FigofyButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FigofyButton.swift; sourceTree = "<group>"; };
@@ -233,6 +237,8 @@
 				181E55741C7DABE7007E9EF3 /* FigofySea.swift */,
 				181E55761C7DDCFD007E9EF3 /* FigofyUser.swift */,
 				65C8DFBB1C80434F0088622A /* FavoriteSeaCell.swift */,
+				189DE0CB1C86E89A00EA2977 /* Fish.swift */,
+				189DE0CD1C86FA1400EA2977 /* FishCatch.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -546,6 +552,7 @@
 				184696CA1C5F61710095D64B /* SeaAnnotation.swift in Sources */,
 				181E55751C7DABE7007E9EF3 /* FigofySea.swift in Sources */,
 				655044C91C636F7700D79B89 /* EventTableVC.swift in Sources */,
+				189DE0CC1C86E89A00EA2977 /* Fish.swift in Sources */,
 				654A27121C350EA6008AA4EB /* LoginViewController.swift in Sources */,
 				65C8DFBC1C80434F0088622A /* FavoriteSeaCell.swift in Sources */,
 				181E55771C7DDCFD007E9EF3 /* FigofyUser.swift in Sources */,
@@ -563,6 +570,7 @@
 				18E675801C58B6850046B259 /* TextFieldDesign.swift in Sources */,
 				659501001C6DD94C0067ED1A /* Timer.swift in Sources */,
 				18E642B01C80A87F00155CCC /* RegisterFishVC.swift in Sources */,
+				189DE0CE1C86FA1400EA2977 /* FishCatch.swift in Sources */,
 				183B64C51C58F58C00B78D1B /* GradientColor.swift in Sources */,
 				1846984F1C60C0E50095D64B /* SeaListVC.swift in Sources */,
 				655044CF1C64D24700D79B89 /* Clock.swift in Sources */,
