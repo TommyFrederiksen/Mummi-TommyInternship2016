@@ -42,8 +42,8 @@ class ProfileViewController: UIViewController, UICollectionViewDataSource, UICol
         profileImageView.layer.cornerRadius = profileImageView.frame.width/2
         
         profileImageView.clipsToBounds = true
-        favoriteSeaCollectionView.layer.borderWidth = 1
-        friendsCollectionView.layer.borderWidth = 1
+        //favoriteSeaCollectionView.layer.borderWidth = 1
+        //friendsCollectionView.layer.borderWidth = 1
         //logBtnBg.layer.borderWidth = 2
         //logBtnBg.layer.borderColor = UIColor(red: 255/255, green: 128/255, blue: 0/255, alpha: 1  ).CGColor
         

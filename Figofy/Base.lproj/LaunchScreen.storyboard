@@ -18,10 +18,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="launchScreenBg" translatesAutoresizingMaskIntoConstraints="NO" id="gXt-Su-82B">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <rect key="frame" x="0.0" y="0.0" width="640" height="1136"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Figofy rgb logo" translatesAutoresizingMaskIntoConstraints="NO" id="236-or-W60">
-                                <rect key="frame" x="180" y="236" width="240" height="128"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Figofy_logo_final" translatesAutoresizingMaskIntoConstraints="NO" id="236-or-W60">
+                                <rect key="frame" x="40" y="120" width="520" height="87"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -39,7 +39,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Figofy rgb logo" width="1043" height="181"/>
+        <image name="Figofy_logo_final" width="484" height="87"/>
         <image name="launchScreenBg" width="640" height="1136"/>
     </resources>
 </document>
