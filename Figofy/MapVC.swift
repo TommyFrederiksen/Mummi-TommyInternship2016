@@ -10,6 +10,7 @@ import UIKit
 import MapKit
 import CoreLocation
 import Contacts
+import Firebase
 
 class MapVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, UIPopoverPresentationControllerDelegate {
     
@@ -22,7 +23,8 @@ class MapVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, UIP
     let regionRadius: CLLocationDistance = 1000//default value of the starting zoom
     var currentUserLocation: CLLocation!
     
-    let addresses = ["Kalkgravsvej 22, 4000 roskilde", "Fiskervejen 75,4000 Roskilde" , "Holmevej 41,3670 Veksø", "Tovesvej 30, 4220, Korsør", "Arnakkevej 31, 4593, Eskebjerg", "Åbakkevej 13, 4130, Viby Sjælland"]
+    //let addresses = ["Kalkgravsvej 22, 4000 roskilde", "Fiskervejen 75,4000 Roskilde" , "Holmevej 41,3670 Veksø", "Tovesvej 30, 4220, Korsør", "Arnakkevej 31, 4593, Eskebjerg", "Åbakkevej 13, 4130, Viby Sjælland"]
+    
     
     // MARK: View Methods
     override func viewDidLoad() {
@@ -33,11 +35,24 @@ class MapVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, UIP
         self.locationManager.desiredAccuracy = kCLLocationAccuracyBest
         self.locationManager.startUpdatingLocation()
         
-        for add in addresses {
-            getPlacemarkFromAddress(add)
-        }
+      
+        let ref = DataService.dataService.REF_SEAS
         
+        ref.observeSingleEventOfType(.Value, withBlock: { snapshot  in
         
+            //self.newAddress = []
+            if let snapshots = snapshot.children.allObjects as? [FDataSnapshot]{
+                for stuff in snapshots {
+                    if let SeaDictionary = stuff.value as? Dictionary<String, AnyObject> {
+                        let key = stuff.key
+                        let sea = FigofySea(postKey: key, dictionary: SeaDictionary)
+                        print(sea.fullAddress)
+                        self.getPlacemarkFromAddress(sea.fullAddress!)
+                    }
+                }
+            }
+        })
+
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -81,6 +96,7 @@ class MapVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, UIP
         if annotation.isKindOfClass(SeaAnnotation){
             let annoView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: "Default")
             annoView.animatesDrop = true
+            annoView.pinTintColor = UIColor(red: 255/255, green: 128/255, blue: 0/255, alpha: 1)
             return annoView
             
         } else if annotation.isKindOfClass(MKUserLocation) {
@@ -132,10 +148,4 @@ class MapVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, UIP
     func adaptivePresentationStyleForPresentationController(controller: UIPresentationController) -> UIModalPresentationStyle {
         return .None
     }
-    
-    
-    
-    
-    
-    
 }

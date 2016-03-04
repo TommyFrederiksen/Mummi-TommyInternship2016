@@ -11,27 +11,22 @@ import FBSDKCoreKit
 import FBSDKLoginKit
 
 class LoginViewController: UIViewController, UITextFieldDelegate {
-
+    
     //MARK: IBOutlets
     @IBOutlet weak var usernameTextField: TextFieldDesign!
     @IBOutlet weak var passwordTextField: TextFieldDesign!
     @IBOutlet weak var loginbtn: UIButton!
     @IBOutlet weak var figofyLogo: UIImageView!
     @IBOutlet weak var profilephotoView: UIImageView!
-    
     @IBOutlet weak var fortrydBtn: UIButton!
     @IBOutlet weak var opretBtn: UIButton!
-    
     @IBOutlet weak var createFirstName: TextFieldDesign!
-    @IBOutlet weak var createLastName: TextFieldDesign!
     @IBOutlet weak var createPassword: TextFieldDesign!
     @IBOutlet weak var createEmail: TextFieldDesign!
     @IBOutlet weak var createPhone: TextFieldDesign!
-    
     @IBOutlet weak var opretSV: UIStackView!
-   
     @IBOutlet weak var buttomBarButton: UIButton!
-   
+    
     
     
     // MARK: Variables
@@ -57,9 +52,9 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         //grab the key and if it is there, login automatically
-//        if NSUserDefaults.standardUserDefaults().valueForKey(KEY_UID) != nil {
-//            self.performSegueWithIdentifier(SEGUE_LOGGED_IN, sender: nil)
-//        }
+        //        if NSUserDefaults.standardUserDefaults().valueForKey(KEY_UID) != nil {
+        //            self.performSegueWithIdentifier(SEGUE_LOGGED_IN, sender: nil)
+        //        }
     }
     
     
@@ -172,10 +167,10 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                                 NSUserDefaults.standardUserDefaults().setValue(result[KEY_UID], forKey: KEY_UID)
                                 
                                 DataService.dataService.REF_BASE.authUser(email, password: pwd, withCompletionBlock: { error, authData in
-                                // MARK: TODO The data from the form in to dictionary
-                                let user: [String : AnyObject] = ["provider" : authData.provider!, "email" : self.createEmail.text!, "mobile" : self.createPhone.text!, "firstName" : self.createFirstName.text!]
+                                    // MARK: TODO The data from the form in to dictionary
+                                    let user: [String : AnyObject] = ["provider" : authData.provider!, "email" : self.createEmail.text!, "mobile" : self.createPhone.text!, "firstName" : self.createFirstName.text!]
                                     
-                                DataService.dataService.createFirebaseUser(authData.uid, user: user)
+                                    DataService.dataService.createFirebaseUser(authData.uid, user: user)
                                     
                                     
                                 })
@@ -199,14 +194,13 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         
     }
     
-
+    
     @IBAction func cancelBtnPressed (sender: AnyObject) {
         usernameTextField.hidden = false
         passwordTextField.hidden = false
         loginbtn.hidden = false
         figofyLogo.hidden = false
         profilephotoView.hidden = true
-       
         opretSV.hidden = true
         buttomBarButton.setTitle("Ikke en del af figofy? Opret dig her", forState: UIControlState.Normal)
         createFirstName.text = ""
