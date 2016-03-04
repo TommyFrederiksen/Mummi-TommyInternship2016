@@ -7,13 +7,16 @@
 //
 
 import Foundation
+import Firebase
 
 class Fish {
     
-    enum Species: Int {
+    enum Species: Int, CustomStringConvertible {
         case Laks = 0, Ørred, GuldLaks, Torsk, Hvilling, Kuller, Lange
         
         static var count: Int {return Lange.rawValue + 1}
+        
+        static var array = [Laks,Ørred,GuldLaks,Torsk,Hvilling,Kuller,Lange]
         
         var description: String {
             switch self {
@@ -58,7 +61,7 @@ class Fish {
     private var _length: Int!
     private var _weight: Int!
     private var _species: Species!
-    
+    private var _fishRef: Firebase!
     
     var imageStr: String? {
         return _imageStr
@@ -88,9 +91,26 @@ class Fish {
     }
     
     
-    init(postKey: String,imageStr: String, length: Int, weight: Int, species: Species) {
-        // TODO: POST TO FIREBASE
+    init(postKey: String, dictionary: Dictionary<String,AnyObject>) {
+        self._fishPostKey = postKey
         
+        if let imgStr = dictionary["imageStr"] as? String {
+            self._imageStr = imgStr
+        }
+        
+        if let length = dictionary["length"] as? Int {
+            self._length = length
+        }
+        
+        if let kind = dictionary["species"] as? Species {
+            self._species = kind
+        }
+        
+        if let weight = dictionary["weight"] as? Int {
+            self._weight = weight
+        }
+        
+        self._fishRef = DataService.dataService.REF_FISH.childByAppendingPath(self._fishPostKey)
     }
     
 }

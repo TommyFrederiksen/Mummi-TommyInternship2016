@@ -17,7 +17,10 @@ class DataService {
     private var _REF_BASE = Firebase(url: "\(URL_BASE)")
     private var _REF_SEAS = Firebase(url: "\(URL_BASE)/seas")
     private var _REF_USERS = Firebase(url: "\(URL_BASE)/users")
+    private var _REF_FISH = Firebase(url: "\(URL_BASE)/fish")
+    private var _REF_CATCH = Firebase(url: "\(URL_BASE)/catch")
     private var _CURRENT_TIMESTAMP = Firebase()
+    
     var REF_BASE: Firebase {
         return _REF_BASE
     }
@@ -28,6 +31,14 @@ class DataService {
     
     var REF_USERS: Firebase {
         return _REF_USERS
+    }
+    
+    var REF_FISH: Firebase {
+        return _REF_FISH
+    }
+    
+    var REF_CATCH: Firebase {
+        return _REF_CATCH
     }
     
     
