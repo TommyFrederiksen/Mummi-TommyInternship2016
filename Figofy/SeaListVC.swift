@@ -45,8 +45,8 @@ class SeaListVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
                     if let seaDict = snap.value as? Dictionary<String, AnyObject> {
                         let key = snap.key
                         let sea = FigofySea(postKey: key, dictionary: seaDict)
+                        sea.fullAddress
                         
-                        self.figofySeas.append(sea)
                     }
                     
                 }
