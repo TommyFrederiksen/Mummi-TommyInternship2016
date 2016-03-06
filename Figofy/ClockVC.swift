@@ -31,19 +31,31 @@ class ClockVC: UIViewController {
         })
     }
     
-    override func viewDidAppear(animated: Bool) {
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        print("I WILL APPEAR")
         if !hoursLayer.isAnimating() {
             hoursLayer.animateToAngle(360, duration: 30, completion: nil)
             minutesLayer.animateToAngle(360, duration: 20, completion: nil)
             secondsLayer.animateToAngle(360, duration: 30, completion: nil)
         }
     }
+    override func viewDidAppear(animated: Bool) {
+        print("I APPEARED")
+        
+    }
     
-    override func viewDidDisappear(animated: Bool) {
-        print("I DISAPPEARD")
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        print("I WILL DISAPPEAR")
         hoursLayer.pauseAnimation()
         minutesLayer.pauseAnimation()
         secondsLayer.pauseAnimation()
+    }
+    override func viewDidDisappear(animated: Bool) {
+        super.viewDidDisappear(animated)
+        print("I DISAPPEARED")
     }
 
     
