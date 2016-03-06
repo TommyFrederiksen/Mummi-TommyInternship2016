@@ -15,7 +15,12 @@ class ClockVC: UIViewController {
     @IBOutlet weak var secondsLayer: Timer!
     @IBOutlet weak var timeLabel: UILabel!
     
+    override func viewWillLayoutSubviews() {
+        
+    }
     override func viewDidLoad(){
+        
+        
         
         hoursLayer.animateFromAngle(0, toAngle: 360, duration: 30, relativeDuration: true, completion: { s in
             // TODO: Whatever we wanna do when the timer ends
@@ -34,16 +39,25 @@ class ClockVC: UIViewController {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        hoursLayer.layer.opacity = 0
+        minutesLayer.layer.opacity = 0
+        secondsLayer.layer.opacity = 0
         print("I WILL APPEAR")
         if !hoursLayer.isAnimating() {
             hoursLayer.animateToAngle(360, duration: 30, completion: nil)
             minutesLayer.animateToAngle(360, duration: 20, completion: nil)
-            secondsLayer.animateToAngle(360, duration: 30, completion: nil)
+            secondsLayer.animateToAngle(360, duration: 10, completion: nil)
         }
     }
     override func viewDidAppear(animated: Bool) {
         print("I APPEARED")
-        
+        UIView.animateWithDuration(2.5) { s in
+            
+            self.hoursLayer.layer.opacity = 1
+            self.minutesLayer.layer.opacity = 1
+            self.secondsLayer.layer.opacity = 1
+            
+        }
     }
     
     override func viewWillDisappear(animated: Bool) {
