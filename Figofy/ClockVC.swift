@@ -10,65 +10,42 @@ import UIKit
 
 class ClockVC: UIViewController {
     
-    var payment = MobilePayPayment()
-    var manager = MobilePayManager()
-    let timer = Timer()
-    let clock = Clock()
-    
-    @IBOutlet weak var aquariumView: UIImageView!
-    var clockTimer: NSTimer?
-    var countDown: NSTimer?
-    var TESTSTR: String?
-    
-    @IBOutlet weak var CountDownClock: UILabel!
+    @IBOutlet weak var hoursLayer: Timer!
+    @IBOutlet weak var minutesLayer: Timer!
+    @IBOutlet weak var secondsLayer: Timer!
     @IBOutlet weak var timeLabel: UILabel!
     
-    override func viewDidLoad()
-    {
-        super.viewDidLoad()
-        countDown = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: Selector("Update"), userInfo: nil, repeats: true)
-    }
-    
-    override func viewWillAppear(animated: Bool)
-    {
-        super.viewWillAppear(animated)
-        UpdateTimeLabel()
-        UpdateTimerView()
-        aquariumView.clipsToBounds = true
-        aquariumView.layer.cornerRadius = 130
+    override func viewDidLoad(){
         
+        hoursLayer.animateFromAngle(0, toAngle: 360, duration: 30, relativeDuration: true, completion: { s in
+            // TODO: Whatever we wanna do when the timer ends
+            
+        })
+        minutesLayer.animateFromAngle(0, toAngle: 360, duration: 20, relativeDuration: true, completion: { s in
+            // TODO: Whatever we wanna do when the timer ends
+            
+        })
+        secondsLayer.animateFromAngle(0, toAngle: 360, duration: 10, relativeDuration: true, completion: { s in
+            // TODO: Whatever we wanna do when the timer ends
+            
+        })
     }
     
-    deinit{
-        clockTimer?.invalidate()
+    override func viewDidAppear(animated: Bool) {
+        if !hoursLayer.isAnimating() {
+            hoursLayer.animateToAngle(360, duration: 30, completion: nil)
+            minutesLayer.animateToAngle(360, duration: 20, completion: nil)
+            secondsLayer.animateToAngle(360, duration: 30, completion: nil)
+        }
     }
     
-    func Update()
-    {
-        let formatter = NSDateFormatter()
-        formatter.timeStyle = .MediumStyle
-        timeLabel.text = formatter.stringFromDate(clock.currentTime)
-        timeLabel.textColor = UIColor.whiteColor()
+    override func viewDidDisappear(animated: Bool) {
+        print("I DISAPPEARD")
+        hoursLayer.pauseAnimation()
+        minutesLayer.pauseAnimation()
+        secondsLayer.pauseAnimation()
     }
-    func UpdateTimerView()
-    {
-        let timerView = Timer(frame: CGRectMake(0,0,0,0))
-        view.addSubview(timerView)
-        timerView.center = self.view.center
-        timerView.layer.addSublayer(timerView.progressLayer)
-        timerView.layer.addSublayer(timerView.progressLayer2)
-        timerView.layer.addSublayer(timerView.progressLayer3)
-        timerView.animateProgressView(60)
-    }
-    
-    func UpdateTimeLabel()
-    {
-        let formatter = NSDateFormatter()
-        formatter.timeStyle = .MediumStyle
-        timeLabel.text = formatter.stringFromDate(clock.currentTime)
-        timeLabel.textColor = UIColor.blueColor()
-    }
-    
+
     
     
 }

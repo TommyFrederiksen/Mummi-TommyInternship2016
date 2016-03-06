@@ -46,7 +46,6 @@ class SeaListVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
                         let key = snap.key
                         let sea = FigofySea(postKey: key, dictionary: seaDict)
                         
-                        
                         self.figofySeas.append(sea)
                     }
                     

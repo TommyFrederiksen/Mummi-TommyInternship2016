@@ -264,9 +264,9 @@ class RegisterFishVC: UIViewController, UIImagePickerControllerDelegate, UINavig
             "weight" : kg
         ]
         
-        let firebaseFish = DataService.dataService.REF_FISH.childByAutoId()
+        //let firebaseFish = DataService.dataService.REF_FISH.childByAutoId()
         
-        firebaseFish.setValue(fish)
+        //firebaseFish.setValue(fish)
         
         writeBait.text = "Brugt Agn"
         chooseSpecies.text = "Tryk for Vægt"

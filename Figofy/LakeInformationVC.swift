@@ -95,7 +95,7 @@ class LakeInformationVC: UIViewController {
             tabBarController.selectedIndex = 3
             if let profileView = tabBarController.viewControllers![3] as? ClockVC {
                 
-                profileView.TESTSTR = "PAYED WITH 2 Hours"
+                
             }
         }
     }
