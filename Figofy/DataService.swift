@@ -18,7 +18,6 @@ class DataService {
     private var _REF_SEAS = Firebase(url: "\(URL_BASE)/seas")
     private var _REF_USERS = Firebase(url: "\(URL_BASE)/users")
     private var _REF_FISH = Firebase(url: "\(URL_BASE)/fish")
-    private var _REF_CATCH = Firebase(url: "\(URL_BASE)/catch")
     private var _CURRENT_TIMESTAMP = Firebase()
     
     var REF_BASE: Firebase {
@@ -33,17 +32,39 @@ class DataService {
         return _REF_USERS
     }
     
+    var REF_USER_CURRENT: Firebase {
+        let uid = NSUserDefaults.standardUserDefaults().valueForKey(KEY_UID) as! String
+        //same as doing /users after the URL_BASE
+        let user = Firebase(url: "\(URL_BASE)").childByAppendingPath("users").childByAppendingPath(uid)
+        return user
+    }
+    
     var REF_FISH: Firebase {
         return _REF_FISH
     }
     
-    var REF_CATCH: Firebase {
-        return _REF_CATCH
-    }
     
     
     func createFirebaseUser(uid: String, user: Dictionary<String, AnyObject>) {
         //'/users/33asdf12f34' if it doesnt exist, it will create it. Or if it does it will update it
         REF_USERS.childByAppendingPath(uid).setValue(user)
+    }
+    
+    func createFish(fish: Dictionary<String, AnyObject>) {
+        let postRef = REF_FISH.childByAutoId()
+        postRef.setValue(fish)
+        
+        let postId = postRef.key
+        let fishRef = REF_USER_CURRENT.childByAppendingPath("fish").childByAppendingPath(postId)
+        
+        
+        fishRef.observeEventType(.Value, withBlock: { snapshot in
+        
+            if let doesntExist = snapshot.value as? NSNull {
+                fishRef.setValue(true)
+            }
+        
+        })
+        
     }
 }

@@ -7,19 +7,7 @@
 //
 
 import UIKit
-
-enum Decimals: Double {
-    case One = 0.1
-    case Two = 0.2
-    case Three = 0.3
-    case Four = 0.4
-    case Five = 0.5
-    case Six = 0.6
-    case Seven = 0.7
-    case Eight = 0.8
-    case Nine = 0.9
-    
-}
+import Firebase
 
 class RegisterFishVC: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIPickerViewDelegate, UITextFieldDelegate {
 
@@ -31,6 +19,7 @@ class RegisterFishVC: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBOutlet weak var chooseLength: UILabel!
     @IBOutlet weak var chooseMethod: UILabel!
     @IBOutlet weak var writeBait: UITextField!
+    @IBOutlet weak var writeNote: UITextField!
    
     
     var imagePicker: UIImagePickerController!
@@ -171,22 +160,33 @@ class RegisterFishVC: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBAction func uploadPressed(sender: AnyObject) {
         
         if let speciesTxt = chooseSpecies.text where speciesTxt != "" && speciesTxt != "Tryk for Art",
-           let weightTxt = chooseWeight.text where weightTxt != "" && weightTxt != "Tryk for Vægt",
-           let lengthTxt = chooseLength.text where lengthTxt != "" && lengthTxt != "Tryk for Længde",
-           let baitTxt = writeBait.text where baitTxt != "" && baitTxt != "Brugt Agn" {
-                
+            let weightTxt = chooseWeight.text where weightTxt != "" && weightTxt != "Tryk for Vægt",
+            let lengthTxt = chooseLength.text where lengthTxt != "" && lengthTxt != "Tryk for Længde",
+            let methodTxt = chooseMethod.text where methodTxt != "" && methodTxt != "Tryk for Metode",
+            let baitTxt = writeBait.text where baitTxt != "" && baitTxt != "Brugt Agn" {
+            
             if let img = fishImg.image where imageSelected == true {
                 let imgData = encodeToBase64String(img)
                 
                 postToFirebase(imgData)
                 
                 
-            }
+                chooseSpecies.text = "Tryk for Art"
+                chooseWeight.text = "Weight"
+                chooseLength.text = "Tryk for Længde"
+                chooseMethod.text = "Tryk for Metode"
+                writeBait.text = "Brugt Agn"
+                writeNote.text = "Eventuelt Note"
                 
+                imageSelected = false
+                fishImg.image = nil
+                
+            }
+            self.dismissViewControllerAnimated(true, completion: nil)
+                
+        } else {
+            AlertView().showOkayAlert("Information Needed", message:  "Please check, Species, Weight(kg), Length(m), Method & Bait", style: .Alert, VC: self)
         }
-        
-        
-        self.dismissViewControllerAnimated(true, completion: nil)
         
     }
     
@@ -255,27 +255,26 @@ class RegisterFishVC: UIViewController, UIImagePickerControllerDelegate, UINavig
         let kind: String = chooseSpecies.text!
         let kg = Double(chooseWeight.text!)!
         let m = Double(chooseLength.text!)!
+        let bait = writeBait.text!
+        let method = chooseMethod.text!
+        let note = writeNote.text!
         
-        
-        let fish: Dictionary<String, AnyObject> = [
+        let newFish: Dictionary<String, AnyObject> = [
             "imageStr" : imgData,
             "length" : m,
             "species" : kind,
-            "weight" : kg
+            "weight" : kg,
+            "catched" : [
+                "bait" : bait,
+                "method" : method,
+                "note" : note,
+            ]
         ]
         
-        //let firebaseFish = DataService.dataService.REF_FISH.childByAutoId()
-        
-        //firebaseFish.setValue(fish)
-        
-        writeBait.text = "Brugt Agn"
-        chooseSpecies.text = "Tryk for Vægt"
-        chooseLength.text = "Tryk for Længde"
-        chooseWeight.text = "Weight"
-        imageSelected = false
-        fishImg.image = nil
+        DataService.dataService.createFish(newFish)
         
     }
+    
     
     
     
