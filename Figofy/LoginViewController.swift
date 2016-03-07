@@ -17,7 +17,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var passwordTextField: TextFieldDesign!
     @IBOutlet weak var loginbtn: UIButton!
     @IBOutlet weak var figofyLogo: UIImageView!
-    @IBOutlet weak var profilephotoView: UIImageView!
+   
     @IBOutlet weak var fortrydBtn: UIButton!
     @IBOutlet weak var opretBtn: UIButton!
     @IBOutlet weak var createFirstName: TextFieldDesign!
@@ -42,9 +42,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         loginbtn.layer.cornerRadius = 50
         opretBtn.layer.cornerRadius = opretBtn.frame.width/2
         fortrydBtn.layer.cornerRadius = fortrydBtn.frame.width/2
-        profilephotoView.layer.cornerRadius = 75
-        profilephotoView.clipsToBounds = true
-        
         fbParameters.updateValue("email,first_name,middle_name,last_name,gender,location", forKey: "fields")
         
     }
@@ -140,7 +137,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         passwordTextField.hidden = true
         loginbtn.hidden = true
         figofyLogo.hidden = true
-        profilephotoView.hidden = false
+        
         buttomBarButton.setTitle("FIGOFY fisketuren begynder her!", forState: UIControlState.Normal)
         opretSV.hidden = false
         
@@ -200,7 +197,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         passwordTextField.hidden = false
         loginbtn.hidden = false
         figofyLogo.hidden = false
-        profilephotoView.hidden = true
+        
         opretSV.hidden = true
         buttomBarButton.setTitle("Ikke en del af figofy? Opret dig her", forState: UIControlState.Normal)
         createFirstName.text = ""

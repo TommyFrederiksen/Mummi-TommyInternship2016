@@ -149,11 +149,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Figofy/LoginViewController.swift"
-            timestampString = "478771148.389987"
+            timestampString = "479045476.414924"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "88"
-            endingLineNumber = "88"
+            startingLineNumber = "85"
+            endingLineNumber = "85"
             landmarkName = "fbLogin(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -165,23 +165,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Figofy/LoginViewController.swift"
-            timestampString = "478771148.389987"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "87"
-            endingLineNumber = "87"
-            landmarkName = "fbLogin(_:)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Figofy/LoginViewController.swift"
-            timestampString = "478771148.389987"
+            timestampString = "479045476.414924"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "84"
@@ -197,11 +181,27 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Figofy/LoginViewController.swift"
-            timestampString = "478771148.389987"
+            timestampString = "479045476.414924"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "114"
-            endingLineNumber = "114"
+            startingLineNumber = "81"
+            endingLineNumber = "81"
+            landmarkName = "fbLogin(_:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Figofy/LoginViewController.swift"
+            timestampString = "479045476.414924"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "111"
+            endingLineNumber = "111"
             landmarkName = "fbLogin(_:)"
             landmarkType = "5">
          </BreakpointContent>

@@ -15,12 +15,18 @@ class ClockVC: UIViewController {
     @IBOutlet weak var secondsLayer: Timer!
     @IBOutlet weak var timeLabel: UILabel!
     
+    @IBOutlet weak var clockImageView: UIImageView!
     override func viewWillLayoutSubviews() {
         
     }
+    override func viewDidLayoutSubviews() {
+        clockImageView.layer.cornerRadius = clockImageView.layer.frame.width/2
+        print("width\(clockImageView.layer.frame.width)")
+        print("height\(clockImageView.layer.frame.height)")
+        
+        clockImageView.clipsToBounds = true
+    }
     override func viewDidLoad(){
-        
-        
         
         hoursLayer.animateFromAngle(0, toAngle: 360, duration: 30, relativeDuration: true, completion: { s in
             // TODO: Whatever we wanna do when the timer ends
@@ -71,7 +77,7 @@ class ClockVC: UIViewController {
         super.viewDidDisappear(animated)
         print("I DISAPPEARED")
     }
-
+    
     
     
 }
