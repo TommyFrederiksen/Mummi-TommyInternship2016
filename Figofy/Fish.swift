@@ -61,6 +61,9 @@ class Fish {
     private var _length: Int!
     private var _weight: Int!
     private var _species: Species!
+    private var _bait: String!
+    private var _method: String!
+    private var _note: String!
     private var _fishRef: Firebase!
     
     var imageStr: String? {
@@ -77,6 +80,18 @@ class Fish {
     
     var species: Species {
         return _species
+    }
+    
+    var bait: String {
+        return _bait
+    }
+    
+    var method: String {
+        return _method
+    }
+    
+    var note: String {
+        return _note
     }
     
     var fishPostKey: String {
@@ -110,7 +125,20 @@ class Fish {
             self._weight = weight
         }
         
-        self._fishRef = DataService.dataService.REF_FISH.childByAppendingPath(self._fishPostKey)
+        if let catched = dictionary["catched"] as? Dictionary<String, AnyObject> {
+            
+            if let bait = catched["bait"] as? String {
+                self._bait = bait
+            }
+            
+            if let method = catched["method"] as? String {
+                self._method = method
+            }
+            
+            if let note = catched["note"] as? String {
+                self._note = note
+            }
+        }
     }
     
 }
