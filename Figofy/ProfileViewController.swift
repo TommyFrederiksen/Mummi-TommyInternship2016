@@ -9,106 +9,55 @@
 import UIKit
 
 
-class ProfileViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
+class ProfileViewController: UIViewController,UITableViewDelegate, UITableViewDataSource {
     
-    @IBOutlet weak var favoriteSeaCollectionView: UICollectionView!
-    @IBOutlet weak var friendsCollectionView: UICollectionView!
-    
-    
-    var favoriteSeasImg = ["EventImage1","EventImage2","EventImage3","EventImage1","EventImage2","EventImage3","EventImage1","EventImage2","EventImage3","EventImage1"]
-    var favoriteSeasTxt = ["Simons Put & Take","Fede Sø","Super Sø","Fisker Sø","Kæmpe Sø","Mini Sø","Ibs Sø","Hannes Sø","Lenes Sø","SønderSø"]
-    var friendsImg = ["man1","man2","man3","man4","female1","female2","man8","man5","man6","man7"]
-    var friendsName = ["Søren","Kim","Lasse","Jonas","Vibeke","Lullu","Ib","Gerner","Hans","Ole"]
-    
-    @IBOutlet weak var logBtn: UIButton!
-    @IBOutlet weak var photoBtn: UIButton!
-    @IBOutlet weak var logBtnBg: FigofyButton!
+    @IBOutlet weak var feedTableView: UITableView!
+  
     @IBOutlet weak var profileImageView: UIImageView!
     
-    
-    @IBOutlet weak var FavoriteSeaLbl: UILabel!
-    //@IBOutlet weak var editImgBGLbl: UILabel!
-    @IBOutlet weak var editImageBtn: UIButton!
-    
-    var user: FigofyUser!
-    
+       var user: FigofyUser!
+    var logImages = ["log1","log2","log3","log4","log5"]
+    var agnLbls = ["Powerbait Gul","Saltede sandorm","Gummiagn","Powerbait Blå","ingen"]
+    var artLbls = ["Laks","GuldLaks","Torsk","Hvilling","Lange"]
+    var beskrivelsesLbls = ["Fangede en Fisk","Sygeste fangst :D","Min stolthed","Se hvad jeg fik på krogen", "Fik den med hjem"]
+    var metodeLbls = ["Agnfiskeri","Geddefiskeri","Spinnefiskeri","Fluefiskeri","Jigfiskeri"]
+    var længdeLbls = ["1,2 M","1,4 M","2,1 M","0.3 M","0,8 M"]
+    var vægtLbls = ["4,5 Kg","1,9 Kg","2,7 Kg","1,5 Kg","4,1 Kg"]
     override func viewDidLoad() {
         super.viewDidLoad()
-        favoriteSeaCollectionView.delegate = self
-        favoriteSeaCollectionView.dataSource = self
-        friendsCollectionView.delegate = self
-        friendsCollectionView.dataSource = self
-        
         profileImageView.layer.cornerRadius = profileImageView.frame.width/2
-        
         profileImageView.clipsToBounds = true
-        //favoriteSeaCollectionView.layer.borderWidth = 1
-        //friendsCollectionView.layer.borderWidth = 1
-        //logBtnBg.layer.borderWidth = 2
-        //logBtnBg.layer.borderColor = UIColor(red: 255/255, green: 128/255, blue: 0/255, alpha: 1  ).CGColor
+        feedTableView.delegate = self
+        feedTableView.dataSource = self
         
         
         
-        
-        
-        
-    }
-    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell
-    {
-        if collectionView == favoriteSeaCollectionView
-        {
-            let img = UIImage(named: favoriteSeasImg[indexPath.row])
-            if let cell = collectionView.dequeueReusableCellWithReuseIdentifier("FavoriteSeaCell", forIndexPath: indexPath) as? FavoriteSeaCell
-            {
-                cell.configureCell(img!, text: favoriteSeasTxt[indexPath.row])
-                cell.layer.cornerRadius = 15
-                cell.mainImg.layer.cornerRadius = cell.mainImg.layer.frame.width/2
-                cell.mainImg.clipsToBounds = true
-                return cell
-                
-            }else{
-                return FavoriteSeaCell()
-            }
-            
-        }
-        if collectionView == friendsCollectionView {
-            let img = UIImage(named: friendsImg[indexPath.row])
-            if let cell = collectionView.dequeueReusableCellWithReuseIdentifier("FriendsCell", forIndexPath: indexPath) as? FavoriteSeaCell
-            {
-                if let profielImg = img {
-                    cell.configureCell(profielImg, text: friendsName[indexPath.row])
-                    
-                }
-                cell.layer.cornerRadius = 15
-                cell.mainImg.layer.cornerRadius = cell.mainImg.layer.frame.width/2
-                cell.mainImg.clipsToBounds = true
-                return cell
-            }
-            else
-            {
-                return FavoriteSeaCell()
-            }
-            
-        }
-        else
-        {
-            return FavoriteSeaCell()
-        }
-        
-        
-        
-        
-        
-    }
-    func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
-        
-        return 1
     }
     
-    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return favoriteSeasImg.count
+    override func didReceiveMemoryWarning() {
+    super.didReceiveMemoryWarning()
+    
     }
     
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    return 1
+    }
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    
+    return logImages.count
+    }
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    let cellIdentifier = "FeedCell"
+    let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as? logCell
+    let img = UIImage(named: logImages[indexPath.row])
+    
+    cell?.configureCell(img!, agn: agnLbls[indexPath.row], art: artLbls[indexPath.row], beskrivelse: beskrivelsesLbls[indexPath.row], metode: metodeLbls[indexPath.row], længde: længdeLbls[indexPath.row], vægt: vægtLbls[indexPath.row])
+        
+    
+    
+    return cell!
+    }
+
     
     
     
