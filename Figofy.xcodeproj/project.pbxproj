@@ -59,6 +59,8 @@
 		657368CE1C635E3900E1367D /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 657368CD1C635E3900E1367D /* EventTableViewCell.swift */; };
 		659501001C6DD94C0067ED1A /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659500FF1C6DD94C0067ED1A /* Timer.swift */; };
 		65C8DFBC1C80434F0088622A /* FavoriteSeaCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C8DFBB1C80434F0088622A /* FavoriteSeaCell.swift */; };
+		65D98CE81C8EC0AF00D54BB9 /* LogVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D98CE71C8EC0AF00D54BB9 /* LogVC.swift */; };
+		65D98CEA1C8ED25700D54BB9 /* logCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D98CE91C8ED25700D54BB9 /* logCell.swift */; };
 		F98634459CF7905C5013FABE /* Pods in Frameworks */ = {isa = PBXBuildFile; fileRef = B10CAFE5CCEBA3FE110E428F /* Pods */; };
 /* End PBXBuildFile section */
 
@@ -139,6 +141,8 @@
 		657368CD1C635E3900E1367D /* EventTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventTableViewCell.swift; path = ../EventTableViewCell.swift; sourceTree = "<group>"; };
 		659500FF1C6DD94C0067ED1A /* Timer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Timer.swift; sourceTree = "<group>"; };
 		65C8DFBB1C80434F0088622A /* FavoriteSeaCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteSeaCell.swift; sourceTree = "<group>"; };
+		65D98CE71C8EC0AF00D54BB9 /* LogVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogVC.swift; sourceTree = "<group>"; };
+		65D98CE91C8ED25700D54BB9 /* logCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = logCell.swift; sourceTree = "<group>"; };
 		6B3D4BDC1C3533F8ED3B5DA2 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B10CAFE5CCEBA3FE110E428F /* Pods */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods; path = ../../../Pods; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3D388C7DAA3D5DB5B97783B /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -222,6 +226,7 @@
 				655044CC1C64CF1100D79B89 /* ClockVC.swift */,
 				18317D661C6DD31400C995D7 /* CustomTabBar.swift */,
 				18E642AF1C80A87F00155CCC /* RegisterFishVC.swift */,
+				65D98CE71C8EC0AF00D54BB9 /* LogVC.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -239,6 +244,7 @@
 				65C8DFBB1C80434F0088622A /* FavoriteSeaCell.swift */,
 				189DE0CB1C86E89A00EA2977 /* Fish.swift */,
 				189DE0CD1C86FA1400EA2977 /* FishCatch.swift */,
+				65D98CE91C8ED25700D54BB9 /* logCell.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -547,9 +553,11 @@
 			files = (
 				655044CD1C64CF1100D79B89 /* ClockVC.swift in Sources */,
 				18AFDA031C7472C300F2616E /* AlertView.swift in Sources */,
+				65D98CE81C8EC0AF00D54BB9 /* LogVC.swift in Sources */,
 				651018171C50DB4C00B7FECC /* LakeInformationVC.swift in Sources */,
 				651018131C50D93100B7FECC /* ProfileViewController.swift in Sources */,
 				184696CA1C5F61710095D64B /* SeaAnnotation.swift in Sources */,
+				65D98CEA1C8ED25700D54BB9 /* logCell.swift in Sources */,
 				181E55751C7DABE7007E9EF3 /* FigofySea.swift in Sources */,
 				655044C91C636F7700D79B89 /* EventTableVC.swift in Sources */,
 				189DE0CC1C86E89A00EA2977 /* Fish.swift in Sources */,
