@@ -402,7 +402,7 @@ public class Timer: UIView {
             CGContextSetFillColorWithColor(ctx, progressInsideFillColor.CGColor)
             CGContextSetLineWidth(ctx, trackLineWidth)
             CGContextSetLineCap(ctx, CGLineCap.Butt)
-            CGContextDrawPath(ctx, .FillStroke)
+            CGContextDrawPath(ctx, .Stroke)
             
             UIGraphicsBeginImageContextWithOptions(size, false, 0.0)
             let imageCtx = UIGraphicsGetCurrentContext()
@@ -480,7 +480,7 @@ public class Timer: UIView {
             let startPoint = CGPoint(x: (cos(angleInRadians) * halfX) + halfX, y: (sin(angleInRadians) * halfX) + halfX)
             let endPoint = CGPoint(x: (cos(oppositeAngle) * halfX) + halfX, y: (sin(oppositeAngle) * halfX) + halfX)
             
-            CGContextDrawLinearGradient(ctx, gradient, startPoint, endPoint, .DrawsBeforeStartLocation)
+            CGContextDrawLinearGradient(ctx, gradient, startPoint, endPoint, .DrawsAfterEndLocation)
         }
         
         private func gradientLocationsFromColorCount(colorCount: Int, gradientWidth: CGFloat) -> [CGFloat] {

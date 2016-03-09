@@ -8,65 +8,46 @@
 
 import UIKit
 import Firebase
+import ActionSheetPicker_3_0
 
 class RegisterFishVC: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIPickerViewDelegate, UITextFieldDelegate {
 
     // MARK: IBOutlets
     @IBOutlet weak var fishImg: UIImageView!
     @IBOutlet weak var uploadButton: UIButton!
-    @IBOutlet weak var chooseSpecies: UILabel!
-    @IBOutlet weak var chooseWeight: UILabel!
-    @IBOutlet weak var chooseLength: UILabel!
-    @IBOutlet weak var chooseMethod: UILabel!
+    @IBOutlet weak var chooseSpecies: UIButton!
+    @IBOutlet weak var chooseWeight: UIButton!
+    @IBOutlet weak var chooseLength: UIButton!
+    @IBOutlet weak var chooseMethod: UIButton!
     @IBOutlet weak var writeBait: UITextField!
     @IBOutlet weak var writeNote: UITextField!
    
     
     var imagePicker: UIImagePickerController!
-    // MARK: PickerViews
-    @IBOutlet weak var speciesPicker: UIPickerView!
-    @IBOutlet weak var weightPicker: UIPickerView!
-    @IBOutlet weak var lengthPicker: UIPickerView!
-    @IBOutlet weak var methodPicker: UIPickerView!
     
     var currentPicker: UIPickerView!
     
     // MARK: Variables
     var imageSelected = false
     
-    var currentArray = []
-    var speciesArray = ["Laks","GuldLaks","Torsk","Hvilling","Lange", "Abore"]
-    var kgArray: [Int] = []
-    var gArray: [Int] = []
-    var weightArray: [[Int]] = []
-    var mArray: [Int] = []
-    var cmArray: [Int] = []
-    var lengthArray: [[Int]] = []
-    var methodArray = ["Agnfiskeri","Geddefiskeri","Spinnefiskeri","Fluefiskeri","Jigfiskeri","Fiskeri med store softbaits","Trollingfiskeri"]
+    var speciesArray = ["Laks","GuldLaks","Guldørred","Havørred","Regnbueørred","Bækørred","Stør","Torsk","Hvilling","Lange","Aborre","Gede","Skalle","Angiv Selv"]
     
+    var methodArray = ["Spinne","Mede","Flue","Trolle","Bombarda"]
+    
+    var lengthArray: [[Int]]?
+    var valuesArray: [Int] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         imagePicker = UIImagePickerController()
         imagePicker.delegate = self
-        speciesPicker.delegate = self
-        speciesPicker.hidden = true
-        weightPicker.delegate = self
-        weightPicker.hidden = true
-        lengthPicker.delegate = self
-        lengthPicker.hidden = true
-        methodPicker.delegate = self
+        
         // Do any additional setup after loading the view.
+        valuesArray += 0..<10
+        lengthArray = [valuesArray,valuesArray,valuesArray]
         
         fishImg.layer.cornerRadius = 2.5
         uploadButton.layer.cornerRadius = 5
-        
-        kgArray += 0..<100
-        gArray += 0..<10
-        weightArray = [kgArray,gArray]
-        mArray += 0..<4
-        cmArray += 0..<10
-        lengthArray = [mArray,cmArray]
         
     }
 
@@ -79,68 +60,6 @@ class RegisterFishVC: UIViewController, UIImagePickerControllerDelegate, UINavig
         view.endEditing(true)
     }
     
-    
-    // MARK: UIPickerView delegate Methods
-    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
-        if pickerView == speciesPicker {
-            return 1
-        } else if pickerView == weightPicker {
-            return weightArray.count
-        } else if pickerView == lengthPicker {
-            return lengthArray.count
-        } else if pickerView == methodPicker {
-            return 1
-        }
-        return 1
-    }
-    
-    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        if pickerView == speciesPicker  {
-            return speciesArray.count
-        } else if pickerView == weightPicker {
-            return weightArray[component].count
-        } else if pickerView == lengthPicker {
-            return lengthArray[component].count
-        } else if pickerView == methodPicker {
-            return methodArray.count
-        }
-        return 0
-    }
-    
-    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        if pickerView == speciesPicker {
-            return Fish.Species.init(value: row)?.description
-        } else if pickerView == weightPicker {
-            return "\(weightArray[component][row])"
-        } else if pickerView == lengthPicker {
-            return "\(lengthArray[component][row])"
-        } else if pickerView == methodPicker {
-            return methodArray[row]
-        }
-        return "FAIL"
-    }
-    
-    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        
-        if pickerView == speciesPicker {
-            chooseSpecies.text = speciesArray[row]
-            
-        } else if pickerView == weightPicker {
-            let kilos = weightPicker.selectedRowInComponent(weightArray[0][0])
-            let grams = weightPicker.selectedRowInComponent(weightArray[1][1])
-            
-            chooseWeight.text = "\(kilos).\(grams)"
-            
-        } else if pickerView == lengthPicker {
-            let m = lengthPicker.selectedRowInComponent(lengthArray[0][0])
-            let cm = lengthPicker.selectedRowInComponent(lengthArray[1][1])
-            chooseLength.text = "\(m).\(cm)"
-            
-        } else if pickerView == methodPicker {
-            chooseMethod.text = methodArray[row]
-        }
-        
-    }
     
     // MARK: UIImagePicker delegate methods
     //when user taps on image it returns it
@@ -159,10 +78,10 @@ class RegisterFishVC: UIViewController, UIImagePickerControllerDelegate, UINavig
     // MARK: IBActions
     @IBAction func uploadPressed(sender: AnyObject) {
         
-        if let speciesTxt = chooseSpecies.text where speciesTxt != "" && speciesTxt != "Tryk for Art",
-            let weightTxt = chooseWeight.text where weightTxt != "" && weightTxt != "Tryk for Vægt",
-            let lengthTxt = chooseLength.text where lengthTxt != "" && lengthTxt != "Tryk for Længde",
-            let methodTxt = chooseMethod.text where methodTxt != "" && methodTxt != "Tryk for Metode",
+        if let speciesTxt = chooseSpecies.currentTitle where speciesTxt != "" && speciesTxt != "Tryk for Art",
+            let weightTxt = chooseWeight.currentTitle where weightTxt != "" && weightTxt != "Tryk for Vægt",
+            let lengthTxt = chooseLength.currentTitle where lengthTxt != "" && lengthTxt != "Tryk for Længde",
+            let methodTxt = chooseMethod.currentTitle where methodTxt != "" && methodTxt != "Tryk for Metode",
             let baitTxt = writeBait.text where baitTxt != "" && baitTxt != "Brugt Agn" {
             
             if let img = fishImg.image where imageSelected == true {
@@ -171,10 +90,10 @@ class RegisterFishVC: UIViewController, UIImagePickerControllerDelegate, UINavig
                 postToFirebase(imgData)
                 
                 
-                chooseSpecies.text = "Tryk for Art"
-                chooseWeight.text = "Weight"
-                chooseLength.text = "Tryk for Længde"
-                chooseMethod.text = "Tryk for Metode"
+                chooseSpecies.setTitle("Tryk for Art", forState: .Normal)
+                chooseWeight.setTitle("Tryk for Vægt", forState: .Normal)
+                chooseLength.setTitle("Tryk for Længde", forState: .Normal)
+                chooseMethod.setTitle("Tryk for Metode", forState: .Normal)
                 writeBait.text = "Brugt Agn"
                 writeNote.text = "Eventuelt Note"
                 
@@ -185,7 +104,7 @@ class RegisterFishVC: UIViewController, UIImagePickerControllerDelegate, UINavig
             self.dismissViewControllerAnimated(true, completion: nil)
                 
         } else {
-            AlertView().showOkayAlert("Information Needed", message:  "Please check, Species, Weight(kg), Length(m), Method & Bait", style: .Alert, VC: self)
+            AlertView().showOkayAlert("Check dine indtastninger", message:  "En af følgende manger, Art, Vægt(kg), længde(m), metode & agn", style: .Alert, VC: self)
         }
         
     }
@@ -196,54 +115,69 @@ class RegisterFishVC: UIViewController, UIImagePickerControllerDelegate, UINavig
         presentViewController(imagePicker, animated: true, completion: nil)
     }
    
-    @IBAction func speciesTapped(sender: UITapGestureRecognizer) {
+    @IBAction func speciesTapped(sender: UIButton) {
         //Species stuff
-        if currentPicker != speciesPicker {
-            currentPickerNotNill(currentPicker)
-            currentPicker = speciesPicker
-            currentPicker.hidden = false
-        } else {
-            currentPicker.hidden = false
-        }
+        let action = ActionSheetStringPicker(title: "Vælg Art", rows: speciesArray, initialSelection: 0, doneBlock: { picker, selectedIndex, selectedValue in
+            
+                self.chooseSpecies.setTitle("\(selectedValue)", forState: .Normal)
+            
+            }, cancelBlock: { picker in
+                
+                self.chooseSpecies.setTitle("Tryk for Art", forState: .Normal)
+                
+            }, origin: sender.superview)
+        
+        action.showActionSheetPicker()
     }
     
-    @IBAction func weightTapped(sender: UITapGestureRecognizer) {
+    
+    @IBOutlet weak var weightBtn: UIButton!
+    @IBAction func weightTapped(sender: UIButton) {
         //Weight stuff
-        if currentPicker != weightPicker {
-            currentPickerNotNill(currentPicker)
-            currentPicker = weightPicker
-            currentPicker.hidden = false
-        } else {
-            currentPicker.hidden = false
-        }
+        let action = ActionSheetDistancePicker(title: "Vælg Vægt", bigUnitString: "kg", bigUnitMax: 99, selectedBigUnit: 1, smallUnitString: "g", smallUnitMax: 9, selectedSmallUnit: 1, target: self, action: Selector("measurementWasSelected:smallUnit:element:"), origin: sender.superview!)
+        
+        action.showActionSheetPicker()
         
     }
     
-    @IBAction func lengthTapped(sender: UITapGestureRecognizer) {
+    @IBOutlet weak var lengthBtn: UIButton!
+    @IBAction func lengthTapped(sender: UIButton) {
         //Length stuff
-        if currentPicker != lengthPicker {
-            currentPickerNotNill(currentPicker)
-            currentPicker = lengthPicker
-            currentPicker.hidden = false
-        } else {
-            currentPicker.hidden = false
-        }
+        let action = ActionSheetMultipleStringPicker(title: "Vælg længde", rows: lengthArray, initialSelection: [0,0,0], doneBlock: {
+            picker, values, indexes in
+            
+                self.chooseLength.setTitle("\(values[0])\(values[1])\(values[2])", forState: .Normal)
+            return
+            }, cancelBlock: { ActionMultipleStringCancelBlock in
+                self.chooseLength.setTitle("Tryk for Længde", forState: .Normal)
+            }, origin: sender)
+        
+        action.showActionSheetPicker()
+        
     }
-    @IBAction func methodTapped(sender: UITapGestureRecognizer) {
-        if currentPicker != methodPicker {
-            currentPickerNotNill(currentPicker)
-            currentPicker = methodPicker
-            currentPicker.hidden = false
-        } else {
-            currentPicker.hidden = false
-        }
+    @IBAction func methodTapped(sender: UIButton) {
+        //Method stuff
+        let action = ActionSheetStringPicker(title: "Vælg Metode", rows: methodArray, initialSelection: 0, doneBlock: { picker, selectedIndex, selectedValue in
+            
+                self.chooseMethod.setTitle("\(selectedValue)", forState: .Normal)
+            
+            }, cancelBlock: { picker in
+                
+                self.chooseMethod.setTitle("Tryk for Metode", forState: .Normal)
+                
+            }, origin: sender.superview)
+        
+        action.showActionSheetPicker()
     }
    
+    @IBAction func backBtnPressed(sender: UIButton) {
+        dismissViewControllerAnimated(true, completion: nil)
+    }
     // MARK: Custom methods
-    func currentPickerNotNill(pickerView: UIPickerView?) {
-        if let picker = currentPicker {
-            picker.hidden = true
-        }
+    
+    func measurementWasSelected(bigUnit: NSNumber, smallUnit: NSNumber, element: AnyObject) {
+        weightBtn.setTitle("\(bigUnit).\(smallUnit)", forState: .Normal)
+        print("measurementWasSelected")
     }
     
     func encodeToBase64String(image: UIImage) -> String {
@@ -252,11 +186,11 @@ class RegisterFishVC: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     func postToFirebase(imgData: String) {
         
-        let kind: String = chooseSpecies.text!
-        let kg = Double(chooseWeight.text!)!
-        let m = Double(chooseLength.text!)!
+        let kind: String = chooseSpecies.currentTitle!
+        let kg = Double(chooseWeight.currentTitle!)!
+        let m = Double(chooseLength.currentTitle!)!
         let bait = writeBait.text!
-        let method = chooseMethod.text!
+        let method = chooseMethod.currentTitle!
         let note = writeNote.text!
         
         let newFish: Dictionary<String, AnyObject> = [

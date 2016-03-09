@@ -19,6 +19,7 @@ class ClockVC: UIViewController {
     override func viewWillLayoutSubviews() {
         
     }
+    
     override func viewDidLayoutSubviews() {
         clockImageView.layer.cornerRadius = clockImageView.layer.frame.width/2
         print("width\(clockImageView.layer.frame.width)")
@@ -26,6 +27,7 @@ class ClockVC: UIViewController {
         
         clockImageView.clipsToBounds = true
     }
+    
     override func viewDidLoad(){
         
         hoursLayer.animateFromAngle(0, toAngle: 360, duration: 30, relativeDuration: true, completion: { s in
@@ -41,7 +43,6 @@ class ClockVC: UIViewController {
             
         })
     }
-    
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
