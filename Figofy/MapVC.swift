@@ -20,7 +20,8 @@ class MapVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, UIP
     
     // MARK: Variables
     let locationManager = CLLocationManager()
-    let regionRadius: CLLocationDistance = 1000//default value of the starting zoom
+    let regionRadius: CLLocationDistance = 5000//default value of the starting zoom
+    var countryLocation = CLLocationCoordinate2D(latitude: CLLocationDegrees(55.44392), longitude: CLLocationDegrees(11.900785))
     var currentUserLocation: CLLocation!
     
     //let addresses = ["Kalkgravsvej 22, 4000 roskilde", "Fiskervejen 75,4000 Roskilde" , "Holmevej 41,3670 Veksø", "Tovesvej 30, 4220, Korsør", "Arnakkevej 31, 4593, Eskebjerg", "Åbakkevej 13, 4130, Viby Sjælland"]
@@ -31,9 +32,8 @@ class MapVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, UIP
         super.viewDidLoad()
         
         self.map.delegate = self
-        self.map.userTrackingMode = MKUserTrackingMode.Follow
+        self.map.userTrackingMode = MKUserTrackingMode.None
         self.locationManager.desiredAccuracy = kCLLocationAccuracyBest
-        self.locationManager.startUpdatingLocation()
         
       
         let ref = DataService.dataService.REF_SEAS
@@ -55,8 +55,17 @@ class MapVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, UIP
 
     }
     
+    override func viewWillAppear(animated: Bool) {
+        self.map.delegate = self
+        
+    }
     override func viewDidAppear(animated: Bool) {
         locationAuthStatus()
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        map.showsUserLocation = false
+        map.delegate = nil
     }
     
     
@@ -64,6 +73,9 @@ class MapVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, UIP
     func locationAuthStatus() {
         if CLLocationManager.authorizationStatus() == .AuthorizedWhenInUse {
             self.map.showsUserLocation = true
+            let region = MKCoordinateRegionMake(countryLocation, MKCoordinateSpanMake(2.0,2.0))
+            let adjustedRegion: MKCoordinateRegion = map.regionThatFits(region)
+            map.setRegion(adjustedRegion, animated: true)
         } else {
             self.locationManager.requestWhenInUseAuthorization()
         }
@@ -74,7 +86,7 @@ class MapVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, UIP
         let coordinateRegion = MKCoordinateRegionMakeWithDistance(location.coordinate, regionRadius * 2, regionRadius * 2)
         
         self.map.setRegion(coordinateRegion, animated: true)
-        
+    
         self.locationManager.stopUpdatingLocation()
     }
     
@@ -84,6 +96,7 @@ class MapVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, UIP
             currentUserLocation = loc
         }
     }
+    
     
     //calls before each annotation is placed
     func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
@@ -107,7 +120,6 @@ class MapVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, UIP
     
     func createAnnotationForLocation(location: CLLocation) {
         let sea = SeaAnnotation(coordinate: location.coordinate)
-        
         self.map.addAnnotation(sea)
         
     }
@@ -126,12 +138,9 @@ class MapVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, UIP
     
     // MARK: IBActions and Navigation
     @IBAction func currentLocaitonPressed(sender: AnyObject) {
-        centerMapOnLocation(currentUserLocation)
-    }
-    
-    
-    @IBAction func onPopoverTapped(sender: AnyObject) {
-        self.performSegueWithIdentifier("showSeas", sender: nil)
+        if let currentUserLocation = currentUserLocation {
+            centerMapOnLocation(currentUserLocation)
+        }
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
