@@ -781,14 +781,14 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Ey-qk-lOs">
-                                                        <rect key="frame" x="100" y="0.0" width="386" height="40"/>
+                                                        <rect key="frame" x="100" y="0.0" width="385" height="40"/>
                                                         <state key="normal" title="Tryk for Vægt"/>
                                                         <connections>
                                                             <action selector="weightTapped:" destination="vB9-OO-Q0m" eventType="touchUpInside" id="6Ur-jh-6da"/>
                                                         </connections>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="kg" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Edb-nB-kJC">
-                                                        <rect key="frame" x="486" y="0.0" width="19" height="40"/>
+                                                        <rect key="frame" x="485" y="0.0" width="19" height="40"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                         <nil key="highlightedColor"/>
@@ -1789,7 +1789,7 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="560" height="40"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PRISER" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NhM-wZ-Ii5">
-                                                        <rect key="frame" x="0.0" y="10" width="560" height="22"/>
+                                                        <rect key="frame" x="0.0" y="9" width="560" height="22"/>
                                                         <fontDescription key="fontDescription" name=".HelveticaNeueDeskInterface-Bold" family="SFNS Display" pointSize="18"/>
                                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
@@ -1823,7 +1823,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ehQ-VW-m3Y">
-                                                        <rect key="frame" x="61" y="0.0" width="500" height="30"/>
+                                                        <rect key="frame" x="61" y="0.0" width="499" height="30"/>
                                                         <fontDescription key="fontDescription" name=".HelveticaNeueDeskInterface-Bold" family="SFNS Display" pointSize="15"/>
                                                         <state key="normal" title="130 ,-"/>
                                                         <connections>
@@ -1845,7 +1845,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gnY-zC-RdK">
-                                                        <rect key="frame" x="61" y="0.0" width="500" height="30"/>
+                                                        <rect key="frame" x="61" y="0.0" width="499" height="30"/>
                                                         <fontDescription key="fontDescription" name=".HelveticaNeueDeskInterface-Bold" family="SFNS Display" pointSize="15"/>
                                                         <state key="normal" title="190 ,-"/>
                                                         <connections>
@@ -1867,7 +1867,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4CH-PK-dZd">
-                                                        <rect key="frame" x="61" y="0.0" width="500" height="30"/>
+                                                        <rect key="frame" x="61" y="0.0" width="499" height="30"/>
                                                         <fontDescription key="fontDescription" name=".HelveticaNeueDeskInterface-Bold" family="SFNS Display" pointSize="15"/>
                                                         <state key="normal" title="260 ,-"/>
                                                         <connections>
