@@ -104,7 +104,7 @@ class RegisterFishVC: UIViewController, UIImagePickerControllerDelegate, UINavig
             self.dismissViewControllerAnimated(true, completion: nil)
                 
         } else {
-            AlertView().showOkayAlert("Check dine indtastninger", message:  "En af følgende manger, Art, Vægt(kg), længde(m), metode & agn", style: .Alert, VC: self)
+            AlertView().showOkayAlert("Check dine indtastninger", message:  "En af følgende mangler, Art, Vægt(kg), længde(cm), metode & agn", style: .Alert, VC: self)
         }
         
     }

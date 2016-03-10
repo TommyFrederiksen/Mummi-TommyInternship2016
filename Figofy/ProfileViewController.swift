@@ -17,12 +17,12 @@ class ProfileViewController: UIViewController,UITableViewDelegate, UITableViewDa
     
        var user: FigofyUser!
     var logImages = ["log1","log2","log3","log4","log5"]
-    var agnLbls = ["Powerbait Gul","Saltede sandorm","Gummiagn","Powerbait Blå","ingen"]
-    var artLbls = ["Laks","GuldLaks","Torsk","Hvilling","Lange"]
-    var beskrivelsesLbls = ["Fangede en Fisk","Sygeste fangst :D","Min stolthed","Se hvad jeg fik på krogen", "Fik den med hjem"]
-    var metodeLbls = ["Agnfiskeri","Geddefiskeri","Spinnefiskeri","Fluefiskeri","Jigfiskeri"]
-    var længdeLbls = ["1,2 M","1,4 M","2,1 M","0.3 M","0,8 M"]
-    var vægtLbls = ["4,5 Kg","1,9 Kg","2,7 Kg","1,5 Kg","4,1 Kg"]
+    var agnLbls = ["Wobler","Gennemløber blå/grøn","Majs","Kobber spinner","Blink"]
+    var artLbls = ["Gedde","Ørred","Skalle","ukendt","Ørred?"]
+    var beskrivelsesLbls = ["Bagsværd sø","Simone Put & Take","Holbæk havn","Gudenåen", "Køgebugt syd"]
+    var metodeLbls = ["Spinne","Spinne","Mede","Spinne","Spinne"]
+    var længdeLbls = ["87cm","39cm","17cm","23cm","74cm"]
+    var vægtLbls = ["7,2kg","1,8kg","0,1kg","0,2kg","5,1kg"]
     override func viewDidLoad() {
         super.viewDidLoad()
         profileImageView.layer.cornerRadius = profileImageView.frame.width/2
