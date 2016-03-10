@@ -52,7 +52,12 @@ class LogVC: UIViewController, UITableViewDelegate, UITableViewDataSource
         return cell!
     }
     
+    @IBAction func BackToProfile(sender: AnyObject) {
+            dismissViewControllerAnimated(true, completion: nil)
+        
+    }
     
+   
 
 
 

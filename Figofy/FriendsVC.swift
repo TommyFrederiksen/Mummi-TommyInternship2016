@@ -42,12 +42,6 @@ class FriendsVC: UIViewController, UICollectionViewDataSource, UICollectionViewD
             {
                 return FriendsCell()
             }
-            
-        
-        
-        
-        
-        
         
     }
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
@@ -59,6 +53,9 @@ class FriendsVC: UIViewController, UICollectionViewDataSource, UICollectionViewD
         return friendsImg.count
     }
     
+    @IBAction func backToProfile(sender: AnyObject) {
+        dismissViewControllerAnimated(true, completion: nil)
+    }
 
     
 }
