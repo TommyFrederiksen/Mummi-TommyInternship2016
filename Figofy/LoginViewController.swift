@@ -17,7 +17,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var passwordTextField: TextFieldDesign!
     @IBOutlet weak var loginbtn: UIButton!
     @IBOutlet weak var figofyLogo: UIImageView!
-   
+    
     @IBOutlet weak var fortrydBtn: UIButton!
     @IBOutlet weak var opretBtn: UIButton!
     @IBOutlet weak var createFirstName: TextFieldDesign!
@@ -73,6 +73,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                 //get the access token for Firebase
                 let accessToken = FBSDKAccessToken.currentAccessToken()
                 
+                
                 if accessToken.declinedPermissions.count == 0 {
                     print("No Permissions were declined")
                     // TODO: Some
@@ -101,15 +102,32 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                         //save to firebase
                         FBSDKGraphRequest(graphPath: "me", parameters: self.fbParameters).startWithCompletionHandler({ connection, result, error in
                             print("RESULT:________\(result)__________")
+                            
                             if error != nil {
                                 print("couldnt get information about user: \(error)")
                             } else {
                                 print("\(result)")
                                 
                                 if let userInfo = result as? [String:AnyObject] {
-                                    
+                                    var id:String = ""
+                                    var firstName:String = ""
                                     let currentUser = FigofyUser(postKey: authData.uid, dictionary: userInfo)
                                     DataService.dataService.createFirebaseUser(authData.uid, user: userInfo)
+                                    // setting singleton id for user in App
+                                    for userdata in userInfo{
+                                        if userdata.0 == "id"{
+                                            id = userdata.1 as! String
+                                        }
+                                        if userdata.0 == "first_name"{
+                                            
+                                            firstName = userdata.1 as! String
+                                        }
+                                    }
+                                    LoggedInUser.CurrentLoggedInUser(id,FirstName: firstName)
+                                    print("Stored in Singleton","First Name:",firstName,"And","ID:",id)
+                                    
+                                    
+                                    //print("......\(currentUser.facebookId)")
                                     
                                     //Navigate through
                                     
@@ -233,6 +251,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             if let profileView = tabBarController.viewControllers![0] as? ProfileViewController {
                 if let user = sender as? FigofyUser {
                     profileView.user = user
+                    
                 }
             }
         }
