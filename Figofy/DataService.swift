@@ -14,12 +14,14 @@ let URL_BASE = "https://figofydev.firebaseio.com"
 class DataService {
     static let dataService = DataService()
     
+    // MARK: Variables
     private var _REF_BASE = Firebase(url: "\(URL_BASE)")
     private var _REF_SEAS = Firebase(url: "\(URL_BASE)/seas")
     private var _REF_USERS = Firebase(url: "\(URL_BASE)/users")
     private var _REF_FISH = Firebase(url: "\(URL_BASE)/fish")
-    private var _CURRENT_TIMESTAMP = Firebase()
+    private var _CURRENT_TIMESTAMP = FirebaseServerValue.timestamp()
     
+    // MARK: Properties
     var REF_BASE: Firebase {
         return _REF_BASE
     }
@@ -45,8 +47,10 @@ class DataService {
     
     
     
-    func createFirebaseUser(uid: String, user: Dictionary<String, AnyObject>) {
+    // MARK: Post Methods
+    func createFirebaseUser(uid: String, var user: Dictionary<String, AnyObject>) {
         //'/users/33asdf12f34' if it doesnt exist, it will create it. Or if it does it will update it
+        user.updateValue(FirebaseServerValue.timestamp(), forKey: "member_since")
         REF_USERS.childByAppendingPath(uid).setValue(user)
     }
     

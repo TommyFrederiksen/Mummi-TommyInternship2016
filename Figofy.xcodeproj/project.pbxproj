@@ -24,6 +24,7 @@
 		187625E61C60F251003828DD /* Sea.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187625E41C60F251003828DD /* Sea.swift */; };
 		187625E71C60F251003828DD /* Sea+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187625E51C60F251003828DD /* Sea+CoreDataProperties.swift */; };
 		187625E91C60F440003828DD /* menudata.csv in Resources */ = {isa = PBXBuildFile; fileRef = 187625E81C60F440003828DD /* menudata.csv */; };
+		188D09C01C92E4970021FBC8 /* NSDateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188D09BF1C92E4970021FBC8 /* NSDateExtensions.swift */; };
 		189DE0CC1C86E89A00EA2977 /* Fish.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189DE0CB1C86E89A00EA2977 /* Fish.swift */; };
 		189DE0CE1C86FA1400EA2977 /* FishCatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189DE0CD1C86FA1400EA2977 /* FishCatch.swift */; };
 		189E3CFC1C7BC05100AFE975 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189E3CFB1C7BC05100AFE975 /* Constants.swift */; };
@@ -58,7 +59,6 @@
 		655044CF1C64D24700D79B89 /* Clock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655044CE1C64D24700D79B89 /* Clock.swift */; };
 		657368CE1C635E3900E1367D /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 657368CD1C635E3900E1367D /* EventTableViewCell.swift */; };
 		659501001C6DD94C0067ED1A /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659500FF1C6DD94C0067ED1A /* Timer.swift */; };
-		65A2236C1C906A1400D41105 /* noun_140278_cc.png in Resources */ = {isa = PBXBuildFile; fileRef = 65A2236B1C906A1400D41105 /* noun_140278_cc.png */; };
 		65C8DFBC1C80434F0088622A /* FavoriteSeaCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C8DFBB1C80434F0088622A /* FavoriteSeaCell.swift */; };
 		65D98CE81C8EC0AF00D54BB9 /* LogVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D98CE71C8EC0AF00D54BB9 /* LogVC.swift */; };
 		65D98CEA1C8ED25700D54BB9 /* logCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D98CE91C8ED25700D54BB9 /* logCell.swift */; };
@@ -102,6 +102,7 @@
 		187625E41C60F251003828DD /* Sea.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sea.swift; sourceTree = "<group>"; };
 		187625E51C60F251003828DD /* Sea+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Sea+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		187625E81C60F440003828DD /* menudata.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = menudata.csv; sourceTree = "<group>"; };
+		188D09BF1C92E4970021FBC8 /* NSDateExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDateExtensions.swift; sourceTree = "<group>"; };
 		189DE0CB1C86E89A00EA2977 /* Fish.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fish.swift; sourceTree = "<group>"; };
 		189DE0CD1C86FA1400EA2977 /* FishCatch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FishCatch.swift; sourceTree = "<group>"; };
 		189E3CFB1C7BC05100AFE975 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -143,7 +144,6 @@
 		655044CE1C64D24700D79B89 /* Clock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Clock.swift; sourceTree = "<group>"; };
 		657368CD1C635E3900E1367D /* EventTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventTableViewCell.swift; path = ../EventTableViewCell.swift; sourceTree = "<group>"; };
 		659500FF1C6DD94C0067ED1A /* Timer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Timer.swift; sourceTree = "<group>"; };
-		65A2236B1C906A1400D41105 /* noun_140278_cc.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = noun_140278_cc.png; path = ../../../Downloads/noun_140278_cc.png; sourceTree = "<group>"; };
 		65C8DFBB1C80434F0088622A /* FavoriteSeaCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteSeaCell.swift; sourceTree = "<group>"; };
 		65D98CE71C8EC0AF00D54BB9 /* LogVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogVC.swift; sourceTree = "<group>"; };
 		65D98CE91C8ED25700D54BB9 /* logCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = logCell.swift; sourceTree = "<group>"; };
@@ -272,6 +272,7 @@
 			isa = PBXGroup;
 			children = (
 				189E3CFB1C7BC05100AFE975 /* Constants.swift */,
+				188D09BF1C92E4970021FBC8 /* NSDateExtensions.swift */,
 			);
 			name = Util;
 			sourceTree = "<group>";
@@ -328,7 +329,6 @@
 				654A270F1C350EA6008AA4EB /* AppDelegate.swift */,
 				654A27131C350EA6008AA4EB /* Main.storyboard */,
 				654A27161C350EA6008AA4EB /* Assets.xcassets */,
-				65A2236B1C906A1400D41105 /* noun_140278_cc.png */,
 				654A27181C350EA6008AA4EB /* LaunchScreen.storyboard */,
 				654A271B1C350EA6008AA4EB /* Info.plist */,
 				184698441C60A34B0095D64B /* Figofy.xcdatamodeld */,
@@ -483,7 +483,6 @@
 				654A271A1C350EA6008AA4EB /* LaunchScreen.storyboard in Resources */,
 				183B64C11C58DD7100B78D1B /* System San Francisco Display Regular.ttf in Resources */,
 				654A27171C350EA6008AA4EB /* Assets.xcassets in Resources */,
-				65A2236C1C906A1400D41105 /* noun_140278_cc.png in Resources */,
 				18E675861C58C3340046B259 /* System San Francisco Display Thin.ttf in Resources */,
 				654A27151C350EA6008AA4EB /* Main.storyboard in Resources */,
 				18CCAA991C60D5B700C7D5E8 /* CreateSeaVC.xib in Resources */,
@@ -578,6 +577,7 @@
 				184698461C60A34B0095D64B /* Figofy.xcdatamodeld in Sources */,
 				654A27101C350EA6008AA4EB /* AppDelegate.swift in Sources */,
 				18E675821C58B76F0046B259 /* TextFieldEffects.swift in Sources */,
+				188D09C01C92E4970021FBC8 /* NSDateExtensions.swift in Sources */,
 				189E3CFC1C7BC05100AFE975 /* Constants.swift in Sources */,
 				657368CE1C635E3900E1367D /* EventTableViewCell.swift in Sources */,
 				187625E71C60F251003828DD /* Sea+CoreDataProperties.swift in Sources */,

@@ -80,7 +80,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                     let declinedPerms = accessToken.declinedPermissions
                     for perm in declinedPerms {
                         print("__________________________ \(perm.description)")
-                        
                     }
                 }
                 

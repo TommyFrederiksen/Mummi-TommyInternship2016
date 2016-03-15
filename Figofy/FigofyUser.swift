@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Firebase
 
 enum Gender: String {
     case Female = "female"
@@ -25,7 +26,7 @@ class FigofyUser {
     private var _email: String!
     private var _gender: String!
     private var _birthday: String!//TODO
-    private var _dateCreated: NSDate
+    private var _dateCreated: NSTimeInterval!
     
     var facebookId: Int {
         return _facebookId
@@ -56,12 +57,9 @@ class FigofyUser {
     }
     
     var userMemberLength: NSDate {
-        return _dateCreated
+        return NSDate.convertFirebaseTimestampToDate(stamp: _dateCreated)
     }
     
-    init() {
-        self._dateCreated = NSDate()
-    }
     
     init(facebookId: Int, firstname: String, lastname: String, gender: String, birthday: String) {
         self._facebookId = facebookId
@@ -69,11 +67,10 @@ class FigofyUser {
         self._lastName = lastname
         self._gender = gender
         self._birthday = birthday
-        self._dateCreated = NSDate()
     }
     
     
-    init(postKey: String, dictionary: Dictionary<String, AnyObject>) {
+    init(postKey: String, var dictionary: Dictionary<String, AnyObject>) {
         self._userPostKey = postKey
         
         if let id = dictionary["id"] as? Int {
@@ -84,26 +81,36 @@ class FigofyUser {
             print("firstName: \(fName)")
             self._firstName = fName
         }
+        
         if let fLast = dictionary["last_name"] as? String {
             print("lastName: \(fLast)")
             self._lastName = fLast
         }
+        
         if let email = dictionary["email"] as? String {
             print("Email: \(email)")
             self._email = email
         }
+        
         if let birthday = dictionary["birthday"] as? String {
             print("BirthDay: \(birthday)")
             self._birthday = birthday
         }
+        
         if let gender = dictionary["gender"] as? String {
             print("Gender: \(gender)")
             self._gender = gender
         }
+        
         if let location = dictionary["location"] as? Dictionary<String, AnyObject> {
             print("Location: \(location)")
         }
-        self._dateCreated = NSDate()
+        
+        if let memberSince = dictionary["member_since"] as? NSTimeInterval {
+            print("Member Since: \(memberSince)")
+            self._dateCreated = memberSince
+        }
+        
     }
     
     // MARK: Custom Methods
