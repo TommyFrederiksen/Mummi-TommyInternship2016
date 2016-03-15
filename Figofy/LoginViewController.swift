@@ -109,24 +109,9 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                                 print("\(result)")
                                 
                                 if let userInfo = result as? [String:AnyObject] {
-                                    var id:String = ""
-                                    var firstName:String = ""
+                                    
                                     let currentUser = FigofyUser(postKey: authData.uid, dictionary: userInfo)
                                     DataService.dataService.createFirebaseUser(authData.uid, user: userInfo)
-                                    // setting singleton id for user in App
-                                    for userdata in userInfo{
-                                        if userdata.0 == "id"{
-                                            id = userdata.1 as! String
-                                        }
-                                        if userdata.0 == "first_name"{
-                                            
-                                            firstName = userdata.1 as! String
-                                        }
-                                    }
-                                    LoggedInUser.CurrentLoggedInUser(id,FirstName: firstName)
-                                    print("Stored in Singleton","First Name:",firstName,"And","ID:",id)
-                                    
-                                    
                                     //print("......\(currentUser.facebookId)")
                                     
                                     //Navigate through
