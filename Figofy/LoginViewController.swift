@@ -17,7 +17,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var passwordTextField: TextFieldDesign!
     @IBOutlet weak var loginbtn: UIButton!
     @IBOutlet weak var figofyLogo: UIImageView!
-   
+    
     @IBOutlet weak var fortrydBtn: UIButton!
     @IBOutlet weak var opretBtn: UIButton!
     @IBOutlet weak var createFirstName: TextFieldDesign!
@@ -73,6 +73,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                 //get the access token for Firebase
                 let accessToken = FBSDKAccessToken.currentAccessToken()
                 
+                
                 if accessToken.declinedPermissions.count == 0 {
                     print("No Permissions were declined")
                     // TODO: Some
@@ -100,6 +101,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                         //save to firebase
                         FBSDKGraphRequest(graphPath: "me", parameters: self.fbParameters).startWithCompletionHandler({ connection, result, error in
                             print("RESULT:________\(result)__________")
+                            
                             if error != nil {
                                 print("couldnt get information about user: \(error)")
                             } else {
@@ -109,6 +111,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                                     
                                     let currentUser = FigofyUser(postKey: authData.uid, dictionary: userInfo)
                                     DataService.dataService.createFirebaseUser(authData.uid, user: userInfo)
+                                    //print("......\(currentUser.facebookId)")
                                     
                                     //Navigate through
                                     
@@ -232,6 +235,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             if let profileView = tabBarController.viewControllers![0] as? ProfileViewController {
                 if let user = sender as? FigofyUser {
                     profileView.user = user
+                    
                 }
             }
         }

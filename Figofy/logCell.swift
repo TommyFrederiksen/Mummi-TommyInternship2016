@@ -25,15 +25,28 @@ class logCell: UITableViewCell {
     }
 
    
-    func configureCell(image: UIImage,agn: String,art: String,beskrivelse: String,metode:String,længde: String,vægt: String)
+    func configureCell(fish: Fish)
     {
-        logImageView.image = image
-        agnLabel.text = agn
-        artLabel.text = art
-        beskrivelseLabel.text = beskrivelse
-        metodeLabel.text = metode
-        længdeLabel.text = længde
-        vægtLabel.text = vægt
+        let img = decodeBase64StringToImage(fish.imageStr)
+        
+        logImageView.image = img
+        agnLabel.text = fish.bait
+        artLabel.text = fish.species.description
+        beskrivelseLabel.text = fish.note
+        metodeLabel.text = fish.method
+        længdeLabel.text = "\(fish.length)"
+        vægtLabel.text = "\(fish.weight)"
+    }
+    func decodeBase64StringToImage(strEncodedData: String?) -> UIImage {
+        if let data = strEncodedData{
+            let image = NSData(base64EncodedString: data, options: .IgnoreUnknownCharacters)
+            return UIImage(data: image!)!
+        }
+        else
+        {
+            return UIImage(named: "Figofy_app_trans")!
+        }
+        
     }
     
 
