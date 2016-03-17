@@ -8,6 +8,7 @@
 
 import Foundation
 import Firebase
+import CoreLocation
 
 class Fish {
     
@@ -90,6 +91,9 @@ class Fish {
     private var _bait: String!
     private var _method: String!
     private var _note: String!
+    private var _timeCatched: NSTimeInterval!
+    private var _latitude: CLLocationDegrees?
+    private var _longitude: CLLocationDegrees?
     private var _fishRef: Firebase!
     
     var imageStr: String? {
@@ -118,6 +122,18 @@ class Fish {
     
     var note: String {
         return _note
+    }
+    
+    var timeCatched: NSDate {
+        return NSDate.convertFirebaseTimestampToDate(stamp: _timeCatched)
+    }
+    
+    var latitude: CLLocationDegrees? {
+        return _latitude
+    }
+    
+    var longitude: CLLocationDegrees? {
+        return _longitude
     }
     
     var fishPostKey: String {
@@ -164,6 +180,19 @@ class Fish {
             if let note = catched["note"] as? String {
                 self._note = note
             }
+            
+            if let time = catched["time_catched"] as? NSTimeInterval {
+                self._timeCatched = time
+            }
+            
+            if let latitude = catched["latitude"] as? CLLocationDegrees {
+                self._latitude = latitude
+            }
+            
+            if let longitude = catched["longitude"] as? CLLocationDegrees {
+                self._longitude = longitude
+            }
+            
         }
     }
     

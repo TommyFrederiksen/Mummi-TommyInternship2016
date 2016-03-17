@@ -9,8 +9,9 @@
 import UIKit
 import Firebase
 import ActionSheetPicker_3_0
+import CoreLocation
 
-class RegisterFishVC: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIPickerViewDelegate, UITextFieldDelegate {
+class RegisterFishVC: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIPickerViewDelegate, UITextFieldDelegate, CLLocationManagerDelegate {
 
     // MARK: IBOutlets
     @IBOutlet weak var fishImg: UIImageView!
@@ -22,12 +23,13 @@ class RegisterFishVC: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBOutlet weak var writeBait: UITextField!
     @IBOutlet weak var writeNote: UITextField!
    
+    // MARK: Variables
+    var locationManager = CLLocationManager()
+    var currentLocation: CLLocationCoordinate2D?
     
     var imagePicker: UIImagePickerController!
-    
     var currentPicker: UIPickerView!
     
-    // MARK: Variables
     var imageSelected = false
     
     var speciesArray = ["Laks","GuldLaks","Guldørred","Havørred","Regnbueørred","Bækørred","Stør","Torsk","Hvilling","Lange","Aborre","Gede","Skalle","Angiv Selv"]
@@ -41,6 +43,14 @@ class RegisterFishVC: UIViewController, UIImagePickerControllerDelegate, UINavig
         super.viewDidLoad()
         imagePicker = UIImagePickerController()
         imagePicker.delegate = self
+        
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+        if CLLocationManager.authorizationStatus() == .AuthorizedWhenInUse {
+            locationManager.startUpdatingLocation()
+        } else {
+            locationManager.requestWhenInUseAuthorization()
+        }
         
         // Do any additional setup after loading the view.
         valuesArray += 0..<10
@@ -73,6 +83,13 @@ class RegisterFishVC: UIViewController, UIImagePickerControllerDelegate, UINavig
     // MARK: UITextField delegate methods
     func textFieldShouldBeginEditing(textField: UITextField) -> Bool {
         return true
+    }
+    
+    // MARK: Location delegate methods
+    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        
+        currentLocation = manager.location?.coordinate
+        locationManager.stopUpdatingLocation()
     }
     
     // MARK: IBActions
@@ -192,16 +209,21 @@ class RegisterFishVC: UIViewController, UIImagePickerControllerDelegate, UINavig
         let bait = writeBait.text!
         let method = chooseMethod.currentTitle!
         let note = writeNote.text!
+        let lat = currentLocation!.latitude ?? 0.0
+        let lon = currentLocation!.longitude ?? 0.0
         
         let newFish: Dictionary<String, AnyObject> = [
             "imageStr" : imgData,
             "length" : m,
             "species" : kind,
             "weight" : kg,
+            "latitude" : lat,
+            "longitude": lon,
             "catched" : [
                 "bait" : bait,
                 "method" : method,
                 "note" : note,
+                "time_catched" : FirebaseServerValue.timestamp()
             ]
         ]
         

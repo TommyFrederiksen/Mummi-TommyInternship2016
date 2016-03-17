@@ -24,6 +24,7 @@
 		187625E61C60F251003828DD /* Sea.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187625E41C60F251003828DD /* Sea.swift */; };
 		187625E71C60F251003828DD /* Sea+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187625E51C60F251003828DD /* Sea+CoreDataProperties.swift */; };
 		187625E91C60F440003828DD /* menudata.csv in Resources */ = {isa = PBXBuildFile; fileRef = 187625E81C60F440003828DD /* menudata.csv */; };
+		188D09C01C92E4970021FBC8 /* NSDateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188D09BF1C92E4970021FBC8 /* NSDateExtensions.swift */; };
 		189DE0CC1C86E89A00EA2977 /* Fish.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189DE0CB1C86E89A00EA2977 /* Fish.swift */; };
 		189DE0CE1C86FA1400EA2977 /* FishCatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189DE0CD1C86FA1400EA2977 /* FishCatch.swift */; };
 		189E3CFC1C7BC05100AFE975 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189E3CFB1C7BC05100AFE975 /* Constants.swift */; };
@@ -101,6 +102,7 @@
 		187625E41C60F251003828DD /* Sea.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sea.swift; sourceTree = "<group>"; };
 		187625E51C60F251003828DD /* Sea+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Sea+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		187625E81C60F440003828DD /* menudata.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = menudata.csv; sourceTree = "<group>"; };
+		188D09BF1C92E4970021FBC8 /* NSDateExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDateExtensions.swift; sourceTree = "<group>"; };
 		189DE0CB1C86E89A00EA2977 /* Fish.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fish.swift; sourceTree = "<group>"; };
 		189DE0CD1C86FA1400EA2977 /* FishCatch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FishCatch.swift; sourceTree = "<group>"; };
 		189E3CFB1C7BC05100AFE975 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -270,6 +272,7 @@
 			isa = PBXGroup;
 			children = (
 				189E3CFB1C7BC05100AFE975 /* Constants.swift */,
+				188D09BF1C92E4970021FBC8 /* NSDateExtensions.swift */,
 			);
 			name = Util;
 			sourceTree = "<group>";
@@ -574,6 +577,7 @@
 				184698461C60A34B0095D64B /* Figofy.xcdatamodeld in Sources */,
 				654A27101C350EA6008AA4EB /* AppDelegate.swift in Sources */,
 				18E675821C58B76F0046B259 /* TextFieldEffects.swift in Sources */,
+				188D09C01C92E4970021FBC8 /* NSDateExtensions.swift in Sources */,
 				189E3CFC1C7BC05100AFE975 /* Constants.swift in Sources */,
 				657368CE1C635E3900E1367D /* EventTableViewCell.swift in Sources */,
 				187625E71C60F251003828DD /* Sea+CoreDataProperties.swift in Sources */,

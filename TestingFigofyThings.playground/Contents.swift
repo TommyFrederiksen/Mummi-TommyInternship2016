@@ -178,7 +178,7 @@ secondsToHoursMinutesSeconds(3600)
 
 var test = ProgressView()
 
-test.animateProgressView(6)
+//test.animateProgressView(6)
 
 //http://www.appcoda.com/nsdate/
 /* Custom date format Specifiers
@@ -230,6 +230,14 @@ dateFormatter.dateFormat = "EEE, dd MMM yyyy HH:mm:ss zzz"
 newDate = dateFormatter.dateFromString(dateAsString)
 
 
+//FIREBASE TIMESTAMP
+let fireFormatter = NSDateFormatter()
+
+fireFormatter.dateFormat = "yy-MM-dd HH:mm:ss zzz"
+var fireDateString = "2016-03-11 10:49:24 +0000"
+let fireStamp = fireFormatter.dateFromString(fireDateString)
+NSDate(timeIntervalSince1970: 1457694636608.0/1000)
+NSDate(timeIntervalSince1970: 1457705798501/1000)
 let calendar = NSCalendar.currentCalendar()
 
 

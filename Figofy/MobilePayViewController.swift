@@ -7,23 +7,99 @@
 //
 
 import UIKit
+import Firebase
+import CoreLocation
 
-class MobilePayViewController: UIViewController {
+class MobilePayViewController: UIViewController, CLLocationManagerDelegate {
     
     
     @IBOutlet weak var payBtn: UIButton!
     @IBOutlet weak var amount: TextFieldDesign!
     
+    @IBOutlet weak var serverTimeLbl: UILabel!
+    @IBOutlet weak var image: UIImageView!
     
     var payment: MobilePayPayment?
     var alert: AlertView?
+    let locationManager = CLLocationManager()
+    
+    override func viewDidAppear(animated: Bool) {
+        
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+        locationManager.startMonitoringVisits()
+        
+        if CLLocationManager.authorizationStatus() == .AuthorizedWhenInUse {
+            locationManager.startUpdatingLocation()
+        } else {
+            locationManager.requestWhenInUseAuthorization()
+        }
         // Do any additional setup after loading the view, typically from a nib.
         alert = AlertView()
         
         payBtn.layer.cornerRadius = 5.0
+        
+        
+    }
+    
+    
+    func getUsers() {
+        
+        DataService.dataService.REF_USERS.observeEventType(.ChildAdded, withBlock: { snapshots in
+            
+            if let memberSince = snapshots.value.objectForKey("member_since") as? NSTimeInterval? ?? 0 {
+                let date = NSDate.convertFirebaseTimestampToDate(stamp: memberSince)
+                self.serverTimeLbl.text = "\(NSDate.convertToString(time: date, style: NSDateFormatterStyle.MediumStyle))"
+            }
+            let firstName = snapshots.value.objectForKey("first_name")
+            print(firstName)
+        })
+        
+    }
+    
+    func getFish() {
+        
+        DataService.dataService.REF_FISH.observeEventType(.ChildAdded, withBlock: { snapshots in
+            
+            if let imageStr = snapshots.value.objectForKey("length") as? Double? ?? 0.0 {
+                print(imageStr)
+            }
+            
+        })
+    }
+    
+    
+    func decodeBase64StringToImage(strEncodeData: String?) -> UIImage {
+        if let data = strEncodeData {
+            let image = NSData(base64EncodedString: data, options: .IgnoreUnknownCharacters)
+            return UIImage(data: image!)!
+        } else {
+            return UIImage()
+        }
+    }
+    
+    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        
+        manager.location?.coordinate
+        CLGeocoder().reverseGeocodeLocation(manager.location!, completionHandler: { placemarks, error in
+            
+            let placemark = placemarks![0]
+                
+            print("Addresse : \(placemark.name!), \(placemark.postalCode!) \(placemark.subLocality!) ,\(placemark.country!)")
+            
+            
+        })
+        
+        locationManager.stopUpdatingLocation()
+    }
+    
+    
+    func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
+        print("Error While updating location " + error.localizedDescription)
     }
     
     
