@@ -13,7 +13,7 @@ class logCell: UITableViewCell {
     
     @IBOutlet weak var logImageView: UIImageView!
     @IBOutlet weak var agnLabel: UILabel!
-    @IBOutlet weak var artLabel: UILabel!
+   // @IBOutlet weak var artLabel: UILabel!
     @IBOutlet weak var beskrivelseLabel: UILabel!
     @IBOutlet weak var metodeLabel: UILabel!
     @IBOutlet weak var længdeLabel: UILabel!
@@ -31,11 +31,11 @@ class logCell: UITableViewCell {
         
         logImageView.image = img
         agnLabel.text = fish.bait
-        artLabel.text = fish.species.description
+        //artLabel.text = fish.species.description!
         beskrivelseLabel.text = fish.note
         metodeLabel.text = fish.method
-        længdeLabel.text = "\(fish.length)"
-        vægtLabel.text = "\(fish.weight)"
+        længdeLabel.text = "\(fish.length) Cm"
+        vægtLabel.text = "\(fish.weight) Kg"
     }
     func decodeBase64StringToImage(strEncodedData: String?) -> UIImage {
         if let data = strEncodedData{

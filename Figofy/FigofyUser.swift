@@ -27,6 +27,7 @@ class FigofyUser {
     private var _birthday: String!//TODO
     private var _dateCreated: NSDate
     
+    
     var facebookId: Int {
         return _facebookId
     }
@@ -62,6 +63,7 @@ class FigofyUser {
     init() {
         self._dateCreated = NSDate()
     }
+   
     
     init(facebookId: Int, firstname: String, lastname: String, gender: String, birthday: String) {
         self._facebookId = facebookId
@@ -70,6 +72,9 @@ class FigofyUser {
         self._gender = gender
         self._birthday = birthday
         self._dateCreated = NSDate()
+        
+        
+       
     }
     
     
@@ -102,6 +107,11 @@ class FigofyUser {
         }
         if let location = dictionary["location"] as? Dictionary<String, AnyObject> {
             print("Location: \(location)")
+        }
+        if let fish = dictionary["fish"] as? Dictionary<String, AnyObject> {
+            print("fish \(fish)")
+
+            
         }
         self._dateCreated = NSDate()
     }

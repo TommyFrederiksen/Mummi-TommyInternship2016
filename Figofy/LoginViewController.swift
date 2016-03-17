@@ -49,9 +49,9 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         //grab the key and if it is there, login automatically
-        //        if NSUserDefaults.standardUserDefaults().valueForKey(KEY_UID) != nil {
-        //            self.performSegueWithIdentifier(SEGUE_LOGGED_IN, sender: nil)
-        //        }
+                if NSUserDefaults.standardUserDefaults().valueForKey(KEY_UID) != nil {
+                    self.performSegueWithIdentifier(SEGUE_LOGGED_IN, sender: nil)
+                }
     }
     
     
