@@ -18,22 +18,22 @@ class ProfileViewController: UIViewController,UITableViewDelegate, UITableViewDa
     @IBOutlet weak var nameLbl: UILabel!
     
     var user: FigofyUser!
-    var fishInit: Fish!
     var fish = [Fish]()
     
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        profileImageView.image = UIImage(named: "man")
         profileImageView.layer.cornerRadius = profileImageView.frame.width/2
         profileImageView.clipsToBounds = true
         feedTableView.delegate = self
         feedTableView.dataSource = self
         observerForFeed()
-        
-        
-        
+        //nameLbl.text = "\(user.userFirstName)"+" \(user.userLastName)"
         
     }
+    
+    
     
     
     func observerForFeed()
@@ -52,16 +52,19 @@ class ProfileViewController: UIViewController,UITableViewDelegate, UITableViewDa
                         {
                             let key = element.key
                             let _fish = Fish(postKey: key, dictionary: fishDict)
+                            
                             self.fish.append(_fish)
+                            
                             
                         }
                     }
                 }
-                
+                self.feedTableView.reloadData()
         })
-        feedTableView.reloadData()
+        
+        
     }
- 
+    
     
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -69,16 +72,13 @@ class ProfileViewController: UIViewController,UITableViewDelegate, UITableViewDa
     }
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return fish.count
+        return self.fish.count
     }
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cellIdentifier = "FeedCell"
         let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as? logCell
         
-        cell?.configureCell(fish[indexPath.row])
-        
-        print(fish.count)
-        
+        cell?.configureCell(self.fish[indexPath.row])
         
         return cell!
     }

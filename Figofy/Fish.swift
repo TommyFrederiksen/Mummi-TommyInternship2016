@@ -13,23 +13,32 @@ import CoreLocation
 class Fish {
     
     enum Species: Int, CustomStringConvertible {
-        case Laks = 0, Ørred, GuldLaks, Torsk, Hvilling, Kuller, Lange
+        case Laks = 0, Ørred,Guldørred,Havørred,Regnbueørred,Bækørred, GuldLaks, Torsk, Hvilling, Kuller, Lange,Stør,Aborre,Gede,Skalle
         
         static var count: Int {return Lange.rawValue + 1}
         
-        static var array = [Laks,Ørred,GuldLaks,Torsk,Hvilling,Kuller,Lange]
+        static var array = [Laks, Ørred,Guldørred,Havørred,Regnbueørred,Bækørred, GuldLaks, Torsk, Hvilling, Kuller, Lange,Stør,Aborre,Gede,Skalle]
         
         var description: String {
             switch self {
             case Laks: return "Laks"
+            case Guldørred: return "Guldørred"
             case Ørred: return "Ørred"
             case GuldLaks: return "GuldLaks"
             case Torsk: return "Torsk"
             case Hvilling: return "Hvilling"
             case Kuller: return "Kuller"
             case Lange: return "Lange"
+            case Havørred: return "Havørred"
+            case Regnbueørred: return "Regnbueørred"
+            case Bækørred: return "Bækørred"
+            case Stør: return "Stør"
+            case Aborre: return "Aborre"
+            case Gede: return "Gede"
+            case Skalle: return "Skalle"
             }
         }
+
         
         var value: Int {
             switch self {
@@ -40,7 +49,16 @@ class Fish {
             case .Hvilling: return 4
             case .Kuller: return 5
             case .Lange: return 6
+            case .Guldørred: return 7
+            case .Havørred: return 8
+            case .Regnbueørred: return 9
+            case .Bækørred: return 10
+            case .Stør: return 11
+            case .Aborre: return 12
+            case .Gede: return 13
+            case .Skalle: return 14
             }
+            
         }
         
         init?(value: Int) {
@@ -52,6 +70,14 @@ class Fish {
             case 4 : self = .Hvilling
             case 5 : self = .Kuller
             case 6 : self = .Lange
+            case 7 : self = .Guldørred
+            case 8 : self = .Havørred
+            case 9 : self = .Regnbueørred
+            case 10 : self = .Bækørred
+            case 11 : self = .Stør
+            case 12 : self = .Aborre
+            case 13 : self = .Gede
+            case 14 : self = .Skalle
             default : return nil
             }
         }
