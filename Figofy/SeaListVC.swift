@@ -33,7 +33,6 @@ class SeaListVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     func observeForNewSeas () {
         DataService.dataService.REF_SEAS.observeEventType(.Value, withBlock: { snapshot in
             
-            print(snapshot.value)
             
             self.figofySeas = []
             if let snapshots = snapshot.children.allObjects as? [FDataSnapshot] {
@@ -45,7 +44,6 @@ class SeaListVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
                     if let seaDict = snap.value as? Dictionary<String, AnyObject> {
                         let key = snap.key
                         let sea = FigofySea(postKey: key, dictionary: seaDict)
-                        
                         self.figofySeas.append(sea)
                     }
                     
@@ -84,6 +82,7 @@ class SeaListVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         
         sea = figofySeas[indexPath.row]
         
+        print("\(sea.seaName) \(sea.seaPrices)")
         performSegueWithIdentifier("LakeInformationVC", sender: sea)
     }
     
@@ -95,7 +94,7 @@ class SeaListVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "LakeInformationVC" {
             if let lakeInfo = segue.destinationViewController as? LakeInformationVC {
-                if let sea = sender as? Sea {
+                if let sea = sender as? FigofySea {
                     lakeInfo.sea = sea
                 }
             }

@@ -7,22 +7,40 @@
 //
 
 import Foundation
+import CoreLocation
 
 class FigofySea {
     
     private var _seaPostKey: String!
     private var _seaName: String!
-    private var _seaAddress: String?
+    private var _seaEmail: String?
+    private var _seaTlf: Int?
+    private var _seaWebsite: String?
     private var _seaStreetName: String!
     private var _seaStreetNumber: Int!
     private var _seaZipCode: Int!
     private var _seaCity: String!
+    private var _seaLatitude: CLLocationDegrees?
+    private var _seaLongitude: CLLocationDegrees?
+    private var _seaPrices: Dictionary<String,Int>?
     private var _seaCoverImgUrl: String?
     private var _seaProfileImgUrl: String?
     
     
     var seaName: String {
         return _seaName
+    }
+    
+    var email: String? {
+        return _seaEmail
+    }
+    
+    var website: String? {
+        return _seaWebsite
+    }
+    
+    var seaTlf: Int? {
+        return _seaTlf
     }
     
     var fullAddress: String? {
@@ -45,6 +63,17 @@ class FigofySea {
         return _seaCity
     }
     
+    var seaLongitude: CLLocationDegrees? {
+        return _seaLongitude
+    }
+    
+    var seaLatitude: CLLocationDegrees? {
+        return _seaLatitude
+    }
+    
+    var seaPrices: Dictionary<String, Int>? {
+        return _seaPrices
+    }
     var seaCoverImgUrl: String? {
         return _seaCoverImgUrl
     }
@@ -69,6 +98,18 @@ class FigofySea {
             self._seaName = name
         }
         
+        if let email = dictionary["email"] as? String {
+            self._seaEmail = email
+        }
+        
+        if let website = dictionary["website"] as? String {
+            self._seaWebsite = website
+        }
+        
+        if let tlf = dictionary["telefon"] as? Int {
+            self._seaTlf = tlf
+        }
+        
         if let address = dictionary["address"] as? Dictionary<String, AnyObject> {
             if let streetName = address["street"] as? String {
                 self._seaStreetName = streetName
@@ -81,6 +122,18 @@ class FigofySea {
             }
             if let city = address["city"] as? String {
                 self._seaCity = city
+            }
+            if let lat = address["latitude"] as? CLLocationDegrees {
+                self._seaLatitude = lat
+            }
+            if let lon = address["longitude"] as? CLLocationDegrees {
+                self._seaLongitude = lon
+            }
+        }
+        
+        if let prices = dictionary["prices"] as? Dictionary<String, Int> {
+            if prices.count > 0 {
+                self._seaPrices = prices
             }
         }
     }

@@ -74,7 +74,7 @@
 		</dict>
 	</dict>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>Application needs to find your current location so you can pint point where u are and attach the sea</string>
+	<string>Vi bruger KUN din lokalitet til at finde din nuværende position når du søger efter søer eller registrerer en fangst</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>System San Francisco Display Thin.ttf</string>

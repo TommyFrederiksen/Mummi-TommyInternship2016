@@ -43,20 +43,39 @@ class MobilePayViewController: UIViewController, CLLocationManagerDelegate {
         
         payBtn.layer.cornerRadius = 5.0
         
+        getCurrentUsersFish()
+        
+    }
+    
+    func getSeas() {
+        
+        DataService.dataService.REF_SEAS.childByAppendingPath("asdfjhjk2348").observeEventType(.Value, withBlock: { snapshots in
+            
+            if let prices = snapshots.value.objectForKey("prices") as? Dictionary<String,AnyObject> {
+                for (key, value) in prices {
+                    print("\(key) Hours for \(value)")
+                }
+                
+            }
+            
+        })
         
     }
     
     
-    func getUsers() {
+    func getCurrentUsersFish() {
         
-        DataService.dataService.REF_USERS.observeEventType(.ChildAdded, withBlock: { snapshots in
-            
-            if let memberSince = snapshots.value.objectForKey("member_since") as? NSTimeInterval? ?? 0 {
-                let date = NSDate.convertFirebaseTimestampToDate(stamp: memberSince)
-                self.serverTimeLbl.text = "\(NSDate.convertToString(time: date, style: NSDateFormatterStyle.MediumStyle))"
-            }
-            let firstName = snapshots.value.objectForKey("first_name")
-            print(firstName)
+        
+        var catches = [Fish]()
+        DataService.dataService.REF_USER_CURRENT.childByAppendingPath("fish").observeEventType(.ChildAdded, withBlock: { snaps in
+            DataService.dataService.REF_FISH.childByAppendingPath(snaps.key).observeSingleEventOfType(.Value, withBlock: { fish in
+                
+                print(fish)
+            })
+//            if let memberSince = snapshots.value.objectForKey("member_since") as? NSTimeInterval? ?? 0 {
+//                let date = NSDate.convertFirebaseTimestampToDate(stamp: memberSince)
+//                self.serverTimeLbl.text = "\(NSDate.convertToString(time: date, style: NSDateFormatterStyle.MediumStyle))"
+//            }
         })
         
     }
@@ -65,8 +84,10 @@ class MobilePayViewController: UIViewController, CLLocationManagerDelegate {
         
         DataService.dataService.REF_FISH.observeEventType(.ChildAdded, withBlock: { snapshots in
             
-            if let imageStr = snapshots.value.objectForKey("length") as? Double? ?? 0.0 {
-                print(imageStr)
+            if let imageStr = snapshots.value.objectForKey("species") as? String {
+                
+                
+                
             }
             
         })
@@ -87,9 +108,10 @@ class MobilePayViewController: UIViewController, CLLocationManagerDelegate {
         manager.location?.coordinate
         CLGeocoder().reverseGeocodeLocation(manager.location!, completionHandler: { placemarks, error in
             
-            let placemark = placemarks![0]
+            if let placemark = placemarks {
                 
-            print("Addresse : \(placemark.name!), \(placemark.postalCode!) \(placemark.subLocality!) ,\(placemark.country!)")
+                print("Addresse : \(placemark[0].name), \(placemark[0].postalCode!) \(placemark[0].subLocality) ,\(placemark[0].country)")
+            }
             
             
         })

@@ -114,6 +114,10 @@ class Fish {
         return _fishPostKey
     }
     
+    init(postKey: String) {
+        self._fishPostKey = postKey
+    }
+    
     init(imageStr: String, length: Int, weight: Int, species: Species) {
         self._imageStr = imageStr
         self._length = length

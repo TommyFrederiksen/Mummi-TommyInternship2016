@@ -15,6 +15,7 @@ class RegisterFishVC: UIViewController, UIImagePickerControllerDelegate, UINavig
 
     // MARK: IBOutlets
     @IBOutlet weak var fishImg: UIImageView!
+    @IBOutlet weak var addImg: UIButton!
     @IBOutlet weak var uploadButton: UIButton!
     @IBOutlet weak var chooseSpecies: UIButton!
     @IBOutlet weak var chooseWeight: UIButton!
@@ -28,7 +29,6 @@ class RegisterFishVC: UIViewController, UIImagePickerControllerDelegate, UINavig
     var currentLocation: CLLocationCoordinate2D?
     
     var imagePicker: UIImagePickerController!
-    var currentPicker: UIPickerView!
     
     var imageSelected = false
     
@@ -64,9 +64,6 @@ class RegisterFishVC: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         super.touchesBegan(touches, withEvent: event)
-        if let picker = currentPicker {
-            picker.hidden = true
-        }
         view.endEditing(true)
     }
     
@@ -75,9 +72,13 @@ class RegisterFishVC: UIViewController, UIImagePickerControllerDelegate, UINavig
     //when user taps on image it returns it
     func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage, editingInfo: [String : AnyObject]?) {
         imagePicker.dismissViewControllerAnimated(true, completion: nil)
+        let imagePicked: UIImage? = UIImage(CGImage: image.CGImage!)
         //save image
-        fishImg.image = image
-        imageSelected = true
+        if imagePicked != nil {
+            fishImg.image = image
+            imageSelected = true
+            addImg.setTitle("", forState: .Normal)
+        } 
     }
     
     // MARK: UITextField delegate methods
@@ -88,7 +89,8 @@ class RegisterFishVC: UIViewController, UIImagePickerControllerDelegate, UINavig
     // MARK: Location delegate methods
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         
-        currentLocation = manager.location?.coordinate
+        var location = locations.last
+        currentLocation = location?.coordinate
         locationManager.stopUpdatingLocation()
     }
     
@@ -128,8 +130,37 @@ class RegisterFishVC: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     @IBAction func addPicBtnPressed(sender: UIButton) {
         //still able to change pic
-        sender.setTitle("", forState: .Normal)
-        presentViewController(imagePicker, animated: true, completion: nil)
+        let actionSheet = UIAlertController(title: nil, message: nil, preferredStyle: .ActionSheet)
+        
+        let cancel = UIAlertAction(title: "Annuller", style: .Default, handler: { cancelAction in
+            
+            
+        })
+        
+        let camera = UIAlertAction(title: "Tag Billede", style: .Default, handler: { cameraAction in
+            
+            if UIImagePickerController.availableCaptureModesForCameraDevice(.Rear) != nil {
+                self.imagePicker.allowsEditing = false
+                self.imagePicker.sourceType = .Camera
+                self.imagePicker.cameraCaptureMode = .Photo
+                self.presentViewController(self.imagePicker, animated: true, completion: nil)
+            } else {
+                AlertView().showOkayAlert("Fejl", message: "Kan ikke få adgang til dit camera, har du givet os tilladelse", style: .Alert, VC: self)
+            }
+            
+        })
+        
+        let library = UIAlertAction(title: "Bibliotek", style: .Default, handler: { libraryAction in
+            
+            self.imagePicker.sourceType = .PhotoLibrary
+            self.presentViewController(self.imagePicker, animated: true, completion: nil)
+            
+        })
+        
+        actionSheet.addAction(library)
+        actionSheet.addAction(camera)
+        actionSheet.addAction(cancel)
+        presentViewController(actionSheet, animated: true, completion: nil)
     }
    
     @IBAction func speciesTapped(sender: UIButton) {
@@ -209,8 +240,8 @@ class RegisterFishVC: UIViewController, UIImagePickerControllerDelegate, UINavig
         let bait = writeBait.text!
         let method = chooseMethod.currentTitle!
         let note = writeNote.text!
-        let lat = currentLocation!.latitude ?? 0.0
-        let lon = currentLocation!.longitude ?? 0.0
+        let lat = currentLocation!.latitude
+        let lon = currentLocation!.longitude
         
         let newFish: Dictionary<String, AnyObject> = [
             "imageStr" : imgData,
