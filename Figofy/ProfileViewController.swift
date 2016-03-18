@@ -28,7 +28,7 @@ class ProfileViewController: UIViewController,UITableViewDelegate, UITableViewDa
         profileImageView.clipsToBounds = true
         feedTableView.delegate = self
         feedTableView.dataSource = self
-        //observerForFeed()
+        observerForFeed()
         //nameLbl.text = "\(user.userFirstName)"+" \(user.userLastName)"
         
     }
@@ -52,7 +52,7 @@ class ProfileViewController: UIViewController,UITableViewDelegate, UITableViewDa
                         {
                             let key = element.key
                             let _fish = Fish(postKey: key, dictionary: fishDict)
-                            
+                            //print("fish: \(fishDict)")
                             self.fish.append(_fish)
                             
                             
@@ -76,7 +76,7 @@ class ProfileViewController: UIViewController,UITableViewDelegate, UITableViewDa
     }
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cellIdentifier = "FeedCell"
-        let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as? logCell
+        let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as? FeedCell
         
         cell?.configureCell(self.fish[indexPath.row])
         
