@@ -236,12 +236,12 @@ class RegisterFishVC: UIViewController, UIImagePickerControllerDelegate, UINavig
         
         let kind: String = chooseSpecies.currentTitle!
         let kg = Double(chooseWeight.currentTitle!)!
-        let m = chooseLength.currentTitle!
+        let m = Int(chooseLength.currentTitle!)!
         let bait = writeBait.text!
         let method = chooseMethod.currentTitle!
         let note = writeNote.text!
-        let lat = currentLocation!.latitude
-        let lon = currentLocation!.longitude
+        let lat = CLLocationDegrees(currentLocation!.latitude)
+        let lon = CLLocationDegrees(currentLocation!.longitude)
         
         let newFish: Dictionary<String, AnyObject> = [
             "imageStr" : imgData,

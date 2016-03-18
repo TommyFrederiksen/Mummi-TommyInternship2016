@@ -57,11 +57,12 @@
 		655044CB1C637C2900D79B89 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655044CA1C637C2900D79B89 /* Event.swift */; };
 		655044CD1C64CF1100D79B89 /* ClockVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655044CC1C64CF1100D79B89 /* ClockVC.swift */; };
 		655044CF1C64D24700D79B89 /* Clock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655044CE1C64D24700D79B89 /* Clock.swift */; };
+		6550AD4C1C9C30380020A415 /* LogCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6550AD4B1C9C30380020A415 /* LogCell.swift */; };
 		657368CE1C635E3900E1367D /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 657368CD1C635E3900E1367D /* EventTableViewCell.swift */; };
 		659501001C6DD94C0067ED1A /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659500FF1C6DD94C0067ED1A /* Timer.swift */; };
 		65C8DFBC1C80434F0088622A /* FavoriteSeaCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C8DFBB1C80434F0088622A /* FavoriteSeaCell.swift */; };
 		65D98CE81C8EC0AF00D54BB9 /* LogVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D98CE71C8EC0AF00D54BB9 /* LogVC.swift */; };
-		65D98CEA1C8ED25700D54BB9 /* logCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D98CE91C8ED25700D54BB9 /* logCell.swift */; };
+		65D98CEA1C8ED25700D54BB9 /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D98CE91C8ED25700D54BB9 /* FeedCell.swift */; };
 		65D98CEC1C9023A900D54BB9 /* FriendsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D98CEB1C9023A900D54BB9 /* FriendsCell.swift */; };
 		65D98CEE1C9023E300D54BB9 /* FriendsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D98CED1C9023E300D54BB9 /* FriendsVC.swift */; };
 		F98634459CF7905C5013FABE /* Pods in Frameworks */ = {isa = PBXBuildFile; fileRef = B10CAFE5CCEBA3FE110E428F /* Pods */; };
@@ -142,11 +143,12 @@
 		655044CA1C637C2900D79B89 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		655044CC1C64CF1100D79B89 /* ClockVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClockVC.swift; sourceTree = "<group>"; };
 		655044CE1C64D24700D79B89 /* Clock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Clock.swift; sourceTree = "<group>"; };
+		6550AD4B1C9C30380020A415 /* LogCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogCell.swift; sourceTree = "<group>"; };
 		657368CD1C635E3900E1367D /* EventTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventTableViewCell.swift; path = ../EventTableViewCell.swift; sourceTree = "<group>"; };
 		659500FF1C6DD94C0067ED1A /* Timer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Timer.swift; sourceTree = "<group>"; };
 		65C8DFBB1C80434F0088622A /* FavoriteSeaCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteSeaCell.swift; sourceTree = "<group>"; };
 		65D98CE71C8EC0AF00D54BB9 /* LogVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogVC.swift; sourceTree = "<group>"; };
-		65D98CE91C8ED25700D54BB9 /* logCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = logCell.swift; sourceTree = "<group>"; };
+		65D98CE91C8ED25700D54BB9 /* FeedCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedCell.swift; sourceTree = "<group>"; };
 		65D98CEB1C9023A900D54BB9 /* FriendsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendsCell.swift; sourceTree = "<group>"; };
 		65D98CED1C9023E300D54BB9 /* FriendsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendsVC.swift; sourceTree = "<group>"; };
 		6B3D4BDC1C3533F8ED3B5DA2 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -259,11 +261,12 @@
 		1846984D1C60BE920095D64B /* View */ = {
 			isa = PBXGroup;
 			children = (
-				65D98CE91C8ED25700D54BB9 /* logCell.swift */,
+				65D98CE91C8ED25700D54BB9 /* FeedCell.swift */,
 				184696EF1C5F9A000095D64B /* CustomFigofyAnnotation.swift */,
 				1846984B1C60BE8E0095D64B /* SeaCell.swift */,
 				18CCAA971C60D5B700C7D5E8 /* CreateSeaVC.xib */,
 				18AFDA021C7472C300F2616E /* AlertView.swift */,
+				6550AD4B1C9C30380020A415 /* LogCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -566,10 +569,11 @@
 				651018171C50DB4C00B7FECC /* LakeInformationVC.swift in Sources */,
 				651018131C50D93100B7FECC /* ProfileViewController.swift in Sources */,
 				184696CA1C5F61710095D64B /* SeaAnnotation.swift in Sources */,
-				65D98CEA1C8ED25700D54BB9 /* logCell.swift in Sources */,
+				65D98CEA1C8ED25700D54BB9 /* FeedCell.swift in Sources */,
 				181E55751C7DABE7007E9EF3 /* FigofySea.swift in Sources */,
 				655044C91C636F7700D79B89 /* EventTableVC.swift in Sources */,
 				189DE0CC1C86E89A00EA2977 /* Fish.swift in Sources */,
+				6550AD4C1C9C30380020A415 /* LogCell.swift in Sources */,
 				654A27121C350EA6008AA4EB /* LoginViewController.swift in Sources */,
 				65C8DFBC1C80434F0088622A /* FavoriteSeaCell.swift in Sources */,
 				181E55771C7DDCFD007E9EF3 /* FigofyUser.swift in Sources */,

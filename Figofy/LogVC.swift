@@ -16,7 +16,7 @@ class LogVC: UIViewController, UITableViewDelegate, UITableViewDataSource
     
     @IBOutlet weak var logTableView: UITableView!
     var user: FigofyUser!
-    var catches = [String]()
+    
     var fish = [Fish]()
     
     
@@ -32,60 +32,63 @@ class LogVC: UIViewController, UITableViewDelegate, UITableViewDataSource
     
     func observerForLog()
     {
-        self.fish = []
         
+        self.fish = []
         DataService.dataService.REF_USER_CURRENT.childByAppendingPath("fish").observeEventType(.ChildAdded, withBlock: { fishIds in
             
             print("\(fishIds.key)")
-            DataService.dataService.REF_FISH.childByAppendingPath(fishIds.key).observeEventType(.Value, withBlock: {
+            DataService.dataService.REF_FISH.childByAppendingPath(fishIds.key).observeSingleEventOfType(.Value, withBlock: {
                 fishSnaps in
-                if let snapshots = fishSnaps.children.allObjects as? [FDataSnapshot] {
-                    for currentFish in snapshots {
-                        if let fish = currentFish.value as? Dictionary<String, AnyObject> {
-                            let key = currentFish.key
-                            let personalFish = Fish(postKey: key, dictionary: fish)
-                            print(personalFish)
-                        }
-                    }
+                
+                if let fishDict = fishSnaps.value as? Dictionary<String, AnyObject> {
+                    
+                    let fishData = Fish(postKey: fishIds.key, dictionary: fishDict)
+                    self.fish.append(fishData)
+                    print(fishData)
                 }
                 
+                
+                self.logTableView.reloadData()
+                
+                
+                
             })
-            self.logTableView.reloadData()
+            
         })
     }
-
-
-
-func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-    return 1
-}
-func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    // MARK: return the number of rows
-    return fish.count
-}
-func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-    let cellIdentifier = "logCell"
-    if let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as? logCell {
+    
+    
+    
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 1
+    }
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        // MARK: return the number of rows
+        return fish.count
+    }
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cellIdentifier = "logCell"
+        if let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as? LogCell {
+            
+            let fish = self.fish[indexPath.row]
+            
+            cell.configureCell(fish)
+            
+            return cell
+            
+        } else {
+            return UITableViewCell()
+        }
         
-        let fish = self.fish[indexPath.row]
-        
-        cell.configureCell(fish)
-        
-        return cell
-        
-    } else {
-        return UITableViewCell()
     }
     
-}
-
-@IBAction func BackToProfile(sender: AnyObject) {
-    dismissViewControllerAnimated(true, completion: nil)
+    @IBAction func BackToProfile(sender: AnyObject) {
+        dismissViewControllerAnimated(true, completion: nil)
+        
+    }
     
-}
-
-
-
-
-
+    
+    
+    
+    
 }

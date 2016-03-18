@@ -1,5 +1,5 @@
 //
-//  logCell.swift
+//  FeedCell.swift
 //  Figofy
 //
 //  Created by Tommy on 08/03/2016.
@@ -8,12 +8,12 @@
 
 import UIKit
 
-class logCell: UITableViewCell {
+class FeedCell: UITableViewCell {
 
     
     @IBOutlet weak var logImageView: UIImageView!
     @IBOutlet weak var agnLabel: UILabel!
-   // @IBOutlet weak var artLabel: UILabel!
+    @IBOutlet weak var artLabel: UILabel!
     @IBOutlet weak var beskrivelseLabel: UILabel!
     @IBOutlet weak var metodeLabel: UILabel!
     @IBOutlet weak var længdeLabel: UILabel!
@@ -29,6 +29,12 @@ class logCell: UITableViewCell {
     {
         længdeLabel.text = "\(fish.length) Cm"
         vægtLabel.text = "\(fish.weight) Kg"
+        agnLabel.text = "\(fish.bait)"
+        let img = decodeBase64StringToImage(fish.imageStr)
+        logImageView.image = img
+        metodeLabel.text = "\(fish.method)"
+        beskrivelseLabel.text = "\(fish.note)"
+        artLabel.text = "\(fish.species)"
     }
     
     func decodeBase64StringToImage(strEncodedData: String?) -> UIImage {
