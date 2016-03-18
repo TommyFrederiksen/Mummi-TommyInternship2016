@@ -10,9 +10,10 @@ import UIKit
 import Firebase
 import CoreLocation
 
-class MobilePayViewController: UIViewController, CLLocationManagerDelegate {
+class MobilePayViewController: UIViewController, CLLocationManagerDelegate, UITableViewDelegate, UITableViewDataSource {
     
     
+    @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var payBtn: UIButton!
     @IBOutlet weak var amount: TextFieldDesign!
     
@@ -21,6 +22,7 @@ class MobilePayViewController: UIViewController, CLLocationManagerDelegate {
     
     var payment: MobilePayPayment?
     var alert: AlertView?
+    var catches = [Fish]()
     let locationManager = CLLocationManager()
     
     override func viewDidAppear(animated: Bool) {
@@ -38,17 +40,21 @@ class MobilePayViewController: UIViewController, CLLocationManagerDelegate {
         } else {
             locationManager.requestWhenInUseAuthorization()
         }
+        tableView.delegate = self
+        tableView.dataSource = self
+        
         // Do any additional setup after loading the view, typically from a nib.
         alert = AlertView()
         
         payBtn.layer.cornerRadius = 5.0
         
-        getCurrentUsersFish()
-        
+        getFish()
+        tableView.reloadData()
     }
     
     func getSeas() {
         
+        catches = []
         DataService.dataService.REF_SEAS.childByAppendingPath("asdfjhjk2348").observeEventType(.Value, withBlock: { snapshots in
             
             if let prices = snapshots.value.objectForKey("prices") as? Dictionary<String,AnyObject> {
@@ -65,32 +71,74 @@ class MobilePayViewController: UIViewController, CLLocationManagerDelegate {
     
     func getCurrentUsersFish() {
         
-        
-        var catches = [Fish]()
-        DataService.dataService.REF_USER_CURRENT.childByAppendingPath("fish").observeEventType(.ChildAdded, withBlock: { snaps in
-            DataService.dataService.REF_FISH.childByAppendingPath(snaps.key).observeSingleEventOfType(.Value, withBlock: { fish in
-                
-                print(fish)
-            })
-//            if let memberSince = snapshots.value.objectForKey("member_since") as? NSTimeInterval? ?? 0 {
-//                let date = NSDate.convertFirebaseTimestampToDate(stamp: memberSince)
-//                self.serverTimeLbl.text = "\(NSDate.convertToString(time: date, style: NSDateFormatterStyle.MediumStyle))"
-//            }
+    
+        DataService.dataService.REF_USERS.childByAppendingPath("facebook:10209515104821303").childByAppendingPath("fish").observeEventType(.Value, withBlock: { snapshot in
+            
+            self.catches = []
+            if let snapshots = snapshot.children.allObjects as? [FDataSnapshot] {
+                for snap in snapshots {
+                    DataService.dataService.REF_FISH.childByAppendingPath(snap.key).observeEventType(.Value, withBlock: { fish in
+                        
+                        if let fishDict = fish.value as? Dictionary<String, AnyObject> {
+                            let key = fish.key
+                            let currentFish = Fish(postKey: key, dictionary: fishDict)
+                            print("\(currentFish.weight)")
+                            self.serverTimeLbl.text = currentFish.bait
+                            self.catches.append(currentFish)
+                        }
+                        
+                    })
+                }
+            }
+            
         })
         
     }
     
     func getFish() {
         
-        DataService.dataService.REF_FISH.observeEventType(.ChildAdded, withBlock: { snapshots in
+        DataService.dataService.REF_FISH.observeEventType(.Value, withBlock: { snapshot in
             
-            if let imageStr = snapshots.value.objectForKey("species") as? String {
+            
+            self.catches = []
+            if let snapshots = snapshot.children.allObjects as? [FDataSnapshot] {
                 
-                
+                for snap in snapshots {
+                    
+                    print("SNAP: \(snap)")
+                    
+                    if let fishDict = snap.value as? Dictionary<String, AnyObject> {
+                        let key = snap.key
+                        let fish = Fish(postKey: key, dictionary: fishDict)
+                        self.serverTimeLbl.text = "\(fish.weight)"
+                        self.catches.append(fish)
+                    }
+                    
+                }
                 
             }
             
         })
+    }
+    
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return catches.count
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        
+       let cell = tableView.dequeueReusableCellWithIdentifier("fish", forIndexPath: indexPath) as UITableViewCell
+        
+        let fish = catches[indexPath.row]
+
+        cell.textLabel?.text = fish.bait
+        
+        return cell
+        
     }
     
     

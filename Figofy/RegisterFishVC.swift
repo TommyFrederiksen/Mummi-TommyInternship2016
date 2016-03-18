@@ -236,7 +236,7 @@ class RegisterFishVC: UIViewController, UIImagePickerControllerDelegate, UINavig
         
         let kind: String = chooseSpecies.currentTitle!
         let kg = Double(chooseWeight.currentTitle!)!
-        let m = Double(chooseLength.currentTitle!)!
+        let m = chooseLength.currentTitle!
         let bait = writeBait.text!
         let method = chooseMethod.currentTitle!
         let note = writeNote.text!

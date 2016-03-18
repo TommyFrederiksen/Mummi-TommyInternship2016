@@ -251,7 +251,6 @@
 				65C8DFBB1C80434F0088622A /* FavoriteSeaCell.swift */,
 				189DE0CB1C86E89A00EA2977 /* Fish.swift */,
 				189DE0CD1C86FA1400EA2977 /* FishCatch.swift */,
-				65D98CE91C8ED25700D54BB9 /* logCell.swift */,
 				65D98CEB1C9023A900D54BB9 /* FriendsCell.swift */,
 			);
 			name = Model;
@@ -260,6 +259,7 @@
 		1846984D1C60BE920095D64B /* View */ = {
 			isa = PBXGroup;
 			children = (
+				65D98CE91C8ED25700D54BB9 /* logCell.swift */,
 				184696EF1C5F9A000095D64B /* CustomFigofyAnnotation.swift */,
 				1846984B1C60BE8E0095D64B /* SeaCell.swift */,
 				18CCAA971C60D5B700C7D5E8 /* CreateSeaVC.xib */,

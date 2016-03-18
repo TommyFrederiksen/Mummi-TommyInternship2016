@@ -27,16 +27,10 @@ class logCell: UITableViewCell {
    
     func configureCell(fish: Fish)
     {
-        let img = decodeBase64StringToImage(fish.imageStr)
-        
-        logImageView.image = img
-        agnLabel.text = fish.bait
-        //artLabel.text = fish.species.description!
-        beskrivelseLabel.text = fish.note
-        metodeLabel.text = fish.method
         længdeLabel.text = "\(fish.length) Cm"
         vægtLabel.text = "\(fish.weight) Kg"
     }
+    
     func decodeBase64StringToImage(strEncodedData: String?) -> UIImage {
         if let data = strEncodedData{
             let image = NSData(base64EncodedString: data, options: .IgnoreUnknownCharacters)

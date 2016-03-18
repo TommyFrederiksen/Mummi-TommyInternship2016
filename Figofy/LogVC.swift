@@ -18,14 +18,17 @@ class LogVC: UIViewController, UITableViewDelegate, UITableViewDataSource
     var user: FigofyUser!
     var catches = [String]()
     var fish = [Fish]()
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         logTableView.delegate = self
         logTableView.dataSource = self
         observerForLog()
-        print(fish.count)
     }
+    
     
     func observerForLog()
     {
@@ -41,7 +44,7 @@ class LogVC: UIViewController, UITableViewDelegate, UITableViewDataSource
                         if let fish = currentFish.value as? Dictionary<String, AnyObject> {
                             let key = currentFish.key
                             let personalFish = Fish(postKey: key, dictionary: fish)
-                            self.fish.append(personalFish)
+                            print(personalFish)
                         }
                     }
                 }

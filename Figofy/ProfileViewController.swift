@@ -28,7 +28,7 @@ class ProfileViewController: UIViewController,UITableViewDelegate, UITableViewDa
         profileImageView.clipsToBounds = true
         feedTableView.delegate = self
         feedTableView.dataSource = self
-        observerForFeed()
+        //observerForFeed()
         //nameLbl.text = "\(user.userFirstName)"+" \(user.userLastName)"
         
     }

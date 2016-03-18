@@ -13,6 +13,7 @@ class ClockVC: UIViewController {
     
     @IBOutlet weak var timeLabel: UILabel!
     
+    var payment: MobilePayPayment?
     let clock = Clock()
     var timer: NSTimer?
     
@@ -45,6 +46,27 @@ class ClockVC: UIViewController {
         timeLabel.text = formatter.stringFromDate(clock.currentTime)
     }
     
+    @IBAction func KøbTid(sender: AnyObject) {
+        
+        
+            
+            let Id = "3232"
+            let price = Float(200.00)
+        
+            if price >= 0 && Id != "" {
+                payment = MobilePayPayment(orderId: Id, productPrice: price)
+                MobilePayManager.sharedInstance().beginMobilePaymentWithPayment(payment!) { error in
+                    if error.localizedDescription != "" {
+                        print(error.localizedDescription)
+                    }
+                    
+                    
+                }
+                
+            }
+        
+        
+    }
     
     deinit {
         if let timer = self.timer {
