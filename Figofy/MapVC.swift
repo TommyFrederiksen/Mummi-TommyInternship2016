@@ -146,6 +146,7 @@ class MapVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, UIP
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "showSeas" {
             let vc = segue.destinationViewController
+            vc.preferredContentSize = CGSizeMake(UIScreen.mainScreen().bounds.width, 200)
             let controller = vc.popoverPresentationController
             
             if controller != nil {
@@ -153,6 +154,7 @@ class MapVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, UIP
             }
         }
     }
+    
     
     func adaptivePresentationStyleForPresentationController(controller: UIPresentationController) -> UIModalPresentationStyle {
         return .None

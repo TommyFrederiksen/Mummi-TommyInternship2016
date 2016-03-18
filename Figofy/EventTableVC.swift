@@ -14,8 +14,6 @@ class EventTableVC: UITableViewController {
     
     var events = [Event]()
     
-    
-    
     func loadSampleEvents()
     {
         let photo1 = UIImage(named: "EventImage1")!
@@ -61,7 +59,7 @@ class EventTableVC: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        loadSampleEvents()
+        //loadSampleEvents()
         
         
         // Uncomment the following line to preserve selection between presentations
@@ -85,33 +83,28 @@ class EventTableVC: UITableViewController {
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // MARK: return the number of rows
-        return events.count
+        return 15
     }
     
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cellIdentifier = "EventTableViewCell"
-        let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! EventTableViewCell
-        let event = events[indexPath.row]
-        // MARK: configures the cell
-        cell.photoImageView.image = event._photo
-        cell.photoImageView.layer.cornerRadius = 45
-        cell.photoImageView.clipsToBounds = true
-        cell.nameLabel.text = event._name
-        cell.descriptionLabel.text = event._description
-        cell.timeAndDateLabel.text = event._dateTime
+        let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath)
         
-        
-        
-        
+        cell.textLabel?.text = "Ikke tilgængelig i Beta"
+//        let event = events[indexPath.row]
+//        // MARK: configures the cell
+//        cell.photoImageView.image = event._photo
+//        cell.photoImageView.layer.cornerRadius = 45
+//        cell.photoImageView.clipsToBounds = true
+//        cell.nameLabel.text = event._name
+//        cell.descriptionLabel.text = event._description
+//        cell.timeAndDateLabel.text = event._dateTime
         
         
         return cell
     }
-    override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        
-        return 20.00
-    }
+    
     
     
     

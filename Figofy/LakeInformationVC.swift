@@ -18,17 +18,20 @@ class LakeInformationVC: UIViewController, UITableViewDelegate, UITableViewDataS
     @IBOutlet weak var nameLbl: UILabel!
     @IBOutlet weak var logoImg: UIImageView!
     @IBOutlet weak var seaImg: UIImageView!
-    @IBOutlet weak var descriptionLbl: UILabel!
+    @IBOutlet weak var descriptionView: UITextView!
     @IBOutlet weak var tableView: UITableView!
     
     // MARK: Variables
     var sea: FigofySea!
     var payment = MobilePayPayment()
     var hours = [String]()
-    var price = [Int]()
+    var prices = [Int]()
     // MARK: View Functions
     override func viewDidLoad() {
         super.viewDidLoad()
+        descriptionView.text = "\(sea.seaDescription!)"
+        
+        nameLbl.text = sea.seaName
         // Do any additional setup after loading the view, typically from a nib.
         tableView.delegate = self
         tableView.dataSource = self
@@ -37,11 +40,15 @@ class LakeInformationVC: UIViewController, UITableViewDelegate, UITableViewDataS
         if sea.seaPrices?.count > 0 {
             for (key,value) in sea.seaPrices! {
                 hours.append(key)
-                price.append(value)
+                prices.append(value)
                 print("\(key),\(value)")
             }
         }
         
+    }
+    
+    override func viewDidLayoutSubviews() {
+        descriptionView.scrollRangeToVisible(NSMakeRange(1, 0))
     }
     
    
@@ -54,7 +61,8 @@ class LakeInformationVC: UIViewController, UITableViewDelegate, UITableViewDataS
         
         let cell = tableView.dequeueReusableCellWithIdentifier("prices", forIndexPath: indexPath) as! UITableViewCell
         
-        cell.textLabel?.text = hours[indexPath.row]
+        cell.textLabel?.text = "\(hours[indexPath.row]) Timer"
+        cell.detailTextLabel?.text = "\(prices[indexPath.row]) ,-"
         return cell
     }
     

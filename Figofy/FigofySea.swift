@@ -13,6 +13,7 @@ class FigofySea {
     
     private var _seaPostKey: String!
     private var _seaName: String!
+    private var _seaDescription: String?
     private var _seaEmail: String?
     private var _seaTlf: Int?
     private var _seaWebsite: String?
@@ -31,11 +32,15 @@ class FigofySea {
         return _seaName
     }
     
-    var email: String? {
+    var seaDescription: String? {
+        return _seaDescription
+    }
+    
+    var seaEmail: String? {
         return _seaEmail
     }
     
-    var website: String? {
+    var seaWebsite: String? {
         return _seaWebsite
     }
     
@@ -108,6 +113,10 @@ class FigofySea {
         
         if let tlf = dictionary["telefon"] as? Int {
             self._seaTlf = tlf
+        }
+        
+        if let desc = dictionary["description"] as? String {
+            self._seaDescription = desc
         }
         
         if let address = dictionary["address"] as? Dictionary<String, AnyObject> {
