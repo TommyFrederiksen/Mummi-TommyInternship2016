@@ -37,7 +37,7 @@ class LakeInformationVC: UIViewController, UITableViewDelegate, UITableViewDataS
         tableView.dataSource = self
         
         
-        if sea.seaPrices?.count > 0 {
+        if sea.seaPrices?.count > 0 && sea.seaPrices != nil {
             for (key,value) in sea.seaPrices! {
                 hours.append(key)
                 prices.append(value)
@@ -54,16 +54,30 @@ class LakeInformationVC: UIViewController, UITableViewDelegate, UITableViewDataS
    
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return (sea.seaPrices?.count)!
+        if sea.seaPrices?.count == 0 || sea.seaPrices == nil {
+            return 1
+        } else {
+            return (sea.seaPrices?.count)!
+        }
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCellWithIdentifier("prices", forIndexPath: indexPath) as! UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("prices", forIndexPath: indexPath) 
+        if sea.seaPrices?.count == 0 || sea.seaPrices == nil {
+            
+            cell.textLabel?.text = "Ingen priser fundet"
+            cell.detailTextLabel?.text = ""
+            
+            return cell
+        } else {
+            
+            cell.textLabel?.text = "\(hours[indexPath.row])"
+            cell.detailTextLabel?.text = "\(prices[indexPath.row]) ,-"
+            
+            return cell
+        }
         
-        cell.textLabel?.text = "\(hours[indexPath.row]) Timer"
-        cell.detailTextLabel?.text = "\(prices[indexPath.row]) ,-"
-        return cell
     }
     
     

@@ -445,6 +445,7 @@
 				TargetAttributes = {
 					654A270B1C350EA6008AA4EB = {
 						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = KGH9V264AH;
 					};
 					654A271F1C350EA7008AA4EB = {
 						CreatedOnToolsVersion = 7.2;
@@ -674,7 +675,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_BITCODE = YES;
@@ -698,6 +699,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				SWIFT_OBJC_BRIDGING_HEADER = "/Users/MJPS/Desktop/Figofy/Figofy-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -722,7 +724,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_BITCODE = YES;
@@ -739,6 +741,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				SWIFT_OBJC_BRIDGING_HEADER = "/Users/MJPS/Desktop/Figofy/Figofy-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -760,16 +763,18 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = Figofy/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Pods/MobilePay-AppSwitch-SDK/sdk/iOS/1.7.0/MobilePayManager",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = Tommy.Figofy;
+				PRODUCT_BUNDLE_IDENTIFIER = figofy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "${SRCROOT}/Figofy-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -787,15 +792,17 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = Figofy/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Pods/MobilePay-AppSwitch-SDK/sdk/iOS/1.7.0/MobilePayManager",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = Tommy.Figofy;
+				PRODUCT_BUNDLE_IDENTIFIER = figofy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "${SRCROOT}/Figofy-Bridging-Header.h";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

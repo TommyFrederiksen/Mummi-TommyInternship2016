@@ -22,7 +22,7 @@ class MobilePayViewController: UIViewController, CLLocationManagerDelegate, UITa
     
     var payment: MobilePayPayment?
     var alert: AlertView?
-    var catches = [Fish]()
+    var catches = [FigofySea]()
     let locationManager = CLLocationManager()
     
     override func viewDidAppear(animated: Bool) {
@@ -48,20 +48,22 @@ class MobilePayViewController: UIViewController, CLLocationManagerDelegate, UITa
         
         payBtn.layer.cornerRadius = 5.0
         
-        getFish()
+        getSeas()
         tableView.reloadData()
+        
+        
     }
     
     func getSeas() {
         
         catches = []
-        DataService.dataService.REF_SEAS.childByAppendingPath("asdfjhjk2348").observeEventType(.Value, withBlock: { snapshots in
+        DataService.dataService.REF_SEAS.observeEventType(.ChildAdded, withBlock: { snapshots in
             
-            if let prices = snapshots.value.objectForKey("prices") as? Dictionary<String,AnyObject> {
-                for (key, value) in prices {
-                    print("\(key) Hours for \(value)")
-                }
-                
+            if let seas = snapshots.value as? Dictionary<String,AnyObject> {
+                let key = snapshots.key
+                let sea = FigofySea(postKey: key, dictionary: seas)
+                print("Name: \(sea.seaName) - Prices: \(sea.seaPrices)")
+                self.catches.append(sea)
             }
             
         })
@@ -84,7 +86,7 @@ class MobilePayViewController: UIViewController, CLLocationManagerDelegate, UITa
                             let currentFish = Fish(postKey: key, dictionary: fishDict)
                             print("\(currentFish.weight)")
                             self.serverTimeLbl.text = currentFish.bait
-                            self.catches.append(currentFish)
+                            //self.catches.append(currentFish)
                         }
                         
                     })
@@ -111,7 +113,7 @@ class MobilePayViewController: UIViewController, CLLocationManagerDelegate, UITa
                         let key = snap.key
                         let fish = Fish(postKey: key, dictionary: fishDict)
                         self.serverTimeLbl.text = "\(fish.weight)"
-                        self.catches.append(fish)
+                        //self.catches.append(fish)
                     }
                     
                 }
@@ -135,7 +137,7 @@ class MobilePayViewController: UIViewController, CLLocationManagerDelegate, UITa
         
         let fish = catches[indexPath.row]
 
-        cell.textLabel?.text = fish.bait
+        //cell.textLabel?.text = fish.bait
         
         return cell
         

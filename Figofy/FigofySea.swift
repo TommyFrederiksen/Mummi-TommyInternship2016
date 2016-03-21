@@ -17,6 +17,7 @@ class FigofySea {
     private var _seaEmail: String?
     private var _seaTlf: Int?
     private var _seaWebsite: String?
+    private var _isFigofySea: Bool!
     private var _seaStreetName: String!
     private var _seaStreetNumber: Int!
     private var _seaZipCode: Int!
@@ -42,6 +43,10 @@ class FigofySea {
     
     var seaWebsite: String? {
         return _seaWebsite
+    }
+    
+    var isFigofySea: Bool {
+        return _isFigofySea
     }
     
     var seaTlf: Int? {
@@ -113,6 +118,10 @@ class FigofySea {
         
         if let tlf = dictionary["telefon"] as? Int {
             self._seaTlf = tlf
+        }
+        
+        if let isit = dictionary["is_figofy_sea"] as? Bool {
+            self._isFigofySea = isit
         }
         
         if let desc = dictionary["description"] as? String {
