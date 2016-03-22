@@ -448,7 +448,7 @@
 				TargetAttributes = {
 					654A270B1C350EA6008AA4EB = {
 						CreatedOnToolsVersion = 7.2;
-						DevelopmentTeam = KGH9V264AH;
+						DevelopmentTeam = XY2PLHYP4U;
 					};
 					654A271F1C350EA7008AA4EB = {
 						CreatedOnToolsVersion = 7.2;
@@ -773,7 +773,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Pods/MobilePay-AppSwitch-SDK/sdk/iOS/1.7.0/MobilePayManager",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = figofy;
+				PRODUCT_BUNDLE_IDENTIFIER = dk.figofy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "3714ceaf-6dfb-427a-84ac-c3bbf0267dac";
 				SWIFT_OBJC_BRIDGING_HEADER = "${SRCROOT}/Figofy-Bridging-Header.h";
@@ -802,7 +802,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Pods/MobilePay-AppSwitch-SDK/sdk/iOS/1.7.0/MobilePayManager",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = figofy;
+				PRODUCT_BUNDLE_IDENTIFIER = dk.figofy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "3714ceaf-6dfb-427a-84ac-c3bbf0267dac";
 				SWIFT_OBJC_BRIDGING_HEADER = "${SRCROOT}/Figofy-Bridging-Header.h";

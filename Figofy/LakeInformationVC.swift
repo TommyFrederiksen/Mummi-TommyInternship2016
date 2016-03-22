@@ -23,12 +23,18 @@ class LakeInformationVC: UIViewController, UITableViewDelegate, UITableViewDataS
     
     // MARK: Variables
     var sea: FigofySea!
-    var payment = MobilePayPayment()
+    var mobilePayPayment = MobilePayPayment()
     var hours = [String]()
     var prices = [Int]()
+    var checkPayment: MPPayment!
+    var hourToFutureDate: NSTimeInterval?
+    
     // MARK: View Functions
     override func viewDidLoad() {
         super.viewDidLoad()
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        appDelegate.lakeInformation = self
+        
         descriptionView.text = "\(sea.seaDescription!)"
         
         nameLbl.text = sea.seaName
@@ -87,15 +93,25 @@ class LakeInformationVC: UIViewController, UITableViewDelegate, UITableViewDataS
         // UNIQUE ID FOR TRANSACTION
         //print(NSUUID().UUIDString)
         
-        let alertWithChild = UIAlertController(title: "Bekræft", message: "Du har valgt \(hour) for \(totalPrice).\n Ønsker du at fortsætte til betaling?", preferredStyle: .Alert)
+        
+        let alertWithChild = UIAlertController(title: "Bekræft", message: "Du har valgt \(hour) for \(totalPrice).\n Ønsker du at fortsætte til betaling?", preferredStyle: .ActionSheet)
+        
         
         let yesAction = UIAlertAction(title: "Ja", style: .Default, handler: { yesAction in
             let currentTime = NSDate()
-            let hourToFutureDate: NSTimeInterval = Double(hour * 60 * 60)
+            self.hourToFutureDate = Double(hour * 60 * 60)
             
-            let checkPayment = MPPayment(price: totalPrice, startDate: currentTime, endDate: currentTime.dateByAddingTimeInterval(hourToFutureDate))
+            self.checkPayment = MPPayment(price: totalPrice, startDate: currentTime, endDate: currentTime.dateByAddingTimeInterval(self.hourToFutureDate!))
             
-            self.performSegueWithIdentifier(SEGUE_PAYMENT, sender: checkPayment)
+            let orderID = NSUUID().UUIDString
+            
+            self.mobilePayPayment = MobilePayPayment(orderId: orderID, productPrice: Float(totalPrice))
+            
+            MobilePayManager.sharedInstance().beginMobilePaymentWithPayment(self.mobilePayPayment, error: { mobilepayError in
+                    print(mobilepayError.code)
+            })
+            
+            
         })
         
         
@@ -109,6 +125,10 @@ class LakeInformationVC: UIViewController, UITableViewDelegate, UITableViewDataS
         
         self.presentViewController(alertWithChild, animated: true, completion: nil)
         
+    }
+    
+    func updateAndPasInfoToClockVC() {
+        self.performSegueWithIdentifier(SEGUE_PAYMENT, sender: self.checkPayment)
     }
     
     
@@ -146,6 +166,8 @@ class LakeInformationVC: UIViewController, UITableViewDelegate, UITableViewDataS
         } else if hours.rangeOfString("12 Timer") != nil {
             hour = 12
         } else if hours.rangeOfString("Dagskort") != nil {
+            hour = 12
+        } else if hours.rangeOfString("Døgnkort") != nil {
             hour = 24
         }
         return hour

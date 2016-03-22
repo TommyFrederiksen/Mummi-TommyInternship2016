@@ -28,6 +28,8 @@ class AlertView: UIAlertController {
     }
     
     
+    
+    
     func showYesNoAlert(title: String!, message: String!, style: UIAlertControllerStyle, VC: UIViewController) {
         alertController = UIAlertController(title: title, message: message, preferredStyle: style)
         

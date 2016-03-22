@@ -15,6 +15,8 @@ import FBSDKLoginKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    var mppayment: MPPayment?
+    var lakeInformation: LakeInformationVC?
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
@@ -25,11 +27,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //ACTUAL
         //MobilePayManager.sharedInstance().setupWithMerchantId("APPDK2922783001", merchantUrlScheme: "figofy", timeoutSeconds: 30, returnSeconds: 1, captureType: .Capture, country: .Denmark)
         
+        
         //facebook Check for log in
         return FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
     }
     
-
     func applicationWillResignActive(application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
@@ -59,46 +61,32 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject) -> Bool {
         handleMobilePayPaymentWithUrl(url)
         
+        
+        let navigationController = application.windows[0].rootViewController! as UIViewController
+        
+        let activeViewCont = navigationController
+
+        
+        print(activeViewCont)
         //When you create a new account with facebook, its going to switch to facebook and handle it
         return FBSDKApplicationDelegate.sharedInstance().application(application, openURL: url, sourceApplication: sourceApplication, annotation: annotation)
         
     }
     
-//    func application(app: UIApplication, openURL url: NSURL, options: [String : AnyObject]) -> Bool {
-//        
-//        // MARK: TODO
-//        //if mobilepay doesnt work with the method above, try and figure out how to handle different appswitching or whatever.
-//        //handleMobilePayPaymentWithUrl(url)
-//        return false
-//    }
-    
     // MARK: MOBILEPAY
     func handleMobilePayPaymentWithUrl(url: NSURL) {
-        var top: UIViewController?
+        
+        let top: UIViewController?
         if let view = UIApplication.sharedApplication().keyWindow?.rootViewController {
             top = view
         }
         MobilePayManager.sharedInstance().handleMobilePayPaymentWithUrl(url, success: { (mobilePaySuccess: MobilePaySuccessfulPayment?) -> Void in
             
-            let orderId = mobilePaySuccess?.orderId
-            let transactionId = mobilePaySuccess?.transactionId
-            let amountWithdrawnFromCard = "\(mobilePaySuccess?.amountWithdrawnFromCard)"
+            let orderId = mobilePaySuccess!.orderId
+            let transactionId = mobilePaySuccess!.transactionId
+            let amountWithdrawnFromCard = "\(mobilePaySuccess!.amountWithdrawnFromCard)"
             
-            
-            AlertView().showOkayAlert("Payment Successful", message: "MobilePay purchase succeeded: You have now paid for order with ID: \(orderId) and MobilePay Transaction ID: \(transactionId) and the amount withdrawn form the card is \(amountWithdrawnFromCard)", style: .Alert, VC: top!)
-            
-            let tabController: UITabBarController = (self.window?.rootViewController as! UITabBarController)
-            
-            if mobilePaySuccess!.amountWithdrawnFromCard > 0 {
-                
-                if let clock = tabController.viewControllers![3] as? ClockVC {
-                    clock.timerOn = true
-                    clock.startDate = NSDate()
-                }
-                
-            }
-            
-            
+            self.lakeInformation?.updateAndPasInfoToClockVC()
             
             
             }, error: { error in
@@ -119,7 +107,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 // MobilePay app is out of date and should be updated
                 else if error.code == MobilePayErrorCode.UpdateApp.rawValue {
                     // TODO: NOTFIY USER #3
-                    AlertView().showOkayAlert("MobilePay Outdated", message: "Please update your MobilePay Application", style: .Alert, VC: top!)
+                    AlertView().showOkayAlert("MobilePay Outdated", message: "Please update your MobilePay Application", style: .Alert, VC: self.lakeInformation!)
                     print(error.description)
                 }
                 // Merchant is not valid
@@ -133,20 +121,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 // MobilePay timeout, the purchase took more than 5 minutes
                 else if error.code == MobilePayErrorCode.TimeOut.rawValue {
                     // TODO: NOTFIY USER #6
-                    AlertView().showOkayAlert("MobilePay TimeOut", message: "The purchase took more than 5 minutes", style: .Alert, VC: top!)
+                    AlertView().showOkayAlert("MobilePay TimeOut", message: "The purchase took more than 5 minutes", style: .Alert, VC: self.lakeInformation!)
                     print(error.description)
                 }
                 // MobilePay amount limits exceeded. Open MobilePay 'Beløbsgrænser' to see your status.
                 else if error.code == MobilePayErrorCode.LimitsExceeded.rawValue {
                     // TODO: NOTFIY USER #7
                     
-                    AlertView().showOkayAlert("Limit Exceeded", message: "Open MobilePay 'Beløbsgrænser' to see your status.", style: .Alert, VC: top!)
+                    //AlertView().showOkayAlert("Limit Exceeded", message: "Open MobilePay 'Beløbsgrænser' to see your status.", style: .Alert, VC: currentVC!)
                     print(error.description)
                 }
                 // Timeout set in merchant app exceeded
                 else if error.code == MobilePayErrorCode.MerchantTimeout.rawValue {
                     // TODO: NOTFIY USER #8
-                    AlertView().showOkayAlert("MobilePay TimeOut", message: "Lost connection to server, please try again later", style: .Alert, VC: top!)
+                    AlertView().showOkayAlert("MobilePay TimeOut", message: "Lost connection to server, please try again later", style: .Alert, VC: self.lakeInformation!)
                     print(error.description)
                 }
                 // Invalid signature
@@ -168,9 +156,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 
             }) { paymentCancelled in
                 // TODO: CANCELATION HANDLING
-                print("MobilePay got cancelled with Id \(paymentCancelled?.orderId) by user")
-                AlertView().showOkayAlert("Payment Cancelled", message: "MobilePay got cancelled with Id \(paymentCancelled?.orderId) by user", style: .Alert, VC: top!)
-                
+                print("MobilePay blev annulleret \(paymentCancelled?.orderId) af bruger")
+                AlertView().showOkayAlert("Betaling Annulleret", message: "MobilePay blev annulleret af bruger med Id \(paymentCancelled!.orderId)", style: .Alert, VC: self.lakeInformation!)
         }
         
     }
