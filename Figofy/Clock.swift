@@ -8,14 +8,17 @@
 
 import Foundation
 import UIKit
-import CoreGraphics
-import CoreText
+
+
 
 class Clock {
+    
+    var hours: Int = 0
     
     var currentTime: NSDate {
         return NSDate()
     }
+    
     
 }
 

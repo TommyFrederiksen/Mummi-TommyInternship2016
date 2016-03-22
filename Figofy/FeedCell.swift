@@ -18,6 +18,7 @@ class FeedCell: UITableViewCell {
     @IBOutlet weak var metodeLabel: UILabel!
     @IBOutlet weak var længdeLabel: UILabel!
     @IBOutlet weak var vægtLabel: UILabel!
+    @IBOutlet weak var coughtByLabel : UILabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -35,6 +36,7 @@ class FeedCell: UITableViewCell {
         metodeLabel.text = "\(fish.method)"
         beskrivelseLabel.text = "\(fish.note)"
         artLabel.text = "\(fish.species)"
+        coughtByLabel.text = "\(fish.coughtBy)"
     }
     
     func decodeBase64StringToImage(strEncodedData: String?) -> UIImage {

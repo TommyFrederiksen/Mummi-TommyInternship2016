@@ -95,6 +95,7 @@ class Fish {
     private var _latitude: CLLocationDegrees?
     private var _longitude: CLLocationDegrees?
     private var _fishRef: Firebase!
+    private var _cougntBy: String?
     
     var imageStr: String? {
         return _imageStr
@@ -138,6 +139,15 @@ class Fish {
     
     var fishPostKey: String {
         return _fishPostKey
+    }
+    var coughtBy: String {
+        get{
+            return _cougntBy!
+        }
+        set{
+          _cougntBy = newValue
+        }
+        
     }
     
     init(postKey: String) {

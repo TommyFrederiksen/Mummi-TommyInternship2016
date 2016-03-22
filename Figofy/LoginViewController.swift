@@ -17,7 +17,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var passwordTextField: TextFieldDesign!
     @IBOutlet weak var loginbtn: UIButton!
     @IBOutlet weak var figofyLogo: UIImageView!
-    
     @IBOutlet weak var fortrydBtn: UIButton!
     @IBOutlet weak var opretBtn: UIButton!
     @IBOutlet weak var createFirstName: TextFieldDesign!
