@@ -20,4 +20,19 @@ extension NSDate {
         return formatter.stringFromDate(dateTime)
     }
     
+    var zeroSecond : NSDate {
+        return NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)!.dateBySettingHour(hour, minute: minute, second: 0, ofDate: self, options: [])!
+    }
+    var nextRoundMinute : NSDate {
+        return NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)!.dateBySettingHour(NSDate().hour, minute: NSDate().minute+1, second: 0, ofDate: NSDate(), options: [])!
+    }
+    
+    var minute: Int {
+        return NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)!.component(NSCalendarUnit.Minute, fromDate: self)
+    }
+    var hour: Int {
+        return NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)!.component(NSCalendarUnit.Hour, fromDate: self)
+        
+    }
+    
 }

@@ -10,20 +10,21 @@ import UIKit
 import Firebase
 import CoreLocation
 
-class MobilePayViewController: UIViewController, CLLocationManagerDelegate, UITableViewDelegate, UITableViewDataSource {
+class MobilePayViewController: UIViewController, CLLocationManagerDelegate {
     
     
-    @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var payBtn: UIButton!
     @IBOutlet weak var amount: TextFieldDesign!
     
     @IBOutlet weak var serverTimeLbl: UILabel!
-    @IBOutlet weak var image: UIImageView!
-    
     var payment: MobilePayPayment?
-    var alert: AlertView?
     var catches = [FigofySea]()
     let locationManager = CLLocationManager()
+    
+    let currentDate = NSDate()
+    let endDate = NSDate.convertFirebaseTimestampToDate(stamp: 1458576108)
+    var timer = NSTimer()
+    var timerOn = false
     
     override func viewDidAppear(animated: Bool) {
         
@@ -40,18 +41,33 @@ class MobilePayViewController: UIViewController, CLLocationManagerDelegate, UITa
         } else {
             locationManager.requestWhenInUseAuthorization()
         }
-        tableView.delegate = self
-        tableView.dataSource = self
         
         // Do any additional setup after loading the view, typically from a nib.
-        alert = AlertView()
         
-        payBtn.layer.cornerRadius = 5.0
+        payBtn.layer.cornerRadius = 8.0
         
-        getSeas()
-        tableView.reloadData()
+        timerOn = !timerOn
+        if timerOn {
+            timer = NSTimer.scheduledTimerWithTimeInterval(0.5, target: self, selector: "updateCounter", userInfo: nil, repeats: true)
+        } else {
+            timer.invalidate()
+            timerOn = false
+        }
         
         
+        
+    }
+    
+    func updateCounter() {
+        let timeLeft = endDate.timeIntervalSinceNow
+        print(timeLeft)
+        if timeLeft > 0 {
+            serverTimeLbl.text = timeLeft.time
+        } else {
+            serverTimeLbl.text = "Finished"
+            timer.invalidate()
+            timerOn = false
+        }
     }
     
     func getSeas() {
@@ -123,25 +139,6 @@ class MobilePayViewController: UIViewController, CLLocationManagerDelegate, UITa
         })
     }
     
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 1
-    }
-    
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return catches.count
-    }
-    
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        
-       let cell = tableView.dequeueReusableCellWithIdentifier("fish", forIndexPath: indexPath) as UITableViewCell
-        
-        let fish = catches[indexPath.row]
-
-        //cell.textLabel?.text = fish.bait
-        
-        return cell
-        
-    }
     
     
     func decodeBase64StringToImage(strEncodeData: String?) -> UIImage {
@@ -199,3 +196,4 @@ class MobilePayViewController: UIViewController, CLLocationManagerDelegate, UITa
         
     }
 }
+

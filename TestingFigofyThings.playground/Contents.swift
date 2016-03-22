@@ -201,25 +201,25 @@ zzz: The timezone presented with three letters (e.g. GMT)
 GGG: BC or AD.
 */
 
-let currentDate = NSDate()
+let currrentDate = NSDate()
 let dateFormatter = NSDateFormatter()
 
 //Full Style
 dateFormatter.dateStyle = .FullStyle
-var convertedDate = dateFormatter.stringFromDate(currentDate)
+var convertedDate = dateFormatter.stringFromDate(currrentDate)
 //Long Style
 dateFormatter.dateStyle = .LongStyle
-convertedDate = dateFormatter.stringFromDate(currentDate)
+convertedDate = dateFormatter.stringFromDate(currrentDate)
 //Medium Style
 dateFormatter.dateStyle = .MediumStyle
-convertedDate = dateFormatter.stringFromDate(currentDate)
+convertedDate = dateFormatter.stringFromDate(currrentDate)
 //Short Style
 dateFormatter.dateStyle = .ShortStyle
-convertedDate = dateFormatter.stringFromDate(currentDate)
+convertedDate = dateFormatter.stringFromDate(currrentDate)
 dateFormatter.dateFormat = "EEEE, MMMM dd, yyyy"
-convertedDate = dateFormatter.stringFromDate(currentDate)
+convertedDate = dateFormatter.stringFromDate(currrentDate)
 dateFormatter.dateFormat = "HH:mm:ss"
-convertedDate = dateFormatter.stringFromDate(currentDate)
+convertedDate = dateFormatter.stringFromDate(currrentDate)
 //Converting from string to NSDate
 var dateAsString = "24-02-2016 15:00"
 dateFormatter.dateFormat = "dd-MM-yyyy HH:mm"
@@ -238,7 +238,40 @@ var fireDateString = "2016-03-11 10:49:24 +0000"
 let fireStamp = fireFormatter.dateFromString(fireDateString)
 NSDate(timeIntervalSince1970: 1457694636608.0/1000)
 NSDate(timeIntervalSince1970: 1457705798501/1000)
+
+let date = NSDate()
 let calendar = NSCalendar.currentCalendar()
+let components = calendar.components(NSCalendarUnit.Hour, fromDate: date)
+
+let hour = components.hour
+let minutes = components.minute
+let month = components.month
+let year = components.year
+let day = components.day
+
+let currentDate = calendar.dateFromComponents(components)
+
+let userCalendar = NSCalendar.currentCalendar()
+
+let competitionDate = NSDateComponents()
+competitionDate.year = 2016
+competitionDate.month = 3
+competitionDate.day = 28
+competitionDate.hour = 21
+competitionDate.minute = 00
+let competitionDay = userCalendar.dateFromComponents(competitionDate)!
+
+competitionDay.timeIntervalSinceDate(currentDate!)
+
+let dayCalendarUnit: NSCalendarUnit = (.Day)
+let competitionDayDifference = userCalendar.components(dayCalendarUnit, fromDate: currentDate!, toDate: competitionDay, options: .MatchFirst)
+
+
+
+var startDate = NSDate()
+var endDate = NSDate(timeIntervalSince1970: 4439053409)
+
+endDate.timeIntervalSinceDate(startDate)
 
 
 //var view = UIView(frame: CGRectMake(0,0, 100, 50))

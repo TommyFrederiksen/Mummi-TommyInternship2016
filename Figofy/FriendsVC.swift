@@ -26,31 +26,24 @@ class FriendsVC: UIViewController, UICollectionViewDataSource, UICollectionViewD
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell
     {
 
-            let img = UIImage(named: friendsImg[indexPath.row])
-            if let cell = collectionView.dequeueReusableCellWithReuseIdentifier("FriendsCell", forIndexPath: indexPath) as? FriendsCell
-            {
-                if let profielImg = img {
-                    cell.configureCell(profielImg, text: friendsName[indexPath.row])
-                    
-                }
-                cell.layer.cornerRadius = 15
-                cell.mainImg.layer.cornerRadius = cell.mainImg.layer.frame.width/2
-                cell.mainImg.clipsToBounds = true
-                return cell
-            }
-            else
-            {
-                return FriendsCell()
-            }
+        let img = UIImage(named: friendsImg[indexPath.row])
+        if let cell = collectionView.dequeueReusableCellWithReuseIdentifier("FriendsCell", forIndexPath: indexPath) as? UICollectionViewCell
+        {
+            cell
+            
+            return cell
+        }
+        else {
+            return UICollectionViewCell()
+        }
         
     }
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
-        
         return 1
     }
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return friendsImg.count
+        return 10
     }
     
     @IBAction func backToProfile(sender: AnyObject) {

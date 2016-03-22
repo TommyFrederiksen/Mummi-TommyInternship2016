@@ -35,13 +35,11 @@ class LakeInformationVC: UIViewController, UITableViewDelegate, UITableViewDataS
         // Do any additional setup after loading the view, typically from a nib.
         tableView.delegate = self
         tableView.dataSource = self
-        
-        
-        if sea.seaPrices?.count > 0 && sea.seaPrices != nil {
-            for (key,value) in sea.seaPrices! {
+        if sea.seaPrices?.count > 0 || sea.seaPrices != nil {
+            let sortedPrices = sea.seaPrices?.sort {$0.1 < $1.1}
+            for (key,value) in sortedPrices! {
                 hours.append(key)
                 prices.append(value)
-                print("\(key),\(value)")
             }
         }
         
@@ -80,107 +78,91 @@ class LakeInformationVC: UIViewController, UITableViewDelegate, UITableViewDataS
         
     }
     
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
+        let totalPrice = prices[indexPath.row]
+        let totalHours: String = "\(hours[indexPath.row])"
+        let hour = checkHours(totalHours)
+        
+        // UNIQUE ID FOR TRANSACTION
+        //print(NSUUID().UUIDString)
+        
+        let alertWithChild = UIAlertController(title: "Bekræft", message: "Du har valgt \(hour) for \(totalPrice).\n Ønsker du at fortsætte til betaling?", preferredStyle: .Alert)
+        
+        let yesAction = UIAlertAction(title: "Ja", style: .Default, handler: { yesAction in
+            let currentTime = NSDate()
+            let hourToFutureDate: NSTimeInterval = Double(hour * 60 * 60)
+            
+            let checkPayment = MPPayment(price: totalPrice, startDate: currentTime, endDate: currentTime.dateByAddingTimeInterval(hourToFutureDate))
+            
+            self.performSegueWithIdentifier(SEGUE_PAYMENT, sender: checkPayment)
+        })
+        
+        
+        let noAction = UIAlertAction(title: "Nej", style: .Default, handler: { noAction in
+            // TODO: NAVIGER VIDERE TIL BETALING
+            return
+        })
+        
+        alertWithChild.addAction(yesAction)
+        alertWithChild.addAction(noAction)
+        
+        self.presentViewController(alertWithChild, animated: true, completion: nil)
+        
+    }
+    
     
     @IBAction func backBtnPressed(sender: AnyObject) {
         dismissViewControllerAnimated(true, completion: nil)
     }
     
     
-    @IBOutlet weak var pricesBtn: UIButton!
-    @IBAction func pricesTapped(sender: UIButton) {
-        ActionSheetMultipleStringPicker.showPickerWithTitle("Fisketid", rows: [[3,5,7,24],["timer"]], initialSelection:
-            [0,0], doneBlock: {
-            picker, values, indexes in
-                
-                let hours = values[0]
-            
-                print("Timer: \(hours)")
-            
-                let alertWithChild = UIAlertController(title: "Har du gæst med?", message: nil, preferredStyle: .Alert)
-                let yesAction = UIAlertAction(title: "Ja", style: .Default, handler: { yesAction in
-                    ActionSheetMultipleStringPicker.showPickerWithTitle("Fisketid for gæst", rows: [[1,2,3,4,5],["antal"],[3,5,7,24],["timer"]], initialSelection:  [0,0,0,0], doneBlock: { picker, values, indexes in
-                        
-                        let kids = values[0]
-                        let hours = values[2]
-                        
-                        print("Børn:\(kids), Timer: \(hours)")
-                        
-                        }, cancelBlock: { ActionMultipleStringCancelBlock in return }, origin: sender)
-                    // TODO: NAVIGER VIDERE TIL BETALING
-                })
-                
-                let noAction = UIAlertAction(title: "Nej", style: .Default, handler: { noAction in
-                    // TODO: NAVIGER VIDERE TIL BETALING
-                    return
-                })
-            
-                alertWithChild.addAction(yesAction)
-                alertWithChild.addAction(noAction)
-                self.presentViewController(alertWithChild, animated: true, completion: nil)
-            
-            return
-            }, cancelBlock: { ActionMultipleStringCancelBlock in return }, origin: sender)
-    }
-    
-    
-    
-    @IBAction func payHoursTapped(sender: UIButton) {
-        var price = Float(200)
-        let Id = "3232"
-        if sender.tag == 0 {
-            price = 130
-            
-            payment = MobilePayPayment(orderId: Id, productPrice: price)
-            
-            MobilePayManager.sharedInstance().beginMobilePaymentWithPayment(payment) { error in
-                if error.localizedDescription != "" {
-                    print(error.localizedDescription)
-                }
-                
-                
-            }
-            
-            
-        } else if sender.tag == 1 {
-            price = 190
-            payment = MobilePayPayment(orderId: Id, productPrice: price)
-            
-            MobilePayManager.sharedInstance().beginMobilePaymentWithPayment(payment) { error in
-                if error.localizedDescription != "" {
-                    print(error.localizedDescription)
-                }
-                
-                
-            }
-            
-            
-        } else if sender.tag == 2 {
-            price = 260
-            payment = MobilePayPayment(orderId: Id, productPrice: price)
-            
-            MobilePayManager.sharedInstance().beginMobilePaymentWithPayment(payment) { error in
-                if error.localizedDescription != "" {
-                    print(error.localizedDescription)
-                }
-                
-                
-            }
-            
-            
+    func checkHours(hours: String) -> Int {
+        
+        var hour: Int = 0
+        
+        if hours.rangeOfString("1 Timer") != nil {
+            hour = 1
+        } else if hours.rangeOfString("2 Timer") != nil {
+            hour = 2
+        } else if hours.rangeOfString("3 Timer") != nil {
+            hour = 3
+        } else if hours.rangeOfString("4 Timer") != nil {
+            hour = 4
+        } else if hours.rangeOfString("5 Timer") != nil {
+            hour = 5
+        } else if hours.rangeOfString("6 Timer") != nil {
+            hour = 6
+        } else if hours.rangeOfString("7 Timer") != nil {
+            hour = 7
+        } else if hours.rangeOfString("8 Timer") != nil {
+            hour = 8
+        } else if hours.rangeOfString("9 Timer") != nil {
+            hour = 9
+        } else if hours.rangeOfString("10 Timer") != nil {
+            hour = 10
+        } else if hours.rangeOfString("11 Timer") != nil {
+            hour = 11
+        } else if hours.rangeOfString("12 Timer") != nil {
+            hour = 12
+        } else if hours.rangeOfString("Dagskort") != nil {
+            hour = 24
         }
-        
-        self.performSegueWithIdentifier(SEGUE_PAYMENT, sender: nil)
-        
+        return hour
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // TODO: Time updates etc.
-        let tabBarController = segue.destinationViewController as! UITabBarController
+        let tabBarC = segue.destinationViewController as! UITabBarController
         
         if segue.identifier == SEGUE_PAYMENT {
-            tabBarController.selectedIndex = 3
-            if let profileView = tabBarController.viewControllers![3] as? ClockVC {
-                
+            tabBarC.selectedIndex = 3
+            if let clock = tabBarC.viewControllers![3] as? ClockVC {
+                if let mppayment = sender as? MPPayment {
+                    if mppayment.price > 0 {
+                        clock.timeInformation = mppayment
+                    }
+                }
                 
             }
         }

@@ -19,6 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
         
+        
         //TESTING
         MobilePayManager.sharedInstance().setupWithMerchantId("APPDK0000000000", merchantUrlScheme: "figofy", timeoutSeconds: 30, returnSeconds: 1, captureType: .Capture, country: .Denmark)
         //ACTUAL
@@ -85,6 +86,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             
             
             AlertView().showOkayAlert("Payment Successful", message: "MobilePay purchase succeeded: You have now paid for order with ID: \(orderId) and MobilePay Transaction ID: \(transactionId) and the amount withdrawn form the card is \(amountWithdrawnFromCard)", style: .Alert, VC: top!)
+            
+            let tabController: UITabBarController = (self.window?.rootViewController as! UITabBarController)
+            
+            if mobilePaySuccess!.amountWithdrawnFromCard > 0 {
+                
+                if let clock = tabController.viewControllers![3] as? ClockVC {
+                    clock.timerOn = true
+                    clock.startDate = NSDate()
+                }
+                
+            }
+            
+            
             
             
             }, error: { error in

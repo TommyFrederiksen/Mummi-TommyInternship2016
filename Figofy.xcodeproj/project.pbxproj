@@ -10,7 +10,6 @@
 		171DC17FDCFBEE728D67FE26 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B3D4BDC1C3533F8ED3B5DA2 /* Pods.framework */; };
 		181E55751C7DABE7007E9EF3 /* FigofySea.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181E55741C7DABE7007E9EF3 /* FigofySea.swift */; };
 		181E55771C7DDCFD007E9EF3 /* FigofyUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181E55761C7DDCFD007E9EF3 /* FigofyUser.swift */; };
-		18317D671C6DD31400C995D7 /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18317D661C6DD31400C995D7 /* CustomTabBar.swift */; };
 		183B64C01C58DD7100B78D1B /* System San Francisco Display Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 183B64BE1C58DD7100B78D1B /* System San Francisco Display Bold.ttf */; };
 		183B64C11C58DD7100B78D1B /* System San Francisco Display Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 183B64BF1C58DD7100B78D1B /* System San Francisco Display Regular.ttf */; };
 		183B64C51C58F58C00B78D1B /* GradientColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183B64C41C58F58C00B78D1B /* GradientColor.swift */; };
@@ -24,6 +23,8 @@
 		187625E61C60F251003828DD /* Sea.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187625E41C60F251003828DD /* Sea.swift */; };
 		187625E71C60F251003828DD /* Sea+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187625E51C60F251003828DD /* Sea+CoreDataProperties.swift */; };
 		187625E91C60F440003828DD /* menudata.csv in Resources */ = {isa = PBXBuildFile; fileRef = 187625E81C60F440003828DD /* menudata.csv */; };
+		18869D191CA133C200635951 /* NSTimeIntervalExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18869D181CA133C200635951 /* NSTimeIntervalExtensions.swift */; };
+		18869D1B1CA13C8300635951 /* MPPayment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18869D1A1CA13C8300635951 /* MPPayment.swift */; };
 		188D09C01C92E4970021FBC8 /* NSDateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188D09BF1C92E4970021FBC8 /* NSDateExtensions.swift */; };
 		189DE0CC1C86E89A00EA2977 /* Fish.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189DE0CB1C86E89A00EA2977 /* Fish.swift */; };
 		189DE0CE1C86FA1400EA2977 /* FishCatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189DE0CD1C86FA1400EA2977 /* FishCatch.swift */; };
@@ -88,7 +89,6 @@
 /* Begin PBXFileReference section */
 		181E55741C7DABE7007E9EF3 /* FigofySea.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FigofySea.swift; sourceTree = "<group>"; };
 		181E55761C7DDCFD007E9EF3 /* FigofyUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FigofyUser.swift; sourceTree = "<group>"; };
-		18317D661C6DD31400C995D7 /* CustomTabBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
 		183B64BE1C58DD7100B78D1B /* System San Francisco Display Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "System San Francisco Display Bold.ttf"; sourceTree = "<group>"; };
 		183B64BF1C58DD7100B78D1B /* System San Francisco Display Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "System San Francisco Display Regular.ttf"; sourceTree = "<group>"; };
 		183B64C41C58F58C00B78D1B /* GradientColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientColor.swift; sourceTree = "<group>"; };
@@ -103,6 +103,8 @@
 		187625E41C60F251003828DD /* Sea.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sea.swift; sourceTree = "<group>"; };
 		187625E51C60F251003828DD /* Sea+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Sea+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		187625E81C60F440003828DD /* menudata.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = menudata.csv; sourceTree = "<group>"; };
+		18869D181CA133C200635951 /* NSTimeIntervalExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSTimeIntervalExtensions.swift; sourceTree = "<group>"; };
+		18869D1A1CA13C8300635951 /* MPPayment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MPPayment.swift; sourceTree = "<group>"; };
 		188D09BF1C92E4970021FBC8 /* NSDateExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDateExtensions.swift; sourceTree = "<group>"; };
 		189DE0CB1C86E89A00EA2977 /* Fish.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fish.swift; sourceTree = "<group>"; };
 		189DE0CD1C86FA1400EA2977 /* FishCatch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FishCatch.swift; sourceTree = "<group>"; };
@@ -232,7 +234,6 @@
 				1846984E1C60C0E50095D64B /* SeaListVC.swift */,
 				655044C81C636F7700D79B89 /* EventTableVC.swift */,
 				655044CC1C64CF1100D79B89 /* ClockVC.swift */,
-				18317D661C6DD31400C995D7 /* CustomTabBar.swift */,
 				18E642AF1C80A87F00155CCC /* RegisterFishVC.swift */,
 				65D98CE71C8EC0AF00D54BB9 /* LogVC.swift */,
 				65D98CED1C9023E300D54BB9 /* FriendsVC.swift */,
@@ -254,6 +255,7 @@
 				189DE0CB1C86E89A00EA2977 /* Fish.swift */,
 				189DE0CD1C86FA1400EA2977 /* FishCatch.swift */,
 				65D98CEB1C9023A900D54BB9 /* FriendsCell.swift */,
+				18869D1A1CA13C8300635951 /* MPPayment.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -276,6 +278,7 @@
 			children = (
 				189E3CFB1C7BC05100AFE975 /* Constants.swift */,
 				188D09BF1C92E4970021FBC8 /* NSDateExtensions.swift */,
+				18869D181CA133C200635951 /* NSTimeIntervalExtensions.swift */,
 			);
 			name = Util;
 			sourceTree = "<group>";
@@ -565,6 +568,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				655044CD1C64CF1100D79B89 /* ClockVC.swift in Sources */,
+				18869D1B1CA13C8300635951 /* MPPayment.swift in Sources */,
 				18AFDA031C7472C300F2616E /* AlertView.swift in Sources */,
 				65D98CE81C8EC0AF00D54BB9 /* LogVC.swift in Sources */,
 				651018171C50DB4C00B7FECC /* LakeInformationVC.swift in Sources */,
@@ -572,6 +576,7 @@
 				184696CA1C5F61710095D64B /* SeaAnnotation.swift in Sources */,
 				65D98CEA1C8ED25700D54BB9 /* FeedCell.swift in Sources */,
 				181E55751C7DABE7007E9EF3 /* FigofySea.swift in Sources */,
+				18869D191CA133C200635951 /* NSTimeIntervalExtensions.swift in Sources */,
 				655044C91C636F7700D79B89 /* EventTableVC.swift in Sources */,
 				189DE0CC1C86E89A00EA2977 /* Fish.swift in Sources */,
 				6550AD4C1C9C30380020A415 /* LogCell.swift in Sources */,
@@ -590,7 +595,6 @@
 				18CCAA981C60D5B700C7D5E8 /* CreateSeaVC.swift in Sources */,
 				18ACE6451C7BBDAE0092BC95 /* DataService.swift in Sources */,
 				655044CB1C637C2900D79B89 /* Event.swift in Sources */,
-				18317D671C6DD31400C995D7 /* CustomTabBar.swift in Sources */,
 				18E675801C58B6850046B259 /* TextFieldDesign.swift in Sources */,
 				659501001C6DD94C0067ED1A /* Timer.swift in Sources */,
 				18E642B01C80A87F00155CCC /* RegisterFishVC.swift in Sources */,

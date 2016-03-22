@@ -12,27 +12,41 @@ class ClockVC: UIViewController {
     
     
     @IBOutlet weak var timeLabel: UILabel!
+    @IBOutlet weak var countdownLabel: UILabel!
     
     var payment: MobilePayPayment?
     let clock = Clock()
-    var timer: NSTimer?
+    var timeInformation: MPPayment?
+    
+    var startDate: NSDate?
+    var endDate: NSDate?
+    
+    var timerOn = false
+    
+    var currentTime: NSTimer!
+    var countdownTime: NSTimer?
+    
     
     // MARK: View Methods
     override func viewDidLoad(){
         super.viewDidLoad()
-        timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: "updateTimeLabel", userInfo: nil, repeats: true)
+        print("VIEWDIDLOAD")
+        timeLabel.text = ""
+        countdownLabel.text = ""
         
+        
+        currentTime = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: "updateCurrentTime", userInfo: nil, repeats: true)
+        
+        
+        countdownTime = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: "updateCountdown", userInfo: nil, repeats: true)
     }
     
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
-        updateTimeLabel()
-        
-    }
+    
     
     override func viewDidAppear(animated: Bool) {
         
     }
+    
     
     override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
         return UIInterfaceOrientationMask.All
@@ -40,38 +54,37 @@ class ClockVC: UIViewController {
     
     
     // MARK: Custom Methods
-    func updateTimeLabel() {
+    func updateCurrentTime() {
         let formatter = NSDateFormatter()
         formatter.timeStyle = .MediumStyle
         timeLabel.text = formatter.stringFromDate(clock.currentTime)
     }
     
-    @IBAction func KøbTid(sender: AnyObject) {
+    func updateCountdown() {
         
-        
+        if let validatedEndDate = timeInformation?.endDate  {
+            self.endDate = validatedEndDate
             
-            let Id = "3232"
-            let price = Float(200.00)
-        
-            if price >= 0 && Id != "" {
-                payment = MobilePayPayment(orderId: Id, productPrice: price)
-                MobilePayManager.sharedInstance().beginMobilePaymentWithPayment(payment!) { error in
-                    if error.localizedDescription != "" {
-                        print(error.localizedDescription)
-                    }
-                    
-                    
-                }
-                
+            if let timeLeft = self.endDate?.timeIntervalSinceNow where timeLeft > 0 {
+                countdownLabel.text = timeLeft.time
             }
-        
+            
+        } else {
+            countdownLabel.text = ""
+        }
         
     }
     
+    
     deinit {
-        if let timer = self.timer {
+        if let clock = self.currentTime {
+            clock.invalidate()
+        }
+        
+        if let timer = self.countdownTime {
             timer.invalidate()
         }
+        
     }
     
     
