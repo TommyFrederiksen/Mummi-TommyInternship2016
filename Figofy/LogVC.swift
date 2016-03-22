@@ -36,7 +36,7 @@ class LogVC: UIViewController, UITableViewDelegate, UITableViewDataSource
         self.fish = []
         DataService.dataService.REF_USER_CURRENT.childByAppendingPath("fish").observeEventType(.ChildAdded, withBlock: { fishIds in
             
-            print("\(fishIds.key)")
+            //print("\(fishIds.key)")
             DataService.dataService.REF_FISH.childByAppendingPath(fishIds.key).observeSingleEventOfType(.Value, withBlock: {
                 fishSnaps in
                 
@@ -44,7 +44,7 @@ class LogVC: UIViewController, UITableViewDelegate, UITableViewDataSource
                     
                     let fishData = Fish(postKey: fishIds.key, dictionary: fishDict)
                     self.fish.append(fishData)
-                    print(fishData)
+                    //print(fishData)
                 }
                 
                 

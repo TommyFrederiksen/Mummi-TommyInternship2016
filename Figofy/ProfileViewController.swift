@@ -20,6 +20,7 @@ class ProfileViewController: UIViewController,UITableViewDelegate, UITableViewDa
     var user: FigofyUser!
     var fish = [Fish]()
     
+    
     override func viewDidLoad()
     {
         super.viewDidLoad()
@@ -29,18 +30,30 @@ class ProfileViewController: UIViewController,UITableViewDelegate, UITableViewDa
         feedTableView.delegate = self
         feedTableView.dataSource = self
         observerForFeed()
-        //nameLbl.text = "\(user.userFirstName)"+" \(user.userLastName)"
+        curentUser()
+        
+        
         
     }
-    
-    
+    func curentUser()
+    {
+        
+        DataService.dataService.REF_USER_CURRENT.observeSingleEventOfType(.Value, withBlock: { snapshot in
+            if let userDict = snapshot.value as?Dictionary<String, AnyObject>{
+                
+                let _user = FigofyUser(postKey: snapshot.key, dictionary: userDict)
+                self.user = _user
+                self.nameLbl.text = "\(self.user.userFirstName) \(self.user.userLastName)"
+            }
+        })
+        
+    }
     
     
     func observerForFeed()
     {
         DataService.dataService.REF_FISH.observeEventType(.Value, withBlock:
             { snapshot in
-                
                 
                 self.fish = []
                 if let snapshots = snapshot.children.allObjects as? [FDataSnapshot]
@@ -52,11 +65,11 @@ class ProfileViewController: UIViewController,UITableViewDelegate, UITableViewDa
                         {
                             let key = element.key
                             let _fish = Fish(postKey: key, dictionary: fishDict)
-                            //print("fish: \(fishDict)")
+                            _fish.coughtBy = ""// connect fisherman name to this string.
                             self.fish.append(_fish)
                             
-                            
                         }
+                        
                     }
                 }
                 self.feedTableView.reloadData()
