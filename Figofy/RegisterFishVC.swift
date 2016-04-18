@@ -68,7 +68,7 @@ class RegisterFishVC: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     
     
-    // MARK: UIImagePicker delegate methods
+    // MARK: UIImagePicker delegate methodss
     //when user taps on image it returns it
     func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage, editingInfo: [String : AnyObject]?) {
         imagePicker.dismissViewControllerAnimated(true, completion: nil)
